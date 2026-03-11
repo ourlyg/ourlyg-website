@@ -3,100 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="理财工具 - 我们的理易港提供专业的理财计算工具">
+    <meta name="keywords" content="理财工具,收益计算器,复利计算器,退休规划,风险评估">
     <title>理财工具 - 我们的理易港</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <!-- 导航栏 -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar">
         <div class="container">
             <a class="navbar-brand" href="../index.html">
                 <span class="logo-icon">💰</span>
                 我们的理易港
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">首页</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../products/index.html">产品测评</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">理财工具</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../knowledge/index.html">知识科普</a>
-                    </li>
-                </ul>
-            </div>
+            <ul class="navbar-nav">
+                <li>
+                    <a class="nav-link" href="../index.html">首页</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="../products/index.html">产品测评</a>
+                </li>
+                <li>
+                    <a class="nav-link active" href="index.html">理财工具</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="../knowledge/index.html">知识科普</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
     <!-- 页面标题 -->
-    <section class="section-padding bg-light" style="padding-top: 120px;">
+    <section class="hero-section">
         <div class="container">
-            <div class="text-center">
-                <h1 class="section-title">理财工具</h1>
-                <p class="section-subtitle">实用、专业的理财计算工具</p>
-            </div>
+            <h1 class="hero-title">理财工具</h1>
+            <p class="hero-subtitle">实用、专业的理财计算工具，助您科学管理财富</p>
         </div>
     </section>
 
     <!-- 工具列表 -->
-    <section class="section-padding">
+    <section class="section">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="tool-card text-center">
-                        <div class="tool-icon">📊</div>
-                        <h4>收益计算器</h4>
-                        <p>快速计算投资收益，支持单利和复利</p>
-                        <a href="calculator.html" class="btn btn-primary btn-sm">立即使用</a>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card tool-card">
+                        <div class="card-body">
+                            <div class="tool-icon">📊</div>
+                            <h3>收益计算器</h3>
+                            <p>快速计算投资收益，支持单利和复利计算</p>
+                            <a href="calculator.html" class="btn btn-primary" style="width: 100%;">立即使用</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="tool-card text-center">
-                        <div class="tool-icon">📈</div>
-                        <h4>复利计算器</h4>
-                        <p>计算复利增长，见证时间的力量</p>
-                        <a href="compound-interest.html" class="btn btn-primary btn-sm">立即使用</a>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card tool-card">
+                        <div class="card-body">
+                            <div class="tool-icon">📈</div>
+                            <h3>复利计算器</h3>
+                            <p>计算复利增长，见证时间的力量</p>
+                            <span style="color: var(--color-text-hint); font-size: var(--font-size-sm);">开发中...</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="tool-card text-center">
-                        <div class="tool-icon">🎯</div>
-                        <h4>退休规划</h4>
-                        <p>规划退休生活，计算需要的储蓄</p>
-                        <a href="retirement.html" class="btn btn-primary btn-sm">立即使用</a>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card tool-card">
+                        <div class="card-body">
+                            <div class="tool-icon">🎯</div>
+                            <h3>退休规划</h3>
+                            <p>规划退休生活，计算需要的储蓄</p>
+                            <span style="color: var(--color-text-hint); font-size: var(--font-size-sm);">开发中...</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="tool-card text-center">
-                        <div class="tool-icon">🎲</div>
-                        <h4>风险评估</h4>
-                        <p>测试风险承受能力，找到适合的投资方式</p>
-                        <a href="risk-assessment.html" class="btn btn-primary btn-sm">立即使用</a>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card tool-card">
+                        <div class="card-body">
+                            <div class="tool-icon">🎲</div>
+                            <h3>风险评估</h3>
+                            <p>测试风险承受能力，找到适合的投资方式</p>
+                            <span style="color: var(--color-text-hint); font-size: var(--font-size-sm);">开发中...</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="tool-card text-center">
-                        <div class="tool-icon">💼</div>
-                        <h4>资产配置</h4>
-                        <p>科学分配资产，实现稳健增长</p>
-                        <a href="asset-allocation.html" class="btn btn-primary btn-sm">立即使用</a>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card tool-card">
+                        <div class="card-body">
+                            <div class="tool-icon">💼</div>
+                            <h3>资产配置</h3>
+                            <p>科学分配资产，实现稳健增长</p>
+                            <span style="color: var(--color-text-hint); font-size: var(--font-size-sm);">开发中...</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="tool-card text-center">
-                        <div class="tool-icon">🏠</div>
-                        <h4>房贷计算器</h4>
-                        <p>计算房贷月供和利息</p>
-                        <a href="mortgage.html" class="btn btn-primary btn-sm">立即使用</a>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card tool-card">
+                        <div class="card-body">
+                            <div class="tool-icon">🏠</div>
+                            <h3>房贷计算器</h3>
+                            <p>计算房贷月供和利息</p>
+                            <span style="color: var(--color-text-hint); font-size: var(--font-size-sm);">开发中...</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -104,20 +115,12 @@
     </section>
 
     <!-- 页脚 -->
-    <footer class="bg-dark text-white">
-        <div class="container py-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; 2025 我们的理易港. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p>让理财变得简单</p>
-                </div>
-            </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 我们的理易港. All rights reserved.</p>
+            <p style="margin-top: var(--spacing-2);">让理财变得简单</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/main.js"></script>
 </body>
 </html>
