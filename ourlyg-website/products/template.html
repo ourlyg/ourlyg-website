@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品详情 - 我们的理易港</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .product-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 30px;
+        }
+
+        .product-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .meta-item {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 5px;
+            backdrop-filter: blur(10px);
+        }
+
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+            color: #667eea;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .score-number {
+            font-size: 3rem;
+            line-height: 1;
+        }
+
+        .score-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .score-bar {
+            height: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .score-bar-fill {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+
+        .pros-cons-card {
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .pros-card {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+        }
+
+        .cons-card {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+
+        .pros-cons-item {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .pros-cons-item:last-child {
+            border-bottom: none;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="logo-icon">💰</span>
+                我们的理易港
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">产品测评</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../tools/index.html">理财工具</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../knowledge/index.html">知识科普</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 产品头部 -->
+    <section class="product-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <span class="badge bg-light text-dark mb-2">产品类型</span>
+                    <h1 class="mb-3">产品名称</h1>
+                    <p class="lead mb-4">产品简短描述，一句话说明核心特点</p>
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <strong>发行机构：</strong>机构名称
+                        </div>
+                        <div class="meta-item">
+                            <strong>风险等级：</strong>R2
+                        </div>
+                        <div class="meta-item">
+                            <strong>预期收益：</strong>3.5%
+                        </div>
+                        <div class="meta-item">
+                            <strong>起购金额：</strong>1元
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="score-circle mx-auto">
+                        <span class="score-number">8.5</span>
+                        <span class="score-label">综合评分</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 评分详情 -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="mb-4">评分详情</h2>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>收益评分</span>
+                            <span>8.0/10</span>
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-bar-fill bg-primary" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>风险评分</span>
+                            <span>9.0/10</span>
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-bar-fill bg-success" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>流动性评分</span>
+                            <span>8.0/10</span>
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-bar-fill bg-info" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>服务评分</span>
+                            <span>9.0/10</span>
+                        </div>
+                        <div class="score-bar">
+                            <div class="score-bar-fill bg-warning" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 优缺点分析 -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="pros-cons-card pros-card">
+                        <h3 class="mb-4 text-success">✅ 优点</h3>
+                        <div class="pros-cons-item">
+                            <strong>风险低，R2等级</strong>
+                            <p class="mb-0">适合保守型投资者，本金安全有保障</p>
+                        </div>
+                        <div class="pros-cons-item">
+                            <strong>收益稳定</strong>
+                            <p class="mb-0">历史年化收益4.5%，波动小</p>
+                        </div>
+                        <div class="pros-cons-item">
+                            <strong>流动性好</strong>
+                            <p class="mb-0">可随时赎回，T+1到账</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="pros-cons-card cons-card">
+                        <h3 class="mb-4 text-danger">❌ 缺点</h3>
+                        <div class="pros-cons-item">
+                            <strong>起购金额高</strong>
+                            <p class="mb-0">1万元起购，门槛相对较高</p>
+                        </div>
+                        <div class="pros-cons-item">
+                            <strong>收益相对较低</strong>
+                            <p class="mb-0">相比其他投资方式，收益不算高</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 适用人群 -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title text-success mb-3">👍 适合谁</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">✅ 保守型投资者</li>
+                                <li class="mb-2">✅ 新手投资者</li>
+                                <li class="mb-2">✅ 短期理财需求者</li>
+                                <li class="mb-2">✅ 流动性要求高的投资者</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title text-danger mb-3">👎 不适合谁</h3>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">❌ 追求高收益的投资者</li>
+                                <li class="mb-2">❌ 长期投资者</li>
+                                <li class="mb-2">❌ 风险承受能力强的投资者</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA区域 -->
+    <section class="section-padding bg-light">
+        <div class="container text-center">
+            <h2 class="mb-4">立即体验</h2>
+            <p class="lead mb-4">通过我们的专属链接开户，享受更多优惠</p>
+            <div class="mb-4">
+                <a href="#" class="cta-button me-3">立即开户</a>
+                <a href="#" class="btn btn-outline-primary btn-lg">了解更多</a>
+            </div>
+            <p class="text-muted small">开户链接包含我们的推荐码，我们可能会获得佣金</p>
+        </div>
+    </section>
+
+    <!-- 产品详情 -->
+    <section class="section-padding">
+        <div class="container">
+            <h2 class="mb-4">产品详情</h2>
+            <div class="card">
+                <div class="card-body">
+                    <h4>产品介绍</h4>
+                    <p>详细介绍产品的特点、投资范围、风险控制等内容...</p>
+
+                    <h4>投资范围</h4>
+                    <p>说明资金的投资方向、资产配置比例等...</p>
+
+                    <h4>风险控制</h4>
+                    <p>说明产品的风险控制措施、保障机制等...</p>
+
+                    <h4>费用说明</h4>
+                    <p>说明产品的各项费用、收费标准等...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 延伸阅读 -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="mb-4">延伸阅读</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">相关产品1</h5>
+                            <p class="card-text">相关产品描述...</p>
+                            <a href="#" class="btn btn-primary btn-sm">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">相关产品2</h5>
+                            <p class="card-text">相关产品描述...</p>
+                            <a href="#" class="btn btn-primary btn-sm">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2025 我们的理易港. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>让理财变得简单</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
