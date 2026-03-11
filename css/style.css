@@ -1,12 +1,14 @@
 /* 全局样式 */
 :root {
-    --primary-color: #0d6efd;
-    --secondary-color: #6c757d;
-    --success-color: #198754;
-    --info-color: #0dcaf0;
-    --warning-color: #ffc107;
-    --dark-color: #212529;
-    --light-color: #f8f9fa;
+    --primary-color: #2563eb;
+    --secondary-color: #475569;
+    --success-color: #059669;
+    --info-color: #0ea5e9;
+    --warning-color: #d97706;
+    --dark-color: #1e293b;
+    --light-color: #f8fafc;
+    --gradient-start: #667eea;
+    --gradient-end: #764ba2;
 }
 
 * {
@@ -49,10 +51,13 @@ body {
 /* Hero 区域 */
 .hero-section {
     padding: 120px 0 80px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
     color: white;
     position: relative;
     overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
 }
 
 .hero-section::before {
@@ -69,35 +74,45 @@ body {
 }
 
 .hero-section h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
     margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
 .hero-section .lead {
-    font-size: 1.25rem;
-    opacity: 0.9;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    opacity: 0.95;
+    margin-bottom: 2rem;
 }
 
 .stat-card {
     display: inline-block;
-    background: rgba(255,255,255,0.2);
-    padding: 20px 30px;
-    border-radius: 10px;
+    background: rgba(255,255,255,0.25);
+    padding: 30px 40px;
+    border-radius: 15px;
     margin: 10px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
 }
 
 .stat-card h3 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
     margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .stat-card p {
-    font-size: 1rem;
-    opacity: 0.9;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    opacity: 0.95;
     margin: 0;
+    font-weight: 500;
 }
 
 /* 通用区块样式 */
@@ -120,15 +135,16 @@ body {
 /* 产品卡片 */
 .product-card {
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
 }
 
 .product-card .card-header {
@@ -141,11 +157,13 @@ body {
 }
 
 .product-card .score-badge {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
     color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 .product-card .card-body {
@@ -178,20 +196,22 @@ body {
 /* 工具卡片 */
 .tool-card {
     background: white;
-    padding: 40px 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 50px 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .tool-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
 }
 
 .tool-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
 }
 
 .tool-card h4 {
@@ -262,12 +282,30 @@ footer p {
 
 /* 按钮动画 */
 .btn {
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+    border: none;
+}
+
+.btn-outline-light {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline-light:hover {
+    background: white;
+    color: var(--primary-color);
 }
 
 /* 卡片悬停效果 */
@@ -290,4 +328,58 @@ footer p {
 
 .fade-in {
     animation: fadeIn 0.6s ease forwards;
+}
+
+/* 导航栏改进 */
+.navbar {
+    backdrop-filter: blur(10px);
+    background: rgba(33, 37, 41, 0.95) !important;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.logo-icon {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* 背景装饰 */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+/* 粒子效果 */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.hero-section .stat-card {
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero-section .stat-card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.hero-section .stat-card:nth-child(3) {
+    animation-delay: 1s;
 }
