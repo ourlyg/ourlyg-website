@@ -93,23 +93,38 @@ body {
 /* ==================== Hero区域 ==================== */
 .hero-section {
     background: #FFFFFF;
-    padding: var(--spacing-16) 0 var(--spacing-12);
-    min-height: 500px;
+    padding: var(--spacing-8) 0 var(--spacing-6);
+    min-height: auto;
+}
+
+.hero-section .container {
+    max-width: 1200px;
+}
+
+.hero-section .row {
+    justify-content: flex-start;
+}
+
+.hero-section .col-md-8,
+.hero-section .col-md-6 {
+    max-width: 100%;
 }
 
 .hero-title {
-    font-size: 59px;
+    font-size: 48px;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 24px;
+    margin-bottom: var(--spacing-2);
     color: #1A1A1A;
+    max-width: 900px;
 }
 
 .hero-subtitle {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.75;
     color: #666666;
-    margin-bottom: 40px;
+    margin-bottom: var(--spacing-4);
+    max-width: 800px;
 }
 
 /* ==================== 按钮 ==================== */
@@ -330,19 +345,24 @@ footer p {
     }
 
     .hero-section {
-        padding: var(--spacing-12) 0 var(--spacing-8);
+        padding: var(--spacing-6) 0 var(--spacing-4);
         text-align: center;
-        min-height: 400px;
+    }
+
+    .hero-section .container {
+        max-width: 100%;
     }
 
     .hero-title {
         font-size: 32px;
-        margin-bottom: var(--spacing-3);
+        margin-bottom: var(--spacing-2);
+        max-width: 100%;
     }
 
     .hero-subtitle {
         font-size: 16px;
-        margin-bottom: var(--spacing-6);
+        margin-bottom: var(--spacing-4);
+        max-width: 100%;
     }
 
     .hero-buttons {
@@ -376,6 +396,10 @@ footer p {
 }
 
 @media (max-width: 576px) {
+    .hero-section {
+        padding: var(--spacing-4) 0 var(--spacing-3);
+    }
+
     .hero-title {
         font-size: 28px;
     }
