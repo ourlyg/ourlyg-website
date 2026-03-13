@@ -1,31 +1,72 @@
 /* ourlyg.com - Bootstrap 5.3.2 自定义样式 */
 
+/* ==================== CSS变量系统 ==================== */
+:root {
+    /* 颜色 */
+    --color-primary: #0066FF;
+    --color-primary-hover: #0052CC;
+    --color-primary-light: #E6F0FF;
+    --color-primary-dark: #004499;
+    --color-text-primary: #1A1A1A;
+    --color-text-secondary: #666666;
+    --color-text-hint: #999999;
+    --color-bg-white: #FFFFFF;
+    --color-bg-gray: #F5F5F5;
+    --color-border-light: #E5E5E5;
+    --color-success: #00C853;
+    --color-success-light: #E8F5E9;
+    --color-error: #FF5252;
+    --color-error-light: #FFEBEE;
+    
+    /* 阴影 */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+    
+    /* 间距 */
+    --spacing-1: 4px;
+    --spacing-2: 8px;
+    --spacing-3: 12px;
+    --spacing-4: 16px;
+    --spacing-6: 24px;
+    --spacing-8: 32px;
+    --spacing-10: 40px;
+    --spacing-12: 48px;
+    --spacing-16: 64px;
+    --spacing-20: 80px;
+}
+
 /* ==================== 导航栏 ==================== */
 .navbar {
-    background: #FFFFFF;
-    border-bottom: 1px solid #E5E5E5;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    background: var(--color-bg-white);
+    border-bottom: 1px solid var(--color-border-light);
+    box-shadow: var(--shadow-sm);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 64px;
 }
 
 .navbar-brand {
     font-size: 18px;
     font-weight: 600;
-    color: #1A1A1A;
+    color: var(--color-text-primary);
     text-decoration: none;
 }
 
 .navbar-brand:hover {
-    color: #0066FF;
+    color: var(--color-primary);
     text-decoration: none;
 }
 
 .logo-icon {
     font-size: 24px;
-    margin-right: 8px;
+    margin-right: var(--spacing-2);
 }
 
 .nav-link {
-    color: #666666;
+    color: var(--color-text-secondary);
     font-size: 14px;
     font-weight: 400;
     transition: color 0.2s ease;
@@ -33,7 +74,7 @@
 
 .nav-link:hover,
 .nav-link.active {
-    color: #0066FF;
+    color: var(--color-primary);
     text-decoration: none;
 }
 
@@ -65,184 +106,184 @@
 
 /* ==================== 按钮 ==================== */
 .btn-primary {
-    background: #0066FF;
+    background: var(--color-primary);
     border: none;
     color: white;
 }
 
 .btn-primary:hover {
-    background: #0052CC;
+    background: var(--color-primary-hover);
     color: white;
 }
 
 .btn-outline {
-    border: 1px solid #0066FF;
-    color: #0066FF;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
     background: white;
 }
 
 .btn-outline:hover {
-    background: #E6F0FF;
-    color: #0066FF;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
 }
 
 /* ==================== 卡片 ==================== */
 .card {
-    border: 1px solid #E5E5E5;
+    border: 1px solid var(--color-border-light);
     border-radius: 8px;
     transition: all 0.2s ease;
     height: 100%;
 }
 
 .card:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-md);
     transform: translateY(-2px);
 }
 
 .product-card .product-header {
-    padding: 16px 24px;
-    border-bottom: 1px solid #E5E5E5;
+    padding: var(--spacing-4) var(--spacing-6);
+    border-bottom: 1px solid var(--color-border-light);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .badge {
-    padding: 4px 12px;
+    padding: var(--spacing-1) var(--spacing-3);
     font-size: 12px;
     font-weight: 500;
     border-radius: 4px;
 }
 
 .badge-primary {
-    background: #E6F0FF;
-    color: #0066FF;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
 }
 
 .badge-success {
-    background: #E8F5E9;
-    color: #00C853;
+    background: var(--color-success-light);
+    color: var(--color-success);
 }
 
 .score-badge {
-    background: #0066FF;
+    background: var(--color-primary);
     color: white;
     font-weight: 700;
     font-size: 16px;
-    padding: 8px 16px;
+    padding: var(--spacing-2) var(--spacing-4);
 }
 
 .card-title {
     font-size: 18px;
     font-weight: 600;
-    color: #1A1A1A;
-    margin-bottom: 12px;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-3);
 }
 
 .card-text {
     font-size: 14px;
-    color: #666666;
-    margin-bottom: 24px;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-6);
 }
 
 .card-footer {
-    padding: 16px 24px;
-    border-top: 1px solid #E5E5E5;
-    background: #F5F5F5;
+    padding: var(--spacing-4) var(--spacing-6);
+    border-top: 1px solid var(--color-border-light);
+    background: var(--color-bg-gray);
 }
 
 .tags {
     display: flex;
-    gap: 8px;
+    gap: var(--spacing-2);
     flex-wrap: wrap;
-    margin-top: 16px;
+    margin-top: var(--spacing-4);
 }
 
 /* 工具卡片 */
 .tool-card {
     text-align: center;
-    padding: 40px 24px;
+    padding: var(--spacing-10) var(--spacing-6);
 }
 
 .tool-icon {
     font-size: 48px;
-    margin-bottom: 16px;
+    margin-bottom: var(--spacing-4);
 }
 
 .tool-card h4 {
     font-size: 18px;
     font-weight: 600;
-    color: #1A1A1A;
-    margin-bottom: 12px;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-3);
 }
 
 .tool-card p {
     font-size: 14px;
-    color: #666666;
-    margin-bottom: 32px;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-8);
 }
 
 /* ==================== 区域 ==================== */
 .section {
-    padding: 80px 0;
+    padding: var(--spacing-20) 0;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: var(--spacing-12);
 }
 
 .section-title {
     font-size: 37px;
     font-weight: 600;
-    color: #1A1A1A;
-    margin-bottom: 8px;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-2);
 }
 
 .section-subtitle {
     font-size: 14px;
-    color: #666666;
+    color: var(--color-text-secondary);
 }
 
 /* ==================== 特色区域 ==================== */
 .feature {
     text-align: center;
-    padding: 40px;
+    padding: var(--spacing-10);
     background: white;
     border-radius: 8px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid var(--color-border-light);
 }
 
 .feature-icon {
     font-size: 48px;
-    margin-bottom: 16px;
+    margin-bottom: var(--spacing-4);
 }
 
 .feature h4 {
     font-size: 18px;
     font-weight: 600;
-    color: #1A1A1A;
-    margin-bottom: 12px;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-3);
 }
 
 .feature p {
     font-size: 14px;
-    color: #666666;
+    color: var(--color-text-secondary);
     line-height: 1.5;
 }
 
 /* ==================== 页脚 ==================== */
 footer {
     background: white;
-    border-top: 1px solid #E5E5E5;
-    padding: 40px 0 32px;
+    border-top: 1px solid var(--color-border-light);
+    padding: var(--spacing-10) 0 var(--spacing-8);
     text-align: center;
 }
 
 footer p {
-    color: #999999;
+    color: var(--color-text-hint);
     font-size: 13px;
-    margin-bottom: 8px;
+    margin-bottom: var(--spacing-2);
 }
 
 /* ==================== 响应式 ==================== */
@@ -265,5 +306,12 @@ footer p {
     .btn {
         width: 100%;
         max-width: 300px;
+    }
+    
+    /* 修复移动端列宽问题 */
+    .col-md-6, .col-md-8, .col-md-4, .col-md-3 {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }

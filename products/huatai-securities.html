@@ -6,34 +6,41 @@
     <meta name="description" content="华泰证券测评 - 低佣金、优质服务、App体验好">
     <meta name="keywords" content="华泰证券,券商测评,股票开户,佣金">
     <title>华泰证券测评 - 我们的理易港</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        .product-hero { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%); color: white; padding: 120px 0 80px; margin-bottom: var(--spacing-8); }
-        .product-meta { display: flex; gap: var(--spacing-4); margin-bottom: var(--spacing-6); flex-wrap: wrap; }
-        .meta-item { background: rgba(255,255,255,0.2); padding: var(--spacing-3) var(--spacing-6); border-radius: 6px; }
-        .score-circle { width: 120px; height: 120px; border-radius: 50%; background: white; color: var(--color-primary); display: flex; flex-direction: column; justify-content: center; align-items: center; font-weight: bold; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+        .product-header { background: linear-gradient(135deg, #0066FF 0%, #004499 100%); color: white; padding: 120px 0 80px; margin-bottom: 32px; margin-top: 64px; }
+        .product-meta { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+        .meta-item { background: rgba(255,255,255,0.2); padding: 12px 24px; border-radius: 6px; }
+        .score-circle { width: 120px; height: 120px; border-radius: 50%; background: white; color: #0066FF; display: flex; flex-direction: column; justify-content: center; align-items: center; font-weight: bold; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
         .score-number { font-size: 3rem; line-height: 1; }
-        .score-bar { height: 8px; background: var(--color-bg-gray); border-radius: 4px; overflow: hidden; margin-bottom: var(--spacing-4); }
+        .score-bar { height: 8px; background: #F5F5F5; border-radius: 4px; overflow: hidden; margin-bottom: 16px; }
         .score-bar-fill { height: 100%; border-radius: 4px; }
-        .pros-cons-card { padding: var(--spacing-8); border-radius: 8px; margin-bottom: var(--spacing-6); }
-        .pros-card { background: var(--color-success-light); border: 1px solid var(--color-success); }
-        .cons-card { background: var(--color-error-light); border: 1px solid var(--color-error); }
-        .pros-cons-item { padding: var(--spacing-3) 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .pros-cons-card { padding: 32px; border-radius: 8px; margin-bottom: 24px; }
+        .pros-card { background: #E8F5E9; border: 1px solid #00C853; }
+        .cons-card { background: #FFEBEE; border: 1px solid #FF5252; }
+        .pros-cons-item { padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
         .pros-cons-item:last-child { border-bottom: none; }
-        .cta-button { background: var(--color-primary); color: white; border: none; padding: var(--spacing-4) var(--spacing-10); border-radius: 30px; font-size: 18px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
-        .cta-button:hover { background: var(--color-primary-hover); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .cta-button { background: #0066FF; color: white; border: none; padding: 16px 40px; border-radius: 30px; font-size: 18px; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+        .cta-button:hover { background: #0052CC; transform: translateY(-2px); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .section-padding { padding: 80px 0; }
     </style>
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="../index.html"><span class="logo-icon">💰</span>我们的理易港</a>
-            <ul class="navbar-nav">
-                <li><a class="nav-link" href="../index.html">首页</a></li>
-                <li><a class="nav-link" href="index.html">产品测评</a></li>
-                <li><a class="nav-link" href="../tools/index.html">理财工具</a></li>
-                <li><a class="nav-link" href="../knowledge/index.html">知识科普</a></li>
-            </ul>
+            <a class="navbar-brand" href="../index.html" target="_self"><span class="logo-icon">💰</span>我们的理易港</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html" target="_self">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html" target="_self">产品测评</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tools/index.html" target="_blank">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../knowledge/index.html" target="_blank">知识科普</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -139,13 +146,13 @@
         </div>
     </section>
 
-    <footer class="bg-dark text-white">
-        <div class="container py-4">
+    <footer>
+        <div class="container">
             <p>&copy; 2025 我们的理易港. All rights reserved.</p>
+            <p style="margin-top: var(--spacing-2);">让理财变得简单</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
