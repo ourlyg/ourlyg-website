@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="基金投资完全指南：从选基金到定投策略，手把手教你基金投资全流程，避开新手常见坑">
+    <title>基金投资完全指南：从选基到定投的全流程 - 我们的理易港</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-header { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; padding: var(--spacing-10) 0 var(--spacing-8); }
+        .article-header .meta { opacity: 0.85; font-size: 14px; margin-top: var(--spacing-3); }
+        .article-body { max-width: 820px; margin: 0 auto; }
+        .article-body h2 { font-size: 22px; font-weight: 700; margin-top: var(--spacing-10); margin-bottom: var(--spacing-4); color: var(--color-text-primary); }
+        .article-body h3 { font-size: 18px; font-weight: 600; margin-top: var(--spacing-6); margin-bottom: var(--spacing-3); color: var(--color-text-primary); }
+        .article-body p { font-size: 16px; line-height: 1.85; color: var(--color-text-secondary); margin-bottom: var(--spacing-4); }
+        .article-body ul, .article-body ol { font-size: 16px; line-height: 1.85; color: var(--color-text-secondary); padding-left: 24px; margin-bottom: var(--spacing-4); }
+        .article-body li { margin-bottom: 8px; }
+        .highlight-box { background: var(--color-primary-light); border-left: 4px solid var(--color-primary); border-radius: 0 8px 8px 0; padding: var(--spacing-4) var(--spacing-5); margin: var(--spacing-6) 0; }
+        .highlight-box p { margin: 0; color: var(--color-primary); font-weight: 500; }
+        .warning-box { background: #FFF8E1; border-left: 4px solid #FFB300; border-radius: 0 8px 8px 0; padding: var(--spacing-4) var(--spacing-5); margin: var(--spacing-6) 0; }
+        .warning-box p { margin: 0; color: #6D4C00; }
+        .green-box { background: #E8F5E9; border-left: 4px solid #2e7d32; border-radius: 0 8px 8px 0; padding: var(--spacing-4) var(--spacing-5); margin: var(--spacing-6) 0; }
+        .green-box p { margin: 0; color: #1B5E20; font-weight: 500; }
+        .fund-type-card { border: 1px solid var(--color-border-light); border-radius: 12px; padding: var(--spacing-5); height: 100%; }
+        .fund-type-card .type-icon { font-size: 28px; margin-bottom: var(--spacing-2); }
+        .fund-type-card h4 { font-size: 16px; font-weight: 700; margin-bottom: var(--spacing-2); }
+        .fund-type-card p { font-size: 13px; color: var(--color-text-secondary); margin: 0; line-height: 1.7; }
+        .risk-badge { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: var(--spacing-2); }
+        .risk-low { background: #E8F5E9; color: #2e7d32; }
+        .risk-mid { background: #FFF8E1; color: #F57F17; }
+        .risk-high { background: #FFEBEE; color: #C62828; }
+        .compare-table th { background: var(--color-bg-gray); font-weight: 600; }
+        .compare-table td, .compare-table th { padding: 12px 16px; border: 1px solid var(--color-border-light); font-size: 14px; }
+        .tag { display: inline-block; background: rgba(255,255,255,0.25); color: white; border-radius: 20px; padding: 3px 12px; font-size: 12px; font-weight: 600; margin: 0 4px 4px 0; }
+        .tag-article { display: inline-block; background: #E8F5F9; color: #0077B6; border-radius: 20px; padding: 3px 12px; font-size: 12px; font-weight: 600; margin: 0 4px 4px 0; }
+        .toc { background: var(--color-bg-gray); border-radius: 12px; padding: var(--spacing-5) var(--spacing-6); margin-bottom: var(--spacing-8); }
+        .toc-title { font-weight: 700; font-size: 15px; margin-bottom: var(--spacing-3); }
+        .toc a { color: var(--color-text-secondary); font-size: 14px; display: block; padding: 4px 0; text-decoration: none; }
+        .toc a:hover { color: var(--color-primary); }
+        .step-num { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #43e97b, #38f9d7); color: white; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; margin-right: 10px; flex-shrink: 0; }
+        .checklist li { list-style: none; padding-left: 0; }
+        .checklist li::before { content: "✅ "; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><span class="logo-icon">💰</span>我们的理易港</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products/index.html">产品测评</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tools/index.html">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">知识科普</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="article-header">
+        <div class="container">
+            <nav aria-label="breadcrumb" style="margin-bottom: var(--spacing-3);">
+                <ol class="breadcrumb" style="font-size:13px;">
+                    <li class="breadcrumb-item"><a href="../index.html" style="color:rgba(255,255,255,0.7);">首页</a></li>
+                    <li class="breadcrumb-item"><a href="index.html" style="color:rgba(255,255,255,0.7);">知识科普</a></li>
+                    <li class="breadcrumb-item active" style="color:rgba(255,255,255,0.9);">基金投资</li>
+                </ol>
+            </nav>
+            <div style="max-width: 820px;">
+                <div style="margin-bottom: var(--spacing-3);">
+                    <span class="tag">基金投资</span>
+                    <span class="tag">定投策略</span>
+                    <span class="tag">指数基金</span>
+                </div>
+                <h1 style="font-size:32px; font-weight:800; line-height:1.3; margin-bottom:0; color:white;">基金投资完全指南：从选基到定投的全流程</h1>
+                <div class="meta">发布于 2026年2月 · 阅读约15分钟 · 适合有一定理财基础的读者</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="article-body">
+
+                <div class="toc">
+                    <div class="toc-title">📋 本文目录</div>
+                    <a href="#what">什么是基金？为什么值得买？</a>
+                    <a href="#types">基金的主要类型</a>
+                    <a href="#choose">如何选择一只好基金</a>
+                    <a href="#dip">定投策略：最适合普通人的买法</a>
+                    <a href="#platform">在哪里买基金？</a>
+                    <a href="#sell">什么时候卖基金？</a>
+                    <a href="#mistakes">新手常见的7个错误</a>
+                </div>
+
+                <p>基金是目前最适合普通人参与资本市场的方式——门槛低（1元起投）、分散风险、有专业基金经理管理，不需要你盯着K线图。但"适合"不等于"简单"，选错了基金、买在了错误的时机，同样会亏钱。本文告诉你该怎么做。</p>
+
+                <h2 id="what">什么是基金？为什么值得买？</h2>
+                <p>基金本质上是<strong>集合投资</strong>：把众多投资者的钱汇集起来，由专业基金经理统一管理，投资于股票、债券等资产，收益和风险按比例分摊。</p>
+                <p>对普通人来说，基金的核心优势：</p>
+                <ul>
+                    <li><strong>分散风险</strong>：一只基金通常持有几十到上百只股票，单只股票暴雷不会毁掉你的投资</li>
+                    <li><strong>专业管理</strong>：基金经理全职研究，比大部分散户更懂市场</li>
+                    <li><strong>门槛极低</strong>：很多基金10元起投，定投可以从100元开始</li>
+                    <li><strong>透明合规</strong>：受证监会监管，持仓定期公开披露</li>
+                </ul>
+
+                <h2 id="types">基金的主要类型</h2>
+                <div class="row g-4" style="margin-bottom: var(--spacing-6);">
+                    <div class="col-md-6">
+                        <div class="fund-type-card">
+                            <div class="type-icon">📊</div>
+                            <div class="risk-badge risk-low">低风险</div>
+                            <h4>货币基金</h4>
+                            <p>投资于短期国债、存单等货币工具。年化1.5%-3%，随时申赎，本金极安全。适合放应急金和短期闲置资金。代表：余额宝、零钱通。</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="fund-type-card">
+                            <div class="type-icon">📉</div>
+                            <div class="risk-badge risk-low">低-中风险</div>
+                            <h4>债券基金</h4>
+                            <p>主要投资债券。年化3%-7%，波动较小。纯债基金较稳健，混合债基（含少量股票）弹性更大。适合稳健型投资者。</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="fund-type-card">
+                            <div class="type-icon">📈</div>
+                            <div class="risk-badge risk-mid">中-高风险</div>
+                            <h4>指数基金</h4>
+                            <p>跟踪特定指数（如沪深300、中证500），被动管理，费率极低。长期表现往往优于大部分主动基金。定投指数基金是最推荐的入门方式。</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="fund-type-card">
+                            <div class="type-icon">📊</div>
+                            <div class="risk-badge risk-high">高风险</div>
+                            <h4>主动股票基金</h4>
+                            <p>基金经理主动选股，潜在收益高但波动大。年化可能-30%~+50%。需要选对基金经理，对投资者要求较高。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 id="choose">如何选择一只好基金</h2>
+                <p>选基金不是选"最近涨得最多的"，而是找"长期稳定、适合自己的"。以下是一个系统化的筛选框架：</p>
+
+                <h3>筛选指数基金（推荐新手首选）</h3>
+                <ol>
+                    <li><strong>选宽基指数</strong>：优先考虑沪深300、中证500、中证1000等覆盖市场够广的指数，避免过于集中在单一行业</li>
+                    <li><strong>比较费率</strong>：管理费+托管费越低越好，同类指数基金选费率最低的。0.1%费率 vs 1%，30年差距巨大</li>
+                    <li><strong>看规模</strong>：规模太小（<1亿）有被清盘风险，太大（>500亿）跟踪误差可能偏大。一般10-200亿比较合适</li>
+                    <li><strong>看跟踪误差</strong>：越小越好，说明基金跟踪指数更精准</li>
+                </ol>
+
+                <h3>筛选主动基金</h3>
+                <ol>
+                    <li><strong>看3-5年长期收益</strong>：而非1年内的短期表现，避免追热点</li>
+                    <li><strong>看最大回撤</strong>：历史最大亏损幅度。超过40%意味着你需要很强的心理承受能力</li>
+                    <li><strong>看夏普比率</strong>：衡量"单位风险下的收益"，越高越好</li>
+                    <li><strong>看基金经理任期</strong>：至少3年以上，要看是否在当前基金任职取得了好成绩，而非"明星基金经理换人了"</li>
+                    <li><strong>看持仓集中度</strong>：前10大重仓股如果占比超过60%，说明风险较集中</li>
+                </ol>
+
+                <div class="highlight-box">
+                    <p>💡 实用工具：天天基金（东方财富）、晨星网、Wind资讯都可以查到基金的历史业绩、费率、持仓等详细数据。</p>
+                </div>
+
+                <h2 id="dip">定投策略：最适合普通人的买法</h2>
+                <p><strong>定投</strong>（定期定额投资）是最适合普通人的基金买法。每月固定日期、固定金额买入，不管市场涨跌。</p>
+                <p>定投的核心优势是<strong>平摊成本</strong>（美元成本平均法）：市场低位时买入更多份额，高位时买入较少，长期下来平均持仓成本往往低于市场均价。</p>
+                <div class="green-box">
+                    <p>📌 定投的关键不是选最低点，而是坚持——在市场大跌时继续定投，在市场上涨时不要停止。越是市场恐慌，定投的威力越大。</p>
+                </div>
+
+                <h3>定投实操建议</h3>
+                <ul>
+                    <li><strong>金额</strong>：每月可投资资金的50%-70%，留一部分作为"加仓备用金"</li>
+                    <li><strong>频率</strong>：月定投即可，周定投效果类似但操作成本更高</li>
+                    <li><strong>时间</strong>：市场低估区间开始，而非市场历史高位开始大额定投</li>
+                    <li><strong>止盈</strong>：设定目标收益率（如30%-50%），达到后分批卖出，不要无限持有</li>
+                    <li><strong>坚持周期</strong>：至少3-5年，经历一个完整牛熊周期</li>
+                </ul>
+
+                <h2 id="platform">在哪里买基金？</h2>
+                <table class="table compare-table">
+                    <thead><tr><th>平台</th><th>优点</th><th>缺点</th><th>推荐指数</th></tr></thead>
+                    <tbody>
+                        <tr><td>天天基金（东方财富）</td><td>品种最全，费率低（申购费1折），界面友好</td><td>客服响应较慢</td><td>⭐⭐⭐⭐⭐</td></tr>
+                        <tr><td>支付宝/蚂蚁基金</td><td>操作极简，入门门槛低</td><td>品种不如天天基金全，部分基金费率较高</td><td>⭐⭐⭐⭐</td></tr>
+                        <tr><td>银行APP</td><td>熟悉，安全感强</td><td>费率高（通常不打折），品种少</td><td>⭐⭐⭐</td></tr>
+                        <tr><td>基金公司官网/APP</td><td>申购费最低（甚至免手续费）</td><td>每家只有自家产品，需要多个账户</td><td>⭐⭐⭐⭐</td></tr>
+                    </tbody>
+                </table>
+
+                <h2 id="sell">什么时候卖基金？</h2>
+                <p>很多人买基金会，却不会卖。以下是几个合理的卖出时机：</p>
+                <ul>
+                    <li><strong>达到目标收益率</strong>：设定好止盈点，分批卖出（而非一次性全卖）</li>
+                    <li><strong>基本面发生变化</strong>：基金经理换人了、投资策略改变了、规模剧烈变化</li>
+                    <li><strong>需要使用资金</strong>：本来就是为了特定目标而储蓄，到期取用</li>
+                    <li><strong>市场极度狂热</strong>：周围人都在谈论某个赚了多少，社交媒体充斥暴富故事——这通常是市场见顶信号</li>
+                </ul>
+                <div class="warning-box">
+                    <p>⚠️ 不应该卖的时机：市场大跌后恐慌割肉。这是大多数散户亏损的核心原因——在低点割肉，等市场涨回来后又高位追入，反复循环。</p>
+                </div>
+
+                <h2 id="mistakes">新手常见的7个错误</h2>
+                <ol>
+                    <li><strong>买"最近涨最多"的基金</strong>：过去收益≠未来收益，短期高收益往往是风险集中的结果</li>
+                    <li><strong>买了就不管，不设止盈</strong>：永久持有的策略只适合极少数指数基金，多数情况需要主动止盈</li>
+                    <li><strong>买太多只基金</strong>：买10只基金不代表分散风险，如果它们都是同类产品，相关性极高</li>
+                    <li><strong>频繁申赎</strong>：每次交易都有费用，短线操作费用侵蚀收益严重</li>
+                    <li><strong>把基金当股票炒</strong>：基金不适合日内交易，主要收益来自长期持有</li>
+                    <li><strong>在牛市末期大量买入</strong>：指数在历史高位时，不适合集中买入，应减少定投金额</li>
+                    <li><strong>不看基金经理信息</strong>：主动基金的收益高度依赖基金经理，"过去的明星"不等于"未来的明星"</li>
+                </ol>
+
+                <hr style="margin: var(--spacing-10) 0; border-color: var(--color-border-light);">
+                <p style="font-size:15px; color:var(--color-text-secondary);">基金投资没有必胜法则，但有纪律地执行"选好基、长期持有、定期定投"策略，大概率能实现超过存款的长期回报。市场的短期波动是噪音，长期的复利才是主旋律。</p>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background:var(--color-bg-gray); padding-top: var(--spacing-8); padding-bottom: var(--spacing-8);">
+        <div class="container">
+            <h3 style="font-weight:700; margin-bottom: var(--spacing-6);">相关阅读</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <a href="article-beginner.html" class="card-link">
+                        <div class="card h-100">
+                            <div class="card-body" style="padding: var(--spacing-5);">
+                                <span class="tag-article">理财入门</span>
+                                <h5 style="font-weight:600; margin-top: var(--spacing-3);">普通人理财入门7步指南</h5>
+                                <p style="color:var(--color-text-secondary); font-size:14px; margin:0;">从零开始建立个人理财体系</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="article-risk.html" class="card-link">
+                        <div class="card h-100">
+                            <div class="card-body" style="padding: var(--spacing-5);">
+                                <span class="tag-article">风险控制</span>
+                                <h5 style="font-weight:600; margin-top: var(--spacing-3);">投资风险控制实用手册</h5>
+                                <p style="color:var(--color-text-secondary); font-size:14px; margin:0;">理解风险本质，建立防亏损体系</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="../products/tianhong-fund.html" class="card-link">
+                        <div class="card h-100">
+                            <div class="card-body" style="padding: var(--spacing-5);">
+                                <span class="tag-article">产品测评</span>
+                                <h5 style="font-weight:600; margin-top: var(--spacing-3);">天天基金测评：评分9.2</h5>
+                                <p style="color:var(--color-text-secondary); font-size:14px; margin:0;">东方财富旗下基金平台详细评测</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="footer-brand">💰 我们的理易港</div>
+                    <p class="footer-desc">专注于理财产品评测和理财知识普及，帮助每个人做出更明智的财务决策。</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p style="color: var(--color-text-hint); font-size: 13px; margin-top: var(--spacing-4);">本文内容仅供参考，不构成投资建议。投资有风险，入市需谨慎。</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

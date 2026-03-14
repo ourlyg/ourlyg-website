@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="天天基金测评 - 东方财富旗下基金平台，品种齐全、低费率、操作方便">
+    <meta name="keywords" content="天天基金,东方财富,基金平台,基金投资,基金测评">
+    <title>天天基金测评 - 我们的理易港</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .product-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: var(--spacing-16) 0 var(--spacing-12); margin-bottom: var(--spacing-8); }
+        .product-meta { display: flex; gap: var(--spacing-3); margin-bottom: var(--spacing-4); flex-wrap: wrap; }
+        .meta-item { background: rgba(255,255,255,0.2); padding: var(--spacing-2) var(--spacing-4); border-radius: 6px; font-size: 14px; }
+        .score-circle { width: 140px; height: 140px; border-radius: 50%; background: white; color: #667eea; display: flex; flex-direction: column; justify-content: center; align-items: center; font-weight: bold; box-shadow: 0 8px 32px rgba(0,0,0,0.15); margin: 0 auto; }
+        .score-number { font-size: 3.5rem; line-height: 1; }
+        .score-label { font-size: 14px; color: #666; margin-top: 4px; }
+        .score-bar { height: 8px; background: #e9ecef; border-radius: 4px; overflow: hidden; margin-bottom: var(--spacing-3); }
+        .score-bar-fill { height: 100%; border-radius: 4px; }
+        .pros-cons-card { padding: var(--spacing-6); border-radius: 8px; margin-bottom: var(--spacing-4); }
+        .pros-card { background: #E8F5E9; border: 1px solid #00C853; }
+        .cons-card { background: #FFEBEE; border: 1px solid #FF5252; }
+        .pros-cons-item { padding: var(--spacing-3) 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .pros-cons-item:last-child { border-bottom: none; }
+        .pros-cons-item strong { display: block; margin-bottom: 4px; font-size: 15px; }
+        .pros-cons-item p { margin-bottom: 0; color: #555; line-height: 1.6; }
+        .suitable-list li { padding: 8px 0; border-bottom: 1px solid var(--color-border-light); list-style: none; font-size: 15px; color: var(--color-text-secondary); }
+        .suitable-list li:last-child { border-bottom: none; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" target="_self"><span class="logo-icon">💰</span>我们的理易港</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html" target="_self">首页</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html" target="_self">产品测评</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tools/index.html" target="_self">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../knowledge/index.html" target="_self">知识科普</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 产品头部 -->
+    <section class="product-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <span class="badge bg-light text-dark mb-3" style="padding: 8px 16px; font-size: 13px;">基金平台</span>
+                    <h1 style="font-size: 48px; font-weight: 700; margin-bottom: var(--spacing-3);">天天基金</h1>
+                    <p style="font-size: 18px; margin-bottom: var(--spacing-6); opacity: 0.95;">东方财富旗下，品种齐全、费率低、数据强，基金投资首选平台</p>
+                    <div class="product-meta">
+                        <div class="meta-item"><strong>运营商：</strong>东方财富</div>
+                        <div class="meta-item"><strong>基金数量：</strong>10,000+</div>
+                        <div class="meta-item"><strong>申购费折扣：</strong>1折起</div>
+                        <div class="meta-item"><strong>起投金额：</strong>1元</div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="score-circle">
+                        <span class="score-number">9.2</span>
+                        <span class="score-label">综合评分</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 评分详情 -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h2 style="font-size: 32px; font-weight: 600; margin-bottom: var(--spacing-6);">评分详情</h2>
+                    <div class="card">
+                        <div class="card-body" style="padding: var(--spacing-8);">
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2"><span>平台可靠性</span><span style="font-weight:600;">9.5/10</span></div>
+                                <div class="score-bar"><div class="score-bar-fill" style="width:95%;background:var(--color-primary);"></div></div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2"><span>费率水平</span><span style="font-weight:600;">9.0/10</span></div>
+                                <div class="score-bar"><div class="score-bar-fill" style="width:90%;background:var(--color-success);"></div></div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2"><span>产品丰富度</span><span style="font-weight:600;">9.5/10</span></div>
+                                <div class="score-bar"><div class="score-bar-fill" style="width:95%;background:var(--color-primary);"></div></div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2"><span>数据与资讯</span><span style="font-weight:600;">9.0/10</span></div>
+                                <div class="score-bar"><div class="score-bar-fill" style="width:90%;background:var(--color-primary);"></div></div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2"><span>操作体验</span><span style="font-weight:600;">8.8/10</span></div>
+                                <div class="score-bar"><div class="score-bar-fill" style="width:88%;background:var(--color-primary);"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 优缺点分析 -->
+    <section class="section" style="background: var(--color-bg-gray);">
+        <div class="container">
+            <h2 style="font-size: 32px; font-weight: 600; margin-bottom: var(--spacing-8); text-align:center;">优缺点分析</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="pros-cons-card pros-card">
+                        <h3 style="font-size: 24px; font-weight: 600; margin-bottom: var(--spacing-4); color: #00C853;">✅ 优点</h3>
+                        <div class="pros-cons-item"><strong>费率极低</strong><p>申购费普遍打1折，长期持有节省大量成本</p></div>
+                        <div class="pros-cons-item"><strong>品种丰富</strong><p>覆盖1万+只基金，公募、ETF、LOF应有尽有</p></div>
+                        <div class="pros-cons-item"><strong>数据强大</strong><p>基金历史业绩、经理履历、持仓明细一网打尽</p></div>
+                        <div class="pros-cons-item"><strong>定投方便</strong><p>支持自动定投，最低每月1元，适合长期投资</p></div>
+                        <div class="pros-cons-item"><strong>平台稳定</strong><p>东方财富旗下，上市公司背书，资金安全有保障</p></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="pros-cons-card cons-card">
+                        <h3 style="font-size: 24px; font-weight: 600; margin-bottom: var(--spacing-4); color: #FF5252;">❌ 缺点</h3>
+                        <div class="pros-cons-item"><strong>客服较慢</strong><p>用户量大，高峰期人工客服等待时间较长</p></div>
+                        <div class="pros-cons-item"><strong>界面信息量大</strong><p>功能繁多，新手初期可能会觉得略复杂</p></div>
+                        <div class="pros-cons-item"><strong>部分基金赎回较慢</strong><p>个别基金赎回到账需T+3至T+7，需提前规划</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 适合人群 -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card" style="height:100%;">
+                        <div class="card-body" style="padding: var(--spacing-6);">
+                            <h3 style="font-size: 22px; font-weight: 600; color: var(--color-success); margin-bottom: var(--spacing-4);">👍 适合人群</h3>
+                            <ul class="suitable-list">
+                                <li>✅ 基金投资新手，需要完整数据参考</li>
+                                <li>✅ 长期定投爱好者</li>
+                                <li>✅ 想低成本配置多种基金的投资者</li>
+                                <li>✅ 喜欢研究基金、关注基金经理的用户</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card" style="height:100%;">
+                        <div class="card-body" style="padding: var(--spacing-6);">
+                            <h3 style="font-size: 22px; font-weight: 600; color: var(--color-error); margin-bottom: var(--spacing-4);">👎 不太适合</h3>
+                            <ul class="suitable-list">
+                                <li>❌ 需要频繁客服支持的用户</li>
+                                <li>❌ 只买单一基金且对平台功能无要求的用户</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 详细介绍 -->
+    <section class="section" style="background: var(--color-bg-gray);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h2 style="font-size: 32px; font-weight: 600; margin-bottom: var(--spacing-6);">产品详情</h2>
+                    <div class="card">
+                        <div class="card-body" style="padding: var(--spacing-8);">
+                            <h4 style="font-weight:600; margin-bottom: var(--spacing-3);">平台介绍</h4>
+                            <p style="color: var(--color-text-secondary); line-height: 1.75; margin-bottom: var(--spacing-6);">天天基金网（fund.eastmoney.com）是东方财富旗下的专业基金销售平台，成立于2012年，是国内最大的第三方基金销售平台之一，累计用户超过6000万。依托东方财富强大的数据和资讯能力，天天基金提供了业内最全面的基金信息服务。</p>
+                            <h4 style="font-weight:600; margin-bottom: var(--spacing-3);">费率优势</h4>
+                            <p style="color: var(--color-text-secondary); line-height: 1.75; margin-bottom: var(--spacing-6);">申购费普遍1折起（例如原费率1.5%只需0.15%），相比银行柜台直接购买节省高达90%的费用。持有满一定年限后赎回费率为0，大幅降低长期投资成本。</p>
+                            <h4 style="font-weight:600; margin-bottom: var(--spacing-3);">数据与工具</h4>
+                            <p style="color: var(--color-text-secondary); line-height: 1.75; margin-bottom: var(--spacing-6);">提供基金净值历史、业绩走势、基金经理履历、持仓明细、分红记录等全量数据，支持基金对比、风险测评、定投计划等专业工具，是研究基金的最佳平台。</p>
+                            <h4 style="font-weight:600; margin-bottom: var(--spacing-3);">定投功能</h4>
+                            <p style="color: var(--color-text-secondary); line-height: 1.75;">支持按日/周/月/季自动定投，最低1元起投，可自定义扣款日期和金额，适合工薪族做长期资产积累。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 延伸阅读 -->
+    <section class="section">
+        <div class="container">
+            <h2 style="font-size: 32px; font-weight: 600; margin-bottom: var(--spacing-6);">相关测评</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card">
+                        <div class="product-header" style="background: none; padding: var(--spacing-4) var(--spacing-6); border-bottom: 1px solid var(--color-border-light);">
+                            <span class="badge badge-primary">银行理财</span><span class="badge score-badge">8.5</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">招商银行朝朝宝</h5>
+                            <p class="card-text">灵活存取、稳健收益的银行理财之选</p>
+                        </div>
+                        <div class="card-footer"><a href="zhaoshang-zhaozhaobao.html" class="btn btn-outline" style="width:100%;">查看详情</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card">
+                        <div class="product-header" style="background: none; padding: var(--spacing-4) var(--spacing-6); border-bottom: 1px solid var(--color-border-light);">
+                            <span class="badge badge-success">互联网理财</span><span class="badge score-badge">8.2</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">支付宝余额宝</h5>
+                            <p class="card-text">零门槛、高流动性的零钱理财神器</p>
+                        </div>
+                        <div class="card-footer"><a href="alipay-yuebao.html" class="btn btn-outline" style="width:100%;">查看详情</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card">
+                        <div class="product-header" style="background: none; padding: var(--spacing-4) var(--spacing-6); border-bottom: 1px solid var(--color-border-light);">
+                            <span class="badge badge-primary">券商</span><span class="badge score-badge">9.0</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">华泰证券</h5>
+                            <p class="card-text">低佣金、优质服务、App体验好</p>
+                        </div>
+                        <div class="card-footer"><a href="huatai-securities.html" class="btn btn-outline" style="width:100%;">查看详情</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 我们的理易港. All rights reserved.</p>
+            <p style="margin-top: var(--spacing-2);">让理财变得简单</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

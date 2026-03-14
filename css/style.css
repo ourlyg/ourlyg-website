@@ -334,6 +334,41 @@ footer p {
     margin-bottom: var(--spacing-2);
 }
 
+/* ==================== 新版页脚 ==================== */
+.footer {
+    background: white;
+    border-top: 1px solid var(--color-border-light);
+    padding: var(--spacing-10) 0 var(--spacing-8);
+}
+
+.footer-brand {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-3);
+}
+
+.footer-desc {
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    max-width: 320px;
+}
+
+/* ==================== 文章/产品卡片链接 ==================== */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.card-link:hover .card {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
 /* ==================== 响应式 ==================== */
 @media (max-width: 768px) {
     body {
