@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="蚂蚁财富测评 - 支付宝旗下综合理财平台，基金、保险、债券一站式配置，适合进阶理财用户">
+    <meta name="keywords" content="蚂蚁财富,蚂蚁基金,支付宝理财,蚂蚁财富测评,基金投资,理财平台">
+    <title>蚂蚁财富测评 - 我们的理易港</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .product-header { background: linear-gradient(135deg, #1677FF 0%, #0958d9 100%); color: white; padding: var(--spacing-16) 0 var(--spacing-12); margin-bottom: var(--spacing-8); }
+        .product-meta { display: flex; gap: var(--spacing-3); margin-bottom: var(--spacing-4); flex-wrap: wrap; }
+        .meta-item { background: rgba(255,255,255,0.2); padding: var(--spacing-2) var(--spacing-4); border-radius: 6px; font-size: 14px; }
+        .score-circle { width: 140px; height: 140px; border-radius: 50%; background: white; color: #1677FF; display: flex; flex-direction: column; justify-content: center; align-items: center; font-weight: bold; box-shadow: 0 8px 32px rgba(0,0,0,0.15); margin: 0 auto; }
+        .score-number { font-size: 3.5rem; line-height: 1; }
+        .score-label { font-size: 14px; color: #666; margin-top: 4px; }
+        .score-bar { height: 8px; background: #e9ecef; border-radius: 4px; overflow: hidden; margin-bottom: var(--spacing-3); }
+        .score-bar-fill { height: 100%; border-radius: 4px; }
+        .pros-cons-card { padding: var(--spacing-6); border-radius: 8px; margin-bottom: var(--spacing-4); }
+        .pros-card { background: #E8F5E9; border: 1px solid #00C853; }
+        .cons-card { background: #FFEBEE; border: 1px solid #FF5252; }
+        .pros-cons-item { padding: var(--spacing-3) 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .pros-cons-item:last-child { border-bottom: none; }
+        .pros-cons-item strong { display: block; margin-bottom: 4px; font-size: 15px; }
+        .pros-cons-item p { margin-bottom: 0; color: #555; line-height: 1.6; }
+        .suitable-list li { padding: 8px 0; border-bottom: 1px solid var(--color-border-light); list-style: none; font-size: 15px; color: var(--color-text-secondary); }
+        .suitable-list li:last-child { border-bottom: none; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" target="_self"><span class="logo-icon">&#x1f4b0;</span>我们的理易港</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html" target="_self">首页</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html" target="_self">产品测评</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tools/index.html" target="_self">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../knowledge/index.html" target="_self">知识科普</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="product-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <span class="badge bg-light text-dark mb-3" style="padding: 8px 16px; font-size: 13px;">互联网理财</span>
+                    <h1 style="font-size: 48px; font-weight: 700; margin-bottom: var(--spacing-3);">蚂蚁财富</h1>
+                    <p style="font-size: 18px; margin-bottom: var(--spacing-6); opacity: 0.95;">支付宝旗下综合理财平台，基金、债券、保险多元配置，适合进阶理财用户</p>
+                    <div class="product-meta">
+                        <div class="meta-item"><strong>运营商：</strong>蚂蚁集团</div>
+                        <div class="meta-item"><strong>产品类型：</strong>综合理财平台</div>
+                        <div class="meta-item"><strong>基金数量：</strong>8000+</div>
+                        <div class="meta-item"><strong>起投金额：</strong>1元</div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="score-circle">
+                        <span class="score-number">8.7</span>
+                        <span class="score-label">综合评分</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h2 style="font-size: 32px; font-weight: 600; margin-bottom: var(--spacing-6);">评分详情</h2>
+                    <div class="card">
+                        <div class="card-body" style="padding: var(--spacing-8);">
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2"><span>平台可靠性</span><span style="font-weight:600;">9.0/10</span></div>
+                                <div class="score-bar"><div class="score-bar-fill" style="width:90%;background:var(--color-primary);"></div></div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2"><span>产品丰富度</span><span style="font-weight:600;">9.0/10</span></div>
+                                <div class="score-bar"><div class="score-bar-fill" style="width:90%;background:var(--color-primary);"></div></div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2"><span>费率水平</span><span style="font-weight:600;">8.5/10</span></div>
+                                <div class="score-bar"><div class="score-bar-fill" style="width:85%;background:var(--color-success);"></div></div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2"><span>操作体验</span><span style="font-weight:600;">8.5/10</span></div>
+                                <div class="score-bar"><div class="score-bar-fill" style="width:85%;background:var(--color-primary);"></div></div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2"><span>智能推荐</span><span style="font-weight:600;">8.5/10</span></div>
+                                <div class="score-bar"><div class="score-bar-fill" style="width:85%;background:var(--color-primary);"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--color-bg-gray);">
+        <div class="container">
+            <h2 style="font-size: 32px; font-weight: 600; margin-bottom: var(--spacing-8); text-align:center;">优缺点分析</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="pros-cons-card pros-card">
+                        <h3 style="font-size: 24px; font-weight: 600; margin-bottom: var(--spacing-4); color: #00C853;">优点</h3>
+                        <div class="pros-cons-item"><strong>生态整合强</strong><p>深度整合支付宝，资金转入转出极方便，与日常消费无缝衔接</p></div>
+                        <div class="pros-cons-item"><strong>产品线完整</strong><p>覆盖货币基金、债券基金、股票基金、黄金、保险等多种类型</p></div>
+                        <div class="pros-cons-item"><strong>智能组合推荐</strong><p>提供"帮你投"等智能组合产品，适合不想自己选基金的用户</p></div>
+                        <div class="pros-cons-item"><strong>数据展示清晰</strong><p>净值历史、基金经理、持仓结构等信息展示完善，便于决策</p></div>
+                        <div class="pros-cons-item"><strong>定投功能完善</strong><p>支持多种定投策略，可设置智能定投（下跌多买、上涨少买）</p></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="pros-cons-card cons-card">
+                        <h3 style="font-size: 24px; font-weight: 600; margin-bottom: var(--spacing-4); color: #FF5252;">缺点</h3>
+                        <div class="pros-cons-item"><strong>营销推送较多</strong><p>App内广告和推荐较多，容易被引导购买不适合自己的产品</p></div>
+                        <div class="pros-cons-item"><strong>申购费折扣不如天天基金</strong><p>部分基金申购费折扣不及天天基金，长期投资成本略高</p></div>
+                        <div class="pros-cons-item"><strong>信息过载</strong><p>功能模块过多，初次使用时容易找不到所需功能，需要适应</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card" style="height:100%;">
+                        <div class="card-body" style="padding: var(--spacing-6);">
+                            <h3 style="font-size: 22px; font-weight: 600; color: var(--color-success); margin-bottom: var(--spacing-4);">适合人群</h3>
+                            <ul class="suitable-list">
+                                <li>支付宝重度用户，希望在一个平台搞定理财</li>
+                                <li>理财进阶用户，需要多元化资产配置</li>
+                                <li>希望用"帮你投"等产品省心理财的用户</li>
+                                <li>有基金定投习惯、想做长期投资的用户</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card" style="height:100%;">
+                        <div class="card-body" style="padding: var(--spacing-6);">
+                            <h3 style="font-size: 22px; font-weight: 600; color: var(--color-error); margin-bottom: var(--spacing-4);">不太适合</h3>
+                            <ul class="suitable-list">
+                                <li>对申购费率斤斤计较的投资者（天天基金费率更低）</li>
+                                <li>需要专业股票交易功能的用户</li>
+                                <li>不喜欢广告推送、讨厌被推销的用户</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--color-bg-gray);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h2 style="font-size: 32px; font-weight: 600; margin-bottom: var(--spacing-6);">产品详情</h2>
+                    <div class="card">
+                        <div class="card-body" style="padding: var(--spacing-8);">
+                            <h4 style="font-weight:600; margin-bottom: var(--spacing-3);">平台介绍</h4>
+                            <p style="color: var(--color-text-secondary); line-height: 1.75; margin-bottom: var(--spacing-6);">蚂蚁财富是蚂蚁集团旗下的综合理财平台，依托支付宝的10亿用户生态，提供基金、债券、黄金、保险等多类理财产品。平台持有基金销售资质，与数百家基金公司合作，是国内用户规模最大的互联网理财平台之一。</p>
+                            <h4 style="font-weight:600; margin-bottom: var(--spacing-3);">核心功能：帮你投</h4>
+                            <p style="color: var(--color-text-secondary); line-height: 1.75; margin-bottom: var(--spacing-6);">"帮你投"是蚂蚁财富的智能投顾产品，通过风险测评后，系统自动推荐基金组合并动态调仓，省去用户自主选基的烦恼。适合没有时间研究基金、又希望参与市场的普通投资者。</p>
+                            <h4 style="font-weight:600; margin-bottom: var(--spacing-3);">费率说明</h4>
+                            <p style="color: var(--color-text-secondary); line-height: 1.75; margin-bottom: var(--spacing-6);">蚂蚁财富基金申购费普遍打1折，与天天基金相当。部分定期理财产品按预期年化收益率收费，建议购买前仔细阅读费率说明。</p>
+                            <h4 style="font-weight:600; margin-bottom: var(--spacing-3);">与余额宝的关系</h4>
+                            <p style="color: var(--color-text-secondary); line-height: 1.75;">余额宝是蚂蚁财富旗下的货币基金产品（天弘余额宝），是零钱理财入口；蚂蚁财富是更完整的理财平台，包含了余额宝及更多进阶产品。两者相辅相成，建议先用余额宝打底，再通过蚂蚁财富做多元化配置。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 style="font-size: 32px; font-weight: 600; margin-bottom: var(--spacing-6);">相关测评</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card">
+                        <div class="card-body" style="padding: var(--spacing-4) var(--spacing-6);">
+                            <span class="badge badge-success">互联网理财</span><span class="badge score-badge">8.2</span>
+                            <h5 class="card-title mt-2">支付宝余额宝</h5>
+                            <p class="card-text">零门槛、高流动性的零钱理财神器</p>
+                        </div>
+                        <div class="card-footer"><a href="alipay-yuebao.html" class="btn btn-outline" style="width:100%;">查看详情</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card">
+                        <div class="card-body" style="padding: var(--spacing-4) var(--spacing-6);">
+                            <span class="badge badge-primary">基金平台</span><span class="badge score-badge">9.2</span>
+                            <h5 class="card-title mt-2">天天基金</h5>
+                            <p class="card-text">东方财富旗下，费率低、数据强</p>
+                        </div>
+                        <div class="card-footer"><a href="tianhong-fund.html" class="btn btn-outline" style="width:100%;">查看详情</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card">
+                        <div class="card-body" style="padding: var(--spacing-4) var(--spacing-6);">
+                            <span class="badge badge-success">互联网理财</span><span class="badge score-badge">8.4</span>
+                            <h5 class="card-title mt-2">微信零钱通</h5>
+                            <p class="card-text">微信内嵌零钱理财，随存随取</p>
+                        </div>
+                        <div class="card-footer"><a href="weixin-lingqiantong.html" class="btn btn-outline" style="width:100%;">查看详情</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 我们的理易港. All rights reserved.</p>
+            <p style="margin-top: var(--spacing-2);">让理财变得简单</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
