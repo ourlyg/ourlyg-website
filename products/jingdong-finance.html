@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="京东金融测评：京东旗下综合理财平台，小金库货币基金+银行存款+基金，场景丰富，适合京东用户">
+    <meta name="keywords" content="京东金融,小金库,京东理财,基金投资,银行存款,互联网理财">
+    <title>京东金融测评 - 我们的理易港</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .product-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: var(--spacing-16) 0 var(--spacing-12); margin-bottom: var(--spacing-8); }
+        .product-meta { display: flex; gap: var(--spacing-3); margin-bottom: var(--spacing-4); flex-wrap: wrap; }
+        .meta-item { background: rgba(255,255,255,0.2); padding: var(--spacing-2) var(--spacing-4); border-radius: 6px; font-size: 14px; }
+        .score-circle { width: 140px; height: 140px; border-radius: 50%; background: white; color: #667eea; display: flex; flex-direction: column; justify-content: center; align-items: center; font-weight: bold; box-shadow: 0 8px 32px rgba(0,0,0,0.15); margin: 0 auto; }
+        .score-number { font-size: 3.5rem; line-height: 1; }
+        .score-label { font-size: 14px; color: #666; margin-top: 4px; }
+        .score-bar { height: 8px; background: #e9ecef; border-radius: 4px; overflow: hidden; margin-bottom: var(--spacing-3); }
+        .score-bar-fill { height: 100%; border-radius: 4px; }
+        .pros-cons-card { padding: var(--spacing-6); border-radius: 8px; margin-bottom: var(--spacing-4); }
+        .pros-card { background: #E8F5E9; border: 1px solid #00C853; }
+        .cons-card { background: #FFEBEE; border: 1px solid #FF5252; }
+        .pros-cons-item { padding: var(--spacing-3) 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .pros-cons-item:last-child { border-bottom: none; }
+        .pros-cons-item strong { display: block; margin-bottom: 4px; font-size: 15px; }
+        .pros-cons-item p { margin-bottom: 0; color: #555; line-height: 1.6; }
+        .tip-box { background: #E3F2FD; border-left: 4px solid #1976D2; border-radius: 6px; padding: var(--spacing-4) var(--spacing-6); margin-bottom: var(--spacing-4); }
+        .tip-box strong { color: #1976D2; }
+        .product-detail-table td { padding: 12px 16px; border-bottom: 1px solid var(--color-border-light); font-size: 15px; }
+        .product-detail-table td:first-child { color: var(--color-text-secondary); width: 35%; }
+        .product-detail-table td:last-child { font-weight: 500; color: var(--color-text-primary); }
+        .compare-card { border: 1px solid var(--color-border-light); border-radius: 12px; padding: var(--spacing-6); margin-bottom: var(--spacing-4); transition: box-shadow 0.2s; }
+        .compare-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .compare-title { font-size: 18px; font-weight: 600; margin-bottom: var(--spacing-3); }
+        .compare-rate { font-size: 32px; font-weight: 700; color: var(--color-primary); }
+        .compare-desc { color: var(--color-text-secondary); font-size: 14px; margin-top: var(--spacing-2); }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" target="_self"><span class="logo-icon">💰</span>我们的理易港</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">产品测评</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tools/index.html">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../knowledge/index.html">知识科普</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 产品头部 -->
+    <section class="product-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <span class="badge bg-light text-dark mb-3" style="padding: 8px 16px; font-size: 13px;">互联网理财</span>
+                    <h1 style="font-size: 48px; font-weight: 700; margin-bottom: var(--spacing-3);">京东金融</h1>
+                    <p style="font-size: 18px; margin-bottom: var(--spacing-6); opacity: 0.95;">一站式理财平台，购物消费与理财无缝衔接</p>
+                    <div class="product-meta">
+                        <div class="meta-item"><strong>发行机构：</strong>京东科技</div>
+                        <div class="meta-item"><strong>风险等级：</strong>R1–R4</div>
+                        <div class="meta-item"><strong>小金库收益：</strong>约2.2%</div>
+                        <div class="meta-item"><strong>起购金额：</strong>0.01元起</div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="score-circle">
+                        <span class="score-number">8.0</span>
+                        <span class="score-label">综合评分</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 评分详情 -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h2 style="font-size: 32px; font-weight: 600; margin-bottom: var(--spacing-6);">评分详情</h2>
+                    <div class="card">
+                        <div class="card-body" style="padding: var(--spacing-8);">
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2"><span>收益评分</span><span style="font-weight: 600;">7.5/10</span></div>
+                                <div class="score-bar"><div class="score-bar-fill" style="width: 75%; background: var(--color-primary);"></div></div>
+                                <p style="font-size: 13px; color: var(--color-text-secondary); margin-top: 4px;">小金库约2.2%，存款产品可达3%+，部分基金产品收益可观</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2"><span>风险评分</span><span style="font-weight: 600;">8.5/10</span></div>
+                                <div class="score-bar"><div class="score-bar-fill" style="width: 85%; background: var(--color-success);"></div></div>
+                                <p style="font-size: 13px; color: var(--color-text-secondary); margin-top: 4px;">主打产品风险低，平台背靠京东，整体可信度高</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2"><span>流动性评分</span><span style="font-weight: 600;">8.5/10</span></div>
+                                <div class="score-bar"><div class="score-bar-fill" style="width: 85%; background: var(--color-primary);"></div></div>
+                                <p style="font-size: 13px; color: var(--color-text-secondary); margin-top: 4px;">小金库随时赎回，存款产品有锁定期，灵活产品较多</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2"><span>便利性评分</span><span style="font-weight: 600;">8.5/10</span></div>
+                                <div class="score-bar"><div class="score-bar-fill" style="width: 85%; background: var(--color-primary);"></div></div>
+                                <p style="font-size: 13px; color: var(--color-text-secondary); margin-top: 4px;">购物场景嵌入，京东用户体验无缝，App操作简洁</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要产品 -->
+    <section class="section" style="background: var(--color-bg-gray);">
+        <div class="container">
+            <h2 class="text-center" style="font-size: 32px; font-weight: 600; margin-bottom: var(--spacing-8);">主要理财产品</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="compare-card bg-white">
+                        <div class="compare-title">💰 小金库</div>
+                        <div class="compare-rate">≈2.2%</div>
+                        <div class="compare-desc">货币基金，随存随取，T+0快速赎回，无手续费，适合存放活钱</div>
+                        <div class="mt-3">
+                            <span class="badge" style="background: #E8F5E9; color: #00C853;">风险极低</span>
+                            <span class="badge ms-1" style="background: #E3F2FD; color: #1976D2;">随时取用</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="compare-card bg-white">
+                        <div class="compare-title">🏦 银行存款</div>
+                        <div class="compare-rate">2.5–3.5%</div>
+                        <div class="compare-desc">精选银行定存产品，享受存款保险，收益稳定，适合闲置资金</div>
+                        <div class="mt-3">
+                            <span class="badge" style="background: #E8F5E9; color: #00C853;">有存款保险</span>
+                            <span class="badge ms-1" style="background: #FFF3E0; color: #E65100;">有锁定期</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="compare-card bg-white">
+                        <div class="compare-title">📊 基金理财</div>
+                        <div class="compare-rate">收益不定</div>
+                        <div class="compare-desc">债券基金、混合基金、指数基金，品类丰富，支持定投，适合中长期配置</div>
+                        <div class="mt-3">
+                            <span class="badge" style="background: #FFF3E0; color: #E65100;">有波动风险</span>
+                            <span class="badge ms-1" style="background: #E3F2FD; color: #1976D2;">长期收益好</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 优缺点 -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="pros-cons-card pros-card">
+                        <h3 style="font-size: 24px; font-weight: 600; margin-bottom: var(--spacing-4); color: #00C853;">✅ 优点</h3>
+                        <div class="pros-cons-item"><strong>产品线丰富</strong><p>货币基金、存款、基金三条线，一个App满足不同理财需求</p></div>
+                        <div class="pros-cons-item"><strong>购物场景整合</strong><p>小金库余额可直接用于京东购物，消费+理财无缝切换</p></div>
+                        <div class="pros-cons-item"><strong>门槛低</strong><p>0.01元起投，任意金额均可，无最低门槛限制</p></div>
+                        <div class="pros-cons-item"><strong>存款有保障</strong><p>银行存款产品享受最高50万存款保险，资金安全有法律保障</p></div>
+                        <div class="pros-cons-item"><strong>京东信誉背书</strong><p>背靠京东科技，品牌背书强，用户信任度高</p></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="pros-cons-card cons-card">
+                        <h3 style="font-size: 24px; font-weight: 600; margin-bottom: var(--spacing-4); color: #FF5252;">❌ 缺点</h3>
+                        <div class="pros-cons-item"><strong>非京东用户体验感弱</strong><p>平台核心优势是购物场景衔接，不购物的用户吸引力有限</p></div>
+                        <div class="pros-cons-item"><strong>收益竞争力一般</strong><p>货币基金收益与支付宝余额宝相近，相比朝朝宝等产品无明显优势</p></div>
+                        <div class="pros-cons-item"><strong>基金品类相对有限</strong><p>基金数量不如天天基金平台多，选择空间稍小</p></div>
+                        <div class="pros-cons-item"><strong>存款产品利率下行</strong><p>受整体利率环境影响，存款利率持续下滑</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 适合人群 -->
+    <section class="section" style="background: var(--color-bg-gray);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h2 style="font-size: 32px; font-weight: 600; margin-bottom: var(--spacing-6);">适合人群</h2>
+                    <div class="card">
+                        <div class="card-body" style="padding: var(--spacing-8);">
+                            <div class="tip-box">
+                                <strong>💡 狗子建议</strong>
+                                <p class="mb-0 mt-2">京东金融最大的优势是"购物理财一体化"。如果你经常在京东购物，用小金库存放购物备用金是最自然的选择——钱放着赚利息，用的时候直接付款，体验非常顺畅。</p>
+                            </div>
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <li style="padding: 12px 0; border-bottom: 1px solid var(--color-border-light);">✅ <strong>京东重度用户</strong>：购物+理财一体化，体验最顺畅</li>
+                                <li style="padding: 12px 0; border-bottom: 1px solid var(--color-border-light);">✅ <strong>保守型投资者</strong>：小金库+存款产品组合，安全稳健</li>
+                                <li style="padding: 12px 0; border-bottom: 1px solid var(--color-border-light);">✅ <strong>基金入门者</strong>：产品较少，界面友好，适合初次接触基金</li>
+                                <li style="padding: 12px 0;">❌ <strong>基金重度玩家</strong>：品种不如天天基金多，专业选基建议换平台</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 竞品对比 -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h2 style="font-size: 32px; font-weight: 600; margin-bottom: var(--spacing-6);">VS 同类产品</h2>
+                    <div class="card">
+                        <div class="card-body" style="padding: 0;">
+                            <table class="table table-hover mb-0">
+                                <thead style="background: var(--color-bg-gray);">
+                                    <tr>
+                                        <th style="padding: 14px 20px;">产品</th>
+                                        <th>活钱收益</th>
+                                        <th>存款保险</th>
+                                        <th>购物场景</th>
+                                        <th>基金品类</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 14px 20px; font-weight: 600;">京东金融</td>
+                                        <td>≈2.2%</td>
+                                        <td>✅ 有</td>
+                                        <td>⭐⭐⭐⭐⭐</td>
+                                        <td>⭐⭐⭐</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 14px 20px;">支付宝余额宝</td>
+                                        <td>≈2.1%</td>
+                                        <td>❌ 无</td>
+                                        <td>⭐⭐⭐⭐</td>
+                                        <td>⭐⭐⭐⭐</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 14px 20px;">招商朝朝宝</td>
+                                        <td>≈2.5%</td>
+                                        <td>✅ 有</td>
+                                        <td>⭐⭐</td>
+                                        <td>⭐⭐</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 14px 20px;">天天基金</td>
+                                        <td>≈2.0%</td>
+                                        <td>❌ 无</td>
+                                        <td>⭐</td>
+                                        <td>⭐⭐⭐⭐⭐</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 总结 -->
+    <section class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <div class="container text-center">
+            <h2 style="font-size: 32px; font-weight: 700; margin-bottom: var(--spacing-4);">狗子总评</h2>
+            <p style="font-size: 18px; max-width: 640px; margin: 0 auto var(--spacing-6); opacity: 0.95; line-height: 1.8;">
+                京东金融是一个"够用"的理财平台，不是最顶尖，但胜在和购物场景高度整合。
+                <strong>建议定位：</strong>存放京东购物备用金 + 稳健型配置，不需要专门为理财而来，
+                但如果你本来就在用京东，顺手开通小金库让钱不闲置，是个很好的选择。
+            </p>
+            <div style="font-size: 48px; font-weight: 700; margin-bottom: var(--spacing-2);">8.0 / 10</div>
+            <p style="opacity: 0.85;">综合评分 · 京东用户推荐指数 ★★★★</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 我们的理易港. All rights reserved.</p>
+            <p style="margin-top: 8px;">让理财变得简单 | 本站内容仅供参考，不构成投资建议</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="债券基金入门完全指南：什么是债券基金、纯债混债区别、如何选择、风险与收益分析，适合稳健投资者">
+    <meta name="keywords" content="债券基金,纯债基金,混合债券基金,固收理财,低风险投资,债基入门">
+    <title>债券基金入门：比货币基金收益高，比股票基金风险低 - 我们的理易港</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: var(--spacing-16) 0 var(--spacing-12); }
+        .article-meta { display: flex; gap: var(--spacing-4); font-size: 14px; opacity: 0.85; margin-top: var(--spacing-4); flex-wrap: wrap; }
+        .article-body { font-size: 16px; line-height: 1.9; color: var(--color-text-primary); }
+        .article-body h2 { font-size: 26px; font-weight: 700; margin: var(--spacing-10) 0 var(--spacing-4); border-left: 4px solid #667eea; padding-left: var(--spacing-4); }
+        .article-body h3 { font-size: 20px; font-weight: 600; margin: var(--spacing-6) 0 var(--spacing-3); }
+        .article-body p { margin-bottom: var(--spacing-4); }
+        .tip-box { background: #E3F2FD; border-left: 4px solid #1976D2; border-radius: 6px; padding: var(--spacing-4) var(--spacing-6); margin: var(--spacing-6) 0; }
+        .warning-box { background: #FFF3E0; border-left: 4px solid #E65100; border-radius: 6px; padding: var(--spacing-4) var(--spacing-6); margin: var(--spacing-6) 0; }
+        .success-box { background: #E8F5E9; border-left: 4px solid #00C853; border-radius: 6px; padding: var(--spacing-4) var(--spacing-6); margin: var(--spacing-6) 0; }
+        .toc { background: var(--color-bg-gray); border-radius: 12px; padding: var(--spacing-6); margin-bottom: var(--spacing-8); }
+        .toc-title { font-weight: 700; font-size: 18px; margin-bottom: var(--spacing-3); }
+        .toc a { color: var(--color-primary); text-decoration: none; display: block; padding: 4px 0; font-size: 15px; }
+        .type-card { border: 1px solid var(--color-border-light); border-radius: 12px; padding: var(--spacing-6); margin-bottom: var(--spacing-4); transition: box-shadow 0.2s; }
+        .type-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+        .risk-meter { height: 12px; border-radius: 6px; overflow: hidden; background: #e9ecef; margin: 8px 0; }
+        .risk-fill { height: 100%; border-radius: 6px; }
+        .conclusion-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 16px; padding: var(--spacing-8); margin: var(--spacing-8) 0; }
+        .spectrum-bar { height: 24px; border-radius: 12px; background: linear-gradient(90deg, #00C853 0%, #FFD600 50%, #FF5252 100%); margin: 16px 0; position: relative; }
+        .spectrum-marker { position: absolute; top: -24px; font-size: 12px; font-weight: 600; text-align: center; transform: translateX(-50%); }
+        .spectrum-marker::after { content: '▼'; display: block; color: #333; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" target="_self"><span class="logo-icon">💰</span>我们的理易港</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products/index.html">产品测评</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tools/index.html">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">知识科普</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="article-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <span class="badge bg-light text-dark mb-3" style="padding: 8px 16px; font-size: 13px;">基金投资</span>
+                    <h1 style="font-size: 38px; font-weight: 700; line-height: 1.35; margin-bottom: var(--spacing-3);">债券基金入门<br>比货币基金收益高，比股票基金风险低</h1>
+                    <p style="font-size: 18px; opacity: 0.9; margin-bottom: 0;">固收投资者的中间地带，了解它才能搭出完整的资产配置</p>
+                    <div class="article-meta">
+                        <span>📅 2026-03-14</span>
+                        <span>⏱ 阅读约8分钟</span>
+                        <span>🏷 基金投资 · 固收理财</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+
+                    <div class="toc">
+                        <div class="toc-title">📋 本文目录</div>
+                        <a href="#what-is">一、债券基金是什么？</a>
+                        <a href="#types">二、三类债券基金，有什么区别？</a>
+                        <a href="#vs-others">三、和货币基金、股票基金对比</a>
+                        <a href="#risks">四、债券基金有哪些风险？</a>
+                        <a href="#how-choose">五、怎么挑一只好债券基金？</a>
+                        <a href="#who-suits">六、适合什么人买？</a>
+                        <a href="#conclusion">七、狗子总结</a>
+                    </div>
+
+                    <div class="article-body">
+
+                        <p>很多人的理财版图只有两端：要么放余额宝（太安全，收益低），要么买股票基金（收益高，但太刺激）。</p>
+                        <p><strong>债券基金就是这中间那块被忽略的宝地</strong>——风险比股票基金低得多，收益比货币基金高一截，却被大多数普通投资者忽视了。</p>
+
+                        <h2 id="what-is">一、债券基金是什么？</h2>
+                        <p>债券基金，就是主要投资于<strong>债券</strong>的基金。债券是什么？就是政府、企业借钱时打的"欠条"，承诺到期还本付息。</p>
+                        <p>债券基金把很多投资者的钱汇聚在一起，买入大量债券，定期收利息，到期收本金，然后把收益分配给基金持有人。</p>
+
+                        <div class="tip-box">
+                            <strong>💡 简单理解：</strong>买债券基金，相当于你间接借钱给一堆政府和企业，它们按期付你利息。基金经理帮你管理这些"欠条"组合。
+                        </div>
+
+                        <h2 id="types">二、三类债券基金，有什么区别？</h2>
+
+                        <div class="type-card">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h4 style="font-weight: 700; margin-bottom: 4px;">纯债基金</h4>
+                                    <span class="badge" style="background: #E8F5E9; color: #00C853;">风险最低</span>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div style="font-size: 24px; font-weight: 700; color: var(--color-primary);">3–5%</div>
+                                    <div style="font-size: 12px; color: var(--color-text-secondary);">历史年化参考</div>
+                                </div>
+                            </div>
+                            <div class="risk-meter"><div class="risk-fill" style="width: 25%; background: #00C853;"></div></div>
+                            <p class="mb-0" style="color: var(--color-text-secondary); font-size: 15px;">100%投资债券，完全不涉及股票。风险最低，收益也最稳定。分为<strong>短债（期限1年内）</strong>和<strong>中长债</strong>，短债基本不亏钱，适合保守型投资者。</p>
+                        </div>
+
+                        <div class="type-card">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h4 style="font-weight: 700; margin-bottom: 4px;">一级债基（混合债）</h4>
+                                    <span class="badge" style="background: #FFF3E0; color: #E65100;">风险中低</span>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div style="font-size: 24px; font-weight: 700; color: var(--color-primary);">4–8%</div>
+                                    <div style="font-size: 12px; color: var(--color-text-secondary);">历史年化参考</div>
+                                </div>
+                            </div>
+                            <div class="risk-meter"><div class="risk-fill" style="width: 40%; background: #FFD600;"></div></div>
+                            <p class="mb-0" style="color: var(--color-text-secondary); font-size: 15px;">主要投债券，可以参与新股申购（打新）。能享受一定的股权收益，但不直接买股票，风险适中。</p>
+                        </div>
+
+                        <div class="type-card">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h4 style="font-weight: 700; margin-bottom: 4px;">二级债基（偏债混合）</h4>
+                                    <span class="badge" style="background: #FFEBEE; color: #FF5252;">风险中等</span>
+                                </div>
+                                <div style="text-align: right;">
+                                    <div style="font-size: 24px; font-weight: 700; color: var(--color-primary);">5–12%</div>
+                                    <div style="font-size: 12px; color: var(--color-text-secondary);">历史年化参考（波动较大）</div>
+                                </div>
+                            </div>
+                            <div class="risk-meter"><div class="risk-fill" style="width: 55%; background: #FF9800;"></div></div>
+                            <p class="mb-0" style="color: var(--color-text-secondary); font-size: 15px;">主要投债券，但<strong>最多可以投20%的股票</strong>。股票仓位赋予更高弹性，牛市时收益可观，熊市时也会跟着跌一些。</p>
+                        </div>
+
+                        <h2 id="vs-others">三、和货币基金、股票基金对比</h2>
+
+                        <table class="table">
+                            <thead style="background: var(--color-bg-gray);">
+                                <tr>
+                                    <th style="padding: 14px 16px;">维度</th>
+                                    <th>货币基金</th>
+                                    <th>纯债基金</th>
+                                    <th>二级债基</th>
+                                    <th>股票基金</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 12px 16px; font-weight: 600;">历史年化</td>
+                                    <td>1.8–2.3%</td>
+                                    <td>3–5%</td>
+                                    <td>5–12%</td>
+                                    <td>-20% ~ +50%</td>
+                                </tr>
+                                <tr style="background: var(--color-bg-gray);">
+                                    <td style="padding: 12px 16px; font-weight: 600;">最大回撤</td>
+                                    <td>几乎为0</td>
+                                    <td>-3% ~ -8%</td>
+                                    <td>-10% ~ -20%</td>
+                                    <td>-30% ~ -60%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px 16px; font-weight: 600;">流动性</td>
+                                    <td>T+0当日</td>
+                                    <td>T+1–T+2</td>
+                                    <td>T+1–T+2</td>
+                                    <td>T+1–T+2</td>
+                                </tr>
+                                <tr style="background: var(--color-bg-gray);">
+                                    <td style="padding: 12px 16px; font-weight: 600;">适合持有期</td>
+                                    <td>随时</td>
+                                    <td>6个月以上</td>
+                                    <td>1年以上</td>
+                                    <td>3年以上</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2 id="risks">四、债券基金有哪些风险？</h2>
+
+                        <h3>1. 利率风险（最主要）</h3>
+                        <p>债券价格和利率反向运动：<strong>利率上升 → 债券价格下跌 → 基金净值下跌</strong>。2022年底就出现过"债券踩踏"事件，很多纯债基金短期内跌了2–5%。</p>
+
+                        <h3>2. 信用风险（企业债违约）</h3>
+                        <p>如果债券发行方（企业）破产还不上钱，就会违约，导致基金亏损。选择国债、金融债为主的债基，此风险很低。选含大量企业债的，需要注意。</p>
+
+                        <h3>3. 流动性风险</h3>
+                        <p>市场极端情况下，大量人赎回可能造成基金被迫低价卖出持仓，短期净值大幅下跌。持有6个月以上，此风险基本可以规避。</p>
+
+                        <div class="success-box">
+                            <strong>✅ 总体结论：</strong>纯债基金风险可控，只要持有期超过6个月，历史上极少出现亏损。二级债基因含有股票成分，建议持有1年以上，风险高一档。
+                        </div>
+
+                        <h2 id="how-choose">五、怎么挑一只好债券基金？</h2>
+
+                        <p>看4个指标：</p>
+
+                        <div class="row g-3 my-2">
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-body" style="padding: var(--spacing-5);">
+                                        <strong style="color: var(--color-primary);">① 基金规模</strong>
+                                        <p class="mb-0 mt-2" style="font-size: 15px;">选规模10亿以上的基金，规模太小容易被清盘，流动性也差。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-body" style="padding: var(--spacing-5);">
+                                        <strong style="color: var(--color-primary);">② 最大回撤</strong>
+                                        <p class="mb-0 mt-2" style="font-size: 15px;">历史最大回撤越小越好。纯债基金超过-5%就要警惕，可能含有过多高风险债券。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-body" style="padding: var(--spacing-5);">
+                                        <strong style="color: var(--color-primary);">③ 费率</strong>
+                                        <p class="mb-0 mt-2" style="font-size: 15px;">管理费率0.3%–0.6%为合理范围，申购费1折打折后基本可忽略。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-body" style="padding: var(--spacing-5);">
+                                        <strong style="color: var(--color-primary);">④ 基金经理任期</strong>
+                                        <p class="mb-0 mt-2" style="font-size: 15px;">债基依赖基金经理的信用研究能力，优先选任期3年以上、任期内回撤控制好的经理。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <strong>💡 懒人方案：</strong>直接搜索"短债基金"，按规模排序，选规模最大、近1年回撤最小的那只，基本不会出大问题。短债基金是债券基金里风险最低的类别。
+                        </div>
+
+                        <h2 id="who-suits">六、适合什么人买？</h2>
+
+                        <ul style="line-height: 2.2; padding-left: 20px;">
+                            <li>✅ 货币基金放太多，想提高一点收益但不想冒太大风险</li>
+                            <li>✅ 中期闲置资金（6个月–2年），不想定期存款但不想买股票基金</li>
+                            <li>✅ 退休人员、保守型投资者，想要比货币基金好的收益</li>
+                            <li>✅ 资产配置中需要"稳定器"，平衡股票基金的波动</li>
+                            <li>❌ 需要随时取出的应急金（流动性不如货币基金，T+2到账）</li>
+                            <li>❌ 追求高收益、能承受大幅波动的激进型投资者（去买股票吧）</li>
+                        </ul>
+
+                        <h2 id="conclusion">七、狗子总结</h2>
+
+                        <div class="conclusion-box">
+                            <h3 style="font-size: 24px; font-weight: 700; margin-bottom: var(--spacing-4);">🐾 一句话总结</h3>
+                            <p style="font-size: 17px; line-height: 1.8; margin-bottom: var(--spacing-4);">
+                                <strong>债券基金是理财金字塔的中间层，不应该被忽略。</strong><br>
+                                底层放货币基金（应急）→ 中层放债券基金（稳健增值）→ 顶层放股票/指数基金（长期增值），这才是完整的资产配置。
+                            </p>
+                            <p style="opacity: 0.85; font-size: 15px; margin-bottom: 0;">
+                                新手建议从<strong>短债基金</strong>入手，6个月以上持有期，风险低、收益稳，是进入固收世界的最佳起点。
+                            </p>
+                        </div>
+
+                        <p style="margin-top: var(--spacing-8); padding-top: var(--spacing-6); border-top: 1px solid var(--color-border-light); color: var(--color-text-secondary); font-size: 14px;">
+                            本文仅供参考，不构成投资建议。基金投资有风险，历史业绩不代表未来表现。
+                        </p>
+                    </div>
+
+                    <div class="mt-5">
+                        <h3 style="font-size: 22px; font-weight: 700; margin-bottom: var(--spacing-4);">相关阅读</h3>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <a href="article-money-vs-bank.html" class="card text-decoration-none" style="color: inherit;">
+                                    <div class="card-body">
+                                        <div class="text-primary mb-1" style="font-size: 13px;">产品对比</div>
+                                        <div style="font-weight: 600;">货币基金 vs 银行理财：哪个更适合放活钱？</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="article-index-fund.html" class="card text-decoration-none" style="color: inherit;">
+                                    <div class="card-body">
+                                        <div class="text-primary mb-1" style="font-size: 13px;">基金投资</div>
+                                        <div style="font-weight: 600;">定投指数基金：懒人也能跑赢大市</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 我们的理易港. All rights reserved.</p>
+            <p style="margin-top: 8px;">让理财变得简单 | 本站内容仅供参考，不构成投资建议</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
