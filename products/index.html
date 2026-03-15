@@ -49,8 +49,8 @@
                     <h1 class="hero-title">产品测评</h1>
                     <p class="hero-subtitle">专业、客观、有数据支撑的理财产品测评。我们不代表任何金融机构，只做第三方评测。</p>
                     <div style="display:flex; gap: var(--spacing-6); margin-top: var(--spacing-4);">
-                        <div><span style="font-size: 32px; font-weight:700; color: var(--color-primary);">6</span><span style="font-size: 14px; color: var(--color-text-secondary); margin-left: 6px;">篇测评</span></div>
-                        <div><span style="font-size: 32px; font-weight:700; color: var(--color-primary);">4</span><span style="font-size: 14px; color: var(--color-text-secondary); margin-left: 6px;">个品类</span></div>
+                        <div><span style="font-size: 32px; font-weight:700; color: var(--color-primary);">9</span><span style="font-size: 14px; color: var(--color-text-secondary); margin-left: 6px;">篇测评</span></div>
+                        <div><span style="font-size: 32px; font-weight:700; color: var(--color-primary);">6</span><span style="font-size: 14px; color: var(--color-text-secondary); margin-left: 6px;">个品类</span></div>
                         <div><span style="font-size: 32px; font-weight:700; color: var(--color-primary);">100%</span><span style="font-size: 14px; color: var(--color-text-secondary); margin-left: 6px;">客观中立</span></div>
                     </div>
                 </div>
@@ -63,12 +63,12 @@
         <div class="container">
             <!-- 筛选标签 -->
             <div class="filter-tabs">
-                <button class="filter-tab active" onclick="filterProducts('all', this)">全部（6）</button>
+                <button class="filter-tab active" onclick="filterProducts('all', this)">全部（9）</button>
                 <button class="filter-tab" onclick="filterProducts('broker', this)">券商（1）</button>
                 <button class="filter-tab" onclick="filterProducts('bank', this)">银行理财（1）</button>
-                <button class="filter-tab" onclick="filterProducts('fund', this)">基金平台（1）</button>
-                <button class="filter-tab" onclick="filterProducts('internet', this)">互联网理财（2）</button>
-                <button class="filter-tab" onclick="filterProducts('bond', this)">债券投资（1）</button>
+                <button class="filter-tab" onclick="filterProducts('fund', this)">基金平台（2）</button>
+                <button class="filter-tab" onclick="filterProducts('internet', this)">互联网理财（3）</button>
+                <button class="filter-tab" onclick="filterProducts('bond', this)">债券投资（2）</button>
             </div>
 
             <!-- 产品网格 -->
@@ -241,11 +241,95 @@
                     </div>
                 </div>
 
+                <!-- 微信零钱通 -->
+                <div class="col-md-6 col-lg-4 product-item" data-category="internet">
+                    <div class="product-grid-card">
+                        <div class="product-card-header">
+                            <span class="badge badge-success">互联网理财</span>
+                            <span class="score-pill">8.4</span>
+                        </div>
+                        <div class="product-card-body">
+                            <h3 style="font-size: 20px; font-weight:600; margin-bottom: var(--spacing-2);">微信零钱通</h3>
+                            <p style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: var(--spacing-3); line-height: 1.6;">微信内嵌零钱理财，0.01元起，随存随取，让每一分闲钱都生息</p>
+                            <div style="font-size: 13px; color: var(--color-text-hint); margin-bottom: var(--spacing-3);">
+                                <div class="d-flex justify-content-between" style="margin-bottom:4px;"><span>使用便利性</span><span>9.5/10</span></div>
+                                <div class="rating-bar"><div class="rating-fill" style="width:95%"></div></div>
+                                <div class="d-flex justify-content-between" style="margin-bottom:4px; margin-top:8px;"><span>提现灵活性</span><span>9.5/10</span></div>
+                                <div class="rating-bar"><div class="rating-fill" style="width:95%"></div></div>
+                            </div>
+                            <div class="product-tags">
+                                <span class="badge badge-primary">0.01元起</span>
+                                <span class="badge badge-primary">实时到账</span>
+                                <span class="badge badge-primary">微信生态</span>
+                            </div>
+                        </div>
+                        <div class="product-card-footer">
+                            <a href="weixin-lingqiantong.html" class="btn btn-outline" style="width:100%;">查看完整测评</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 蚂蚁财富 -->
+                <div class="col-md-6 col-lg-4 product-item" data-category="fund">
+                    <div class="product-grid-card">
+                        <div class="product-card-header">
+                            <span class="badge badge-primary">基金平台</span>
+                            <span class="score-pill">8.7</span>
+                        </div>
+                        <div class="product-card-body">
+                            <h3 style="font-size: 20px; font-weight:600; margin-bottom: var(--spacing-2);">蚂蚁财富</h3>
+                            <p style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: var(--spacing-3); line-height: 1.6;">支付宝旗下综合理财平台，基金、债券、保险多元配置，进阶用户之选</p>
+                            <div style="font-size: 13px; color: var(--color-text-hint); margin-bottom: var(--spacing-3);">
+                                <div class="d-flex justify-content-between" style="margin-bottom:4px;"><span>产品丰富度</span><span>9.0/10</span></div>
+                                <div class="rating-bar"><div class="rating-fill" style="width:90%"></div></div>
+                                <div class="d-flex justify-content-between" style="margin-bottom:4px; margin-top:8px;"><span>智能推荐</span><span>8.5/10</span></div>
+                                <div class="rating-bar"><div class="rating-fill" style="width:85%"></div></div>
+                            </div>
+                            <div class="product-tags">
+                                <span class="badge badge-primary">8000+基金</span>
+                                <span class="badge badge-primary">帮你投</span>
+                                <span class="badge badge-primary">支付宝生态</span>
+                            </div>
+                        </div>
+                        <div class="product-card-footer">
+                            <a href="ant-wealth.html" class="btn btn-outline" style="width:100%;">查看完整测评</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 储蓄国债 -->
+                <div class="col-md-6 col-lg-4 product-item" data-category="bond">
+                    <div class="product-grid-card">
+                        <div class="product-card-header">
+                            <span class="badge" style="background:#fff1f0; color:#a8071a;">国债</span>
+                            <span class="score-pill">8.9</span>
+                        </div>
+                        <div class="product-card-body">
+                            <h3 style="font-size: 20px; font-weight:600; margin-bottom: var(--spacing-2);">储蓄国债</h3>
+                            <p style="font-size: 14px; color: var(--color-text-secondary); margin-bottom: var(--spacing-3); line-height: 1.6;">国家信用背书、保本保息，稳健型投资者的压舱石，收益远超银行定期</p>
+                            <div style="font-size: 13px; color: var(--color-text-hint); margin-bottom: var(--spacing-3);">
+                                <div class="d-flex justify-content-between" style="margin-bottom:4px;"><span>安全性</span><span>10/10</span></div>
+                                <div class="rating-bar"><div class="rating-fill" style="width:100%"></div></div>
+                                <div class="d-flex justify-content-between" style="margin-bottom:4px; margin-top:8px;"><span>收益水平</span><span>8.5/10</span></div>
+                                <div class="rating-bar"><div class="rating-fill" style="width:85%"></div></div>
+                            </div>
+                            <div class="product-tags">
+                                <span class="badge badge-primary">保本保息</span>
+                                <span class="badge badge-primary">免税收益</span>
+                                <span class="badge badge-primary">100元起购</span>
+                            </div>
+                        </div>
+                        <div class="product-card-footer">
+                            <a href="savings-bond.html" class="btn btn-outline" style="width:100%;">查看完整测评</a>
+                        </div>
+                    </div>
+                </div>
+
             </div><!-- /productGrid -->
 
             <!-- 更多即将来袭 -->
             <div style="text-align:center; margin-top: var(--spacing-12); padding: var(--spacing-10); background: var(--color-bg-gray); border-radius: 12px; border: 1px dashed var(--color-border-light);">
-                <p style="font-size: 24px; margin-bottom: var(--spacing-2);">📝</p>
+                <p style="font-size: 24px; margin-bottom: var(--spacing-2);">&#x1f4dd;</p>
                 <p style="font-size: 18px; font-weight:600; color: var(--color-text-primary); margin-bottom: var(--spacing-2);">更多测评持续更新中</p>
                 <p style="font-size: 14px; color: var(--color-text-secondary);">即将上线：富途证券、雪球基金组合、招行黄金定投、中证A500指数基金…</p>
             </div>
