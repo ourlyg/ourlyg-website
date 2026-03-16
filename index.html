@@ -620,9 +620,11 @@
 
             <!-- 内嵌简版留言表单 -->
             <div style="max-width:520px; margin:0 auto 28px; background:rgba(255,255,255,0.12); border-radius:20px; padding:28px 32px; backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.2);">
-                <form id="quickForm" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
-                    <input type="hidden" name="_subject" value="[理易港] 快速咨询">
-                    <input type="hidden" name="_next" value="https://ourlyg.com/service-request.html?success=1">
+                <form id="quickForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_KEY">
+                    <input type="hidden" name="subject" value="[理易港] 快速咨询">
+                    <input type="hidden" name="redirect" value="https://ourlyg.com/service-request.html?success=1">
+                    <input type="hidden" name="from_name" value="理易港AI金融分析">
                     <div style="margin-bottom:14px;">
                         <select name="服务类型" style="width:100%; background:rgba(255,255,255,0.9); border:none; border-radius:10px; padding:11px 15px; font-size:14px; color:#333;" required>
                             <option value="" disabled selected>选择服务类型</option>
@@ -745,5 +747,28 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 首页快速表单：key未配置时降级处理
+        const qForm = document.getElementById('quickForm');
+        if (qForm) {
+            qForm.addEventListener('submit', function(e) {
+                const key = qForm.querySelector('input[name="access_key"]').value;
+                if (!key || key === 'REPLACE_WITH_WEB3FORMS_KEY') {
+                    e.preventDefault();
+                    // 替换提交按钮为联系提示
+                    const btn = qForm.querySelector('button[type="submit"]');
+                    btn.style.background = '#fef3c7';
+                    btn.style.color = '#92400e';
+                    btn.textContent = '📧 请发邮件至 contact@ourlyg.com 提交需求';
+                    btn.style.fontSize = '13px';
+                }
+            });
+        }
+    </script>
+
+    <!-- 全局悬浮联系按钮 -->
+    <a href="service-request.html" style="position:fixed; bottom:24px; right:24px; background:linear-gradient(135deg,#667eea,#764ba2); color:white; border-radius:50px; padding:12px 20px; font-size:14px; font-weight:600; text-decoration:none; box-shadow:0 4px 20px rgba(102,126,234,0.5); z-index:999; display:flex; align-items:center; gap:8px; transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 28px rgba(102,126,234,0.6)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 20px rgba(102,126,234,0.5)'">
+        💬 立即咨询
+    </a>
 </body>
 </html>
