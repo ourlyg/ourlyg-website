@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ourlyg.com AI金融分析样本报告 - 股票诊断、财经简报、持仓分析真实案例展示">
+    <title>样本报告 - 理易港 AI金融分析服务</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 100%);
+            padding: 100px 0 60px;
+            color: white;
+            text-align: center;
+        }
+        .page-header h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .page-header p { font-size: 17px; opacity: 0.75; }
+
+        .report-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            border: 1px solid #f0f0f0;
+            margin-bottom: 32px;
+        }
+        .report-header {
+            padding: 24px 28px;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .report-tag {
+            display: inline-block;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .report-body { padding: 28px; }
+        .indicator-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .indicator-box {
+            background: #f8f9ff;
+            border-radius: 10px;
+            padding: 14px;
+            text-align: center;
+            border: 1px solid #e8eaf6;
+        }
+        .indicator-box .ind-label { font-size: 11px; color: #999; margin-bottom: 6px; }
+        .indicator-box .ind-value { font-size: 15px; font-weight: 700; }
+        .green { color: #10b981; }
+        .red { color: #ef4444; }
+        .yellow { color: #f59e0b; }
+        .blue { color: #667eea; }
+
+        .conclusion-box {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            border-radius: 0 12px 12px 0;
+            padding: 18px 20px;
+            margin-bottom: 20px;
+        }
+        .risk-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+        .risk-pill {
+            background: #fff8e1;
+            border: 1px solid #ffd54f;
+            color: #e65100;
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: 13px;
+        }
+        .news-item {
+            padding: 16px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-source {
+            display: inline-block;
+            background: #e8eaf6;
+            color: #5c6bc0;
+            border-radius: 4px;
+            padding: 1px 8px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+        .news-importance-high { color: #ef4444; font-size: 11px; font-weight: 700; }
+        .news-importance-mid { color: #f59e0b; font-size: 11px; font-weight: 700; }
+        .cta-inline {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 16px;
+            padding: 28px 32px;
+            text-align: center;
+            margin-top: 16px;
+        }
+        .cta-inline h4 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+        .cta-inline p { font-size: 14px; opacity: 0.85; margin-bottom: 20px; }
+        .cta-inline a {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+        .cta-inline a:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><span class="logo-icon">📊</span>理易港</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">样本报告</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products/index.html">理财测评</a></li>
+                    <li class="nav-item ms-2"><a href="../index.html#contact" class="btn btn-primary" style="border-radius:20px; padding:6px 18px; font-size:14px;">立即咨询</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>📋 样本报告</h1>
+            <p>真实的分析案例，让你看清楚我能输出什么</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <p style="color:#999; font-size:14px; margin-bottom:32px; text-align:center;">以下为模拟报告样本，数据仅作展示用途，不构成投资建议</p>
+
+            <!-- 样本一：股票诊断报告 -->
+            <div class="report-card">
+                <div class="report-header">
+                    <div>
+                        <span class="report-tag" style="background:#ede9fe; color:#7c3aed;">股票诊断报告</span>
+                        <h2 style="font-size:24px; font-weight:800; margin-bottom:4px;">宁德时代 300750.SZ</h2>
+                        <p style="color:#999; font-size:14px; margin:0;">新能源 · 锂电池 · 创业板 | 分析日期：2026-03-16</p>
+                    </div>
+                    <div style="background:#dcfce7; color:#16a34a; padding:8px 20px; border-radius:12px; font-weight:700; font-size:16px;">
+                        关注机会
+                    </div>
+                </div>
+                <div class="report-body">
+
+                    <h5 style="font-weight:700; margin-bottom:14px;">📊 技术指标概览</h5>
+                    <div class="indicator-grid">
+                        <div class="indicator-box">
+                            <div class="ind-label">当前价格</div>
+                            <div class="ind-value">¥186.5</div>
+                        </div>
+                        <div class="indicator-box">
+                            <div class="ind-label">MACD</div>
+                            <div class="ind-value green">金叉 ↑</div>
+                        </div>
+                        <div class="indicator-box">
+                            <div class="ind-label">RSI (14)</div>
+                            <div class="ind-value yellow">54.3 中性</div>
+                        </div>
+                        <div class="indicator-box">
+                            <div class="ind-label">KDJ</div>
+                            <div class="ind-value green">K上穿D</div>
+                        </div>
+                        <div class="indicator-box">
+                            <div class="ind-label">均线系统</div>
+                            <div class="ind-value green">多头排列</div>
+                        </div>
+                        <div class="indicator-box">
+                            <div class="ind-label">布林带</div>
+                            <div class="ind-value blue">中轨附近</div>
+                        </div>
+                        <div class="indicator-box">
+                            <div class="ind-label">成交量</div>
+                            <div class="ind-value yellow">温和放量</div>
+                        </div>
+                        <div class="indicator-box">
+                            <div class="ind-label">周线趋势</div>
+                            <div class="ind-value green">上升通道</div>
+                        </div>
+                    </div>
+
+                    <h5 style="font-weight:700; margin-bottom:14px;">🔍 分析摘要</h5>
+                    <div class="conclusion-box">
+                        <strong>核心结论：</strong>短期技术面偏多，但需量能配合验证。<br><br>
+                        近5个交易日股价在182-190区间震荡整理，成交量较前期明显萎缩后出现温和放量迹象。MACD在零轴上方形成金叉，KDJ指标K线上穿D线，短期动能偏向多头。均线系统呈多头排列（5MA > 10MA > 20MA），日线结构较为健康。<br><br>
+                        关键变量：若本周能放量突破190元前高，则信号明确；若缩量反复触顶，则需降低预期，等待更好入场时机。
+                    </div>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-4">
+                            <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:12px; padding:16px;">
+                                <div style="font-size:12px; color:#16a34a; font-weight:600; margin-bottom:6px;">📈 近期支撑位</div>
+                                <div style="font-size:20px; font-weight:800; color:#166534;">¥178 / ¥182</div>
+                                <div style="font-size:12px; color:#666; margin-top:4px;">20日均线 / 近期整理低点</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div style="background:#eff6ff; border:1px solid #bfdbfe; border-radius:12px; padding:16px;">
+                                <div style="font-size:12px; color:#1d4ed8; font-weight:600; margin-bottom:6px;">🎯 短期目标位</div>
+                                <div style="font-size:20px; font-weight:800; color:#1e3a8a;">¥195 / ¥205</div>
+                                <div style="font-size:12px; color:#666; margin-top:4px;">前期压力区 / 前高位置</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div style="background:#fef2f2; border:1px solid #fecaca; border-radius:12px; padding:16px;">
+                                <div style="font-size:12px; color:#dc2626; font-weight:600; margin-bottom:6px;">🛡️ 建议止损位</div>
+                                <div style="font-size:20px; font-weight:800; color:#7f1d1d;">¥175</div>
+                                <div style="font-size:12px; color:#666; margin-top:4px;">跌破则趋势转弱，需出</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 style="font-weight:700; margin-bottom:10px;">⚖️ 操作建议</h5>
+                    <p style="color:#444; line-height:1.8;">建议轻仓关注（仓位20%-30%），等待放量突破190元确认后可适度加仓。若无量突破或冲高回落，则耐心等待，不追涨。止损位明确设在175元，单次交易亏损不超过本金5%。</p>
+
+                    <div class="risk-row">
+                        <div class="risk-pill">⚠️ 行业政策风险</div>
+                        <div class="risk-pill">⚠️ 市场整体回调风险</div>
+                        <div class="risk-pill">⚠️ 锂价波动影响毛利</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 样本二：财经简报 -->
+            <div class="report-card">
+                <div class="report-header">
+                    <div>
+                        <span class="report-tag" style="background:#dcfce7; color:#16a34a;">每日财经简报</span>
+                        <h2 style="font-size:24px; font-weight:800; margin-bottom:4px;">今日财经速读</h2>
+                        <p style="color:#999; font-size:14px; margin:0;">2026年3月16日（周一）| 共收录 18 条新闻，精选 6 条重点</p>
+                    </div>
+                    <div style="font-size:13px; color:#999;">🕘 推送时间：08:45</div>
+                </div>
+                <div class="report-body">
+                    <div style="background:#f0fdf4; border-radius:12px; padding:16px; margin-bottom:24px;">
+                        <div style="font-weight:700; font-size:15px; color:#166534; margin-bottom:8px;">📌 今日市场开盘前核心提示</div>
+                        <p style="color:#444; font-size:14px; line-height:1.7; margin:0;">本周A股市场预计在政策面偏暖背景下震荡偏多。美联储降息预期边际改善，北向资金近3日连续净流入。重点关注今日公布的2月工业生产数据及地产销售数据，两组数据均可能对板块产生明显影响。</p>
+                    </div>
+
+                    <h5 style="font-weight:700; margin-bottom:14px;">🔥 重点新闻（6条）</h5>
+
+                    <div class="news-item">
+                        <div style="margin-bottom:6px;">
+                            <span class="news-source">央行</span>
+                            <span class="news-importance-high">🔴 高重要性</span>
+                        </div>
+                        <div style="font-weight:700; font-size:15px; margin-bottom:4px;">央行宣布下调存款准备金率0.25个百分点</div>
+                        <div style="font-size:13px; color:#666; line-height:1.6;"><strong>影响解读：</strong>释放长期资金约5500亿元，有利于银行板块和基建相关个股。对债市偏多，对股市整体属中性偏正面消息。</div>
+                    </div>
+
+                    <div class="news-item">
+                        <div style="margin-bottom:6px;">
+                            <span class="news-source">发改委</span>
+                            <span class="news-importance-high">🔴 高重要性</span>
+                        </div>
+                        <div style="font-weight:700; font-size:15px; margin-bottom:4px;">新能源汽车购置补贴政策延续至2027年</div>
+                        <div style="font-size:13px; color:#666; line-height:1.6;"><strong>影响解读：</strong>直接利好新能源车产业链，重点关注：比亚迪、宁德时代、华为汽车供应链。预计今日开盘后相关板块有一定跳涨。</div>
+                    </div>
+
+                    <div class="news-item">
+                        <div style="margin-bottom:6px;">
+                            <span class="news-source">美联储</span>
+                            <span class="news-importance-mid">🟡 中重要性</span>
+                        </div>
+                        <div style="font-weight:700; font-size:15px; margin-bottom:4px;">美联储委员发言暗示5月降息概率上升至65%</div>
+                        <div style="font-size:13px; color:#666; line-height:1.6;"><strong>影响解读：</strong>有助于北向资金继续流入，人民币汇率偏强。对A股整体流动性预期正面，科技成长板块受益更明显。</div>
+                    </div>
+
+                    <div class="news-item">
+                        <div style="margin-bottom:6px;">
+                            <span class="news-source">统计局</span>
+                            <span class="news-importance-mid">🟡 中重要性</span>
+                        </div>
+                        <div style="font-weight:700; font-size:15px; margin-bottom:4px;">2月CPI同比+0.8%，PPI同比-1.2%，均在预期范围</div>
+                        <div style="font-size:13px; color:#666; line-height:1.6;"><strong>影响解读：</strong>通胀压力可控，为货币政策提供宽松空间。PPI持续负增长对上游资源类板块有一定压力。</div>
+                    </div>
+
+                    <div style="background:#fffbeb; border-radius:12px; padding:14px; margin-top:20px;">
+                        <div style="font-weight:700; font-size:14px; color:#92400e; margin-bottom:6px;">📋 今日值得关注的板块</div>
+                        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                            <span style="background:#fef3c7; color:#92400e; padding:4px 12px; border-radius:20px; font-size:13px;">🚗 新能源车链</span>
+                            <span style="background:#dbeafe; color:#1e40af; padding:4px 12px; border-radius:20px; font-size:13px;">🏦 银行板块</span>
+                            <span style="background:#d1fae5; color:#065f46; padding:4px 12px; border-radius:20px; font-size:13px;">💻 AI/科技</span>
+                            <span style="background:#fce7f3; color:#831843; padding:4px 12px; border-radius:20px; font-size:13px;">⚡ 储能</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 样本三：持仓诊断 -->
+            <div class="report-card">
+                <div class="report-header">
+                    <div>
+                        <span class="report-tag" style="background:#fef9c3; color:#a16207;">持仓诊断分析</span>
+                        <h2 style="font-size:24px; font-weight:800; margin-bottom:4px;">某用户持仓诊断报告</h2>
+                        <p style="color:#999; font-size:14px; margin:0;">总持仓价值约 ¥28万 | 分析日期：2026-03-16</p>
+                    </div>
+                </div>
+                <div class="report-body">
+                    <h5 style="font-weight:700; margin-bottom:14px;">📊 当前持仓结构</h5>
+                    <div style="overflow-x:auto; margin-bottom:24px;">
+                        <table style="width:100%; border-collapse:collapse; font-size:14px;">
+                            <thead>
+                                <tr style="background:#f8f9ff; border-bottom:2px solid #e8eaf6;">
+                                    <th style="padding:10px 14px; text-align:left; font-weight:700;">品种</th>
+                                    <th style="padding:10px 14px; text-align:right; font-weight:700;">持仓市值</th>
+                                    <th style="padding:10px 14px; text-align:right; font-weight:700;">占比</th>
+                                    <th style="padding:10px 14px; text-align:right; font-weight:700;">盈亏</th>
+                                    <th style="padding:10px 14px; text-align:left; font-weight:700;">风险评级</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom:1px solid #f5f5f5;">
+                                    <td style="padding:10px 14px;">比亚迪 002594</td>
+                                    <td style="padding:10px 14px; text-align:right;">¥84,000</td>
+                                    <td style="padding:10px 14px; text-align:right;">30%</td>
+                                    <td style="padding:10px 14px; text-align:right; color:#10b981;">+12.3%</td>
+                                    <td style="padding:10px 14px;"><span style="background:#fef3c7; color:#b45309; border-radius:4px; padding:2px 8px; font-size:12px;">中</span></td>
+                                </tr>
+                                <tr style="border-bottom:1px solid #f5f5f5;">
+                                    <td style="padding:10px 14px;">宁德时代 300750</td>
+                                    <td style="padding:10px 14px; text-align:right;">¥70,000</td>
+                                    <td style="padding:10px 14px; text-align:right;">25%</td>
+                                    <td style="padding:10px 14px; text-align:right; color:#10b981;">+6.8%</td>
+                                    <td style="padding:10px 14px;"><span style="background:#fef3c7; color:#b45309; border-radius:4px; padding:2px 8px; font-size:12px;">中</span></td>
+                                </tr>
+                                <tr style="border-bottom:1px solid #f5f5f5;">
+                                    <td style="padding:10px 14px;">华为概念ETF</td>
+                                    <td style="padding:10px 14px; text-align:right;">¥56,000</td>
+                                    <td style="padding:10px 14px; text-align:right;">20%</td>
+                                    <td style="padding:10px 14px; text-align:right; color:#ef4444;">-3.2%</td>
+                                    <td style="padding:10px 14px;"><span style="background:#dcfce7; color:#166534; border-radius:4px; padding:2px 8px; font-size:12px;">低</span></td>
+                                </tr>
+                                <tr style="border-bottom:1px solid #f5f5f5;">
+                                    <td style="padding:10px 14px;">长城汽车 601633</td>
+                                    <td style="padding:10px 14px; text-align:right;">¥42,000</td>
+                                    <td style="padding:10px 14px; text-align:right;">15%</td>
+                                    <td style="padding:10px 14px; text-align:right; color:#ef4444;">-8.5%</td>
+                                    <td style="padding:10px 14px;"><span style="background:#fee2e2; color:#dc2626; border-radius:4px; padding:2px 8px; font-size:12px;">高</span></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:10px 14px;">货币基金（余额宝）</td>
+                                    <td style="padding:10px 14px; text-align:right;">¥28,000</td>
+                                    <td style="padding:10px 14px; text-align:right;">10%</td>
+                                    <td style="padding:10px 14px; text-align:right; color:#10b981;">+1.8%</td>
+                                    <td style="padding:10px 14px;"><span style="background:#dbeafe; color:#1e40af; border-radius:4px; padding:2px 8px; font-size:12px;">极低</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h5 style="font-weight:700; margin-bottom:14px;">⚠️ 主要风险诊断</h5>
+                    <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+                        <div style="background:#fef2f2; border-left:4px solid #ef4444; border-radius:0 12px 12px 0; padding:14px 18px;">
+                            <strong style="color:#dc2626;">🔴 行业过度集中</strong>
+                            <p style="margin:6px 0 0; font-size:14px; color:#444;">新能源汽车相关仓位占比达70%（比亚迪+宁德+长城），行业高度同质。若新能源板块整体调整，组合将面临较大回撤风险。</p>
+                        </div>
+                        <div style="background:#fffbeb; border-left:4px solid #f59e0b; border-radius:0 12px 12px 0; padding:14px 18px;">
+                            <strong style="color:#d97706;">🟡 现金比例偏低</strong>
+                            <p style="margin:6px 0 0; font-size:14px; color:#444;">流动性资产（货币基金）仅占10%，市场大幅震荡时缺乏加仓子弹，也缺乏应急流动性缓冲。</p>
+                        </div>
+                    </div>
+
+                    <h5 style="font-weight:700; margin-bottom:14px;">💡 优化建议</h5>
+                    <ol style="color:#444; font-size:14px; line-height:1.9; padding-left:20px;">
+                        <li>建议将长城汽车仓位降至5%以下（当前技术面弱、基本面也承压），释放仓位</li>
+                        <li>将现金比例提升至20%-25%，增加组合弹性</li>
+                        <li>用释放资金适量布局与新能源相关性低的行业（如医药、消费、银行），降低行业集中风险</li>
+                        <li>比亚迪和宁德持有逻辑仍在，可继续持有，但合计不超过45%</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- 下单CTA -->
+            <div class="cta-inline">
+                <h4>看完样本，想要自己的专属报告？</h4>
+                <p>告诉我你的股票代码 / 持仓情况 / 想了解什么，我来给你出一份专属分析。</p>
+                <a href="../index.html#contact">联系下单 →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div style="border-top:1px solid var(--color-border-light); padding-top: var(--spacing-5); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                <p style="font-size:13px; color:var(--color-text-hint); margin:0;">© 2026 理易港 ourlyg.com</p>
+                <p style="font-size:13px; color:var(--color-text-hint); margin:0;">样本报告数据仅供展示，不构成任何投资建议</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
