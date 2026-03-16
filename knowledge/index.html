@@ -47,7 +47,7 @@
                     <p class="hero-subtitle">易懂、实用的理财知识。不讲废话，直接告诉你该怎么做。</p>
                 </div>
                 <div class="col-md-4 d-none d-md-block text-end">
-                    <div style="font-size: 14px; color: var(--color-text-hint);">已发布 <strong style="color:var(--color-primary); font-size:18px;">3</strong> 篇文章</div>
+                    <div style="font-size: 14px; color: var(--color-text-hint);">已发布 <strong style="color:var(--color-primary); font-size:18px;">9</strong> 篇文章</div>
                 </div>
             </div>
         </div>
@@ -72,6 +72,8 @@
                 <button class="category-btn" onclick="filterArticles('beginner', this)">理财入门</button>
                 <button class="category-btn" onclick="filterArticles('fund', this)">基金投资</button>
                 <button class="category-btn" onclick="filterArticles('risk', this)">风险控制</button>
+                <button class="category-btn" onclick="filterArticles('planning', this)">理财规划</button>
+                <button class="category-btn" onclick="filterArticles('astock', this)">A股市场</button>
             </div>
 
             <!-- 文章列表 -->
@@ -131,18 +133,132 @@
                     </a>
                 </div>
 
+                <!-- 新文章：如何选基金 -->
+                <div class="col-md-6 col-lg-4 article-item" data-category="fund">
+                    <a href="article-how-to-pick-fund.html" style="text-decoration:none;">
+                        <div class="article-card">
+                            <div class="article-cover" style="background: linear-gradient(135deg, #f093fb22 0%, #f5576c22 100%);">🔍</div>
+                            <div class="article-body">
+                                <div class="article-tag" style="background:#FCE4EC; color:#880E4F;">基金投资</div>
+                                <div class="article-title">如何选基金：6个维度筛选，避开90%的坑</div>
+                                <div class="article-desc">规模、费率、基金经理、最大回撤……6个维度系统筛选基金，附5步实操流程。</div>
+                                <div class="article-meta">
+                                    <span>📅 2026年3月</span>
+                                    <span>⏱ 约8分钟</span>
+                                    <span>👤 基金必读</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 新文章：个人理财规划 -->
+                <div class="col-md-6 col-lg-4 article-item" data-category="planning">
+                    <a href="article-financial-planning.html" style="text-decoration:none;">
+                        <div class="article-card">
+                            <div class="article-cover" style="background: linear-gradient(135deg, #4facfe22 0%, #00f2fe22 100%);">🗺️</div>
+                            <div class="article-body">
+                                <div class="article-tag" style="background:#E3F2FD; color:#1565C0;">理财规划</div>
+                                <div class="article-title">个人理财规划全攻略：从零搭建你的理财体系</div>
+                                <div class="article-desc">从现金流管理到保险、投资配置，一套完整的理财规划框架，普通人可执行。</div>
+                                <div class="article-meta">
+                                    <span>📅 2026年3月</span>
+                                    <span>⏱ 约10分钟</span>
+                                    <span>👤 入门必读</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 已有文章：货币基金vs银行存款 -->
+                <div class="col-md-6 col-lg-4 article-item" data-category="beginner">
+                    <a href="article-money-vs-bank.html" style="text-decoration:none;">
+                        <div class="article-card">
+                            <div class="article-cover" style="background: linear-gradient(135deg, #43e97b22 0%, #38f9d722 100%);">🏦</div>
+                            <div class="article-body">
+                                <div class="article-tag" style="background:#E8F5E9; color:#2e7d32;">理财入门</div>
+                                <div class="article-title">货币基金 vs 银行存款：把钱存哪里更合算？</div>
+                                <div class="article-desc">两类产品的收益、流动性、风险对比，帮你决定日常闲置资金放哪里最划算。</div>
+                                <div class="article-meta">
+                                    <span>📅 2026年2月</span>
+                                    <span>⏱ 约7分钟</span>
+                                    <span>👤 新手必读</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 已有文章：债券基金 -->
+                <div class="col-md-6 col-lg-4 article-item" data-category="fund">
+                    <a href="article-bond-fund.html" style="text-decoration:none;">
+                        <div class="article-card">
+                            <div class="article-cover" style="background: linear-gradient(135deg, #a18cd122 0%, #fbc2eb22 100%);">📜</div>
+                            <div class="article-body">
+                                <div class="article-tag" style="background:#EDE7F6; color:#6A1B9A;">基金投资</div>
+                                <div class="article-title">债券基金详解：稳健收益背后的逻辑与风险</div>
+                                <div class="article-desc">什么是债券基金？纯债、混合债怎么区分？适合什么样的投资者？一文说清楚。</div>
+                                <div class="article-meta">
+                                    <span>📅 2026年2月</span>
+                                    <span>⏱ 约9分钟</span>
+                                    <span>👤 稳健型</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 已有文章：指数基金 -->
+                <div class="col-md-6 col-lg-4 article-item" data-category="fund">
+                    <a href="article-index-fund.html" style="text-decoration:none;">
+                        <div class="article-card">
+                            <div class="article-cover" style="background: linear-gradient(135deg, #ffecd222 0%, #fcb69f22 100%);">📈</div>
+                            <div class="article-body">
+                                <div class="article-tag" style="background:#FFF3E0; color:#E65100;">基金投资</div>
+                                <div class="article-title">指数基金投资全解析：为什么巴菲特推荐指数基金</div>
+                                <div class="article-desc">指数基金的运作原理、主流指数介绍、ETF vs 场外，以及定投策略详解。</div>
+                                <div class="article-meta">
+                                    <span>📅 2026年2月</span>
+                                    <span>⏱ 约11分钟</span>
+                                    <span>👤 进阶推荐</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- 已有文章：A股分析 -->
+                <div class="col-md-6 col-lg-4 article-item" data-category="astock">
+                    <a href="article-astock-2026.html" style="text-decoration:none;">
+                        <div class="article-card">
+                            <div class="article-cover" style="background: linear-gradient(135deg, #667eea22 0%, #764ba222 100%);">🇨🇳</div>
+                            <div class="article-body">
+                                <div class="article-tag" style="background:#E8EAF6; color:#283593;">A股市场</div>
+                                <div class="article-title">2026年A股市场结构分析：科技、红利、消费三条主线</div>
+                                <div class="article-desc">从宏观环境、政策方向、估值水位三个维度，梳理2026年A股市场结构性机会。</div>
+                                <div class="article-meta">
+                                    <span>📅 2026年3月</span>
+                                    <span>⏱ 约12分钟</span>
+                                    <span>👤 进阶参考</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
             </div>
 
             <!-- 更多内容预告 -->
             <div style="margin-top: var(--spacing-12);">
-                <h3 style="font-size:22px; font-weight:600; margin-bottom: var(--spacing-6); color: var(--color-text-secondary);">更多内容整理中</h3>
+                <h3 style="font-size:22px; font-weight:600; margin-bottom: var(--spacing-6); color: var(--color-text-secondary);">即将上线</h3>
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-3">
                         <div class="card" style="opacity:0.55; pointer-events:none;">
                             <div class="card-body" style="padding: var(--spacing-5);">
                                 <div style="font-size:28px; margin-bottom: var(--spacing-2);">📊</div>
-                                <h5 style="font-weight:600; font-size:15px;">股票投资入门</h5>
-                                <p style="font-size:13px; color:var(--color-text-hint); margin:0;">基本面分析、技术分析基础知识</p>
+                                <h5 style="font-weight:600; font-size:15px;">股票基本面分析入门</h5>
+                                <p style="font-size:13px; color:var(--color-text-hint); margin:0;">PE/PB/ROE等核心指标解读</p>
                             </div>
                         </div>
                     </div>
@@ -159,7 +275,7 @@
                         <div class="card" style="opacity:0.55; pointer-events:none;">
                             <div class="card-body" style="padding: var(--spacing-5);">
                                 <div style="font-size:28px; margin-bottom: var(--spacing-2);">🔒</div>
-                                <h5 style="font-weight:600; font-size:15px;">保险选购指南</h5>
+                                <h5 style="font-weight:600; font-size:15px;">保险选购实操指南</h5>
                                 <p style="font-size:13px; color:var(--color-text-hint); margin:0;">重疾险、医疗险、意外险如何配置</p>
                             </div>
                         </div>
