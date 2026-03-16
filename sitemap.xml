@@ -60,7 +60,7 @@
   </url>
   <url>
     <loc>https://ourlyg.com/products/weixin-licaitong.html</loc>
-    <lastmod>2026-03-14</lastmod>
+    <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -84,7 +84,7 @@
   </url>
   <url>
     <loc>https://ourlyg.com/products/weixin-lingqiantong.html</loc>
-    <lastmod>2026-03-15</lastmod>
+    <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -197,6 +197,12 @@
     <lastmod>2026-03-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-treasury-repo.html</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://ourlyg.com/knowledge/article-money-vs-bank.html</loc>
