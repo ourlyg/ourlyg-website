@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="提交分析需求 - 理易港AI金融分析服务在线留言">
+    <title>提交需求 - 理易港 AI金融分析</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .req-page {
+            background: #f8f9ff;
+            min-height: 100vh;
+            padding: 100px 0 60px;
+        }
+        .req-card {
+            background: white;
+            border-radius: 24px;
+            padding: 44px 48px;
+            box-shadow: 0 8px 40px rgba(102,126,234,0.10);
+            border: 1px solid #ede9fe;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+        .req-card h1 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+        .req-card .sub {
+            color: #888;
+            font-size: 15px;
+            margin-bottom: 32px;
+        }
+        .form-label {
+            font-weight: 600;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 6px;
+        }
+        .form-control, .form-select {
+            border-radius: 10px;
+            border: 1.5px solid #e5e7eb;
+            padding: 11px 15px;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.12);
+        }
+        textarea.form-control { min-height: 120px; resize: vertical; }
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 50px;
+            padding: 14px 40px;
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(102,126,234,0.3);
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(102,126,234,0.4);
+        }
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .price-hint {
+            background: #f0f4ff;
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 13px;
+            color: #5c6bc0;
+            margin-top: 8px;
+        }
+        .required-mark { color: #ef4444; margin-left: 2px; }
+        .divider {
+            border: none;
+            border-top: 1px solid #f0f0f0;
+            margin: 28px 0;
+        }
+        .success-box {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .success-box .success-icon {
+            font-size: 56px;
+            margin-bottom: 16px;
+        }
+        .success-box h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .success-box p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .step-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+        .step-pill {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f0f4ff;
+            border-radius: 50px;
+            padding: 6px 14px;
+            font-size: 13px;
+            color: #5c6bc0;
+        }
+        .step-pill .num {
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        @media (max-width: 600px) {
+            .req-card { padding: 28px 20px; border-radius: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span class="logo-icon">📊</span>理易港</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="samples/index.html">样本报告</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="service-request.html">提交需求</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="req-page">
+        <div class="container">
+            <div class="req-card">
+
+                <!-- 流程提示 -->
+                <div class="step-row">
+                    <div class="step-pill"><div class="num">1</div>填写需求</div>
+                    <div class="step-pill"><div class="num">2</div>收到报价确认</div>
+                    <div class="step-pill"><div class="num">3</div>AI开始分析</div>
+                    <div class="step-pill"><div class="num">4</div>交付报告</div>
+                </div>
+
+                <h1>📋 提交分析需求</h1>
+                <p class="sub">填写完成后我会在 <strong>4小时内</strong> 回复报价，确认后开始分析</p>
+
+                <!-- 表单 -->
+                <form id="requestForm" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
+                    <!-- 隐藏字段：来源页和时间 -->
+                    <input type="hidden" name="_subject" value="[理易港] 新的分析需求">
+                    <input type="hidden" name="_next" value="https://ourlyg.com/service-request.html?success=1">
+                    <input type="hidden" name="来源" id="source_field" value="">
+
+                    <div class="mb-4">
+                        <label class="form-label">服务类型<span class="required-mark">*</span></label>
+                        <select class="form-select" name="服务类型" id="serviceType" required onchange="updatePriceHint(this.value)">
+                            <option value="" disabled selected>请选择你需要的服务</option>
+                            <option value="股票诊断报告">📈 股票诊断报告（基础版 ¥9.9起）</option>
+                            <option value="每日财经简报">📰 每日财经简报（月度订阅 ¥29起）</option>
+                            <option value="持仓诊断分析">🗂️ 持仓诊断分析（单次 ¥29起）</option>
+                            <option value="个股深度研报">🔬 个股深度研报（完整版 ¥59起）</option>
+                            <option value="自定义需求">💬 其他/自定义需求</option>
+                        </select>
+                        <div class="price-hint" id="priceHint" style="display:none;"></div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">具体需求描述<span class="required-mark">*</span></label>
+                        <textarea class="form-control" name="需求描述" id="description" required placeholder="请尽量详细描述，比如：
+- 股票诊断：「分析贵州茅台600519，重点看近期趋势，需要操作建议」
+- 持仓分析：「我持有A股三只股票，需要看组合风险和是否需要调仓」
+- 财经简报：「每天早8点发送，关注新能源和科技行业」"></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">股票代码（如适用）</label>
+                        <input type="text" class="form-control" name="股票代码" placeholder="如：600519 贵州茅台，300750 宁德时代（多个用逗号分隔）">
+                        <div style="font-size:12px; color:#aaa; margin-top:5px;">如需分析具体股票，请填写代码和名称，方便我快速定位</div>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="mb-4">
+                        <label class="form-label">您的称呼<span class="required-mark">*</span></label>
+                        <input type="text" class="form-control" name="称呼" required placeholder="怎么称呼您？（支持匿名，如：老张、投资新手）">
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">联系方式<span class="required-mark">*</span></label>
+                        <input type="text" class="form-control" name="联系方式" required placeholder="微信号 / 手机号 / 邮箱，方便我回复报价和交付报告">
+                        <div style="font-size:12px; color:#aaa; margin-top:5px;">仅用于本次服务沟通，不会外泄或用于其他用途</div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">期望交付时间</label>
+                        <select class="form-select" name="期望交付时间">
+                            <option value="无特殊要求">无特殊要求（4-24小时内）</option>
+                            <option value="今天内">今天内（加急，可能影响报价）</option>
+                            <option value="明天前">明天前</option>
+                            <option value="本周内">本周内</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label">预算参考（可选）</label>
+                        <select class="form-select" name="预算参考">
+                            <option value="不超过50元">不超过 ¥50</option>
+                            <option value="50-100元">¥50 - ¥100</option>
+                            <option value="100-200元">¥100 - ¥200</option>
+                            <option value="200元以上">¥200 以上，质量优先</option>
+                            <option value="按需报价">按需报价，以你为准</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        提交需求，等待回复 →
+                    </button>
+                    <p style="font-size:12px; color:#bbb; text-align:center; margin-top:12px; margin-bottom:0;">
+                        提交即表示同意我们使用上述信息联系您
+                    </p>
+                </form>
+
+                <!-- 成功提示 -->
+                <div class="success-box" id="successBox">
+                    <div class="success-icon">🎉</div>
+                    <h3>需求已收到！</h3>
+                    <p>我会在 <strong>4小时内</strong> 联系您确认报价。<br>感谢您的信任，期待帮您把数据变成决策。</p>
+                    <a href="index.html" style="display:inline-block; margin-top:20px; background:linear-gradient(135deg,#667eea,#764ba2); color:white; padding:12px 32px; border-radius:50px; text-decoration:none; font-weight:700;">返回首页</a>
+                </div>
+
+            </div>
+
+            <!-- 常见问题 -->
+            <div style="max-width:680px; margin: 32px auto 0;">
+                <h5 style="font-weight:700; margin-bottom:16px; color:#333;">❓ 常见问题</h5>
+                <div style="display:flex; flex-direction:column; gap:12px;">
+                    <details style="background:white; border-radius:12px; padding:16px 20px; border:1px solid #f0f0f0; cursor:pointer;">
+                        <summary style="font-weight:600; font-size:14px; color:#333; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                            报告多久能交付？
+                            <span style="color:#667eea; font-size:18px;">+</span>
+                        </summary>
+                        <p style="color:#666; font-size:14px; margin:10px 0 0; line-height:1.7;">基础股票诊断报告通常2-4小时完成；持仓分析和深度研报需要4-12小时；财经简报为每日定时推送。加急需求可优先处理，报价时会注明。</p>
+                    </details>
+                    <details style="background:white; border-radius:12px; padding:16px 20px; border:1px solid #f0f0f0; cursor:pointer;">
+                        <summary style="font-weight:600; font-size:14px; color:#333; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                            怎么付款？
+                            <span style="color:#667eea; font-size:18px;">+</span>
+                        </summary>
+                        <p style="color:#666; font-size:14px; margin:10px 0 0; line-height:1.7;">确认报价后，通过微信/支付宝转账付款，付款后开始分析。报告通过微信或邮件交付。</p>
+                    </details>
+                    <details style="background:white; border-radius:12px; padding:16px 20px; border:1px solid #f0f0f0; cursor:pointer;">
+                        <summary style="font-weight:600; font-size:14px; color:#333; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                            报告质量怎么保证？
+                            <span style="color:#667eea; font-size:18px;">+</span>
+                        </summary>
+                        <p style="color:#666; font-size:14px; margin:10px 0 0; line-height:1.7;">你可以先看<a href="samples/index.html" style="color:#667eea;">样本报告</a>了解输出质量。报告交付后，提供一次免费追问机会。如果报告内容有明显错误，可申请重做。</p>
+                    </details>
+                    <details style="background:white; border-radius:12px; padding:16px 20px; border:1px solid #f0f0f0; cursor:pointer;">
+                        <summary style="font-weight:600; font-size:14px; color:#333; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+                            分析结果一定准确吗？
+                            <span style="color:#667eea; font-size:18px;">+</span>
+                        </summary>
+                        <p style="color:#666; font-size:14px; margin:10px 0 0; line-height:1.7;">市场没有人能保证准确率——任何预测都存在不确定性。我提供的是基于数据的系统性分析框架和参考意见，最终操作决策由您自己做。这是诚实的声明，也是对您负责的态度。</p>
+                    </details>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer" style="margin-top:40px;">
+        <div class="container">
+            <div style="padding: var(--spacing-5) 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; border-top:1px solid var(--color-border-light);">
+                <p style="font-size:13px; color:var(--color-text-hint); margin:0;">© 2026 理易港 ourlyg.com</p>
+                <p style="font-size:13px; color:var(--color-text-hint); margin:0;">分析内容仅供参考，不构成投资建议</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 价格提示
+        const priceMap = {
+            '股票诊断报告': '覆盖技术指标、趋势判断、支撑压力位、操作建议，通常2-4小时交付',
+            '每日财经简报': '每天早8:30前推送，包含重点财经新闻+市场解读+板块关注提示',
+            '持仓诊断分析': '分析您的持仓结构、行业集中度、风险暴露，给出再平衡建议',
+            '个股深度研报': '完整覆盖基本面+技术面+估值+风险，适合做中长期决策参考',
+            '自定义需求': '描述您的具体需求，我来告诉您是否可以完成以及报价'
+        };
+        function updatePriceHint(val) {
+            const hint = document.getElementById('priceHint');
+            if (priceMap[val]) {
+                hint.textContent = '💡 ' + priceMap[val];
+                hint.style.display = 'block';
+            } else {
+                hint.style.display = 'none';
+            }
+        }
+
+        // 记录来源
+        const urlParams = new URLSearchParams(window.location.search);
+        const serviceParam = urlParams.get('service');
+        if (serviceParam) {
+            const sel = document.getElementById('serviceType');
+            for (let opt of sel.options) {
+                if (opt.value.includes(serviceParam)) {
+                    opt.selected = true;
+                    updatePriceHint(opt.value);
+                    break;
+                }
+            }
+        }
+        document.getElementById('source_field').value = document.referrer || '直接访问';
+
+        // 成功页检测
+        if (window.location.search.includes('success=1')) {
+            document.getElementById('requestForm').style.display = 'none';
+            document.getElementById('successBox').style.display = 'block';
+        }
+
+        // 表单提交状态
+        document.getElementById('requestForm').addEventListener('submit', function(e) {
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.textContent = '提交中...';
+        });
+    </script>
+</body>
+</html>
