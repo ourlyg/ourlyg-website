@@ -193,8 +193,8 @@
                     <div class="mb-4">
                         <label class="form-label">具体需求描述<span class="required-mark">*</span></label>
                         <textarea class="form-control" name="需求描述" id="description" required placeholder="请尽量详细描述，比如：
-- 股票诊断：「分析贵州茅台600519，重点看近期趋势，需要操作建议」
-- 持仓分析：「我持有A股三只股票，需要看组合风险和是否需要调仓」
+- 股票诊断：「分析贵州茅台600519，重点看近期基本面和技术面，提供数据参考」
+- 持仓分析：「我持有A股三只股票，需要分析组合风险敞口和行业集中度」
 - 财经简报：「每天早8点发送，关注新能源和科技行业」"></textarea>
                     </div>
 
@@ -301,16 +301,32 @@
                 <p style="font-size:13px; color:var(--color-text-hint); margin:0;">分析内容仅供参考，不构成投资建议</p>
             </div>
         </div>
+    
+    <!-- ===== 合规免责声明 ===== -->
+    <div style="background:#0d0d1a; border-top:1px solid rgba(255,255,255,0.06); padding:18px 0; margin-top:0;">
+        <div class="container">
+            <p style="font-size:12px; color:rgba(255,255,255,0.35); line-height:1.8; margin:0; text-align:center;">
+                ⚠️ <strong style="color:rgba(255,255,255,0.5);">重要免责声明：</strong>
+                本网站所有内容（包括但不限于文章、报告、分析、数据）均基于公开信息整理，<strong style="color:rgba(255,255,255,0.5);">仅供参考，不构成任何投资建议或投资顾问服务</strong>。
+                市场有风险，投资须谨慎。历史表现不代表未来收益，任何分析均存在不确定性。
+                投资者应根据自身财务状况、风险承受能力及投资目标，独立作出投资判断，并承担相应风险。
+                如需专业投资建议，请咨询具有合法资质的持牌金融机构或金融顾问。
+                本平台不对任何因参考本网站内容而产生的投资损失承担责任。
+            </p>
+        </div>
+    </div>
+    <!-- ===== /合规免责声明 ===== -->
+
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // 价格提示
         const priceMap = {
-            '股票诊断报告': '覆盖技术指标、趋势判断、支撑压力位、操作建议，通常2-4小时交付',
+            '股票诊断报告': '覆盖技术指标、趋势研判、支撑压力位分析，提供数据参考，通常2-4小时交付',
             '每日财经简报': '每天早8:30前推送，包含重点财经新闻+市场解读+板块关注提示',
-            '持仓诊断分析': '分析您的持仓结构、行业集中度、风险暴露，给出再平衡建议',
-            '个股深度研报': '完整覆盖基本面+技术面+估值+风险，适合做中长期决策参考',
+            '持仓诊断分析': '分析持仓结构、行业集中度、风险敞口，提供数据层面的参考信息',
+            '个股深度研报': '完整覆盖基本面+技术面+估值+风险，适合做中长期研究参考',
             '自定义需求': '描述您的具体需求，我来告诉您是否可以完成以及报价'
         };
         function updatePriceHint(val) {
