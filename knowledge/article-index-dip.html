@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="指数基金定投完全指南2026：什么是定投、如何选指数基金、沪深300还是中证500、定投频率与金额怎么定、慧定投vs普通定投对比，新手入门必读">
+    <meta name="keywords" content="指数基金定投,定投入门,沪深300定投,中证500定投,定投技巧,如何定投,指数基金选择,定投多少钱,定投频率,长期投资,复利投资,定投止盈">
+    <title>指数基金定投完全指南2026：从入门到止盈，手把手教会你 - 我们的理易港</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-header { background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%); color: white; padding: var(--spacing-16) 0 var(--spacing-12); }
+        .article-meta { display: flex; gap: var(--spacing-4); font-size: 14px; opacity: 0.85; margin-top: var(--spacing-4); flex-wrap: wrap; }
+        .article-body { font-size: 16px; line-height: 1.9; color: var(--color-text-primary); }
+        .article-body h2 { font-size: 26px; font-weight: 700; margin: var(--spacing-10) 0 var(--spacing-4); color: var(--color-text-primary); border-left: 4px solid #2E7D32; padding-left: var(--spacing-4); }
+        .article-body h3 { font-size: 20px; font-weight: 600; margin: var(--spacing-6) 0 var(--spacing-3); }
+        .article-body p { margin-bottom: var(--spacing-4); }
+        .tip-box { background: #E8F5E9; border-left: 4px solid #00C853; border-radius: 6px; padding: var(--spacing-4) var(--spacing-6); margin: var(--spacing-6) 0; }
+        .tip-box strong { color: #00695C; }
+        .warning-box { background: #FFF3E0; border-left: 4px solid #E65100; border-radius: 6px; padding: var(--spacing-4) var(--spacing-6); margin: var(--spacing-6) 0; }
+        .warning-box strong { color: #E65100; }
+        .info-box { background: #E3F2FD; border-left: 4px solid #1976D2; border-radius: 6px; padding: var(--spacing-4) var(--spacing-6); margin: var(--spacing-6) 0; }
+        .info-box strong { color: #1976D2; }
+        .compare-table th { background: #2E7D32; color: white; padding: 14px 16px; }
+        .compare-table td { padding: 12px 16px; vertical-align: middle; }
+        .compare-table tr:nth-child(even) { background: var(--color-bg-gray); }
+        .toc { background: var(--color-bg-gray); border-radius: 12px; padding: var(--spacing-6); margin-bottom: var(--spacing-8); }
+        .toc-title { font-weight: 700; font-size: 18px; margin-bottom: var(--spacing-3); }
+        .toc a { color: #2E7D32; text-decoration: none; display: block; padding: 4px 0; font-size: 15px; }
+        .toc a:hover { text-decoration: underline; }
+        .conclusion-box { background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%); color: white; border-radius: 16px; padding: var(--spacing-8); margin: var(--spacing-8) 0; }
+        .step-card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; border: 1px solid var(--color-border-light); }
+        .step-num { width: 40px; height: 40px; background: #2E7D32; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; flex-shrink: 0; }
+        .highlight-card { background: linear-gradient(135deg, #E8F5E9 0%, #E3F2FD 100%); border-radius: 12px; padding: 24px; margin: 24px 0; border: 1px solid #A5D6A7; }
+        .index-card { border: 1px solid var(--color-border-light); border-radius: 10px; padding: 20px; background: white; transition: all 0.2s; }
+        .index-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" target="_self"><span class="logo-icon">💰</span>我们的理易港</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products/index.html">产品测评</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tools/index.html">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">知识科普</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 文章头部 -->
+    <section class="article-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <span class="badge bg-light text-dark mb-3" style="padding: 8px 16px; font-size: 13px;">基金投资</span>
+                    <h1 style="font-size: 38px; font-weight: 700; line-height: 1.3; margin-bottom: var(--spacing-4);">指数基金定投完全指南：从入门到止盈，手把手教会你</h1>
+                    <p style="font-size: 18px; opacity: 0.9; margin-bottom: var(--spacing-4);">每月存1000元，20年后到底能有多少？不是复利幻觉，是真实能做到的事</p>
+                    <div class="article-meta">
+                        <span>📅 2026年3月</span>
+                        <span>⏱ 阅读约12分钟</span>
+                        <span>🏷 定投入门 · 指数基金 · 长期投资</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 正文 -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+
+                    <!-- 目录 -->
+                    <div class="toc">
+                        <div class="toc-title">📋 本文目录</div>
+                        <a href="#what-is">一、什么是指数基金？为什么要定投？</a>
+                        <a href="#which-index">二、新手应该选哪个指数？</a>
+                        <a href="#how-to-dip">三、定投的正确姿势：频率、金额、平台</a>
+                        <a href="#smart-dip">四、普通定投 vs 智能定投，哪个更赚？</a>
+                        <a href="#stop-profit">五、最重要的一步：如何止盈？</a>
+                        <a href="#common-mistakes">六、新手最容易踩的5个坑</a>
+                        <a href="#start">七、现在就开始：0到1的具体操作</a>
+                    </div>
+
+                    <div class="article-body">
+
+                        <!-- 第一节 -->
+                        <h2 id="what-is">一、什么是指数基金？为什么要定投？</h2>
+
+                        <p>想象你买了一篮子股票，里面装的是A股市场最重要的300家公司——这就是沪深300指数基金的本质。你不需要研究哪只股票好，只需要押注"中国经济的整体增长"，指数基金帮你自动做分散投资。</p>
+
+                        <p><strong>指数基金的核心逻辑只有一句话：</strong>长期来看，市场会涨，你只要买全市场，时间就是你的朋友。</p>
+
+                        <div class="highlight-card">
+                            <h5 style="font-weight:700; margin-bottom:12px;">📊 历史数据说话</h5>
+                            <p style="margin:0; line-height:1.8;">沪深300指数从2005年基准点1000点，到2024年约3800点，20年涨了约3.8倍，年化收益约7%。同期银行存款利率不到3%。即便经历了2008年金融危机、2015年股灾、2022年大跌，<strong>坚持定投的投资者基本都赚到了钱</strong>。</p>
+                        </div>
+
+                        <h3>为什么要用"定投"方式？</h3>
+
+                        <p>一次性买入的风险在于：如果你在市场高点买入（比如2007年高点6124点），可能等待10年还在亏损。定投则是每月固定金额买入，高点买少、低点买多，自动拉低平均成本——这就是著名的"美元成本平均法"（DCA）。</p>
+
+                        <div class="tip-box">
+                            <strong>💡 定投的神奇之处：</strong>市场下跌时，你用同样的钱能买更多份额，相当于打折买入；市场上涨时，你之前低点买的份额开始涨价。总体上，定投比一次性买入更平滑风险，更适合普通投资者。
+                        </div>
+
+                        <!-- 第二节 -->
+                        <h2 id="which-index">二、新手应该选哪个指数？</h2>
+
+                        <p>市面上指数基金有几百只，但新手其实只需要关注几个核心指数。</p>
+
+                        <div class="row g-3 my-4">
+                            <div class="col-md-6">
+                                <div class="index-card">
+                                    <h5 style="font-weight:700; color:#2E7D32; margin-bottom:8px;">📈 沪深300</h5>
+                                    <p style="font-size:14px; color:var(--color-text-secondary); margin-bottom:8px;">A股市值最大的300家公司，涵盖茅台、宁德、工商银行等龙头，代表中国经济核心力量。</p>
+                                    <div style="font-size:13px; line-height:1.8; color:var(--color-text-hint);">
+                                        <div>波动性：中等</div>
+                                        <div>历史年化：约7%</div>
+                                        <div>代表产品：华泰柏瑞沪深300ETF（510300）</div>
+                                    </div>
+                                    <div style="margin-top:10px;"><span style="background:#E8F5E9; color:#00695C; padding:3px 10px; border-radius:4px; font-size:12px; font-weight:600;">新手首选 ⭐</span></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="index-card">
+                                    <h5 style="font-weight:700; color:#1565C0; margin-bottom:8px;">📊 中证500</h5>
+                                    <p style="font-size:14px; color:var(--color-text-secondary); margin-bottom:8px;">沪深300之外的500家中型企业，更多成长性公司，代表中国经济的"中坚力量"。</p>
+                                    <div style="font-size:13px; line-height:1.8; color:var(--color-text-hint);">
+                                        <div>波动性：较大</div>
+                                        <div>历史年化：约8%（但回撤也更大）</div>
+                                        <div>代表产品：南方中证500ETF（510500）</div>
+                                    </div>
+                                    <div style="margin-top:10px;"><span style="background:#E3F2FD; color:#1565C0; padding:3px 10px; border-radius:4px; font-size:12px; font-weight:600;">进阶配置</span></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="index-card">
+                                    <h5 style="font-weight:700; color:#6A1B9A; margin-bottom:8px;">🌐 纳斯达克100</h5>
+                                    <p style="font-size:14px; color:var(--color-text-secondary); margin-bottom:8px;">美国科技股龙头：苹果、英伟达、微软、谷歌、特斯拉。分散到美国市场，对冲A股风险。</p>
+                                    <div style="font-size:13px; line-height:1.8; color:var(--color-text-hint);">
+                                        <div>波动性：大</div>
+                                        <div>历史年化：约15%（近10年）</div>
+                                        <div>代表产品：华夏纳斯达克100ETF（159941）</div>
+                                    </div>
+                                    <div style="margin-top:10px;"><span style="background:#EDE7F6; color:#6A1B9A; padding:3px 10px; border-radius:4px; font-size:12px; font-weight:600;">全球配置</span></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="index-card">
+                                    <h5 style="font-weight:700; color:#BF360C; margin-bottom:8px;">🏭 中证A500</h5>
+                                    <p style="font-size:14px; color:var(--color-text-secondary); margin-bottom:8px;">2024年新推出，覆盖A股各行业龙头500家，比沪深300更分散，行业均衡度更高。</p>
+                                    <div style="font-size:13px; line-height:1.8; color:var(--color-text-hint);">
+                                        <div>波动性：中等</div>
+                                        <div>上市时间短，暂无长期历史数据</div>
+                                        <div>代表产品：多家基金公司均有发行</div>
+                                    </div>
+                                    <div style="margin-top:10px;"><span style="background:#FBE9E7; color:#BF360C; padding:3px 10px; border-radius:4px; font-size:12px; font-weight:600;">新兴选择</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <strong>💡 新手建议：</strong>从<strong>沪深300</strong>开始，简单、分散、历史数据充分。有了一定经验后，可以考虑50%沪深300 + 30%中证500 + 20%纳斯达克100的"哑铃型"配置，兼顾A股稳健和全球科技成长。
+                        </div>
+
+                        <!-- 第三节 -->
+                        <h2 id="how-to-dip">三、定投的正确姿势：频率、金额、平台</h2>
+
+                        <h3>定投频率：月投还是周投？</h3>
+
+                        <p>理论上，频率越高越能平滑成本，但实际研究表明：<strong>月定投和周定投的长期收益差异极其微小</strong>（通常不超过0.5%）。建议大多数人选择月定投，简单省心，和工资发放频率同步。</p>
+
+                        <h3>定投金额：多少合适？</h3>
+
+                        <div class="warning-box">
+                            <strong>⚠️ 铁律一条：</strong>定投的钱必须是"3–5年不用的闲钱"。如果这笔钱半年后要用，市场正好在低点，你被迫在亏损时赎回，定投的逻辑就完全失效了。
+                        </div>
+
+                        <p>金额没有绝对标准，参考原则：</p>
+
+                        <ul style="line-height:2.2; color:var(--color-text-secondary);">
+                            <li><strong>入门档：</strong>月收入的10%–20%，哪怕每月500元也行</li>
+                            <li><strong>稳健档：</strong>月收入的20%–30%，让钱认真工作</li>
+                            <li><strong>激进档：</strong>每月收入30%以上，需确保生活资金充足</li>
+                        </ul>
+
+                        <p>不要因为"钱少"就放弃定投。每月1000元定投，按年化7%，20年后约61万元；按年化9%，20年后约68万元。起步越早，复利效果越显著。</p>
+
+                        <h3>选哪个平台定投？</h3>
+
+                        <div class="row g-3 my-4">
+                            <div class="col-md-4">
+                                <div class="card h-100 p-3 text-center">
+                                    <div style="font-size:24px; margin-bottom:8px;">📱</div>
+                                    <h6 style="font-weight:700;">天天基金</h6>
+                                    <p style="font-size:13px; color:var(--color-text-secondary); margin:0;">申购费1折，品种最全（10000+），数据工具专业，<strong>定投首选</strong></p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 p-3 text-center">
+                                    <div style="font-size:24px; margin-bottom:8px;">🐜</div>
+                                    <h6 style="font-weight:700;">蚂蚁财富</h6>
+                                    <p style="font-size:13px; color:var(--color-text-secondary); margin:0;">支付宝生态，慧定投智能策略，适合懒人，申购费1折</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 p-3 text-center">
+                                    <div style="font-size:24px; margin-bottom:8px;">🏦</div>
+                                    <h6 style="font-weight:700;">券商账户</h6>
+                                    <p style="font-size:13px; color:var(--color-text-secondary); margin:0;">直接买ETF（场内指数基金），费率极低（0.015%），灵活但需要炒股账户</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 第四节 -->
+                        <h2 id="smart-dip">四、普通定投 vs 智能定投，哪个更赚？</h2>
+
+                        <p>普通定投就是每月固定金额买入，不管市场高低；智能定投（如蚂蚁财富的"慧定投"）会根据市场估值，低估时多买，高估时少买甚至暂停，力求更低的平均成本。</p>
+
+                        <div class="table-responsive my-4">
+                            <table class="table compare-table">
+                                <thead>
+                                    <tr>
+                                        <th>对比维度</th>
+                                        <th>普通定投</th>
+                                        <th>智能定投（慧定投）</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>操作复杂度</td><td>极简，设一次不用管</td><td>需要了解估值概念</td></tr>
+                                    <tr><td>低估时买入量</td><td>固定金额</td><td>多买（策略加仓）</td></tr>
+                                    <tr><td>高估时</td><td>继续买</td><td>少买或暂停</td></tr>
+                                    <tr><td>长期效果</td><td>接近市场回报</td><td>理论上更低平均成本</td></tr>
+                                    <tr><td>前提条件</td><td>无</td><td>市场有"高估/低估"的判断</td></tr>
+                                    <tr><td>适合人群</td><td>完全新手、懒人</td><td>了解估值、想进一步优化</td></tr>
+                                    <tr><td>推荐</td><td>⭐⭐⭐⭐</td><td>⭐⭐⭐⭐⭐</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="tip-box">
+                            <strong>💡 简单判断估值高低：</strong>看沪深300的<strong>PE（市盈率）</strong>——PE < 12 被普遍认为低估，>18 为高估。可在天天基金App"指数诊断"功能中一键查看。低估加仓，高估减仓，长期来看比无脑定投多赚10%–20%。
+                        </div>
+
+                        <!-- 第五节 -->
+                        <h2 id="stop-profit">五、最重要的一步：如何止盈？</h2>
+
+                        <p>很多人只知道定投，却不知道什么时候卖。没有止盈计划的定投，就像在银行存款却从不取款——钱一直在那里，但你无法真正享用复利成果。</p>
+
+                        <h3>止盈方式一：目标收益率止盈</h3>
+
+                        <p>设定目标：当总浮盈达到50%（或你设定的目标）时，全部或部分赎回，落袋为安。然后重新开始定投。这是最简单粗暴的方式，适合心态容易波动的投资者。</p>
+
+                        <h3>止盈方式二：估值止盈（更科学）</h3>
+
+                        <p>当沪深300的PE超过20，代表市场已经进入高估区域，开始分批赎回（比如每月赎回10%）。当PE降回12以下，重新开始买入。这个方法更科学，但需要定期查看估值。</p>
+
+                        <h3>止盈方式三：目标金额止盈</h3>
+
+                        <p>为每笔定投设定目标（如3年内赚50%），达到后赎回，不管市场是否继续上涨。牺牲部分上涨空间，换取确定性落袋。适合风险偏好较低的投资者。</p>
+
+                        <div class="warning-box">
+                            <strong>⚠️ 止盈的关键误区：</strong>不要因为"还能再涨"而一直不止盈。历史反复证明，市场不会永远涨，2015年6000点买入的人等了近10年才回本。适时止盈、循环滚动，长期收益反而更高。
+                        </div>
+
+                        <!-- 第六节 -->
+                        <h2 id="common-mistakes">六、新手最容易踩的5个坑</h2>
+
+                        <div class="step-card">
+                            <div class="step-num">1</div>
+                            <div>
+                                <strong style="display:block; font-size:16px; margin-bottom:4px;">❌ 定投热门主题基金而不是宽基指数</strong>
+                                <p style="margin:0; color:var(--color-text-secondary); font-size:14px; line-height:1.7;">新能源、半导体、医疗这类主题基金波动大，高点买入可能5年都回不来本。新手永远从宽基指数（沪深300）开始，等积累了经验再做行业配置。</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-num">2</div>
+                            <div>
+                                <strong style="display:block; font-size:16px; margin-bottom:4px;">❌ 亏损时停止定投</strong>
+                                <p style="margin:0; color:var(--color-text-secondary); font-size:14px; line-height:1.7;">亏损正是定投摊薄成本的最好时机！市场跌20%，你的每月1000元能买更多份额，等市场反弹时收益更大。停止定投相当于在最低点放弃了最好的买入机会。</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-num">3</div>
+                            <div>
+                                <strong style="display:block; font-size:16px; margin-bottom:4px;">❌ 没有计划就开始，也没有止盈就一直持有</strong>
+                                <p style="margin:0; color:var(--color-text-secondary); font-size:14px; line-height:1.7;">开始前就要想好：预计投多久？目标收益率是多少？何时止盈？没有这些计划，容易在市场波动时乱了阵脚，要么提前割肉，要么错失最佳赎回时机。</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-num">4</div>
+                            <div>
+                                <strong style="display:block; font-size:16px; margin-bottom:4px;">❌ 把应急备用金拿去定投</strong>
+                                <p style="margin:0; color:var(--color-text-secondary); font-size:14px; line-height:1.7;">定投资金必须是闲置资金。家庭3–6个月生活费的应急备用金应该放在货币基金（余额宝、零钱通）里随时可取，不能投入指数基金。否则一旦急需用钱时正好市场在低点，亏损赎回就是雪上加霜。</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-num">5</div>
+                            <div>
+                                <strong style="display:block; font-size:16px; margin-bottom:4px;">❌ 看到短期亏损就换基金</strong>
+                                <p style="margin:0; color:var(--color-text-secondary); font-size:14px; line-height:1.7;">定投看的是3–5年以上的周期，短期1–2年亏20%完全正常。频繁换基金不仅产生申购/赎回费用，还可能在底部卖出、高点买入，白白损失机会成本。定了就要定住心。</p>
+                            </div>
+                        </div>
+
+                        <!-- 第七节 -->
+                        <h2 id="start">七、现在就开始：0到1的具体操作</h2>
+
+                        <p>好了，理论说够了，下面是手把手操作指南。全程15分钟，今天就能设好第一笔定投。</p>
+
+                        <div class="step-card">
+                            <div class="step-num">1</div>
+                            <div>
+                                <strong style="display:block; font-size:16px; margin-bottom:4px;">下载天天基金App</strong>
+                                <p style="margin:0; color:var(--color-text-secondary); font-size:14px;">App Store搜索"天天基金"，认准东方财富出品。注册需要实名认证（身份证+手机号），约3分钟。</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-num">2</div>
+                            <div>
+                                <strong style="display:block; font-size:16px; margin-bottom:4px;">完成风险测评</strong>
+                                <p style="margin:0; color:var(--color-text-secondary); font-size:14px;">首次购买前需完成风险承受能力评测，约10道题，5分钟完成。如实回答以获得准确的风险画像。</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-num">3</div>
+                            <div>
+                                <strong style="display:block; font-size:16px; margin-bottom:4px;">搜索并选择基金</strong>
+                                <p style="margin:0; color:var(--color-text-secondary); font-size:14px;">搜索"510300"（华泰柏瑞沪深300ETF联接A）或"沪深300"找到主流基金。查看最近5年业绩、管理费、基金规模（100亿以上较安全）。</p>
+                            </div>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-num">4</div>
+                            <div>
+                                <strong style="display:block; font-size:16px; margin-bottom:4px;">设置定投计划</strong>
+                                <p style="margin:0; color:var(--color-text-secondary); font-size:14px;">点击"定投"→ 设置金额（建议500–2000元）→ 选择每月扣款日（建议发薪后1–3天）→ 绑定银行卡→ 确认。搞定！</p>
+                            </div>
+                        </div>
+                        <div class="step-card" style="margin-bottom:0;">
+                            <div class="step-num">5</div>
+                            <div>
+                                <strong style="display:block; font-size:16px; margin-bottom:4px;">每季度复查一次，其余时候别管它</strong>
+                                <p style="margin:0; color:var(--color-text-secondary); font-size:14px;">设好之后，每3个月检查一下市场估值（PE是否超过18），到达止盈目标时赎回。其余时候不要因为短期涨跌干扰计划。<strong>定投最难的不是开始，是坚持。</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- 结论框 -->
+                        <div class="conclusion-box">
+                            <h3 style="color:white; font-weight:700; margin-bottom:16px;">📝 总结：指数基金定投的三条铁律</h3>
+                            <ul style="color:rgba(255,255,255,0.9); line-height:2.2; padding-left:20px; margin:0;">
+                                <li><strong>只用闲钱：</strong>3–5年内不用的资金才适合定投，应急备用金永远放货币基金</li>
+                                <li><strong>坚持不断：</strong>下跌时继续买，越跌越要买，这是定投摊薄成本的核心机制</li>
+                                <li><strong>有始有终：</strong>开始前确定止盈策略，到达目标后果断赎回，然后开始新一轮</li>
+                            </ul>
+                            <p style="color:rgba(255,255,255,0.8); margin-top:16px; margin-bottom:0; font-size:15px;">每月1000元，坚持20年，按年化7%计算可以积累约61万元。这不是遥不可及的目标，从今天开始，时间就是你最好的伙伴。</p>
+                        </div>
+
+                        <div class="info-box mt-5">
+                            <strong>📚 推荐延伸阅读：</strong>
+                            <ul style="margin:8px 0 0; padding-left:20px; line-height:2;">
+                                <li><a href="article-fund.html" style="color:#1976D2;">基金入门：公募基金完全指南</a></li>
+                                <li><a href="article-how-to-pick-fund.html" style="color:#1976D2;">如何挑选优质基金：5个核心指标</a></li>
+                                <li><a href="article-index-fund.html" style="color:#1976D2;">指数基金vs主动基金：到底谁更强？</a></li>
+                                <li><a href="article-risk.html" style="color:#1976D2;">理财风险等级全解析</a></li>
+                            </ul>
+                        </div>
+
+                    </div><!-- /article-body -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 我们的理易港. All rights reserved.</p>
+            <p style="margin-top: var(--spacing-2);">让理财变得简单</p>
+        </div>
+    <div style="background:#0d0d1a; border-top:1px solid rgba(255,255,255,0.06); padding:18px 0; margin-top:0;">
+        <div class="container">
+            <p style="font-size:12px; color:rgba(255,255,255,0.35); line-height:1.8; margin:0; text-align:center;">
+                ⚠️ <strong style="color:rgba(255,255,255,0.5);">重要免责声明：</strong>
+                本网站所有内容均基于公开信息整理，<strong style="color:rgba(255,255,255,0.5);">仅供参考，不构成任何投资建议</strong>。基金有风险，投资须谨慎。历史表现不代表未来收益。如需专业建议，请咨询持牌金融机构。
+            </p>
+        </div>
+    </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
