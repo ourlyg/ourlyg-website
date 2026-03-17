@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="K线图怎么看？本文20分钟带你搞懂阳线阴线、上下影线、常见K线组合（锤子线、吞没形态、十字星）以及实战中的判断思路。">
+    <meta name="keywords" content="K线图怎么看,K线图入门,蜡烛图技术分析,阳线阴线,锤子线,K线组合形态,股票技术分析入门">
+    <title>K线图基础入门：20分钟看懂技术分析 - 理易港知识库</title>
+    <link rel="canonical" href="https://ourlyg.com/knowledge/article-candlestick-basics.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-hero {
+            background: linear-gradient(135deg, #1a0a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 100px 0 60px;
+            color: white;
+        }
+        .article-hero h1 { font-size: 36px; font-weight: 800; line-height: 1.3; margin-bottom: 16px; }
+        .article-hero .meta { font-size: 14px; opacity: 0.65; }
+        .article-body { max-width: 780px; margin: 0 auto; padding: 48px 20px; }
+        .article-body h2 { font-size: 24px; font-weight: 800; margin: 44px 0 16px; color: #1a1a1a; padding-bottom: 10px; border-bottom: 2px solid #e8eaf6; }
+        .article-body h3 { font-size: 18px; font-weight: 700; margin: 28px 0 12px; color: #333; }
+        .article-body p { font-size: 16px; color: #444; line-height: 1.9; margin-bottom: 16px; }
+        .article-body ul, .article-body ol { font-size: 15px; color: #444; line-height: 1.9; margin-bottom: 20px; padding-left: 24px; }
+        .article-body li { margin-bottom: 8px; }
+        .highlight-box { background: #f0f4ff; border-left: 4px solid #667eea; border-radius: 0 12px 12px 0; padding: 18px 22px; margin: 24px 0; }
+        .highlight-box p { margin: 0; font-size: 15px; }
+        .tip-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 16px 20px; margin: 20px 0; }
+        .tip-box p { margin: 0; font-size: 15px; color: #166534; }
+        .warning-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; padding: 16px 20px; margin: 20px 0; }
+        .warning-box p { margin: 0; font-size: 15px; color: #92400e; }
+
+        /* K线可视化 */
+        .kline-demo {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 32px;
+            background: #1a1a2e;
+            border-radius: 16px;
+            margin: 28px 0;
+            flex-wrap: wrap;
+        }
+        .kline-item {
+            text-align: center;
+            color: white;
+        }
+        .kline-item .label { font-size: 12px; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+        .kline-item .candle-wrap { display: flex; flex-direction: column; align-items: center; gap: 0; }
+        .wick { width: 2px; background: currentColor; }
+        .body { width: 20px; border-radius: 2px; }
+        .candle-bull { color: #26a69a; }
+        .candle-bear { color: #ef5350; }
+        .body-bull { background: #26a69a; }
+        .body-bear { background: #ef5350; }
+        .kline-item .name { font-size: 13px; font-weight: 700; margin-top: 10px; color: white; }
+        .kline-item .desc { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 4px; max-width: 80px; line-height: 1.4; }
+
+        /* 形态卡片 */
+        .pattern-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+        .pattern-card { background: white; border: 1px solid #e8eaf6; border-radius: 14px; padding: 20px; }
+        .pattern-card .ptag { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
+        .ptag-bull { background: #dcfce7; color: #166534; }
+        .ptag-bear { background: #fee2e2; color: #991b1b; }
+        .ptag-neutral { background: #f3f4f6; color: #374151; }
+        .pattern-card .pname { font-size: 16px; font-weight: 800; color: #1a1a1a; margin-bottom: 8px; }
+        .pattern-card .pdesc { font-size: 14px; color: #555; line-height: 1.7; margin: 0; }
+
+        .cta-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 20px; padding: 36px; text-align: center; color: white; margin: 48px 0 24px; }
+        .cta-box h3 { font-size: 22px; font-weight: 800; margin-bottom: 12px; }
+        .cta-box p { font-size: 15px; opacity: 0.85; margin-bottom: 24px; }
+        .cta-box a { background: white; color: #667eea; padding: 12px 32px; border-radius: 30px; font-weight: 700; text-decoration: none; font-size: 15px; }
+        .disclaimer { background: #f8f9fa; border-radius: 12px; padding: 16px 20px; margin-top: 48px; font-size: 13px; color: #888; line-height: 1.7; }
+        @media (max-width: 600px) {
+            .article-hero h1 { font-size: 26px; }
+            .pattern-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg sticky-top" style="background: rgba(10,10,26,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.07);">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" style="font-weight:800; font-size:20px; color:white; letter-spacing:-0.5px;">
+                理易港 <span style="color:#667eea;">ourlyg</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border-color:rgba(255,255,255,0.3);">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="../index.html" style="color:rgba(255,255,255,0.75);">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../services/index.html" style="color:rgba(255,255,255,0.75);">AI分析服务</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../samples/index.html" style="color:rgba(255,255,255,0.75);">样本报告</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products/index.html" style="color:rgba(255,255,255,0.75);">产品测评</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tools/index.html" style="color:rgba(255,255,255,0.75);">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../knowledge/index.html" style="color:white; font-weight:600;">知识科普</a></li>
+                    <li class="nav-item ms-2">
+                        <a href="../service-request.html" class="btn btn-primary" style="border-radius:20px; padding:6px 18px; font-size:14px;">立即咨询</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 文章头部 -->
+    <section class="article-hero">
+        <div class="container">
+            <div style="max-width:780px; margin:0 auto;">
+                <div style="margin-bottom:16px;">
+                    <span style="background:rgba(99,102,241,0.25); color:#a5b4fc; padding:4px 14px; border-radius:20px; font-size:13px; font-weight:600;">技术分析入门</span>
+                </div>
+                <h1>K线图基础入门：<br>20分钟看懂技术分析</h1>
+                <p class="meta">2026年3月 · 阅读约10分钟 · 适合：股市新手 / 基础薄弱的投资者</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 正文 -->
+    <div class="article-body">
+
+        <p>K线图（蜡烛图）起源于18世纪日本大米期货市场，现在已经是全球最主流的价格图表形式。几乎所有炒股软件的默认界面都是K线图，但很多人看了好几年股票，依然看不懂那些红的绿的"蜡烛"到底在说什么。</p>
+
+        <p>本文用最直接的方式，帮你把K线的基础知识弄清楚。</p>
+
+        <div class="highlight-box">
+            <p><strong>K线的本质：</strong>每一根K线记录了一段时间内价格的四个关键数据——开盘价、收盘价、最高价、最低价。看懂这四个数据的关系，你就看懂了K线。</p>
+        </div>
+
+        <h2>一、K线的基本结构</h2>
+
+        <p>一根K线由三个部分组成：</p>
+        <ul>
+            <li><strong>实体（Body）：</strong> 开盘价和收盘价之间的矩形区域，是K线最重要的部分</li>
+            <li><strong>上影线（Upper Wick）：</strong> 实体上方的细线，代表当天最高价</li>
+            <li><strong>下影线（Lower Wick）：</strong> 实体下方的细线，代表当天最低价</li>
+        </ul>
+
+        <!-- K线可视化 -->
+        <div class="kline-demo">
+            <!-- 阳线 -->
+            <div class="kline-item candle-bull">
+                <div class="label">上影线（最高价）</div>
+                <div class="candle-wrap">
+                    <div class="wick" style="height:30px;"></div>
+                    <div class="body body-bull" style="height:60px;"></div>
+                    <div class="wick" style="height:20px;"></div>
+                </div>
+                <div class="name">阳线（涨）</div>
+                <div class="desc">收盘价 > 开盘价，A股显示红色</div>
+            </div>
+            <!-- 阴线 -->
+            <div class="kline-item candle-bear">
+                <div class="label">上影线（最高价）</div>
+                <div class="candle-wrap">
+                    <div class="wick" style="height:20px;"></div>
+                    <div class="body body-bear" style="height:60px;"></div>
+                    <div class="wick" style="height:30px;"></div>
+                </div>
+                <div class="name">阴线（跌）</div>
+                <div class="desc">收盘价 &lt; 开盘价，A股显示绿色</div>
+            </div>
+            <!-- 长上影 -->
+            <div class="kline-item candle-bear">
+                <div class="label">长上影线</div>
+                <div class="candle-wrap">
+                    <div class="wick" style="height:60px;"></div>
+                    <div class="body body-bear" style="height:16px;"></div>
+                    <div class="wick" style="height:8px;"></div>
+                </div>
+                <div class="name">射击之星</div>
+                <div class="desc">高位出现，看空信号</div>
+            </div>
+            <!-- 长下影 -->
+            <div class="kline-item candle-bull">
+                <div class="label">小实体</div>
+                <div class="candle-wrap">
+                    <div class="wick" style="height:8px;"></div>
+                    <div class="body body-bull" style="height:16px;"></div>
+                    <div class="wick" style="height:60px;"></div>
+                </div>
+                <div class="name">锤子线</div>
+                <div class="desc">低位出现，看多信号</div>
+            </div>
+            <!-- 十字星 -->
+            <div class="kline-item" style="color:#888;">
+                <div class="label">无实体</div>
+                <div class="candle-wrap">
+                    <div class="wick" style="height:40px; background:#888;"></div>
+                    <div style="width:20px; height:2px; background:#888;"></div>
+                    <div class="wick" style="height:40px; background:#888;"></div>
+                </div>
+                <div class="name" style="color:white;">十字星</div>
+                <div class="desc">开收盘价相等，方向不明</div>
+            </div>
+        </div>
+
+        <p style="text-align:center; font-size:13px; color:#999; margin-top:-16px;">注：A股红涨绿跌，与国际惯例相反</p>
+
+        <h2>二、影线说明了什么？</h2>
+
+        <p>很多新手只关注实体（涨跌幅），忽视影线——这是一个误区。<strong>影线的长度反映了价格的试探和反转</strong>，往往比实体更有信息量。</p>
+
+        <h3>上影线的含义</h3>
+        <p>上影线越长，说明当天价格曾经摸到很高，但随后被抛压压回来了——<strong>上方有较强的卖盘阻力</strong>。如果在高位（价格经过一段涨幅后）出现长上影线，这是一个警示信号，说明多头在高位遭遇了阻力。</p>
+
+        <h3>下影线的含义</h3>
+        <p>下影线越长，说明当天价格曾经跌到很低，但随后被买盘拉了回来——<strong>下方有较强的支撑力量</strong>。如果在低位（经过一段跌幅后）出现长下影线，这往往是止跌信号，说明空头冲击被消化，多头开始反击。</p>
+
+        <div class="tip-box">
+            <p><strong>经验总结：</strong> 高位长上影 = 要小心；低位长下影 = 有支撑。这是K线分析中最基础、最实用的两条判断规则。</p>
+        </div>
+
+        <h2>三、常见K线形态速查</h2>
+
+        <div class="pattern-grid">
+            <div class="pattern-card">
+                <span class="ptag ptag-bull">看多形态</span>
+                <div class="pname">锤子线</div>
+                <p class="pdesc">下跌趋势末端出现，小实体+长下影线（影线至少是实体2倍）。下方强支撑，可能反转向上。</p>
+            </div>
+            <div class="pattern-card">
+                <span class="ptag ptag-bear">看空形态</span>
+                <div class="pname">射击之星</div>
+                <p class="pdesc">上涨趋势末端出现，小实体+长上影线。上方强阻力，可能反转向下。</p>
+            </div>
+            <div class="pattern-card">
+                <span class="ptag ptag-bull">看多形态</span>
+                <div class="pname">看涨吞没</div>
+                <p class="pdesc">下跌趋势中，一根阴线后出现一根大阳线，阳线实体完全"吞没"前一根阴线。强烈的反转信号。</p>
+            </div>
+            <div class="pattern-card">
+                <span class="ptag ptag-bear">看空形态</span>
+                <div class="pname">看跌吞没</div>
+                <p class="pdesc">上涨趋势中，一根阳线后出现一根大阴线，阴线实体完全"吞没"前一根阳线。强烈的顶部信号。</p>
+            </div>
+            <div class="pattern-card">
+                <span class="ptag ptag-neutral">中性形态</span>
+                <div class="pname">十字星</div>
+                <p class="pdesc">开盘价和收盘价几乎相等（无实体），上下影线对称。代表多空力量均衡，方向不明，需结合位置判断。</p>
+            </div>
+            <div class="pattern-card">
+                <span class="ptag ptag-bull">看多形态</span>
+                <div class="pname">早晨之星</div>
+                <p class="pdesc">三根K线组合：大阴线 + 小实体（十字星） + 大阳线。低位出现的经典反转形态，可靠性较高。</p>
+            </div>
+            <div class="pattern-card">
+                <span class="ptag ptag-bear">看空形态</span>
+                <div class="pname">黄昏之星</div>
+                <p class="pdesc">三根K线组合：大阳线 + 小实体（十字星） + 大阴线。高位出现的经典顶部形态。</p>
+            </div>
+            <div class="pattern-card">
+                <span class="ptag ptag-bull">看多形态</span>
+                <div class="pname">三白兵</div>
+                <p class="pdesc">连续三根实体较大的阳线，每根收盘价都高于前一根。趋势向上加速的信号，但要注意是否过度延伸。</p>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <p><strong>重要提醒：</strong>以上形态的有效性高度依赖"出现位置"。同样是锤子线，在下跌趋势的低位出现才有意义；在上涨途中出现的锤子线，意义完全不同。形态 + 位置，缺一不可。</p>
+        </div>
+
+        <h2>四、新手常见误区</h2>
+
+        <h3>误区1：单根K线就下结论</h3>
+        <p>单根K线提供的信息有限，更重要的是K线组合（通常看2-3根），以及K线出现的趋势背景。孤立地看一根K线，往往会做出错误判断。</p>
+
+        <h3>误区2：只看K线形态，不看成交量</h3>
+        <p>K线形态需要成交量配合才有意义。看涨吞没配合放量，反转可信度大大提高；无量的大阳线往往是"空头陷阱"。<strong>量是价的先行指标。</strong></p>
+
+        <h3>误区3：在任何级别都用同一套标准</h3>
+        <p>日线上的锤子线和周线上的锤子线，意义相差悬殊——周线信号的可靠性远高于日线，日线又高于60分钟线。做中长线看周线，做短线参考日线，不要混用。</p>
+
+        <h2>五、实战建议</h2>
+
+        <ol>
+            <li><strong>先看趋势方向，再看K线形态</strong> — 顺势做单，胜率更高</li>
+            <li><strong>把K线形态当作"触发点"</strong> — 等形态出现后再进场，不要猜测</li>
+            <li><strong>永远看成交量配合</strong> — 有量的形态才可信</li>
+            <li><strong>多看历史复盘</strong> — 用软件的复盘模式，检验自己对形态的判断是否准确</li>
+            <li><strong>不要死记硬背形态名字</strong> — 理解背后的多空力量含义，才能灵活应用</li>
+        </ol>
+
+        <div class="highlight-box">
+            <p><strong>一句话总结：</strong>K线记录的是"价格轨迹"，但真正重要的是背后的"多空力量对比"。每一根K线都在讲一个故事：今天的买卖双方，谁赢了？赢得干净吗？有没有留下遗憾？读懂这些，K线才算真的看懂了。</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+            <h3>看完理论，想看实战分析？</h3>
+            <p>理论学完，最快的进步方式是看真实案例。我的AI分析报告会把技术面+基本面+消息面放在一起解读，让你看到完整的分析思路。</p>
+            <a href="../samples/index.html">查看样本报告 →</a>
+        </div>
+
+        <div style="text-align:center; margin: 12px 0 48px;">
+            <a href="../service-request.html" style="color:#667eea; font-size:14px; text-decoration:none;">想分析你持仓的股票？提交需求 →</a>
+        </div>
+
+        <div class="disclaimer">
+            <strong>免责声明：</strong>本文内容仅供学习参考，不构成任何投资建议。技术分析存在主观性和局限性，历史形态不保证未来走势。股票市场有风险，投资须谨慎，请独立判断并承担相应风险。
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#0d0d1a; padding: 40px 0; margin-top: 0;">
+        <div class="container">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-bottom:1px solid rgba(255,255,255,0.07); padding-bottom:24px; margin-bottom:20px;">
+                <a href="../index.html" style="font-weight:800; font-size:18px; color:white; text-decoration:none;">理易港 <span style="color:#667eea;">ourlyg</span></a>
+                <div style="display:flex; gap:20px; flex-wrap:wrap;">
+                    <a href="../knowledge/index.html" style="color:rgba(255,255,255,0.5); font-size:13px; text-decoration:none;">知识科普</a>
+                    <a href="../services/index.html" style="color:rgba(255,255,255,0.5); font-size:13px; text-decoration:none;">AI分析服务</a>
+                    <a href="../samples/index.html" style="color:rgba(255,255,255,0.5); font-size:13px; text-decoration:none;">样本报告</a>
+                    <a href="../service-request.html" style="color:rgba(255,255,255,0.5); font-size:13px; text-decoration:none;">立即咨询</a>
+                </div>
+            </div>
+            <p style="font-size:12px; color:rgba(255,255,255,0.3); line-height:1.8; margin:0; text-align:center;">
+                <strong style="color:rgba(255,255,255,0.45);">重要免责声明：</strong>
+                本网站所有内容均基于公开信息整理，仅供参考，不构成任何投资建议或投资顾问服务。
+                市场有风险，投资须谨慎。如需专业投资建议，请咨询具有合法资质的持牌金融机构。
+                本平台不对任何因参考本网站内容而产生的投资损失承担责任。
+            </p>
+            <p style="font-size:12px; color:rgba(255,255,255,0.2); text-align:center; margin:12px 0 0;">© 2026 理易港 ourlyg.com</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
