@@ -211,4 +211,28 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- 新增：AI分析实战文章 -->
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-ai-stock-analysis.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- AI分析服务页 -->
+  <url>
+    <loc>https://ourlyg.com/services/index.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- 知识文章：指数基金定投 -->
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-index-dip.html</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
