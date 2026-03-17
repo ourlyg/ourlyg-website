@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="仓位管理怎么做？1万、10万、100万资金量分别该怎么配置仓位，金字塔建仓、分批止盈的核心原则，散户必学的资金管理技巧。">
+    <meta name="keywords" content="仓位管理,股票仓位,资金管理,分批建仓,金字塔建仓,分批止盈,A股仓位策略,不同资金量的仓位配置">
+    <title>仓位管理怎么做？不同资金量的持仓策略 - 理易港</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #1a1a1a; }
+        .article-hero { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: white; padding: 80px 0 60px; }
+        .article-body-text { font-size: 16px; line-height: 1.9; color: #333; }
+        .article-body-text h2 { font-size: 22px; font-weight: 800; margin: 40px 0 16px; color: #1a1a1a; border-left: 4px solid #64748b; padding-left: 14px; }
+        .article-body-text h3 { font-size: 18px; font-weight: 700; margin: 28px 0 12px; color: #222; }
+        .article-body-text p { margin-bottom: 16px; }
+        .highlight-box { background: #f8fafc; border-radius: 12px; padding: 20px 24px; margin: 24px 0; border-left: 4px solid #64748b; }
+        .warning-box { background: #fef3c7; border-radius: 12px; padding: 20px 24px; margin: 24px 0; border-left: 4px solid #f59e0b; }
+        .position-card { border-radius: 14px; padding: 22px 24px; margin: 16px 0; border: 2px solid; }
+        .cta-section { background: linear-gradient(135deg, #475569 0%, #334155 100%); border-radius: 20px; padding: 36px; color: white; text-align: center; margin: 48px 0; }
+        .table-clean th { background: #f8fafc; font-weight: 700; }
+        .table-clean td, .table-clean th { padding: 12px 16px; border: 1px solid #e2e8f0; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><strong style="color:#667eea;">理易港</strong> <span style="font-size:13px;color:#999;">ourlyg.com</span></a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="../index.html">首页</a>
+                <a class="nav-link active" href="index.html">知识科普</a>
+                <a class="nav-link" href="../service-request.html" style="color:#667eea;font-weight:600;">下单分析</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="article-hero" style="margin-top:56px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div style="margin-bottom:16px;">
+                        <span style="background:rgba(255,255,255,0.2); border-radius:20px; padding:4px 14px; font-size:13px; font-weight:600;">资金管理</span>
+                    </div>
+                    <h1 style="font-size:32px; font-weight:900; line-height:1.3; margin-bottom:20px;">仓位管理怎么做？<br>不同资金量的持仓策略全解析</h1>
+                    <p style="font-size:16px; opacity:0.85; margin-bottom:24px;">1万、10万、100万资金，仓位配置完全不同。小资金怕踏空，大资金怕满仓回撤。仓位管理不是"看心情"，而是用数学方法控制风险。</p>
+                    <div style="display:flex; gap:20px; flex-wrap:wrap; font-size:14px; opacity:0.75;">
+                        <span>📅 2026年3月</span>
+                        <span>⏱ 约18分钟</span>
+                        <span>👤 所有投资者必读</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="padding-top:48px; padding-bottom:80px;">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 article-body-text">
+
+                <h2>一、为什么仓位管理这么重要？</h2>
+                <p>很多人认为投资的关键是"选对股票"，但真正决定长期收益的，是仓位管理。</p>
+
+                <p>一个简单的数学事实：</p>
+                <table class="table table-clean w-100" style="margin:16px 0;">
+                    <thead>
+                        <tr><th>亏损比例</th><th>需要回本的比例</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>10%</td><td>11.1%</td></tr>
+                        <tr><td>20%</td><td>25%</td></tr>
+                        <tr><td>30%</td><td>42.9%</td></tr>
+                        <tr><td>50%</td><td>100%</td></tr>
+                        <tr><td>70%</td><td>233%</td></tr>
+                        <tr><td>90%</td><td>900%</td></tr>
+                    </tbody>
+                </table>
+
+                <p>亏损50%后，需要翻倍才能回本——但你有多少次翻倍的机会？</p>
+                <p>仓位管理的核心目标：<strong>控制单次亏损占总资金的比例，避免一次回撤击垮本金</strong>。</p>
+
+                <div class="highlight-box">
+                    <strong>💡 仓位管理的黄金法则</strong><br>
+                    单只股票的亏损，不应超过总资金的<strong>5%</strong>。
+                    <ul style="margin:12px 0 0 0; padding-left:20px;">
+                        <li>10万本金，单只最多亏5000</li>
+                        <li>100万本金，单只最多亏5万</li>
+                    </ul>
+                    这5%的上限，决定了你的最大仓位和止损距离。
+                </div>
+
+                <h2>二、不同资金量的仓位策略</h2>
+
+                <h3>2.1 小资金（1-5万）：高周转，小仓位</h3>
+                <p>小资金的特点：机会成本高，但抗风险能力弱。</p>
+                <p>策略建议：</p>
+                <ul>
+                    <li><strong>单只仓位：10-20%</strong>（1000-10000元）</li>
+                    <li><strong>持仓数量：2-3只</strong>（分散降低风险）</li>
+                    <li><strong>止损线：-8%到-10%</strong>（快速止损，避免深套）</li>
+                    <li><strong>建仓方式：一次性或分2批</strong>（小资金没太多时间等）</li>
+                </ul>
+                <p>为什么要小仓位？因为小资金经不起一次-30%的回撤——那意味着半年白干。</p>
+
+                <div class="position-card" style="border-color:#dc2626; background:#fff1f2; margin-top:16px; margin-bottom:0;">
+                    <strong>⚠️ 小资金常见错误</strong>
+                    <ul style="margin:12px 0 0 0; padding-left:20px;">
+                        <li>梭哈一只股票——一次回撤30%，半年白干</li>
+                        <li>不止损，死扛——从10万变成2万，回本需要翻5倍</li>
+                        <li>频繁交易——手续费亏掉了本金</li>
+                    </ul>
+                </div>
+
+                <h3>2.2 中等资金（10-50万）：稳健配置，分批操作</h3>
+                <p>中等资金的特点：有一定抗风险能力，可以承担更大波动。</p>
+                <p>策略建议：</p>
+                <ul>
+                    <li><strong>单只仓位：5-10%</strong>（5000-50000元）</li>
+                    <li><strong>持仓数量：5-8只</strong>（行业分散+个股分散）</li>
+                    <li><strong>止损线：-7%到-8%</strong></li>
+                    <li><strong>建仓方式：分3批</strong>（金字塔建仓，越跌越买，但总仓位不超过上限）</li>
+                </ul>
+                <p>中等资金的重点是：不要把所有鸡蛋放在一个篮子里。行业分散（科技+消费+金融）、个股分散（龙头+二线），降低系统性风险。</p>
+
+                <h3>2.3 大资金（100万+）：稳健优先，控制回撤</h3>
+                <p>大资金的特点：抗风险能力强，但单次亏损绝对值大。</p>
+                <p>策略建议：</p>
+                <ul>
+                    <li><strong>单只仓位：3-5%</strong>（3-5万）</li>
+                    <li><strong>持仓数量：8-15只</strong>（充分分散）</li>
+                    <li><strong>止损线：-5%到-6%</strong>（快速止损，避免拖累整体）</li>
+                    <li><strong>建仓方式：分4-5批</strong>（缓慢建仓，避免一次入场点不好）</li>
+                </ul>
+                <p>大资金的最大敌人是：回撤。100万亏50%是50万，想赚回这50万需要100%收益——而A股能做到年化100%的基金寥寥无几。</p>
+
+                <div class="highlight-box">
+                    <strong>💡 大资金原则：保住本金第一</strong><br>
+                    宁可少赚，不要大亏。大资金追求的是"复利增长"，不是"一年翻倍"。
+                </div>
+
+                <h2>三、分批建仓：金字塔建仓法</h2>
+                <p>一次性满仓的风险是：买在高点，之后回调时没有加仓空间。</p>
+                <p>更合理的建仓方式：金字塔建仓。</p>
+
+                <div class="position-card" style="border-color:#2563eb; background:#eff6ff;">
+                    <strong>金字塔建仓：越跌越买，但总仓位受控</strong>
+                    <p>假设总资金10万，目标单只仓位10%（10000元）：</p>
+                    <table class="table table-clean w-100" style="margin:12px 0;">
+                        <thead><tr><th>批次</th><th>买入价格</th><th>买入金额</th><th>理由</th></tr></thead>
+                        <tbody>
+                            <tr><td>第一批</td><td>确认信号出现</td><td>3000元（30%）</td><td>试水，验证方向</td></tr>
+                            <tr><td>第二批</td><td>回调到支撑位</td><td>4000元（40%）</td><td>加仓</td></tr>
+                            <tr><td>第三批</td><td>企稳后再次放量</td><td>3000元（30%）</td><td>确认趋势</td></tr>
+                        </tbody>
+                    </table>
+                    <p>总仓位不超过10000元，但平均成本更低。</p>
+                </div>
+
+                <h3>为什么用金字塔？</h3>
+                <ul>
+                    <li><strong>降低平均成本</strong>：回调时买入，成本更低</li>
+                    <li><strong>控制风险</strong>：如果第一批买入后趋势反转，只亏损30%的仓位</li>
+                    <li><strong>有加仓空间</strong>：不会因为一次性满仓而被动</li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong>⚠️ 常见错误：逆势加仓</strong><br>
+                    股票下跌后不加分析就"摊成本"，这是最危险的操作。<br>
+                    正确做法：先判断下跌原因，如果是趋势反转，应该止损，而不是加仓。<br>
+                    <strong>金字塔建仓的前提：趋势没有改变，只是回调。</strong>
+                </div>
+
+                <h2>四、分批止盈：落袋为安的艺术</h2>
+                <p>建仓是入场，止盈是离场。很多散户死在"贪心"——涨了不卖，最后回撤又卖不出去。</p>
+
+                <div class="position-card" style="border-color:#16a34a; background:#f0fdf4;">
+                    <strong>分批止盈：分3-4批离场，利润落袋</strong>
+                    <p>假设10元买入某股票：</p>
+                    <table class="table table-clean w-100" style="margin:12px 0;">
+                        <thead><tr><th>批次</th><th>卖出价格</th><th>卖出比例</th><th>理由</th></tr></thead>
+                        <tbody>
+                            <tr><td>第一批</td><td>12元（+20%）</td><td>30%</td><td>落袋第一笔利润</td></tr>
+                            <tr><td>第二批</td><td>14元（+40%）</td><td>30%</td><td>继续上涨中锁定利润</td></tr>
+                            <tr><td>第三批</td><td>16元（+60%）</td><td>40%</td><td>最后一批止盈</td></tr>
+                        </tbody>
+                    </table>
+                    <p>平均卖出价约14.3元，总收益43%。</p>
+                </div>
+
+                <h3>为什么分批止盈？</h3>
+                <ul>
+                    <li><strong>避免错过上涨</strong>：第一批卖出后，如果继续涨，还能吃后面的涨幅</li>
+                    <li><strong>控制回撤</strong>：如果见顶回落，至少已经落袋一部分利润</li>
+                    <li><strong>降低心理压力</strong>：不是"全仓持有到顶"，而是"逐步获利"</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>💡 止盈的信号</strong>
+                    <ul style="margin:12px 0 0 0; padding-left:20px;">
+                        <li>技术面：顶背离、量价背离、跌破MA20</li>
+                        <li>基本面：业绩不及预期、行业景气度下降</li>
+                        <li>心理层面：开始犹豫要不要卖的时候——就是卖出信号</li>
+                    </ul>
+                </div>
+
+                <h2>五、仓位管理的6条铁律</h2>
+                <ol>
+                    <li><strong>单只仓位不超过总资金的10%</strong>（大资金不超过5%）</li>
+                    <li><strong>止损必须在买入前设好</strong>，而不是亏了再想</li>
+                    <li><strong>不要逆势加仓摊成本</strong>，趋势反转应该止损</li>
+                    <li><strong>分批建仓，分批止盈</strong>，不要一次性满仓或清仓</li>
+                    <li><strong>行业分散，不要全仓一个行业</strong>（避免系统性风险）</li>
+                    <li><strong>定期检视持仓</strong>，每季度评估是否需要调整仓位</li>
+                </ol>
+
+                <h2>总结</h2>
+                <table class="table table-clean w-100">
+                    <thead>
+                        <tr><th>资金规模</th><th>单只仓位</th><th>持仓数量</th><th>止损线</th><th>建仓方式</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1-5万</td><td>10-20%</td><td>2-3只</td><td>-8%到-10%</td><td>一次或分2批</td></tr>
+                        <tr><td>10-50万</td><td>5-10%</td><td>5-8只</td><td>-7%到-8%</td><td>分3批</td></tr>
+                        <tr><td>100万+</td><td>3-5%</td><td>8-15只</td><td>-5%到-6%</td><td>分4-5批</td></tr>
+                    </tbody>
+                </table>
+
+                <p>仓位管理的本质是：<strong>用概率和数学，控制风险，保护本金</strong>。</p>
+                <p>本金还在，就有翻本的机会。本金没了，投资游戏结束。</p>
+
+                <div class="cta-section">
+                    <h3 style="font-size:22px; font-weight:800; margin-bottom:12px;">你的持仓配置合理吗？</h3>
+                    <p style="font-size:15px; opacity:0.9; margin-bottom:24px;">发给我你的持仓列表，我帮你分析组合风险、行业集中度、仓位分布，给出具体的仓位优化建议。</p>
+                    <a href="../service-request.html?service=持仓诊断分析" style="background:white; color:#334155; border-radius:50px; padding:14px 36px; font-weight:800; font-size:16px; text-decoration:none; display:inline-block;">立即下单 → 获取持仓诊断报告</a>
+                    <div style="margin-top:14px; font-size:13px; opacity:0.8;">单次分析 ¥29 起 · 24小时内交付</div>
+                </div>
+
+                <div style="border-top:1px solid #eee; padding-top:32px; margin-top:8px;">
+                    <div style="font-weight:700; margin-bottom:16px; color:#555;">相关文章</div>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <a href="article-stop-loss.html" style="text-decoration:none; color:#333;">
+                                <div style="background:#f8f9fa; border-radius:10px; padding:14px;">
+                                    <div style="font-size:12px; color:#10b981; font-weight:600; margin-bottom:6px;">风险管理</div>
+                                    <div style="font-size:14px; font-weight:600;">止损线怎么设？3种方法详解</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="article-stock-picking.html" style="text-decoration:none; color:#333;">
+                                <div style="background:#f8f9fa; border-radius:10px; padding:14px;">
+                                    <div style="font-size:12px; color:#059669; font-weight:600; margin-bottom:6px;">选股方法</div>
+                                    <div style="font-size:14px; font-weight:600;">散户选股：行业→龙头→时机框架</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="article-moving-average.html" style="text-decoration:none; color:#333;">
+                                <div style="background:#f8f9fa; border-radius:10px; padding:14px;">
+                                    <div style="font-size:12px; color:#667eea; font-weight:600; margin-bottom:6px;">技术分析</div>
+                                    <div style="font-size:14px; font-weight:600;">均线系统：MA5/MA20/MA60怎么看</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer style="background:#1a1a2e; color:#ccc; padding:40px 0; text-align:center; margin-top:0;">
+        <div class="container">
+            <p style="margin:0; font-size:14px;"><strong style="color:white;">理易港</strong> · ourlyg.com</p>
+            <p style="font-size:12px; margin-top:8px; opacity:0.6;">本文内容仅供学习参考，不构成任何投资建议。投资有风险，入市需谨慎。</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
