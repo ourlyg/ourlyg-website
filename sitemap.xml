@@ -299,6 +299,32 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- 散户选股方法 -->
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-stock-picking.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- K线形态入门 -->
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-candlestick.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- MACD指标详解 -->
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-macd.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+
+
   <!-- AI分析服务页 -->
   <url>
     <loc>https://ourlyg.com/services/index.html</loc>
