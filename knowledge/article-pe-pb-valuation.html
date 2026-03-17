@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PE市盈率、PB市净率怎么看？股票到底贵不贵？一文读懂PE/PB估值的正确用法，以及散户最常犯的估值误区。">
+    <meta name="keywords" content="PE市盈率,PB市净率,股票估值,市盈率怎么看,股票贵不贵,估值方法">
+    <title>PE/PB估值怎么用？判断股票贵不贵的方法 - 理易港</title>
+    <link rel="canonical" href="https://ourlyg.com/knowledge/article-pe-pb-valuation.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%); color: white; padding: 80px 0 50px; }
+        .article-content { max-width: 780px; margin: 0 auto; padding: 48px 24px; }
+        .article-content h2 { font-size: 22px; font-weight: 800; margin: 36px 0 14px; color: #1a1a1a; }
+        .article-content h3 { font-size: 18px; font-weight: 700; margin: 28px 0 12px; color: #2d3748; }
+        .article-content p { color: #444; line-height: 1.9; font-size: 15px; margin-bottom: 16px; }
+        .article-content ul, .article-content ol { color: #444; line-height: 1.9; font-size: 15px; padding-left: 24px; margin-bottom: 16px; }
+        .article-content li { margin-bottom: 8px; }
+        .highlight-box { background: #f0f4ff; border-left: 4px solid #667eea; border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 20px 0; }
+        .highlight-box p { margin: 0; color: #374151; }
+        .warning-box { background: #fff7ed; border-left: 4px solid #f59e0b; border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 20px 0; }
+        .warning-box p { margin: 0; color: #92400e; }
+        .formula-box { background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 12px; padding: 20px; margin: 20px 0; text-align: center; }
+        .formula { font-size: 18px; font-weight: 700; color: #2563eb; font-family: 'Courier New', monospace; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        .comparison-table th { background: #667eea; color: white; padding: 12px 16px; text-align: left; }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid #f0f0f0; }
+        .comparison-table tr:hover td { background: #f8f9ff; }
+        .cta-section { background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 20px; padding: 40px; color: white; text-align: center; margin: 48px 0; }
+        .tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 2px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-right: 6px; }
+        .breadcrumb-nav { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 16px; }
+        .breadcrumb-nav a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        .reading-meta { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; font-size: 13px; opacity: 0.7; }
+        .valuation-level { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0; }
+        @media (max-width: 600px) { .valuation-level { grid-template-columns: 1fr; } }
+        .level-card { border-radius: 10px; padding: 16px; text-align: center; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <!-- 导航 -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background:rgba(10,10,30,0.95); position:sticky; top:0; z-index:100; backdrop-filter:blur(10px); border-bottom:1px solid rgba(255,255,255,0.06);">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html" style="font-weight:800; font-size:20px; background:linear-gradient(90deg,#a5b4fc,#c4b5fd); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">理易港</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border-color:rgba(255,255,255,0.3);">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../services/index.html">服务项目</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products/index.html">产品测评</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tools/calculator.html">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">知识科普</a></li>
+                    <li class="nav-item ms-2"><a href="../service-request.html" class="btn btn-primary" style="border-radius:20px; padding:6px 18px; font-size:14px;">立即咨询</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 文章头部 -->
+    <section class="article-hero">
+        <div class="container">
+            <div style="max-width:780px; margin:0 auto;">
+                <div class="breadcrumb-nav">
+                    <a href="../index.html">首页</a> &gt; <a href="index.html">知识科普</a> &gt; 估值方法
+                </div>
+                <span class="tag" style="background:rgba(219,234,254,0.2); color:#a5b4fc;">基本面分析</span>
+                <h1 style="font-size:clamp(22px,4vw,32px); font-weight:800; margin:16px 0 12px; line-height:1.4;">PE/PB估值怎么用？<br>判断股票贵不贵的简单方法</h1>
+                <p style="opacity:0.75; font-size:15px; line-height:1.8;">市盈率20倍是贵还是便宜？市净率低于1就可以买吗？很多散户用估值指标，但用错了反而误导决策。本文帮你搞清楚估值的正确用法。</p>
+                <div class="reading-meta">
+                    <span>📅 2026年3月</span>
+                    <span>⏱ 约12分钟</span>
+                    <span>👤 适合基本面入门者</span>
+                    <span>🏷️ 基本面 / 估值</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文章内容 -->
+    <div class="article-content">
+
+        <p>"这只股票PE才15倍，很便宜！"——你有没有说过或听过这句话？</p>
+
+        <p>PE（市盈率）和PB（市净率）是最常见的两个估值指标，但也是被误用最多的两个指标。很多散户看到PE低就觉得便宜、果断买入，结果买了之后还是跌——原因往往是估值用法出了问题。</p>
+
+        <div class="highlight-box">
+            <p><strong>先说结论：</strong>估值指标不是"低就便宜、高就贵"这么简单。它需要和<strong>历史分位、同行比较、增长预期</strong>三个维度结合来看，否则只是数字游戏。</p>
+        </div>
+
+        <h2>PE市盈率：最基础的估值指标</h2>
+
+        <h3>PE是什么</h3>
+
+        <div class="formula-box">
+            <div style="font-size:14px; color:#666; margin-bottom:8px;">市盈率计算公式</div>
+            <div class="formula">PE = 股价 ÷ 每股收益（EPS）</div>
+            <div style="font-size:13px; color:#666; margin-top:8px;">也等于：总市值 ÷ 年净利润</div>
+        </div>
+
+        <p>PE的含义是：按当前盈利水平，多少年能"回本"。PE=20，意思是现在买入这只股票，如果利润不变，需要20年的利润才能收回投资。</p>
+
+        <p>所以PE越低，理论上"回本"越快，越便宜——但这个逻辑成立的前提是，利润是稳定的、可以持续的。</p>
+
+        <h3>PE的三种版本</h3>
+        <ul>
+            <li><strong>静态PE（历史PE）：</strong>用上一个完整财年的净利润计算。数据稳定，但滞后</li>
+            <li><strong>滚动PE（TTM）：</strong>用最近12个月的利润。更接近当前情况，常用</li>
+            <li><strong>动态PE（预测PE）：</strong>用分析师预测的未来利润。最前瞻，但不确定性大</li>
+        </ul>
+
+        <div class="warning-box">
+            <p><strong>重要提示：</strong>A股行情软件里默认显示的PE，不同平台版本不同（有的是静态，有的是TTM）。比较两只股票时一定要用同一种PE。</p>
+        </div>
+
+        <h3>PE多少算合理？不能只看绝对值</h3>
+
+        <p>有人说"PE低于15就便宜"，这是很粗糙的说法。PE合不合理，要看：</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr><th>对比维度</th><th>说明</th><th>怎么用</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>历史分位</td><td>这只股票自身的历史PE区间</td><td>当前PE处于历史低位（后30%）才算真的便宜</td></tr>
+                <tr><td>行业平均</td><td>同行业其他公司的PE均值</td><td>低于行业均值才有相对优势</td></tr>
+                <tr><td>增长预期</td><td>公司未来利润增速</td><td>高增长公司可以接受更高PE（PEG判断法）</td></tr>
+                <tr><td>大盘整体</td><td>上证/沪深300整体PE</td><td>大盘高估时个股PE普遍偏高，不可孤立看</td></tr>
+            </tbody>
+        </table>
+
+        <h3>各行业PE参考区间（A股历史数据）</h3>
+        <ul>
+            <li><strong>银行股：</strong>PE通常4-8倍（利润大、增速慢）</li>
+            <li><strong>白酒/消费：</strong>PE通常20-40倍（品牌溢价、稳定增长）</li>
+            <li><strong>科技/互联网：</strong>PE通常50-100倍（高增长预期）</li>
+            <li><strong>周期股（钢铁/煤炭）：</strong>PE起伏很大，周期底部时PE可能虚高（利润亏损），周期顶部时PE很低（利润暴增但不持续）</li>
+        </ul>
+
+        <div class="warning-box">
+            <p><strong>特别注意周期股：</strong>煤炭、钢铁、化工等周期股，PE最低时往往是行业顶部（利润最高的时候），PE最高时反而可能是底部（利润最差的时候）。用PE分析周期股会被"反向误导"，要格外小心。</p>
+        </div>
+
+        <h2>PB市净率：资产价值视角</h2>
+
+        <h3>PB是什么</h3>
+
+        <div class="formula-box">
+            <div style="font-size:14px; color:#666; margin-bottom:8px;">市净率计算公式</div>
+            <div class="formula">PB = 股价 ÷ 每股净资产</div>
+            <div style="font-size:13px; color:#666; margin-top:8px;">也等于：总市值 ÷ 净资产（股东权益）</div>
+        </div>
+
+        <p>PB的含义是：你花多少钱买了这家公司每1元的净资产。PB=1，说明市值恰好等于账面净资产；PB=2，说明你付出了2倍的溢价。</p>
+
+        <p>理论上，PB&lt;1时，公司被"打了折"卖，捡便宜机会来了——但这个逻辑同样有前提。</p>
+
+        <h3>PB什么时候好用，什么时候不好用</h3>
+
+        <ul>
+            <li><strong>PB适合分析：</strong>银行、保险、地产、制造业等<strong>重资产行业</strong>。因为净资产数字比较真实可靠。</li>
+            <li><strong>PB不适合分析：</strong>科技、互联网、咨询、服务业等<strong>轻资产行业</strong>。这些公司的核心价值是人才、技术、品牌，不体现在账面净资产里，用PB看会显得"虚高"，但实际上并不贵。</li>
+        </ul>
+
+        <div class="highlight-box">
+            <p><strong>典型案例：</strong>腾讯、阿里的PB常年在5-15倍，看起来很贵。但它们的核心资产是用户数据、生态系统，这些不在资产负债表里。用PB给科技公司估值会严重低估其价值。</p>
+        </div>
+
+        <h3>PB低于1就可以买吗？</h3>
+
+        <p>不一定。PB&lt;1的情况主要出现在以下几种场景：</p>
+        <ul>
+            <li><strong>真的便宜（可以关注）：</strong>银行股、周期股在行业低谷时，PB确实跌破1，历史上往往是较好的介入机会</li>
+            <li><strong>资产质量差（要警惕）：</strong>账面净资产有大量不良资产、减值准备不足，账面数字不真实，这时PB低不代表便宜</li>
+            <li><strong>行业结构性衰退：</strong>传统行业如果面临长期萎缩，即使PB很低，也可能继续跌</li>
+        </ul>
+
+        <h2>结合使用：PE+PB双维度判断</h2>
+
+        <div class="valuation-level">
+            <div class="level-card" style="background:#fef2f2; border:1px solid #fecaca;">
+                <div style="font-size:20px; margin-bottom:8px;">🔴</div>
+                <div style="font-weight:700; color:#991b1b; margin-bottom:6px;">高估区间</div>
+                <div style="font-size:12px; color:#b91c1c; line-height:1.7;">PE处于历史高位（后20%）<br>PB明显高于行业均值<br>增长不足以支撑溢价</div>
+            </div>
+            <div class="level-card" style="background:#fffbeb; border:1px solid #fde68a;">
+                <div style="font-size:20px; margin-bottom:8px;">🟡</div>
+                <div style="font-weight:700; color:#92400e; margin-bottom:6px;">合理区间</div>
+                <div style="font-size:12px; color:#b45309; line-height:1.7;">PE处于历史中位<br>与同行大体相当<br>等待更好的进场机会</div>
+            </div>
+            <div class="level-card" style="background:#f0fdf4; border:1px solid #bbf7d0;">
+                <div style="font-size:20px; margin-bottom:8px;">🟢</div>
+                <div style="font-weight:700; color:#065f46; margin-bottom:6px;">低估区间</div>
+                <div style="font-size:12px; color:#047857; line-height:1.7;">PE处于历史低位（前30%）<br>低于行业平均估值<br>基本面未发生恶化</div>
+            </div>
+        </div>
+
+        <h2>进阶：PEG指标——考虑增长速度</h2>
+
+        <div class="formula-box">
+            <div style="font-size:14px; color:#666; margin-bottom:8px;">PEG计算公式</div>
+            <div class="formula">PEG = PE ÷ 净利润增长率</div>
+            <div style="font-size:13px; color:#666; margin-top:8px;">PEG &lt; 1 通常认为估值合理或偏低</div>
+        </div>
+
+        <p>PEG把PE和增长速度结合起来——相同PE的公司，增长更快的那个更划算。</p>
+
+        <p>举例：A公司PE=30，净利润增速30%，PEG=1；B公司PE=15，净利润增速5%，PEG=3。表面上B便宜，但考虑增长，A更值得关注。</p>
+
+        <p><strong>注意：</strong>PEG适合用在成长股上，对成熟股、周期股、价值股效果有限。</p>
+
+        <h2>实战操作建议</h2>
+
+        <ol>
+            <li><strong>先看行业：</strong>不同行业估值体系完全不同，银行10倍PE和科技50倍PE不能直接比</li>
+            <li><strong>查历史分位：</strong>用同花顺/东方财富可以查PE/PB历史百分位，处于低位才算"真便宜"</li>
+            <li><strong>结合基本面：</strong>低估值+基本面在改善 = 买点；低估值+基本面在恶化 = 价值陷阱</li>
+            <li><strong>不要单独使用：</strong>估值分析是辅助，还要看技术面、市场情绪、催化剂</li>
+            <li><strong>考虑安全边际：</strong>宁愿在低于合理估值20-30%的位置进场，不要在"刚好合理"时买</li>
+        </ol>
+
+        <div class="highlight-box">
+            <p><strong>核心记忆点：</strong>PE反映盈利能力，PB反映资产价值。判断"便不便宜"要跟<strong>自己的历史</strong>比、跟<strong>同行</strong>比、跟<strong>增长速度</strong>比——三个维度都低才算真便宜。单独看一个数字，容易掉进"价值陷阱"。</p>
+        </div>
+
+        <!-- CTA区域 -->
+        <div class="cta-section">
+            <h3>想知道你手里的股票当前估值水平？</h3>
+            <p>AI帮你查PE/PB历史分位、行业对比、增长预期，综合给出估值判断——不用自己一个个翻数据。</p>
+            <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+                <a href="../service-request.html?service=股票诊断报告" style="background:white; color:#667eea; padding:12px 28px; border-radius:50px; font-weight:700; font-size:15px; text-decoration:none;">AI估值分析，¥9.9起</a>
+                <a href="../samples/index.html" style="background:rgba(255,255,255,0.2); color:white; padding:12px 28px; border-radius:50px; font-weight:700; font-size:15px; text-decoration:none; border:1px solid rgba(255,255,255,0.4);">看样本报告</a>
+            </div>
+        </div>
+
+        <!-- 相关文章 -->
+        <div style="border-top:1px solid #f0f0f0; padding-top:32px; margin-top:32px;">
+            <div style="font-weight:800; font-size:16px; margin-bottom:16px;">相关文章</div>
+            <div style="display:flex; flex-direction:column; gap:10px;">
+                <a href="article-position-diagnosis.html" style="color:#667eea; text-decoration:none; font-size:15px; padding:10px 0; border-bottom:1px solid #f5f5f5;">持仓诊断：如何判断股票还值不值得继续持有 →</a>
+                <a href="article-macd-guide.html" style="color:#667eea; text-decoration:none; font-size:15px; padding:10px 0; border-bottom:1px solid #f5f5f5;">MACD指标怎么看？散户最容易犯的3个错误 →</a>
+                <a href="article-volume-price.html" style="color:#667eea; text-decoration:none; font-size:15px; padding:10px 0;">量价关系怎么看？成交量配合价格的3种信号 →</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer style="background:#0d0d1a; color:rgba(255,255,255,0.5); padding:40px 0 20px;">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <div style="font-weight:800; font-size:18px; color:white; margin-bottom:8px;">理易港</div>
+                    <p style="font-size:13px; line-height:1.8;">AI驱动的金融分析服务，让数据说话，让决策更清晰。</p>
+                </div>
+                <div class="col-md-4">
+                    <div style="font-weight:700; color:rgba(255,255,255,0.7); margin-bottom:12px; font-size:14px;">快速导航</div>
+                    <div style="display:flex; flex-direction:column; gap:6px; font-size:13px;">
+                        <a href="../services/index.html" style="color:rgba(255,255,255,0.5); text-decoration:none;">服务项目</a>
+                        <a href="../samples/index.html" style="color:rgba(255,255,255,0.5); text-decoration:none;">样本报告</a>
+                        <a href="index.html" style="color:rgba(255,255,255,0.5); text-decoration:none;">知识科普</a>
+                        <a href="../service-request.html" style="color:rgba(255,255,255,0.5); text-decoration:none;">立即下单</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="font-weight:700; color:rgba(255,255,255,0.7); margin-bottom:12px; font-size:14px;">联系方式</div>
+                    <div style="font-size:13px; line-height:2;">
+                        <div>邮箱：contact@ourlyg.com</div>
+                        <div>网站：ourlyg.com</div>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:20px; font-size:12px; text-align:center; color:rgba(255,255,255,0.3);">
+                ⚠️ 本文内容仅供参考，不构成投资建议。市场有风险，投资须谨慎。
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
