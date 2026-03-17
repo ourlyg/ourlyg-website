@@ -90,6 +90,24 @@ body {
     font-weight: 500;
 }
 
+/* ==================== 导航栏强制横排（防反复出现竖排Bug）==================== */
+/* 关键修复：在 lg 断点以上强制 navbar-collapse 以 flex 方式展开，不依赖 JS toggle */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        align-items: center;
+    }
+    .navbar-nav {
+        flex-direction: row !important;
+        align-items: center;
+    }
+    .navbar-nav .nav-item {
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
 /* ==================== Hero区域 ==================== */
 .hero-section {
     background: #FFFFFF;
