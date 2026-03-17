@@ -211,9 +211,33 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- 新增：AI分析实战文章 -->
+  <!-- AI分析实战文章 -->
   <url>
     <loc>https://ourlyg.com/knowledge/article-ai-stock-analysis.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- MACD指标教程 -->
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-macd-guide.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- K线图入门 -->
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-candlestick-basics.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 持仓诊断 -->
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-position-diagnosis.html</loc>
     <lastmod>2026-03-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
