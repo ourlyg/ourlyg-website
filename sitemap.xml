@@ -267,6 +267,38 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- 均线系统入门 -->
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-moving-average.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 止损方法 -->
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-stop-loss.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 大盘指数 -->
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-market-index.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 货币基金vs债基对比测评 -->
+  <url>
+    <loc>https://ourlyg.com/reviews/money-fund-vs-bond-fund.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- AI分析服务页 -->
   <url>
     <loc>https://ourlyg.com/services/index.html</loc>
