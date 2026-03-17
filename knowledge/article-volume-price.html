@@ -3,277 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="量价关系怎么看？成交量和股价配合的3种信号：量价齐升、缩量滞涨、放量破位。学会这3点，避开80%的追高陷阱。">
-    <meta name="keywords" content="量价关系,成交量分析,缩量,放量,股票成交量怎么看,量价背离">
-    <title>量价关系怎么看？成交量配合价格的3种信号 - 理易港</title>
-    <link rel="canonical" href="https://ourlyg.com/knowledge/article-volume-price.html">
+    <meta name="description" content="量价关系怎么看？成交量配合价格的3种核心信号详解：量价齐升、量缩阴跌、顶背离放量——读懂成交量，才能看穿主力意图。">
+    <meta name="keywords" content="量价关系,成交量分析,量价背离,量价齐升,缩量上涨,放量下跌,成交量怎么看,技术分析成交量,A股成交量">
+    <title>量价关系怎么看？成交量配合价格的3种核心信号 - 理易港</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        .article-hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); color: white; padding: 80px 0 50px; }
-        .article-content { max-width: 780px; margin: 0 auto; padding: 48px 24px; }
-        .article-content h2 { font-size: 22px; font-weight: 800; margin: 36px 0 14px; color: #1a1a1a; }
-        .article-content h3 { font-size: 18px; font-weight: 700; margin: 28px 0 12px; color: #2d3748; }
-        .article-content p { color: #444; line-height: 1.9; font-size: 15px; margin-bottom: 16px; }
-        .article-content ul, .article-content ol { color: #444; line-height: 1.9; font-size: 15px; padding-left: 24px; margin-bottom: 16px; }
-        .article-content li { margin-bottom: 8px; }
-        .highlight-box { background: #f0f4ff; border-left: 4px solid #667eea; border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 20px 0; }
-        .highlight-box p { margin: 0; color: #374151; }
-        .warning-box { background: #fff7ed; border-left: 4px solid #f59e0b; border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 20px 0; }
-        .warning-box p { margin: 0; color: #92400e; }
-        .success-box { background: #f0fdf4; border-left: 4px solid #10b981; border-radius: 0 12px 12px 0; padding: 16px 20px; margin: 20px 0; }
-        .success-box p { margin: 0; color: #065f46; }
-        .signal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
-        @media (max-width: 600px) { .signal-grid { grid-template-columns: 1fr; } }
-        .signal-card { border-radius: 12px; padding: 20px; text-align: center; }
-        .signal-up { background: #f0fdf4; border: 1px solid #bbf7d0; }
-        .signal-warn { background: #fffbeb; border: 1px solid #fde68a; }
-        .signal-down { background: #fef2f2; border: 1px solid #fecaca; }
-        .cta-section { background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 20px; padding: 40px; color: white; text-align: center; margin: 48px 0; }
-        .cta-section h3 { font-size: 22px; font-weight: 800; margin-bottom: 12px; }
-        .cta-section p { opacity: 0.85; margin-bottom: 24px; font-size: 15px; }
-        .chart-demo { background: #1a1a2e; border-radius: 12px; padding: 20px; font-family: monospace; color: #a5b4fc; font-size: 13px; line-height: 1.8; overflow-x: auto; margin: 20px 0; }
-        .tag { display: inline-block; background: #dbeafe; color: #1e40af; padding: 2px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-right: 6px; }
-        .breadcrumb-nav { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 16px; }
-        .breadcrumb-nav a { color: rgba(255,255,255,0.7); text-decoration: none; }
-        .reading-meta { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; font-size: 13px; opacity: 0.7; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #1a1a1a; }
+        .article-hero { background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%); color: white; padding: 80px 0 60px; }
+        .article-body-text { font-size: 16px; line-height: 1.9; color: #333; }
+        .article-body-text h2 { font-size: 22px; font-weight: 800; margin: 40px 0 16px; color: #1a1a1a; border-left: 4px solid #1d4ed8; padding-left: 14px; }
+        .article-body-text h3 { font-size: 18px; font-weight: 700; margin: 28px 0 12px; color: #222; }
+        .article-body-text p { margin-bottom: 16px; }
+        .highlight-box { background: #eff6ff; border-radius: 12px; padding: 20px 24px; margin: 24px 0; border-left: 4px solid #1d4ed8; }
+        .warning-box { background: #fef3c7; border-radius: 12px; padding: 20px 24px; margin: 24px 0; border-left: 4px solid #f59e0b; }
+        .signal-card { border-radius: 14px; padding: 22px 24px; margin: 16px 0; border: 2px solid; }
+        .signal-bull { background: #dcfce7; border-color: #16a34a; }
+        .signal-bear { background: #fee2e2; border-color: #dc2626; }
+        .signal-warn { background: #fef9c3; border-color: #ca8a04; }
+        .cta-section { background: linear-gradient(135deg, #1d4ed8 0%, #1e3a5f 100%); border-radius: 20px; padding: 36px; color: white; text-align: center; margin: 48px 0; }
+        .table-clean th { background: #eff6ff; font-weight: 700; }
+        .table-clean td, .table-clean th { padding: 12px 16px; border: 1px solid #bfdbfe; }
+        .chart-mock { background: #1e293b; border-radius: 12px; padding: 24px; margin: 20px 0; color: #94a3b8; font-family: monospace; font-size: 13px; line-height: 2; }
     </style>
 </head>
 <body>
-    <!-- 导航 -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background:rgba(10,10,30,0.95); position:sticky; top:0; z-index:100; backdrop-filter:blur(10px); border-bottom:1px solid rgba(255,255,255,0.06);">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="../index.html" style="font-weight:800; font-size:20px; background:linear-gradient(90deg,#a5b4fc,#c4b5fd); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">理易港</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border-color:rgba(255,255,255,0.3);">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../services/index.html">服务项目</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../products/index.html">产品测评</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../tools/calculator.html">理财工具</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="index.html">知识科普</a></li>
-                    <li class="nav-item ms-2"><a href="../service-request.html" class="btn btn-primary" style="border-radius:20px; padding:6px 18px; font-size:14px;">立即咨询</a></li>
-                </ul>
+            <a class="navbar-brand" href="../index.html"><strong style="color:#667eea;">理易港</strong> <span style="font-size:13px;color:#999;">ourlyg.com</span></a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="../index.html">首页</a>
+                <a class="nav-link active" href="index.html">知识科普</a>
+                <a class="nav-link" href="../service-request.html" style="color:#667eea;font-weight:600;">下单分析</a>
             </div>
         </div>
     </nav>
 
-    <!-- 文章头部 -->
-    <section class="article-hero">
+    <div class="article-hero" style="margin-top:56px;">
         <div class="container">
-            <div style="max-width:780px; margin:0 auto;">
-                <div class="breadcrumb-nav">
-                    <a href="../index.html">首页</a> &gt; <a href="index.html">知识科普</a> &gt; 量价关系
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div style="margin-bottom:16px;">
+                        <span style="background:rgba(255,255,255,0.2); border-radius:20px; padding:4px 14px; font-size:13px; font-weight:600;">技术分析</span>
+                    </div>
+                    <h1 style="font-size:32px; font-weight:900; line-height:1.3; margin-bottom:20px;">量价关系怎么看？<br>成交量配合价格的3种核心信号</h1>
+                    <p style="font-size:16px; opacity:0.85; margin-bottom:24px;">价格会说谎，成交量不会。量是价的先导——读懂放量、缩量、背离这3种信号，你就能比大多数散户早一步看清行情真相。</p>
+                    <div style="display:flex; gap:20px; flex-wrap:wrap; font-size:14px; opacity:0.75;">
+                        <span>📅 2026年3月</span>
+                        <span>⏱ 约14分钟</span>
+                        <span>👤 入门至中级</span>
+                    </div>
                 </div>
-                <span class="tag" style="background:rgba(219,234,254,0.2); color:#a5b4fc;">技术分析</span>
-                <h1 style="font-size:clamp(22px,4vw,32px); font-weight:800; margin:16px 0 12px; line-height:1.4;">量价关系怎么看？<br>成交量配合价格的3种信号</h1>
-                <p style="opacity:0.75; font-size:15px; line-height:1.8;">量是价的先行指标——成交量的变化往往比股价领先一步。学会读懂量价关系，是从"看价格"升级到"看市场情绪"的关键一步。</p>
-                <div class="reading-meta">
-                    <span>📅 2026年3月</span>
-                    <span>⏱ 约10分钟</span>
-                    <span>👤 适合有基础的投资者</span>
-                    <span>🏷️ 技术分析 / 成交量</span>
-                </div>
             </div>
         </div>
-    </section>
-
-    <!-- 文章内容 -->
-    <div class="article-content">
-
-        <p>很多散户看股票只看价格涨跌，成交量这栏直接忽略。这是个很大的误区。</p>
-
-        <p>股价是结果，成交量是过程。同样是涨停，10亿成交量的涨停和1亿成交量的涨停意义完全不同；同样是缩量，调整期的缩量和顶部的缩量也截然不同。</p>
-
-        <div class="highlight-box">
-            <p><strong>核心原则：</strong>量价关系最简单的理解方式——<strong>量是"力量"的体现</strong>。看多的人买入，看空的人卖出，两边交易产生成交量。量大说明分歧大、情绪高；量小说明分歧小、参与少。</p>
-        </div>
-
-        <h2>信号一：量价齐升——最健康的上涨形态</h2>
-
-        <p>股价上涨，成交量同步放大——这是技术分析中最受认可的看多信号。</p>
-
-        <p>为什么？因为价格上涨的同时成交量在放大，说明有越来越多的资金在主动介入，买盘力量在增强。这种上涨是"有人在推"的，不是无量空涨。</p>
-
-        <div class="chart-demo">
-价格走势：  ▁▂▃▄▅▆▇█  （持续上涨）
-成交量：    ▁▂▃▅▆▇██  （同步放大）
-
-结论：健康上涨，趋势可持续性高
-        </div>
-
-        <div class="success-box">
-            <p><strong>操作参考：</strong>量价齐升通常是进场参与的较好时机，但要注意——如果已经涨了很多，突然成交量暴增（最后一波疯狂），反而可能是顶部信号。</p>
-        </div>
-
-        <h3>量价齐升的3个细节</h3>
-        <ul>
-            <li><strong>温和放量</strong> vs <strong>暴量</strong>：温和放量（比前期均量增加30-100%）是健康的；暴量（放出几倍成交量）要小心，可能是主力出货或见顶信号</li>
-            <li><strong>放量的位置</strong>：在底部区域放量突破有效性高；在高位区域放量要谨慎</li>
-            <li><strong>持续性</strong>：连续2-3天量价齐升比单天更可靠</li>
-        </ul>
-
-        <h2>信号二：缩量滞涨——警惕的信号</h2>
-
-        <p>"缩量滞涨"指的是成交量在萎缩，但股价却停止上涨甚至开始小跌。这是一个重要的看空信号。</p>
-
-        <p>逻辑是：当买盘力量开始枯竭（量减少），但价格还没跌太多，说明空方还在观望、没有大规模抛售，但趋势的动力已经在减弱。这往往是变盘前的信号。</p>
-
-        <div class="chart-demo">
-价格走势：  ▇████▇▇▆  （高位横盘，轻微回落）
-成交量：    ████▆▄▃▂  （持续萎缩）
-
-结论：上涨动力不足，注意风险
-        </div>
-
-        <div class="warning-box">
-            <p><strong>注意区分：</strong>正常调整期的缩量（下跌时缩量）是健康的，说明抛盘不重；但<strong>高位放量后迅速缩量</strong>，或者<strong>突破关键位时缩量</strong>，才是危险信号。</p>
-        </div>
-
-        <h3>缩量的两种情况</h3>
-        <ul>
-            <li><strong>缩量上涨（不好）</strong>：价格还在涨，但成交量越来越少——这是"无量空涨"，缺乏持续动力，容易被打回来</li>
-            <li><strong>缩量下跌（相对好）</strong>：调整期间成交量萎缩，说明卖盘轻，后续恢复动力后更容易反弹</li>
-        </ul>
-
-        <h2>信号三：放量破位——最需要警惕的形态</h2>
-
-        <p>"放量破位"是量价关系里最危险的信号之一。</p>
-
-        <p>具体来说，是指股价放量跌破了重要支撑位（如均线、前期低点、颈线等）。成交量放大说明卖盘很重，多方溃退，技术支撑被有效突破，后续通常还会继续下跌。</p>
-
-        <div class="chart-demo">
-价格走势：  ████▆▄▂▁  （放量跌破支撑）
-成交量：    ▂▂▃▆████  （跌破时量能暴增）
-
-关键支撑位：────────── （被击穿）
-结论：出现明确看空信号，谨慎操作
-        </div>
-
-        <div class="warning-box">
-            <p><strong>常见误区：</strong>很多散户看到股价跌了很多、成交量放大，觉得是"割肉盘出来了、可以抄底"——但放量破位恰恰相反，它说明主动卖盘很强，不是好的抄底时机。</p>
-        </div>
-
-        <h3>放量破位 vs 缩量破位的区别</h3>
-        <ul>
-            <li><strong>放量破位</strong>：破位时成交量大幅放出，卖盘主动、力度强，有效性高，后续跌幅通常较大</li>
-            <li><strong>缩量破位</strong>：成交量很小，可能是假突破，需要等待确认。但也不能掉以轻心，后续如果放量下跌就确认了</li>
-        </ul>
-
-        <h2>综合来看：量价关系判断矩阵</h2>
-
-        <div class="signal-grid">
-            <div class="signal-card signal-up">
-                <div style="font-size:24px; margin-bottom:8px;">📈</div>
-                <div style="font-weight:700; font-size:14px; color:#065f46; margin-bottom:6px;">放量上涨</div>
-                <div style="font-size:12px; color:#047857; line-height:1.6;">量价齐升<br>趋势健康<br>可以参与</div>
-            </div>
-            <div class="signal-card signal-warn">
-                <div style="font-size:24px; margin-bottom:8px;">⚠️</div>
-                <div style="font-weight:700; font-size:14px; color:#92400e; margin-bottom:6px;">缩量上涨</div>
-                <div style="font-size:12px; color:#b45309; line-height:1.6;">无量空涨<br>动力不足<br>注意减仓</div>
-            </div>
-            <div class="signal-card signal-up">
-                <div style="font-size:24px; margin-bottom:8px;">✅</div>
-                <div style="font-weight:700; font-size:14px; color:#065f46; margin-bottom:6px;">缩量下跌</div>
-                <div style="font-size:12px; color:#047857; line-height:1.6;">调整健康<br>卖盘轻<br>可以等待</div>
-            </div>
-            <div class="signal-card signal-down">
-                <div style="font-size:24px; margin-bottom:8px;">🚨</div>
-                <div style="font-weight:700; font-size:14px; color:#991b1b; margin-bottom:6px;">放量下跌</div>
-                <div style="font-size:12px; color:#b91c1c; line-height:1.6;">卖盘沉重<br>主动出货<br>规避风险</div>
-            </div>
-        </div>
-
-        <h2>量价分析的实战技巧</h2>
-
-        <h3>1. 看相对成交量，而不是绝对值</h3>
-        <p>不同股票的日常成交量差异极大，茅台和一只小盘股不能比绝对数字。要把当日成交量和该股近期均量（通常用5日/10日均量）对比。放出2倍以上均量就算"放量"。</p>
-
-        <h3>2. 量价背离是重要信号</h3>
-        <p><strong>顶背离：</strong>价格创新高，但成交量比上一个高点时更小——说明追高的人越来越少，上涨动力减弱，顶部风险高。</p>
-        <p><strong>底背离：</strong>价格创新低，但成交量比上一个低点时更小——说明抛盘越来越少，下跌动力减弱，可以关注底部信号。</p>
-
-        <h3>3. 结合K线形态看更准</h3>
-        <p>单看成交量会有误判，配合K线一起看效果更好：</p>
-        <ul>
-            <li>放量长阳（收盘在高位）：看多信号</li>
-            <li>放量长阴（收盘在低位）：看空信号</li>
-            <li>放量十字星（收盘接近开盘价）：分歧极大，需要继续观察</li>
-            <li>缩量小阳：整理，方向未定</li>
-        </ul>
-
-        <h3>4. 注意尾盘成交量</h3>
-        <p>尾盘（14:30-15:00）如果突然放量，往往代表机构或主力在最后时刻的操作：尾盘放量拉升是积极信号；尾盘放量下跌要小心次日跳空低开。</p>
-
-        <h2>常见误区总结</h2>
-
-        <ul>
-            <li><strong>误区1：量大=要涨</strong> — 不对。放量下跌说明卖盘重；顶部放量是出货信号</li>
-            <li><strong>误区2：量小=没机会</strong> — 不对。底部缩量整理后的放量突破才是最佳进场时机</li>
-            <li><strong>误区3：只看今天的量</strong> — 要看连续几天的量能变化趋势，单日有噪音</li>
-            <li><strong>误区4：量价关系万能</strong> — 量价分析是辅助工具，不能脱离基本面、行业背景和大盘环境单独使用</li>
-        </ul>
-
-        <div class="highlight-box">
-            <p><strong>核心结论：</strong>量价关系最简单的记忆口诀——<strong>"价涨量增是健康，价涨量缩是虚涨，价跌量增要走人，价跌量缩是调整"</strong>。把这四种情况记牢，看盘会清晰很多。</p>
-        </div>
-
-        <!-- CTA区域 -->
-        <div class="cta-section">
-            <h3>你手里的股票现在量价关系怎样？</h3>
-            <p>光知道理论还不够——你手里那只股票的成交量趋势、量价背离信号、近期主力动向，让AI帮你综合分析一下。</p>
-            <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-                <a href="../service-request.html?service=股票诊断报告" style="background:white; color:#667eea; padding:12px 28px; border-radius:50px; font-weight:700; font-size:15px; text-decoration:none;">AI帮我分析，¥9.9起</a>
-                <a href="../samples/index.html" style="background:rgba(255,255,255,0.2); color:white; padding:12px 28px; border-radius:50px; font-weight:700; font-size:15px; text-decoration:none; border:1px solid rgba(255,255,255,0.4);">先看样本报告</a>
-            </div>
-        </div>
-
-        <!-- 相关文章 -->
-        <div style="border-top:1px solid #f0f0f0; padding-top:32px; margin-top:32px;">
-            <div style="font-weight:800; font-size:16px; margin-bottom:16px;">相关文章</div>
-            <div style="display:flex; flex-direction:column; gap:10px;">
-                <a href="article-macd-guide.html" style="color:#667eea; text-decoration:none; font-size:15px; padding:10px 0; border-bottom:1px solid #f5f5f5;">MACD指标怎么看？散户最容易犯的3个错误 →</a>
-                <a href="article-candlestick-basics.html" style="color:#667eea; text-decoration:none; font-size:15px; padding:10px 0; border-bottom:1px solid #f5f5f5;">K线图基础入门：20分钟看懂技术分析 →</a>
-                <a href="article-position-diagnosis.html" style="color:#667eea; text-decoration:none; font-size:15px; padding:10px 0;">持仓诊断：如何判断股票还值不值得继续持有 →</a>
-            </div>
-        </div>
-
     </div>
 
-    <!-- Footer -->
-    <footer style="background:#0d0d1a; color:rgba(255,255,255,0.5); padding:40px 0 20px;">
-        <div class="container">
-            <div class="row g-4 mb-4">
-                <div class="col-md-4">
-                    <div style="font-weight:800; font-size:18px; color:white; margin-bottom:8px;">理易港</div>
-                    <p style="font-size:13px; line-height:1.8;">AI驱动的金融分析服务，让数据说话，让决策更清晰。</p>
+    <div class="container" style="padding-top:48px; padding-bottom:80px;">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 article-body-text">
+
+                <div class="highlight-box">
+                    <strong>核心原则：</strong>成交量代表市场参与者的"行动力度"。价格涨跌只告诉你结果，成交量告诉你背后是否有真实买卖意愿支撑。量大代表分歧大、换手多；量小代表共识强、参与少。
                 </div>
-                <div class="col-md-4">
-                    <div style="font-weight:700; color:rgba(255,255,255,0.7); margin-bottom:12px; font-size:14px;">快速导航</div>
-                    <div style="display:flex; flex-direction:column; gap:6px; font-size:13px;">
-                        <a href="../services/index.html" style="color:rgba(255,255,255,0.5); text-decoration:none;">服务项目</a>
-                        <a href="../samples/index.html" style="color:rgba(255,255,255,0.5); text-decoration:none;">样本报告</a>
-                        <a href="index.html" style="color:rgba(255,255,255,0.5); text-decoration:none;">知识科普</a>
-                        <a href="../service-request.html" style="color:rgba(255,255,255,0.5); text-decoration:none;">立即下单</a>
-                    </div>
+
+                <h2>一、为什么成交量比价格更诚实</h2>
+
+                <p>价格可以被少量资金短期拉高，但成交量造假的成本极高。一只股票连续涨停但成交量极小，说明流通筹码高度集中、缺乏真实换手；而一只股票放量上涨，说明大量买卖双方都愿意在当前价位成交，上涨的背后有真实认可度。</p>
+
+                <p>理解量价关系，本质是理解多空双方在每个价位的<strong>意愿强度</strong>。</p>
+
+                <h2>二、3种核心量价信号详解</h2>
+
+                <h3>信号一：量价齐升——最健康的上涨</h3>
+
+                <div class="signal-card signal-bull">
+                    <strong>🟢 特征：</strong>价格持续上涨，同时成交量也持续放大<br>
+                    <strong>含义：</strong>多方力量强劲，有大量资金持续流入，上涨有效<br>
+                    <strong>操作参考：</strong>趋势上行，可持有或适量追涨（注意不要追在放量最大的那根K线）
                 </div>
-                <div class="col-md-4">
-                    <div style="font-weight:700; color:rgba(255,255,255,0.7); margin-bottom:12px; font-size:14px;">联系方式</div>
-                    <div style="font-size:13px; line-height:2;">
-                        <div>邮箱：contact@ourlyg.com</div>
-                        <div>网站：ourlyg.com</div>
-                    </div>
+
+                <p>量价齐升是教科书级别的强势信号。每一根阳线背后都有大量买盘支撑，说明市场对这只股票（或指数）的认可度在增加。主升浪往往就是量价齐升的过程。</p>
+
+                <p>注意：如果量价齐升后突然出现<strong>超级天量</strong>（成交量为前期的3倍以上），反而要警惕——这可能是"量价顶"，散户蜂拥进场时，往往是主力出货的时候。</p>
+
+                <h3>信号二：缩量上涨——小心踩空</h3>
+
+                <div class="signal-card signal-warn">
+                    <strong>🟡 特征：</strong>价格持续上涨，但成交量持续萎缩<br>
+                    <strong>含义：</strong>上涨动能不足，筹码锁定但缺乏增量资金<br>
+                    <strong>操作参考：</strong>谨慎追涨，等待放量确认，随时准备变盘
                 </div>
-            </div>
-            <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:20px; font-size:12px; text-align:center; color:rgba(255,255,255,0.3);">
-                ⚠️ 本文内容仅供参考，不构成投资建议。市场有风险，投资须谨慎。
+
+                <p>缩量上涨有两种解读：</p>
+                <ul>
+                    <li><strong>短期看</strong>：筹码集中，持仓者惜售，价格被少量买盘推高——短期可能继续，但不可持续</li>
+                    <li><strong>中长期看</strong>：没有足够新资金入场，上涨缺乏动力，一旦有人出货就容易快速回落</li>
+                </ul>
+
+                <p>A股中有一种典型形态叫"缩量创新高"——连续小阳线慢慢摸高，成交量越来越小。这种形态随后往往跟一根大阴线放量下跌，把前面的所有涨幅一次性打回去。</p>
+
+                <h3>信号三：放量下跌——最危险的卖出信号</h3>
+
+                <div class="signal-card signal-bear">
+                    <strong>🔴 特征：</strong>价格明显下跌，同时成交量大幅放大<br>
+                    <strong>含义：</strong>大量持仓者争相出逃，空头力量占据主导<br>
+                    <strong>操作参考：</strong>止损离场，不要"越跌越买"，等放量止跌企稳后再考虑介入
+                </div>
+
+                <p>放量下跌是最直接的看空信号。大量卖方愿意在当前价位出手，说明市场对这只股票失去信心。尤其是：</p>
+                <ul>
+                    <li><strong>跌破重要支撑位同时放量</strong>：确认破位，下跌趋势开始</li>
+                    <li><strong>高位出现放量长阴线</strong>：主力出货信号，往往是行情顶部附近</li>
+                    <li><strong>下跌过程中量能持续放大</strong>：恐慌性抛售，底部尚远</li>
+                </ul>
+
+                <h2>三、量价背离——最容易被忽视的预警</h2>
+
+                <p>量价背离分两种，都是行情即将反转的警报：</p>
+
+                <h3>顶背离（最危险）</h3>
+                <table class="table table-clean w-100" style="margin:16px 0;">
+                    <thead><tr><th>价格</th><th>成交量</th><th>含义</th></tr></thead>
+                    <tbody>
+                        <tr><td>创出新高</td><td>未同步创新高，反而萎缩</td><td>上涨动能耗尽，随时反转向下</td></tr>
+                    </tbody>
+                </table>
+                <p>顶背离是"上涨的谎言"——价格看起来还在创新高，但愿意在这个高位买入的人越来越少。一旦卖压稍大，价格就会快速回落。</p>
+
+                <h3>底背离（反弹机会）</h3>
+                <table class="table table-clean w-100" style="margin:16px 0;">
+                    <thead><tr><th>价格</th><th>成交量</th><th>含义</th></tr></thead>
+                    <tbody>
+                        <tr><td>跌至新低</td><td>成交量明显萎缩</td><td>卖盘枯竭，下跌动能不足，可能迎来反弹</td></tr>
+                    </tbody>
+                </table>
+                <p>底背离说明愿意继续卖出的人越来越少，恐慌性抛压基本释放完毕。配合超卖技术指标（如RSI&lt;30），是考虑分批建仓的信号。</p>
+
+                <div class="warning-box">
+                    <strong>⚠️ 底背离不等于马上涨：</strong>底背离只说明下跌动能减弱，不代表立刻反转。在底部区域要等到"放量阳线确认"后再介入，不要抢先买入还在缩量下跌的股票。
+                </div>
+
+                <h2>四、实战：用量价关系判断4种典型市场状态</h2>
+
+                <table class="table table-clean w-100" style="margin:20px 0;">
+                    <thead>
+                        <tr>
+                            <th>价格</th>
+                            <th>成交量</th>
+                            <th>市场状态</th>
+                            <th>操作建议</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background:#dcfce7;">
+                            <td>↑ 上涨</td>
+                            <td>↑ 放量</td>
+                            <td>强势上涨（健康）</td>
+                            <td>持有，可适量追</td>
+                        </tr>
+                        <tr style="background:#fef9c3;">
+                            <td>↑ 上涨</td>
+                            <td>↓ 缩量</td>
+                            <td>惰性上涨（警惕）</td>
+                            <td>谨慎持有，不追高</td>
+                        </tr>
+                        <tr style="background:#fef9c3;">
+                            <td>↓ 下跌</td>
+                            <td>↓ 缩量</td>
+                            <td>阴跌整理（相对安全）</td>
+                            <td>观望，等缩量止跌信号</td>
+                        </tr>
+                        <tr style="background:#fee2e2;">
+                            <td>↓ 下跌</td>
+                            <td>↑ 放量</td>
+                            <td>恐慌下跌（危险）</td>
+                            <td>止损离场，勿抄底</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>五、量价分析的3个注意事项</h2>
+
+                <h3>1. 个股和大盘量价要分开看</h3>
+                <p>大盘缩量上涨可能代表慢牛，个股缩量上涨则更危险。看个股时，还需要参考板块整体的量能情况。</p>
+
+                <h3>2. 绝对量没意义，要看相对量</h3>
+                <p>今天成交10亿算大还是小？要和该股过去20日均量比较。如果超过均量150%以上，才算真正"放量"。</p>
+
+                <h3>3. 停牌复牌后第一天的量不算</h3>
+                <p>复牌首日往往有积压的买卖单集中释放，成交量失真，不能用来判断量价关系，至少观察3–5个交易日后再做判断。</p>
+
+                <h2>六、总结：量价判断三步法</h2>
+
+                <div class="highlight-box">
+                    <strong>第一步：</strong>看量的相对大小——今日量 vs 20日均量，超过150%算放量，低于50%算缩量<br>
+                    <strong>第二步：</strong>对照价格方向——涨+放量=健康，涨+缩量=警惕，跌+放量=危险，跌+缩量=整理<br>
+                    <strong>第三步：</strong>看是否出现背离——价创新高但量缩（顶背离），价创新低但量缩（底背离），提前预判转折
+                </div>
+
+                <p>成交量是市场的"体温计"。量大是市场发烧（分歧大），量小是市场平静（共识强）。结合价格方向一起看，你就能把K线图从单纯的涨跌曲线，变成一幅真实反映多空力量对比的战场地图。</p>
+
+                <!-- CTA -->
+                <div class="cta-section">
+                    <h3 style="font-weight:800; margin-bottom:12px;">需要帮你解读个股的量价信号？</h3>
+                    <p style="opacity:0.9; margin-bottom:24px;">量价分析结合K线形态、均线系统、MACD指标做综合判断，才能大幅提高操作胜率。我帮你做完整技术面分析。</p>
+                    <a href="../service-request.html" class="btn btn-light btn-lg" style="font-weight:700; color:#1d4ed8; border-radius:50px; padding:12px 36px;">下单：获取技术分析报告</a>
+                </div>
+
             </div>
         </div>
-    </footer>
+    </div>
 
+    <footer class="bg-dark text-white py-4" style="font-size:14px;">
+        <div class="container text-center">
+            <p style="margin:0; opacity:0.6;">© 2026 理易港 ourlyg.com · 本站内容仅供投资参考，不构成投资建议</p>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
