@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="K线入门图解：锤子线、十字星、吞没形态、晨星暮星……5种最常见K线形态详解，配合实战含义，散户必学的基础技术分析。">
+    <meta name="keywords" content="K线形态,K线怎么看,锤子线,十字星,吞没形态,晨星暮星,K线图教程,蜡烛图,K线反转信号">
+    <title>K线基础入门：5种最常见K线形态图解与实战含义 - 理易港</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #1a1a1a; }
+        .article-hero { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); color: white; padding: 80px 0 60px; }
+        .article-body-text { font-size: 16px; line-height: 1.9; color: #333; }
+        .article-body-text h2 { font-size: 22px; font-weight: 800; margin: 40px 0 16px; color: #1a1a1a; border-left: 4px solid #7c3aed; padding-left: 14px; }
+        .article-body-text h3 { font-size: 18px; font-weight: 700; margin: 28px 0 12px; color: #222; }
+        .article-body-text p { margin-bottom: 16px; }
+        .highlight-box { background: #f5f3ff; border-radius: 12px; padding: 20px 24px; margin: 24px 0; border-left: 4px solid #7c3aed; }
+        .warning-box { background: #fef3c7; border-radius: 12px; padding: 20px 24px; margin: 24px 0; border-left: 4px solid #f59e0b; }
+        .candle-card { border-radius: 16px; padding: 24px; margin: 20px 0; border: 2px solid #e5e7eb; }
+        .candle-visual { font-size: 40px; text-align: center; margin: 16px 0; letter-spacing: 4px; }
+        .cta-section { background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%); border-radius: 20px; padding: 36px; color: white; text-align: center; margin: 48px 0; }
+        .table-clean th { background: #f5f3ff; font-weight: 700; }
+        .table-clean td, .table-clean th { padding: 12px 16px; border: 1px solid #ede9fe; }
+        .bullish { color: #dc2626; font-weight: 700; }
+        .bearish { color: #16a34a; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><strong style="color:#667eea;">理易港</strong> <span style="font-size:13px;color:#999;">ourlyg.com</span></a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="../index.html">首页</a>
+                <a class="nav-link active" href="index.html">知识科普</a>
+                <a class="nav-link" href="../service-request.html" style="color:#667eea;font-weight:600;">下单分析</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="article-hero" style="margin-top:56px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div style="margin-bottom:16px;">
+                        <span style="background:rgba(255,255,255,0.2); border-radius:20px; padding:4px 14px; font-size:13px; font-weight:600;">技术分析</span>
+                    </div>
+                    <h1 style="font-size:32px; font-weight:900; line-height:1.3; margin-bottom:20px;">K线基础入门：5种最常见的K线形态<br>看懂就能读懂多空力量博弈</h1>
+                    <p style="font-size:16px; opacity:0.85; margin-bottom:24px;">K线不是玄学，每根K线背后都是真实的买卖力量。掌握这5种核心形态，你就能读懂图表在"说什么"。</p>
+                    <div style="display:flex; gap:20px; flex-wrap:wrap; font-size:14px; opacity:0.75;">
+                        <span>📅 2026年3月</span>
+                        <span>⏱ 约12分钟</span>
+                        <span>👤 入门级投资者</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="padding-top:48px; padding-bottom:80px;">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 article-body-text">
+
+                <div class="highlight-box">
+                    <strong>📌 先搞清楚K线是什么</strong><br>
+                    每根K线 = 一段时间内的四个价格：<strong>开盘价、收盘价、最高价、最低价</strong><br>
+                    实体（粗的部分）= 开盘到收盘的区间；影线（细线）= 超出实体的最高/最低价<br>
+                    A股：<span class="bullish">红色/阳线</span> = 收盘 > 开盘；<span class="bearish">绿色/阴线</span> = 收盘 < 开盘
+                </div>
+
+                <h2>形态一：锤子线 / 上吊线</h2>
+
+                <div class="candle-card">
+                    <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+                        <div style="font-size:48px; min-width:60px; text-align:center;">🔨</div>
+                        <div style="flex:1;">
+                            <strong>形态特征</strong>：实体很小，位于K线上方；下影线很长（至少是实体的2倍）；几乎没有上影线
+                        </div>
+                    </div>
+                    <hr style="margin:16px 0; border-color:#eee;">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div style="background:#fff1f2; border-radius:10px; padding:14px;">
+                                <div style="font-weight:700; color:#dc2626; margin-bottom:6px;">锤子线（出现在下跌末端）</div>
+                                <p style="font-size:14px; margin:0;">多方在盘中大幅压低价格，但最终买盘强势反击，把价格推回高位。<strong>潜在反转信号：可能止跌反弹</strong></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div style="background:#f0fdf4; border-radius:10px; padding:14px;">
+                                <div style="font-weight:700; color:#16a34a; margin-bottom:6px;">上吊线（出现在上涨末端）</div>
+                                <p style="font-size:14px; margin:0;">形态相同，但位置不同——出现在高位。说明多方上攻后，卖压开始增大。<strong>潜在顶部信号</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="warning-box" style="margin-top:16px; margin-bottom:0;">
+                        <strong>⚠️ 实战要点</strong>：锤子线/上吊线本身不能确认反转，需要等<strong>次日K线确认</strong>（如次日出现阳线跟随才更可靠）。孤立的一根锤子线可能只是洗盘。
+                    </div>
+                </div>
+
+                <h2>形态二：十字星</h2>
+
+                <div class="candle-card">
+                    <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+                        <div style="font-size:48px; min-width:60px; text-align:center;">✝️</div>
+                        <div style="flex:1;">
+                            <strong>形态特征</strong>：开盘价几乎等于收盘价（实体极小或为零）；上下影线都有，形成十字形
+                        </div>
+                    </div>
+                    <hr style="margin:16px 0; border-color:#eee;">
+                    <p style="font-size:15px;">十字星代表多空力量<strong>完全均衡</strong>——买方和卖方势均力敌，市场在犹豫。它本身是中性信号，关键在于出现的位置：</p>
+                    <table class="table table-clean w-100">
+                        <thead><tr><th>出现位置</th><th>含义</th><th>信号强度</th></tr></thead>
+                        <tbody>
+                            <tr><td>下跌末端</td><td>卖压衰竭，可能止跌</td><td>⭐⭐⭐（较强）</td></tr>
+                            <tr><td>上涨末端</td><td>买方力量衰竭，可能见顶</td><td>⭐⭐⭐（较强）</td></tr>
+                            <tr><td>横盘整理中</td><td>继续整理，方向不明</td><td>⭐（弱）</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box" style="margin-top:0;">
+                        <strong>特殊变种：长腿十字星</strong>（上下影线都很长）——代表当天多空激烈争夺，最终平局，变数极大，之后走势可能大幅波动，需要特别警惕。
+                    </div>
+                </div>
+
+                <h2>形态三：吞没形态（孕线逆转）</h2>
+
+                <div class="candle-card">
+                    <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+                        <div style="font-size:48px; min-width:60px; text-align:center;">🫦</div>
+                        <div style="flex:1;">
+                            <strong>形态特征</strong>：由两根K线组成；第二根K线的实体完全"吞没"第一根K线的实体
+                        </div>
+                    </div>
+                    <hr style="margin:16px 0; border-color:#eee;">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div style="background:#fff1f2; border-radius:10px; padding:14px;">
+                                <div style="font-weight:700; color:#dc2626; margin-bottom:6px;">看涨吞没（底部反转）</div>
+                                <p style="font-size:14px; margin:0;">先出现一根阴线，次日出现更大的阳线将其完全吞没。说明买方在一天内彻底逆转了前一天的卖压。<strong>有力的底部信号</strong></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div style="background:#f0fdf4; border-radius:10px; padding:14px;">
+                                <div style="font-weight:700; color:#16a34a; margin-bottom:6px;">看跌吞没（顶部反转）</div>
+                                <p style="font-size:14px; margin:0;">先出现一根阳线，次日出现更大的阴线将其完全吞没。说明卖方强势夺回控制权。<strong>有力的顶部信号</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highlight-box" style="margin-top:16px; margin-bottom:0;">
+                        <strong>💡 为什么吞没形态比较可靠？</strong><br>
+                        因为它描述的是一种"力量转换"——不只是停止下跌，而是买方在盘中彻底压倒了卖方。信号越大（吞没比例越高），意义越强。成交量配合放大则更可信。
+                    </div>
+                </div>
+
+                <h2>形态四：晨星 / 暮星（三根线组合）</h2>
+
+                <div class="candle-card">
+                    <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+                        <div style="font-size:48px; min-width:60px; text-align:center;">⭐</div>
+                        <div style="flex:1;">
+                            <strong>形态特征</strong>：三根K线组成；第二根为小实体（无论颜色），第一和第三根是大实体阴/阳线
+                        </div>
+                    </div>
+                    <hr style="margin:16px 0; border-color:#eee;">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div style="background:#fff1f2; border-radius:10px; padding:14px;">
+                                <div style="font-weight:700; color:#dc2626; margin-bottom:6px;">晨星（底部反转）</div>
+                                <p style="font-size:14px; margin:0;">大阴线 → 小实体（跳空低开） → 大阳线<br>就像黑暗结束前出现的晨星，预示底部反转。</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div style="background:#f0fdf4; border-radius:10px; padding:14px;">
+                                <div style="font-weight:700; color:#16a34a; margin-bottom:6px;">暮星（顶部反转）</div>
+                                <p style="font-size:14px; margin:0;">大阳线 → 小实体（跳空高开） → 大阴线<br>傍晚出现的星，代表涨势即将落幕。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="font-size:14px; color:#555; margin-top:16px; margin-bottom:0;">晨星/暮星是K线组合中<strong>最可靠的反转信号之一</strong>，但在日线图上出现频率不高。如果第二根是十字星，则称为"十字晨星/暮星"，信号更强。</p>
+                </div>
+
+                <h2>形态五：光头光脚大阳/大阴线</h2>
+
+                <div class="candle-card">
+                    <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+                        <div style="font-size:48px; min-width:60px; text-align:center;">📊</div>
+                        <div style="flex:1;">
+                            <strong>形态特征</strong>：实体很长（超过当日价格波动的70%以上）；几乎没有上影线和下影线
+                        </div>
+                    </div>
+                    <hr style="margin:16px 0; border-color:#eee;">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div style="background:#fff1f2; border-radius:10px; padding:14px;">
+                                <div style="font-weight:700; color:#dc2626; margin-bottom:6px;">大阳线（光头光脚）</div>
+                                <p style="font-size:14px; margin:0;">全天买方占据绝对优势，从开盘到收盘几乎单边上行。说明<strong>多方意志极强</strong>，若成交量配合则是强烈看涨信号。</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div style="background:#f0fdf4; border-radius:10px; padding:14px;">
+                                <div style="font-weight:700; color:#16a34a; margin-bottom:6px;">大阴线（光头光脚）</div>
+                                <p style="font-size:14px; margin:0;">全天卖方占据绝对优势，单边下行。<strong>破位大阴线尤其危险</strong>——跌破重要支撑位的大阴线往往意味着趋势反转。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="warning-box" style="margin-top:16px; margin-bottom:0;">
+                        <strong>⚠️ 注意区分场景</strong><br>
+                        大阳线出现在长期下跌末端 → 反转信号<br>
+                        大阳线出现在高位（已涨很多后）→ 可能是主力派发前的"最后一根阳线"，小心追高<br>
+                        大阴线出现在重要支撑位 → 趋势可能已反转，不要接刀
+                    </div>
+                </div>
+
+                <h2>5种形态汇总对比</h2>
+                <table class="table table-clean w-100">
+                    <thead>
+                        <tr>
+                            <th>形态名称</th>
+                            <th>根数</th>
+                            <th>底部信号</th>
+                            <th>顶部信号</th>
+                            <th>可靠性</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>锤子线</td><td>1根</td><td>✅ 锤子线</td><td>✅ 上吊线</td><td>⭐⭐⭐（需确认）</td></tr>
+                        <tr><td>十字星</td><td>1根</td><td>✅（位置相关）</td><td>✅（位置相关）</td><td>⭐⭐（需结合位置）</td></tr>
+                        <tr><td>吞没形态</td><td>2根</td><td>✅ 看涨吞没</td><td>✅ 看跌吞没</td><td>⭐⭐⭐⭐（较可靠）</td></tr>
+                        <tr><td>晨星/暮星</td><td>3根</td><td>✅ 晨星</td><td>✅ 暮星</td><td>⭐⭐⭐⭐⭐（最可靠之一）</td></tr>
+                        <tr><td>大阳/大阴线</td><td>1根</td><td>✅（反弹启动）</td><td>✅（破位下行）</td><td>⭐⭐⭐（结合成交量）</td></tr>
+                    </tbody>
+                </table>
+
+                <h2>K线的正确使用方式</h2>
+                <p>很多新手把K线当成算命工具，看到锤子线就觉得一定反弹。这是错误的。K线的正确使用方式是：</p>
+
+                <div class="highlight-box">
+                    <strong>K线 = 多空力量的"证据"，不是"预言"</strong>
+                    <ul style="margin:12px 0 0 0; padding-left:20px;">
+                        <li>K线形态只告诉你当下力量对比，不能保证未来走势</li>
+                        <li>K线形态需要结合<strong>位置</strong>（支撑/压力位、趋势）才有意义</li>
+                        <li>K线形态需要结合<strong>成交量</strong>确认（量价配合才可信）</li>
+                        <li>单根K线不可靠，<strong>多根K线组合</strong>可靠性更高</li>
+                        <li>K线是辅助工具，决策还需结合基本面和仓位管理</li>
+                    </ul>
+                </div>
+
+                <p>学会K线，是技术分析的第一步。下一步是学均线系统（判断趋势）和MACD（判断动能变化），三者结合才是完整的技术分析体系。</p>
+
+                <div class="cta-section">
+                    <h3 style="font-size:22px; font-weight:800; margin-bottom:12px;">你的股票现在出现了什么K线形态？</h3>
+                    <p style="font-size:15px; opacity:0.9; margin-bottom:24px;">发给我股票代码，我帮你分析当前K线形态、所在位置、成交量配合情况，给出明确的技术面研判。</p>
+                    <a href="../service-request.html?service=股票诊断报告" style="background:white; color:#5b21b6; border-radius:50px; padding:14px 36px; font-weight:800; font-size:16px; text-decoration:none; display:inline-block;">立即下单 → 获取诊断报告</a>
+                    <div style="margin-top:14px; font-size:13px; opacity:0.8;">单次报告 ¥9.9 起 · 24小时内交付</div>
+                </div>
+
+                <div style="border-top:1px solid #eee; padding-top:32px; margin-top:8px;">
+                    <div style="font-weight:700; margin-bottom:16px; color:#555;">相关文章</div>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <a href="article-moving-average.html" style="text-decoration:none; color:#333;">
+                                <div style="background:#f8f9fa; border-radius:10px; padding:14px;">
+                                    <div style="font-size:12px; color:#667eea; font-weight:600; margin-bottom:6px;">技术分析</div>
+                                    <div style="font-size:14px; font-weight:600;">均线系统入门：MA5/MA20怎么看</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="article-stop-loss.html" style="text-decoration:none; color:#333;">
+                                <div style="background:#f8f9fa; border-radius:10px; padding:14px;">
+                                    <div style="font-size:12px; color:#10b981; font-weight:600; margin-bottom:6px;">风险管理</div>
+                                    <div style="font-size:14px; font-weight:600;">止损线怎么设？3种方法详解</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="article-stock-picking.html" style="text-decoration:none; color:#333;">
+                                <div style="background:#f8f9fa; border-radius:10px; padding:14px;">
+                                    <div style="font-size:12px; color:#059669; font-weight:600; margin-bottom:6px;">选股方法</div>
+                                    <div style="font-size:14px; font-weight:600;">散户选股：行业→龙头→时机</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer style="background:#1a1a2e; color:#ccc; padding:40px 0; text-align:center; margin-top:0;">
+        <div class="container">
+            <p style="margin:0; font-size:14px;"><strong style="color:white;">理易港</strong> · ourlyg.com</p>
+            <p style="font-size:12px; margin-top:8px; opacity:0.6;">本文内容仅供学习参考，不构成任何投资建议。投资有风险，入市需谨慎。</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
