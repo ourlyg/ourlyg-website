@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+Disallow: /private/
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /.git/
+
+# Sitemap位置
 Sitemap: https://ourlyg.com/sitemap.xml
