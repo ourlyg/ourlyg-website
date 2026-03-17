@@ -243,6 +243,30 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- 量价关系 -->
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-volume-price.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- PE/PB估值 -->
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-pe-pb-valuation.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 散户投资错误 -->
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-investor-mistakes.html</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- AI分析服务页 -->
   <url>
     <loc>https://ourlyg.com/services/index.html</loc>
