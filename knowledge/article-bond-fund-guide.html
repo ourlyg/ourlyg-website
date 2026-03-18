@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="债券基金怎么选？久期、信用评级、利率风险的完整避坑指南。理解政府债/企业债/可转债区别，掌握3种选基策略，学会估值风险识别。">
+    <meta name="keywords" content="债券基金,久期,信用评级,利率风险,政府债,企业债,可转债,基金避坑">
+    <meta name="author" content="ourlyg.com">
+    <meta name="theme-color" content="#0066cc">
+    
+    <!-- Open Graph 社交分享 -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="债券基金避坑指南：久期、信用评级和利率风险">
+    <meta property="og:description" content="理解久期含义、利率反向关系、信用等级体系，避开3种常见踩坑，学会选基金的3个维度">
+    <meta property="og:url" content="https://ourlyg.com/knowledge/article-bond-fund-guide.html">
+    <meta property="og:site_name" content="ourlyg - AI股票分析">
+    <meta property="og:image" content="https://ourlyg.com/images/default-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="债券基金避坑指南">
+    <meta name="twitter:description" content="久期、信用评级、利率风险的完整避坑指南">
+    <meta name="twitter:image" content="https://ourlyg.com/images/default-og.jpg">
+    
+    <!-- JSON-LD 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "债券基金避坑指南：久期、信用评级和利率风险",
+        "description": "完整的债券基金投资指南，包含久期理论、信用评级体系、利率敏感性分析",
+        "image": "https://ourlyg.com/images/default-og.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "ourlyg.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ourlyg.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://ourlyg.com/images/logo.png"
+            }
+        },
+        "datePublished": "2026-03-18",
+        "dateModified": "2026-03-18"
+    }
+    </script>
+    
+    <link rel="canonical" href="https://ourlyg.com/knowledge/article-bond-fund-guide.html">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .article-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 40px 20px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin: 40px 0 20px 0;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+        .subsection-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #555;
+            margin: 30px 0 15px 0;
+        }
+        .key-point {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+        .comparison-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .calculation-box {
+            background: #e7f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .duration-visual {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .duration-box {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+            margin: 10px;
+        }
+        .duration-bar {
+            width: 100%;
+            height: 30px;
+            background: #ddd;
+            border-radius: 4px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        .duration-short { background: #28a745; }
+        .duration-medium { background: #ffc107; }
+        .duration-long { background: #dc3545; }
+        .rating-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .rating-card {
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+        }
+        .rating-aaa { background: #28a745; }
+        .rating-aa { background: #17a2b8; }
+        .rating-a { background: #ffc107; color: #333; }
+        .rating-bbb { background: #fd7e14; }
+        .rating-bb { background: #dc3545; }
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 50px 0 20px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+    </style>
+    <title>债券基金避坑指南：久期、信用评级和利率风险 - ourlyg</title>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"><strong>ourlyg</strong> AI股票分析</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products/">产品测评</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tools/">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../knowledge/">知识科普</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../services/">服务介绍</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 文章头 -->
+    <div class="article-header">
+        <h1 style="margin: 0 0 15px 0; font-size: 42px;">债券基金避坑指南</h1>
+        <p style="margin: 0; font-size: 18px;">久期、信用评级和利率风险完全解析</p>
+        <small style="display: block; margin-top: 15px; opacity: 0.9;">
+            📅 2026年3月 | ⏱ 约18分钟 | 👤 理财新手至中级投资者
+        </small>
+    </div>
+
+    <!-- 正文 -->
+    <div class="article-content">
+        <div class="key-point">
+            <strong>核心提示：</strong>很多投资者认为债券基金"稳定安全"，但殊不知利率下行时收益惊人，利率上升时亏损也很快。掌握久期、信用评级、利率敏感性这3个维度，才能真正避坑。
+        </div>
+
+        <h2 class="section-title">第一部分：债券基金为什么容易踩坑？</h2>
+        
+        <p>债券基金的风险往往被忽视，因为：</p>
+        <ul>
+            <li><strong>名字迷惑性强：</strong>"债券"听起来很保险，但债券基金并非债券本身，而是投资债券的基金</li>
+            <li><strong>利率敏感性被忽视：</strong>很多人不知道利率上升时，债券基金会大幅亏损</li>
+            <li><strong>信用风险被低估：</strong>没有分清政府债、企业债、可转债的风险差异</li>
+            <li><strong>净值波动被忽视：</strong>按照持有期收益力度下注，不知道期间会高位套牢</li>
+        </ul>
+
+        <div class="warning-box">
+            <strong>⚠️ 常见踩坑案例：</strong><br>
+            2023年下半年利率下行时，不少人在10年期国债收益率接近2.3%的高位满仓债券基金。2024年开始央行加息，收益率上升，债券基金净值下跌10-15%。持有不动还能解套，但被迫平仓就成了亏损。
+        </div>
+
+        <h2 class="section-title">第二部分：久期——债券基金的"风险衡量"</h2>
+        
+        <h3 class="subsection-title">什么是久期（Duration）？</h3>
+        <p>久期是衡量债券价格对利率变化敏感度的指标，单位是"年"。</p>
+        
+        <div class="calculation-box">
+            <strong>核心公式：</strong><br>
+            债券价格变化幅度 ≈ -久期 × 利率变化幅度<br><br>
+            示例：<br>
+            • 久期为5年的债券基金<br>
+            • 利率上升0.5%<br>
+            • 基金净值下跌约 5 × 0.5% = 2.5%
+        </div>
+
+        <h3 class="subsection-title">久期分类与风险等级</h3>
+        
+        <div class="duration-visual">
+            <div class="duration-box">
+                <div class="duration-bar duration-short">
+                    短久期
+                </div>
+                <p><strong>1-3年</strong><br>利率风险小<br>收益率低</p>
+            </div>
+            <div class="duration-box">
+                <div class="duration-bar duration-medium">
+                    中久期
+                </div>
+                <p><strong>3-7年</strong><br>均衡风险<br>收益适中</p>
+            </div>
+            <div class="duration-box">
+                <div class="duration-bar duration-long">
+                    长久期
+                </div>
+                <p><strong>7年+</strong><br>利率风险大<br>收益率高</p>
+            </div>
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>久期区间</th>
+                    <th>典型基金类型</th>
+                    <th>利率↑0.5%的影响</th>
+                    <th>适合人群</th>
+                    <th>风险等级</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1-2年</strong></td>
+                    <td>短期纯债、货币基金增强</td>
+                    <td>-0.5% ~ -1%</td>
+                    <td>保守型、风险厌恶者</td>
+                    <td>⭐ 很低</td>
+                </tr>
+                <tr>
+                    <td><strong>3-5年</strong></td>
+                    <td>中期纯债、定期债基</td>
+                    <td>-1.5% ~ -2.5%</td>
+                    <td>稳健型、保本为主</td>
+                    <td>⭐⭐ 低</td>
+                </tr>
+                <tr>
+                    <td><strong>5-7年</strong></td>
+                    <td>混合债基、高等级企业债</td>
+                    <td>-2.5% ~ -3.5%</td>
+                    <td>均衡型、能承受波动</td>
+                    <td>⭐⭐⭐ 中</td>
+                </tr>
+                <tr>
+                    <td><strong>7年+</strong></td>
+                    <td>长期纯债、可转债基金</td>
+                    <td>-3.5% ~ -5%</td>
+                    <td>进取型、长期投资者</td>
+                    <td>⭐⭐⭐⭐ 较高</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="key-point">
+            <strong>🎯 久期应用：</strong><br>
+            利率要升时 → 选短久期基金<br>
+            利率要降时 → 选长久期基金<br>
+            横盘时期 → 选中久期基金
+        </div>
+
+        <h2 class="section-title">第三部分：信用评级——债券基金的"发行人信用"</h2>
+        
+        <h3 class="subsection-title">中国债券的5级评级体系</h3>
+        
+        <div class="rating-visual">
+            <div class="rating-card rating-aaa">
+                <h4>AAA / AA+</h4>
+                <p>极低风险</p>
+                <p style="font-size: 12px;">政府债、一流国企债</p>
+            </div>
+            <div class="rating-card rating-aa">
+                <h4>AA / AA-</h4>
+                <p>低风险</p>
+                <p style="font-size: 12px;">优质企业债、城投债</p>
+            </div>
+            <div class="rating-card rating-a">
+                <h4>A / A+</h4>
+                <p>中等风险</p>
+                <p style="font-size: 12px;">一般企业债</p>
+            </div>
+            <div class="rating-card rating-bbb">
+                <h4>BBB / BB</h4>
+                <p>较高风险</p>
+                <p style="font-size: 12px;">低等级企业债</p>
+            </div>
+            <div class="rating-card rating-bb" style="grid-column: 1 / -1;">
+                <h4>B级以下</h4>
+                <p>高风险/违约风险</p>
+                <p style="font-size: 12px;">赤字企业、曾违约发行人</p>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">债券基金中的信用风险来源</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>债券类型</th>
+                    <th>发行人</th>
+                    <th>评级范围</th>
+                    <th>违约风险</th>
+                    <th>收益率</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>国债/地方债</strong></td>
+                    <td>政府</td>
+                    <td>AAA</td>
+                    <td>极低</td>
+                    <td>2.0% - 2.5%</td>
+                </tr>
+                <tr>
+                    <td><strong>政策性银行债</strong></td>
+                    <td>国开行、进出口行等</td>
+                    <td>AAA</td>
+                    <td>极低</td>
+                    <td>2.2% - 2.8%</td>
+                </tr>
+                <tr>
+                    <td><strong>城投债</strong></td>
+                    <td>地方政府融资平台</td>
+                    <td>AA - AA+</td>
+                    <td>低</td>
+                    <td>2.5% - 3.2%</td>
+                </tr>
+                <tr>
+                    <td><strong>AAA企业债</strong></td>
+                    <td>优质上市公司、央企</td>
+                    <td>AAA</td>
+                    <td>极低</td>
+                    <td>2.5% - 3.0%</td>
+                </tr>
+                <tr>
+                    <td><strong>AA企业债</strong></td>
+                    <td>一般上市公司</td>
+                    <td>AA / AA-</td>
+                    <td>低</td>
+                    <td>3.0% - 3.8%</td>
+                </tr>
+                <tr>
+                    <td><strong>A级企业债</strong></td>
+                    <td>中小企业</td>
+                    <td>A</td>
+                    <td>中等</td>
+                    <td>3.5% - 4.5%</td>
+                </tr>
+                <tr>
+                    <td><strong>可转债</strong></td>
+                    <td>上市公司</td>
+                    <td>BBB - A</td>
+                    <td>中等</td>
+                    <td>2% - 4%（+转股权益）</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warning-box">
+            <strong>⚠️ 高收益陷阱：</strong><br>
+            如果一只债券基金标榜"年收益5%+"，通常意味着：<br>
+            ① 持仓中有大量低评级债券（AA-及以下）<br>
+            ② 违约风险显著上升<br>
+            ③ 一旦有企业违约，净值暴跌<br>
+            <br>
+            案例：某债基2022年因持仓房企债大幅违约，净值从1.2元跌到0.9元，持有者损失25%。
+        </div>
+
+        <h2 class="section-title">第四部分：债券基金的3种选择维度</h2>
+        
+        <h3 class="subsection-title">维度1：按债券类型选择</h3>
+        
+        <p><strong>纯债基金（最安全）</strong></p>
+        <ul>
+            <li>只投债券，不配股票</li>
+            <li>评级要求 ≥ AA，违约风险低</li>
+            <li>年收益率 2.5% - 3.5%</li>
+            <li>适合：保本为主、风险厌恶者</li>
+        </ul>
+        
+        <p style="margin-top: 20px;"><strong>混合债基（均衡收益）</strong></p>
+        <ul>
+            <li>80%债券 + 20%股票或衍生品</li>
+            <li>年收益率 3% - 4.5%</li>
+            <li>波动性中等</li>
+            <li>适合：稳健收益、能承受波动</li>
+        </ul>
+        
+        <p style="margin-top: 20px;"><strong>可转债基金（高收益+风险）</strong></p>
+        <ul>
+            <li>投资可转债（一种债券，可转为股票）</li>
+            <li>年收益率 4% - 8%（根据股市表现）</li>
+            <li>波动性较大</li>
+            <li>适合：进取型、能承受20%波动</li>
+        </ul>
+
+        <h3 class="subsection-title">维度2：按利率趋势选择</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>利率趋势</th>
+                    <th>选择策略</th>
+                    <th>推荐久期</th>
+                    <th>推荐基金特征</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>💚 利率下降期</td>
+                    <td>重点配置</td>
+                    <td>长久期（6年+）</td>
+                    <td>利率敏感性强，有倍增可能</td>
+                </tr>
+                <tr>
+                    <td>💛 利率横盘期</td>
+                    <td>均衡配置</td>
+                    <td>中久期（4-6年）</td>
+                    <td>稳定息息收入，波动不大</td>
+                </tr>
+                <tr>
+                    <td>❤️ 利率上升期</td>
+                    <td>规避配置</td>
+                    <td>短久期（1-3年）</td>
+                    <td>降低净值下跌幅度</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">维度3：按持有期限选择</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>持有期限</th>
+                    <th>推荐基金</th>
+                    <th>预期收益</th>
+                    <th>风险水平</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>3-6个月</strong></td>
+                    <td>短期纯债、货币基金增强</td>
+                    <td>0.8% - 1.5%</td>
+                    <td>极低</td>
+                </tr>
+                <tr>
+                    <td><strong>6-12个月</strong></td>
+                    <td>中短期纯债、定期债基</td>
+                    <td>1.5% - 2.5%</td>
+                    <td>低</td>
+                </tr>
+                <tr>
+                    <td><strong>1-3年</strong></td>
+                    <td>混合债基、中等评级企业债</td>
+                    <td>2.5% - 3.5%</td>
+                    <td>中</td>
+                </tr>
+                <tr>
+                    <td><strong>3年以上</strong></td>
+                    <td>长期纯债、可转债、权益混合</td>
+                    <td>3.5% - 5%+</td>
+                    <td>中-较高</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="section-title">第五部分：3个常见踩坑及解决方案</h2>
+        
+        <h3 class="subsection-title">❌ 踩坑1：盲目追求高收益，忽视违约风险</h3>
+        <p><strong>错误做法：</strong>看到某债基标榜"年收益5.5%"，不管三七二十一就买。</p>
+        <p><strong>正确做法：</strong>查基金持仓明细，看是否有：</p>
+        <ul>
+            <li>大量AA-及以下评级债券</li>
+            <li>缺乏违约事件的历史记录企业债</li>
+            <li>地产开发商债（高违约概率）</li>
+        </ul>
+        <div class="success-box">
+            <strong>✅ 解决方案：</strong><br>
+            选择评级 ≥ AA 的基金，年收益 3.5% - 4% 就很不错了。安全性远胜于5%高收益。
+        </div>
+
+        <h3 class="subsection-title">❌ 踩坑2：计算收益时忽视净值波动</h3>
+        <p><strong>错误做法：</strong>7年期债券基金，预期收益3%，就以为7年必然能赚21%。</p>
+        <p><strong>现实情况：</strong>如果利率在3年内上升1%，净值会下跌7%左右，前3年的息息收入被抹杀。</p>
+        <div class="success-box">
+            <strong>✅ 解决方案：</strong><br>
+            定期查看基金净值波动。利率上升时，长期债基会下跌，但只要继续持有，利息会填平，最终还是赚的。关键是不要在下跌期被迫卖出。
+        </div>
+
+        <h3 class="subsection-title">❌ 踩坑3：混淆久期，在错误时机买入</h3>
+        <p><strong>错误做法：</strong>2023年底利率处于历史低位，还在买10年期国债基金。结果2024年央行加息，基金净值下跌。</p>
+        <div class="success-box">
+            <strong>✅ 解决方案：</strong><br>
+            建立"利率周期预判表"。每个季度问自己：利率下一步是升、降还是横盘？<br>
+            • 预判下降 → 买长久期（收益最大）<br>
+            • 预判上升 → 买短久期（风险最小）<br>
+            • 预判横盘 → 买中久期（稳定收益）
+        </div>
+
+        <h2 class="section-title">第六部分：债券基金选购检查清单</h2>
+        
+        <div class="key-point">
+            <strong>买之前必看的5个指标：</strong><br><br>
+            ✓ <strong>久期多少？</strong> 对标自己的利率判断<br>
+            ✓ <strong>平均评级？</strong> ≥ AA最安全，A以下要谨慎<br>
+            ✓ <strong>历史最大回撤？</strong> ＜ 5% 才算稳，＞ 10% 风险较大<br>
+            ✓ <strong>基金规模？</strong> ＞ 5亿元，流动性好；＜ 2亿元，可能清盘风险<br>
+            ✓ <strong>费率？</strong> 管理费 ≤ 0.4%，托管费 ≤ 0.1%
+        </div>
+
+        <h2 class="section-title">总结：债券基金3层风险金字塔</h2>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">风险等级</th>
+                    <th style="width: 25%;">基金类型</th>
+                    <th style="width: 25%;">代表产品</th>
+                    <th style="width: 35%;">适合人群</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: #d4edda;">
+                    <td>⭐ 很低</td>
+                    <td>短期纯债（1-2年久期）<br>AAA 100%</td>
+                    <td>国债基金、政策性银行债基</td>
+                    <td>极度保守、年龄 55+、急用钱</td>
+                </tr>
+                <tr style="background: #e2e3e5;">
+                    <td>⭐⭐ 低</td>
+                    <td>中期纯债（3-5年久期）<br>AA+ 占 70% 以上</td>
+                    <td>城投债基、优质企业债基</td>
+                    <td>稳健型投资者、收益 2.5-3.5% 足够</td>
+                </tr>
+                <tr style="background: #fff3cd;">
+                    <td>⭐⭐⭐ 中</td>
+                    <td>混合债基或长期纯债<br>AA 占 60% 以上</td>
+                    <td>混合债基、中等评级企业债基</td>
+                    <td>均衡型投资者、能承受 5-10% 波动</td>
+                </tr>
+                <tr style="background: #f8d7da;">
+                    <td>⭐⭐⭐⭐ 较高</td>
+                    <td>可转债基金、低等级债基<br>BBB、可转债占大</td>
+                    <td>可转债基金、高收益债基</td>
+                    <td>进取型投资者、能承受 15%+ 波动</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="cta-section">
+            <h3 style="margin-top: 0;">想诊断自己的持仓？</h3>
+            <p>本文讲的是债券基金的理论知识。但每个人的持仓组合不同，需要基于自己的年龄、风险承受力、资金用途来诊断。</p>
+            <p>我们提供的<strong>持仓诊断服务</strong>，可以帮你分析：</p>
+            <ul style="color: white; text-align: left; display: inline-block;">
+                <li>目前持仓中债券基金的合理性</li>
+                <li>各部分的风险等级和预期收益</li>
+                <li>当前利率环境下的配置建议</li>
+                <li>调仓方案</li>
+            </ul>
+            <a href="../service-request.html?service=持仓诊断" class="cta-button">
+                立即咨询 (仅需 ¥99)
+            </a>
+            <p style="margin-top: 10px; font-size: 13px;">或 <a href="../samples/" style="color: white; text-decoration: underline;">先看诊断样本报告</a></p>
+        </div>
+
+        <p style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #888; font-size: 13px;">
+            <strong>免责声明：</strong>本文仅供学习参考，不构成投资建议。债券基金投资存在风险，市场波动可能导致基金净值下跌。请根据自身风险承受能力谨慎投资。过往表现不代表未来收益。
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light py-40 mt-60" style="margin-top: 60px;">
+        <div class="container text-center">
+            <p style="color: #666; margin-bottom: 20px;">
+                © 2026 ourlyg.com - AI股票分析平台
+            </p>
+            <p style="color: #999; font-size: 12px;">
+                <a href="../index.html" style="color: #666; text-decoration: none;">首页</a> | 
+                <a href="../services/" style="color: #666; text-decoration: none;">服务介绍</a> | 
+                <a href="../samples/" style="color: #666; text-decoration: none;">样本报告</a> | 
+                <a href="../knowledge/" style="color: #666; text-decoration: none;">知识科普</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
