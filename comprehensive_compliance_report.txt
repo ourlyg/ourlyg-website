@@ -1,0 +1,645 @@
+======================================================================
+全面金融合规性检查报告
+======================================================================
+检查时间: 2026-03-18 17:46:29
+扫描目录: c:\Users\刘炳君\WorkBuddy\Claw\ourlyg-website
+文件总数: 63 个
+
+风险等级汇总:
+----------------------------------------------------------------------
+CRITICAL (严重): 55 个 [CRITICAL]
+HIGH (高): 0 个 [HIGH]
+MEDIUM (中): 3 个 [MEDIUM]
+LOW (低): 5 个 [LOW]
+SAFE (安全): 0 个 [SAFE]
+
+======================================================================
+严重违规文件 (CRITICAL) - 必须立即修复!
+======================================================================
+
+文件: compliance_report_index.html
+  P0违规数量: 5
+    - '建议关注' (出现2次)
+    - '压力位' (出现2次)
+    - '股票推荐' (出现1次)
+    - '投资顾问' (出现3次)
+    - '金融咨询' (出现11次)
+  股票代码: 856404, 600519
+
+文件: index.html
+  P0违规数量: 2
+    - '投资顾问' (出现1次)
+    - '金融咨询' (出现1次)
+  股票代码: 856404, 600519, 137289, 467237
+
+文件: index_backup.html
+  P0违规数量: 4
+    - '建议关注' (出现1次)
+    - '压力位' (出现1次)
+    - '投资顾问' (出现1次)
+    - '金融咨询' (出现1次)
+  股票代码: 600519, 137289, 467237
+
+文件: service-request.html
+  P0违规数量: 2
+    - '持有' (出现1次)
+    - '压力位' (出现1次)
+  股票代码: 300750, 600519, 137289, 467237
+
+文件: includes\footer.html
+  P0违规数量: 1
+    - '投资顾问' (出现1次)
+
+文件: knowledge\article-ai-stock-analysis.html
+  P0违规数量: 7
+    - '买入' (出现2次)
+    - '持有' (出现2次)
+    - '目标价' (出现1次)
+    - '支撑位' (出现1次)
+    - '压力位' (出现2次)
+    - '看多' (出现1次)
+    - '投资顾问' (出现2次)
+
+文件: knowledge\article-astock-2026.html
+  P0违规数量: 2
+    - '持有' (出现2次)
+    - '投资顾问' (出现2次)
+  股票代码: 374151, 166534
+
+文件: knowledge\article-beginner.html
+  P0违规数量: 5
+    - '买入' (出现1次)
+    - '卖出' (出现1次)
+    - '持有' (出现1次)
+    - '投资顾问' (出现1次)
+    - '稳赚不赔' (出现1次)
+
+文件: knowledge\article-bond-fund-guide.html
+  P0违规数量: 4
+    - '买入' (出现1次)
+    - '卖出' (出现1次)
+    - '持有' (出现6次)
+    - '投资顾问' (出现1次)
+
+文件: knowledge\article-bond-fund.html
+  P0违规数量: 4
+    - '买入' (出现1次)
+    - '卖出' (出现1次)
+    - '持有' (出现6次)
+    - '投资顾问' (出现1次)
+
+文件: knowledge\article-candlestick-basics.html
+  P0违规数量: 5
+    - '看涨' (出现2次)
+    - '看跌' (出现1次)
+    - '看多' (出现5次)
+    - '看空' (出现4次)
+    - '投资顾问' (出现1次)
+  股票代码: 374151, 166534
+
+文件: knowledge\article-candlestick.html
+  P0违规数量: 5
+    - '支撑位' (出现2次)
+    - '压力位' (出现1次)
+    - '看涨' (出现3次)
+    - '看跌' (出现2次)
+    - '投资顾问' (出现1次)
+  股票代码: 059669
+
+文件: knowledge\article-financial-planning.html
+  P0违规数量: 2
+    - '卖出' (出现1次)
+    - '投资顾问' (出现1次)
+
+文件: knowledge\article-fund-dca.html
+  P0违规数量: 3
+    - '买入' (出现2次)
+    - '持有' (出现1次)
+    - '投资顾问' (出现1次)
+  股票代码: 510500, 292524, 513100, 159919, 161006
+
+文件: knowledge\article-fund.html
+  P0违规数量: 5
+    - '买入' (出现5次)
+    - '卖出' (出现3次)
+    - '持有' (出现5次)
+    - '投资顾问' (出现1次)
+    - '暴富' (出现1次)
+
+文件: knowledge\article-how-to-pick-fund.html
+  P0违规数量: 4
+    - '买入' (出现3次)
+    - '卖出' (出现2次)
+    - '持有' (出现5次)
+    - '投资顾问' (出现2次)
+
+文件: knowledge\article-index-dip.html
+  P0违规数量: 4
+    - '买入' (出现12次)
+    - '卖出' (出现1次)
+    - '持有' (出现1次)
+    - '投资顾问' (出现1次)
+  股票代码: 159941, 510500, 510300
+
+文件: knowledge\article-index-fund.html
+  P0违规数量: 3
+    - '买入' (出现2次)
+    - '卖出' (出现4次)
+    - '投资顾问' (出现1次)
+
+文件: knowledge\article-investor-mistakes.html
+  P0违规数量: 7
+    - '买入' (出现5次)
+    - '卖出' (出现1次)
+    - '持有' (出现3次)
+    - '目标价' (出现1次)
+    - '止损价' (出现1次)
+    - '支撑位' (出现1次)
+    - '投资顾问' (出现1次)
+  股票代码: 374151
+
+文件: knowledge\article-macd-guide.html
+  P0违规数量: 5
+    - '买入' (出现3次)
+    - '卖出' (出现1次)
+    - '看多' (出现2次)
+    - '看空' (出现2次)
+    - '投资顾问' (出现1次)
+  股票代码: 374151, 166534
+
+文件: knowledge\article-macd.html
+  P0违规数量: 5
+    - '买入' (出现2次)
+    - '支撑位' (出现2次)
+    - '看涨' (出现5次)
+    - '看跌' (出现4次)
+    - '投资顾问' (出现1次)
+  股票代码: 059669
+
+文件: knowledge\article-market-index.html
+  P0违规数量: 3
+    - '买入' (出现1次)
+    - '持有' (出现7次)
+    - '投资顾问' (出现1次)
+  股票代码: 000300, 000001, 399006, 334155
+
+文件: knowledge\article-money-vs-bank.html
+  P0违规数量: 3
+    - '持有' (出现3次)
+    - '投资顾问' (出现1次)
+    - '保本保息' (出现1次)
+
+文件: knowledge\article-moving-average.html
+  P0违规数量: 8
+    - '买入' (出现2次)
+    - '卖出' (出现1次)
+    - '持有' (出现6次)
+    - '压力位' (出现1次)
+    - '看涨' (出现2次)
+    - '看跌' (出现1次)
+    - '投资顾问' (出现1次)
+    - '暴涨' (出现1次)
+  股票代码: 166534, 075985
+
+文件: knowledge\article-pe-pb-valuation.html
+  P0违规数量: 5
+    - '买入' (出现3次)
+    - '持有' (出现2次)
+    - '看涨' (出现1次)
+    - '投资顾问' (出现1次)
+    - '翻倍' (出现1次)
+  股票代码: 166534
+
+文件: knowledge\article-position-diagnosis.html
+  P0违规数量: 5
+    - '买入' (出现16次)
+    - '卖出' (出现1次)
+    - '持有' (出现13次)
+    - '支撑位' (出现1次)
+    - '投资顾问' (出现1次)
+  股票代码: 166534
+
+文件: knowledge\article-position-management.html
+  P0违规数量: 6
+    - '买入' (出现6次)
+    - '卖出' (出现5次)
+    - '持有' (出现1次)
+    - '支撑位' (出现1次)
+    - '投资顾问' (出现1次)
+    - '翻倍' (出现3次)
+  股票代码: 059669, 475569, 334155
+
+文件: knowledge\article-risk.html
+  P0违规数量: 8
+    - '买入' (出现7次)
+    - '卖出' (出现6次)
+    - '持有' (出现6次)
+    - '目标价' (出现2次)
+    - '止损价' (出现2次)
+    - '支撑位' (出现1次)
+    - '投资顾问' (出现1次)
+    - '内幕消息' (出现2次)
+
+文件: knowledge\article-roe-guide.html
+  P0违规数量: 3
+    - '买入' (出现4次)
+    - '持有' (出现5次)
+    - '投资顾问' (出现1次)
+
+文件: knowledge\article-stock-picking.html
+  P0违规数量: 4
+    - '买入' (出现4次)
+    - '持有' (出现1次)
+    - '看涨' (出现1次)
+    - '投资顾问' (出现1次)
+  股票代码: 059669
+
+文件: knowledge\article-stop-loss.html
+  P0违规数量: 6
+    - '买入' (出现8次)
+    - '卖出' (出现2次)
+    - '持有' (出现2次)
+    - '支撑位' (出现4次)
+    - '投资顾问' (出现1次)
+    - '翻倍' (出现1次)
+
+文件: knowledge\article-treasury-repo.html
+  P0违规数量: 4
+    - '买入' (出现3次)
+    - '卖出' (出现6次)
+    - '持有' (出现2次)
+    - '投资顾问' (出现1次)
+  股票代码: 204001, 204002, 204014, 204003, 131800
+
+文件: knowledge\article-volume-price.html
+  P0违规数量: 6
+    - '买入' (出现2次)
+    - '卖出' (出现2次)
+    - '持有' (出现3次)
+    - '支撑位' (出现1次)
+    - '看空' (出现1次)
+    - '投资顾问' (出现1次)
+
+文件: knowledge\index.html
+  P0违规数量: 2
+    - '持有' (出现1次)
+    - '投资顾问' (出现1次)
+  股票代码: 166534, 191722, 075985, 346022, 202722
+
+文件: products\alipay-yuebao.html
+  P0违规数量: 2
+    - '持有' (出现5次)
+    - '投资顾问' (出现1次)
+  股票代码: 856404, 795548
+
+文件: products\ant-wealth.html
+  P0违规数量: 2
+    - '持有' (出现3次)
+    - '投资顾问' (出现1次)
+
+文件: products\ccb-longcaifu.html
+  P0违规数量: 2
+    - '持有' (出现5次)
+    - '投资顾问' (出现1次)
+  股票代码: 003087
+
+文件: products\huatai-securities.html
+  P0违规数量: 1
+    - '投资顾问' (出现1次)
+
+文件: products\index.html
+  P0违规数量: 1
+    - '保本保息' (出现2次)
+
+文件: products\jingdong-finance.html
+  P0违规数量: 1
+    - '投资顾问' (出现1次)
+
+文件: products\savings-bond.html
+  P0违规数量: 5
+    - '建议关注' (出现1次)
+    - '买入' (出现2次)
+    - '持有' (出现5次)
+    - '投资顾问' (出现1次)
+    - '保本保息' (出现3次)
+
+文件: products\template.html
+  P0违规数量: 1
+    - '投资顾问' (出现1次)
+
+文件: products\tianhong-fund.html
+  P0违规数量: 2
+    - '持有' (出现4次)
+    - '投资顾问' (出现1次)
+
+文件: products\treasury-repo.html
+  P0违规数量: 4
+    - '买入' (出现4次)
+    - '持有' (出现3次)
+    - '投资顾问' (出现1次)
+    - '飙升' (出现2次)
+  股票代码: 204001, 204002, 204007, 131810
+
+文件: products\weixin-licaitong.html
+  P0违规数量: 2
+    - '持有' (出现3次)
+    - '投资顾问' (出现1次)
+  股票代码: 795548
+
+文件: products\weixin-lingqiantong.html
+  P0违规数量: 2
+    - '持有' (出现1次)
+    - '投资顾问' (出现1次)
+  股票代码: 795548
+
+文件: products\zhaoshang-zhaozhaobao.html
+  P0违规数量: 3
+    - '买入' (出现1次)
+    - '持有' (出现3次)
+    - '投资顾问' (出现1次)
+
+文件: reviews\money-fund-vs-bond-fund.html
+  P0违规数量: 2
+    - '持有' (出现3次)
+    - '投资顾问' (出现1次)
+  股票代码: 217022, 166534, 110039
+
+文件: samples\index.html
+  P0违规数量: 4
+    - '买入' (出现3次)
+    - '卖出' (出现3次)
+    - '持有' (出现3次)
+    - '支撑位' (出现1次)
+  股票代码: 166534, 002594, 831843, 601633, 300750
+
+文件: tools\calculator.html
+  P0违规数量: 1
+    - '投资顾问' (出现1次)
+
+文件: tools\compound-interest.html
+  P0违规数量: 1
+    - '投资顾问' (出现1次)
+  股票代码: 100000
+
+文件: tools\index.html
+  P0违规数量: 1
+    - '投资顾问' (出现1次)
+
+文件: tools\mortgage.html
+  P0违规数量: 1
+    - '投资顾问' (出现1次)
+
+文件: tools\retirement.html
+  P0违规数量: 1
+    - '投资顾问' (出现1次)
+  股票代码: 100000
+
+文件: tools\risk-assessment.html
+  P0违规数量: 1
+    - '投资顾问' (出现1次)
+
+======================================================================
+中等风险文件 (MEDIUM) - 建议修复
+======================================================================
+
+文件: 404.html
+  P1违规数量: 1
+    - '投资建议'
+  风险提示: 有
+
+文件: news.html
+  P1违规数量: 1
+    - '股票诊断'
+  风险提示: 有
+
+文件: services\index.html
+  P1违规数量: 2
+    - '基本面分析'
+    - '股票诊断'
+  风险提示: 有
+
+======================================================================
+低风险文件 (LOW) - 建议添加风险提示
+======================================================================
+- analytics-dashboard.html
+- payment-confirm.html
+- vip-subscription.html
+- data\financial_news_20260318.html
+- products\eastmoney-securities.html
+
+======================================================================
+所有文件检查清单
+======================================================================
+[CRITICAL] compliance_report_index.html
+   P0违规: 5 项
+   P1违规: 4 项
+   股票代码: 2 个
+[CRITICAL] index.html
+   P0违规: 2 项
+   P1违规: 3 项
+   股票代码: 4 个
+[CRITICAL] index_backup.html
+   P0违规: 4 项
+   P1违规: 4 项
+   股票代码: 3 个
+[CRITICAL] service-request.html
+   P0违规: 2 项
+   P1违规: 1 项
+   股票代码: 4 个
+[CRITICAL] includes\footer.html
+   P0违规: 1 项
+   P1违规: 2 项
+[CRITICAL] knowledge\article-ai-stock-analysis.html
+   P0违规: 7 项
+   P1违规: 5 项
+[CRITICAL] knowledge\article-astock-2026.html
+   P0违规: 2 项
+   P1违规: 3 项
+   股票代码: 2 个
+[CRITICAL] knowledge\article-beginner.html
+   P0违规: 5 项
+   P1违规: 2 项
+[CRITICAL] knowledge\article-bond-fund-guide.html
+   P0违规: 4 项
+   P1违规: 3 项
+[CRITICAL] knowledge\article-bond-fund.html
+   P0违规: 4 项
+   P1违规: 2 项
+[CRITICAL] knowledge\article-candlestick-basics.html
+   P0违规: 5 项
+   P1违规: 3 项
+   股票代码: 2 个
+[CRITICAL] knowledge\article-candlestick.html
+   P0违规: 5 项
+   P1违规: 3 项
+   股票代码: 1 个
+[CRITICAL] knowledge\article-financial-planning.html
+   P0违规: 2 项
+   P1违规: 2 项
+[CRITICAL] knowledge\article-fund-dca.html
+   P0违规: 3 项
+   P1违规: 2 项
+   股票代码: 6 个
+[CRITICAL] knowledge\article-fund.html
+   P0违规: 5 项
+   P1违规: 2 项
+[CRITICAL] knowledge\article-how-to-pick-fund.html
+   P0违规: 4 项
+   P1违规: 2 项
+[CRITICAL] knowledge\article-index-dip.html
+   P0违规: 4 项
+   P1违规: 2 项
+   股票代码: 3 个
+[CRITICAL] knowledge\article-index-fund.html
+   P0违规: 3 项
+   P1违规: 2 项
+[CRITICAL] knowledge\article-investor-mistakes.html
+   P0违规: 7 项
+   P1违规: 2 项
+   股票代码: 1 个
+[CRITICAL] knowledge\article-macd-guide.html
+   P0违规: 5 项
+   P1违规: 4 项
+   股票代码: 2 个
+[CRITICAL] knowledge\article-macd.html
+   P0违规: 5 项
+   P1违规: 4 项
+   股票代码: 1 个
+[CRITICAL] knowledge\article-market-index.html
+   P0违规: 3 项
+   P1违规: 5 项
+   股票代码: 4 个
+[CRITICAL] knowledge\article-money-vs-bank.html
+   P0违规: 3 项
+   P1违规: 2 项
+[CRITICAL] knowledge\article-moving-average.html
+   P0违规: 8 项
+   P1违规: 4 项
+   股票代码: 2 个
+[CRITICAL] knowledge\article-pe-pb-valuation.html
+   P0违规: 5 项
+   P1违规: 3 项
+   股票代码: 1 个
+[CRITICAL] knowledge\article-position-diagnosis.html
+   P0违规: 5 项
+   P1违规: 2 项
+   股票代码: 1 个
+[CRITICAL] knowledge\article-position-management.html
+   P0违规: 6 项
+   P1违规: 3 项
+   股票代码: 3 个
+[CRITICAL] knowledge\article-risk.html
+   P0违规: 8 项
+   P1违规: 2 项
+[CRITICAL] knowledge\article-roe-guide.html
+   P0违规: 3 项
+   P1违规: 4 项
+[CRITICAL] knowledge\article-stock-picking.html
+   P0违规: 4 项
+   P1违规: 4 项
+   股票代码: 1 个
+[CRITICAL] knowledge\article-stop-loss.html
+   P0违规: 6 项
+   P1违规: 3 项
+[CRITICAL] knowledge\article-treasury-repo.html
+   P0违规: 4 项
+   P1违规: 2 项
+   股票代码: 10 个
+[CRITICAL] knowledge\article-volume-price.html
+   P0违规: 6 项
+   P1违规: 3 项
+[CRITICAL] knowledge\index.html
+   P0违规: 2 项
+   P1违规: 5 项
+   股票代码: 10 个
+[CRITICAL] products\alipay-yuebao.html
+   P0违规: 2 项
+   P1违规: 2 项
+   股票代码: 2 个
+[CRITICAL] products\ant-wealth.html
+   P0违规: 2 项
+   P1违规: 2 项
+[CRITICAL] products\ccb-longcaifu.html
+   P0违规: 2 项
+   P1违规: 2 项
+   股票代码: 1 个
+[CRITICAL] products\huatai-securities.html
+   P0违规: 1 项
+   P1违规: 2 项
+[CRITICAL] products\index.html
+   P0违规: 1 项
+[CRITICAL] products\jingdong-finance.html
+   P0违规: 1 项
+   P1违规: 2 项
+[CRITICAL] products\savings-bond.html
+   P0违规: 5 项
+   P1违规: 2 项
+[CRITICAL] products\template.html
+   P0违规: 1 项
+   P1违规: 2 项
+[CRITICAL] products\tianhong-fund.html
+   P0违规: 2 项
+   P1违规: 2 项
+[CRITICAL] products\treasury-repo.html
+   P0违规: 4 项
+   P1违规: 2 项
+   股票代码: 4 个
+[CRITICAL] products\weixin-licaitong.html
+   P0违规: 2 项
+   P1违规: 2 项
+   股票代码: 1 个
+[CRITICAL] products\weixin-lingqiantong.html
+   P0违规: 2 项
+   P1违规: 2 项
+   股票代码: 1 个
+[CRITICAL] products\zhaoshang-zhaozhaobao.html
+   P0违规: 3 项
+   P1违规: 2 项
+[CRITICAL] reviews\money-fund-vs-bond-fund.html
+   P0违规: 2 项
+   P1违规: 2 项
+   股票代码: 3 个
+[CRITICAL] samples\index.html
+   P0违规: 4 项
+   P1违规: 2 项
+   股票代码: 6 个
+[CRITICAL] tools\calculator.html
+   P0违规: 1 项
+   P1违规: 2 项
+[CRITICAL] tools\compound-interest.html
+   P0违规: 1 项
+   P1违规: 2 项
+   股票代码: 1 个
+[CRITICAL] tools\index.html
+   P0违规: 1 项
+   P1违规: 1 项
+[CRITICAL] tools\mortgage.html
+   P0违规: 1 项
+   P1违规: 2 项
+[CRITICAL] tools\retirement.html
+   P0违规: 1 项
+   P1违规: 2 项
+   股票代码: 1 个
+[CRITICAL] tools\risk-assessment.html
+   P0违规: 1 项
+   P1违规: 2 项
+[LOW] analytics-dashboard.html
+   [缺少风险提示]
+[LOW] payment-confirm.html
+   [缺少风险提示]
+[LOW] vip-subscription.html
+   [缺少风险提示]
+[LOW] data\financial_news_20260318.html
+   股票代码: 3 个
+   [缺少风险提示]
+[LOW] products\eastmoney-securities.html
+   股票代码: 1 个
+   [缺少风险提示]
+[MEDIUM] 404.html
+   P1违规: 1 项
+[MEDIUM] news.html
+   P1违规: 1 项
+   股票代码: 2 个
+[MEDIUM] services\index.html
+   P1违规: 2 项
+   股票代码: 1 个
