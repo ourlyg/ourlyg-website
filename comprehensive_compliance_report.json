@@ -1,12 +1,12 @@
 {
-  "timestamp": "2026-03-18T17:46:29.877050",
+  "timestamp": "2026-03-18T17:51:48.836192",
   "summary": {
     "total": 63,
-    "critical": 55,
-    "high": 0,
-    "medium": 3,
+    "critical": 1,
+    "high": 9,
+    "medium": 47,
     "low": 5,
-    "safe": 0
+    "safe": 1
   },
   "files": [
     {
@@ -42,82 +42,7 @@
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\compliance_report_index.html",
       "relative_path": "compliance_report_index.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "建议关注",
-          "count": 2,
-          "positions": [
-            [
-              306,
-              310
-            ],
-            [
-              352,
-              356
-            ]
-          ]
-        },
-        {
-          "keyword": "压力位",
-          "count": 2,
-          "positions": [
-            [
-              1576,
-              1579
-            ],
-            [
-              1632,
-              1635
-            ]
-          ]
-        },
-        {
-          "keyword": "股票推荐",
-          "count": 1,
-          "positions": [
-            [
-              4715,
-              4719
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 3,
-          "positions": [
-            [
-              466,
-              470
-            ],
-            [
-              1216,
-              1220
-            ],
-            [
-              1657,
-              1661
-            ]
-          ]
-        },
-        {
-          "keyword": "金融咨询",
-          "count": 11,
-          "positions": [
-            [
-              1000,
-              1004
-            ],
-            [
-              1154,
-              1158
-            ],
-            [
-              1184,
-              1188
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "股票分析",
@@ -143,34 +68,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "HIGH"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\index.html",
       "relative_path": "index.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              43802,
-              43806
-            ]
-          ]
-        },
-        {
-          "keyword": "金融咨询",
-          "count": 1,
-          "positions": [
-            [
-              13612,
-              13616
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "技术分析",
@@ -186,15 +90,15 @@
         }
       ],
       "stock_codes": [
-        "856404",
-        "600519",
+        "467237",
         "137289",
-        "467237"
+        "856404",
+        "600519"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\index_backup.html",
@@ -261,9 +165,9 @@
         }
       ],
       "stock_codes": [
-        "600519",
         "137289",
-        "467237"
+        "467237",
+        "600519"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
@@ -282,8 +186,8 @@
         }
       ],
       "stock_codes": [
-        "864000",
-        "360000"
+        "360000",
+        "864000"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
@@ -306,28 +210,7 @@
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\service-request.html",
       "relative_path": "service-request.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "持有",
-          "count": 1,
-          "positions": [
-            [
-              11973,
-              11975
-            ]
-          ]
-        },
-        {
-          "keyword": "压力位",
-          "count": 1,
-          "positions": [
-            [
-              21609,
-              21612
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "股票诊断",
@@ -335,15 +218,15 @@
         }
       ],
       "stock_codes": [
-        "300750",
-        "600519",
         "137289",
-        "467237"
+        "300750",
+        "467237",
+        "600519"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\vip-subscription.html",
@@ -364,8 +247,8 @@
       "p0_violations": [],
       "p1_violations": [],
       "stock_codes": [
-        "177270",
         "177301",
+        "177270",
         "177279"
       ],
       "has_risk_warning": false,
@@ -377,18 +260,7 @@
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\includes\\footer.html",
       "relative_path": "includes\\footer.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              2724,
-              2728
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -403,100 +275,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-ai-stock-analysis.html",
       "relative_path": "knowledge\\article-ai-stock-analysis.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 2,
-          "positions": [
-            [
-              9784,
-              9786
-            ],
-            [
-              12931,
-              12933
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 2,
-          "positions": [
-            [
-              10184,
-              10186
-            ],
-            [
-              12935,
-              12937
-            ]
-          ]
-        },
-        {
-          "keyword": "目标价",
-          "count": 1,
-          "positions": [
-            [
-              11881,
-              11884
-            ]
-          ]
-        },
-        {
-          "keyword": "支撑位",
-          "count": 1,
-          "positions": [
-            [
-              12301,
-              12304
-            ]
-          ]
-        },
-        {
-          "keyword": "压力位",
-          "count": 2,
-          "positions": [
-            [
-              12360,
-              12363
-            ],
-            [
-              13261,
-              13264
-            ]
-          ]
-        },
-        {
-          "keyword": "看多",
-          "count": 1,
-          "positions": [
-            [
-              9482,
-              9484
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 2,
-          "positions": [
-            [
-              16109,
-              16113
-            ],
-            [
-              19097,
-              19101
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "股票分析",
@@ -523,42 +308,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "HIGH"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-astock-2026.html",
       "relative_path": "knowledge\\article-astock-2026.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "持有",
-          "count": 2,
-          "positions": [
-            [
-              11519,
-              11521
-            ],
-            [
-              12385,
-              12387
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 2,
-          "positions": [
-            [
-              18011,
-              18015
-            ],
-            [
-              21184,
-              21188
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "技术分析",
@@ -574,70 +330,19 @@
         }
       ],
       "stock_codes": [
-        "374151",
-        "166534"
+        "166534",
+        "374151"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-beginner.html",
       "relative_path": "knowledge\\article-beginner.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 1,
-          "positions": [
-            [
-              13835,
-              13837
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 1,
-          "positions": [
-            [
-              9536,
-              9538
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 1,
-          "positions": [
-            [
-              13857,
-              13859
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              19836,
-              19840
-            ]
-          ]
-        },
-        {
-          "keyword": "稳赚不赔",
-          "count": 1,
-          "positions": [
-            [
-              13975,
-              13979
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -652,62 +357,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-bond-fund-guide.html",
       "relative_path": "knowledge\\article-bond-fund-guide.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 1,
-          "positions": [
-            [
-              19676,
-              19678
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 1,
-          "positions": [
-            [
-              19603,
-              19605
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 6,
-          "positions": [
-            [
-              9176,
-              9178
-            ],
-            [
-              9383,
-              9385
-            ],
-            [
-              15690,
-              15692
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              25837,
-              25841
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "股票分析",
@@ -726,62 +382,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-bond-fund.html",
       "relative_path": "knowledge\\article-bond-fund.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 1,
-          "positions": [
-            [
-              7433,
-              7435
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 1,
-          "positions": [
-            [
-              13925,
-              13927
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 6,
-          "positions": [
-            [
-              7462,
-              7464
-            ],
-            [
-              13147,
-              13149
-            ],
-            [
-              13939,
-              13941
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              22697,
-              22701
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -796,84 +403,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-candlestick-basics.html",
       "relative_path": "knowledge\\article-candlestick-basics.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "看涨",
-          "count": 2,
-          "positions": [
-            [
-              12429,
-              12431
-            ],
-            [
-              14134,
-              14136
-            ]
-          ]
-        },
-        {
-          "keyword": "看跌",
-          "count": 1,
-          "positions": [
-            [
-              12671,
-              12673
-            ]
-          ]
-        },
-        {
-          "keyword": "看多",
-          "count": 5,
-          "positions": [
-            [
-              10491,
-              10493
-            ],
-            [
-              11912,
-              11914
-            ],
-            [
-              12382,
-              12384
-            ]
-          ]
-        },
-        {
-          "keyword": "看空",
-          "count": 4,
-          "positions": [
-            [
-              9987,
-              9989
-            ],
-            [
-              12152,
-              12154
-            ],
-            [
-              12624,
-              12626
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              18397,
-              18401
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "技术分析",
@@ -889,86 +425,19 @@
         }
       ],
       "stock_codes": [
-        "374151",
-        "166534"
+        "166534",
+        "374151"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-candlestick.html",
       "relative_path": "knowledge\\article-candlestick.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "支撑位",
-          "count": 2,
-          "positions": [
-            [
-              13060,
-              13063
-            ],
-            [
-              13466,
-              13469
-            ]
-          ]
-        },
-        {
-          "keyword": "压力位",
-          "count": 1,
-          "positions": [
-            [
-              14958,
-              14961
-            ]
-          ]
-        },
-        {
-          "keyword": "看涨",
-          "count": 3,
-          "positions": [
-            [
-              8976,
-              8978
-            ],
-            [
-              12612,
-              12614
-            ],
-            [
-              14244,
-              14246
-            ]
-          ]
-        },
-        {
-          "keyword": "看跌",
-          "count": 2,
-          "positions": [
-            [
-              9440,
-              9442
-            ],
-            [
-              14259,
-              14261
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              20932,
-              20936
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "技术分析",
@@ -989,34 +458,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-financial-planning.html",
       "relative_path": "knowledge\\article-financial-planning.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "卖出",
-          "count": 1,
-          "positions": [
-            [
-              12531,
-              12533
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              23665,
-              23669
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -1031,48 +479,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-fund-dca.html",
       "relative_path": "knowledge\\article-fund-dca.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 2,
-          "positions": [
-            [
-              5098,
-              5100
-            ],
-            [
-              5321,
-              5323
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 1,
-          "positions": [
-            [
-              3969,
-              3971
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              19552,
-              19556
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -1084,98 +497,23 @@
         }
       ],
       "stock_codes": [
+        "510300",
+        "161006",
         "510500",
-        "292524",
         "513100",
         "159919",
-        "161006",
-        "510300"
+        "292524"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-fund.html",
       "relative_path": "knowledge\\article-fund.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 5,
-          "positions": [
-            [
-              12217,
-              12219
-            ],
-            [
-              12295,
-              12297
-            ],
-            [
-              12305,
-              12307
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 3,
-          "positions": [
-            [
-              12825,
-              12827
-            ],
-            [
-              13721,
-              13723
-            ],
-            [
-              13810,
-              13812
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 5,
-          "positions": [
-            [
-              8819,
-              8821
-            ],
-            [
-              12832,
-              12834
-            ],
-            [
-              14451,
-              14453
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              20415,
-              20419
-            ]
-          ]
-        },
-        {
-          "keyword": "暴富",
-          "count": 1,
-          "positions": [
-            [
-              14044,
-              14046
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -1190,78 +528,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-how-to-pick-fund.html",
       "relative_path": "knowledge\\article-how-to-pick-fund.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 3,
-          "positions": [
-            [
-              15123,
-              15125
-            ],
-            [
-              21154,
-              21156
-            ],
-            [
-              21181,
-              21183
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 2,
-          "positions": [
-            [
-              15396,
-              15398
-            ],
-            [
-              20210,
-              20212
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 5,
-          "positions": [
-            [
-              15402,
-              15404
-            ],
-            [
-              15499,
-              15501
-            ],
-            [
-              15736,
-              15738
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 2,
-          "positions": [
-            [
-              21774,
-              21778
-            ],
-            [
-              27048,
-              27052
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -1276,62 +549,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-index-dip.html",
       "relative_path": "knowledge\\article-index-dip.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 12,
-          "positions": [
-            [
-              8553,
-              8555
-            ],
-            [
-              8569,
-              8571
-            ],
-            [
-              8610,
-              8612
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 1,
-          "positions": [
-            [
-              21320,
-              21322
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 1,
-          "positions": [
-            [
-              20076,
-              20078
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              28646,
-              28650
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -1343,63 +567,20 @@
         }
       ],
       "stock_codes": [
-        "159941",
         "510500",
-        "510300"
+        "510300",
+        "159941"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-index-fund.html",
       "relative_path": "knowledge\\article-index-fund.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 2,
-          "positions": [
-            [
-              7952,
-              7954
-            ],
-            [
-              8797,
-              8799
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 4,
-          "positions": [
-            [
-              13590,
-              13592
-            ],
-            [
-              13706,
-              13708
-            ],
-            [
-              14117,
-              14119
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              20775,
-              20779
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -1414,100 +595,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-investor-mistakes.html",
       "relative_path": "knowledge\\article-investor-mistakes.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 5,
-          "positions": [
-            [
-              8493,
-              8495
-            ],
-            [
-              8925,
-              8927
-            ],
-            [
-              10074,
-              10076
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 1,
-          "positions": [
-            [
-              12109,
-              12111
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 3,
-          "positions": [
-            [
-              10225,
-              10227
-            ],
-            [
-              10425,
-              10427
-            ],
-            [
-              13380,
-              13382
-            ]
-          ]
-        },
-        {
-          "keyword": "目标价",
-          "count": 1,
-          "positions": [
-            [
-              8498,
-              8501
-            ]
-          ]
-        },
-        {
-          "keyword": "止损价",
-          "count": 1,
-          "positions": [
-            [
-              8502,
-              8505
-            ]
-          ]
-        },
-        {
-          "keyword": "支撑位",
-          "count": 1,
-          "positions": [
-            [
-              8941,
-              8944
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              16682,
-              16686
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -1524,80 +618,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-macd-guide.html",
       "relative_path": "knowledge\\article-macd-guide.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 3,
-          "positions": [
-            [
-              11033,
-              11035
-            ],
-            [
-              13658,
-              13660
-            ],
-            [
-              13779,
-              13781
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 1,
-          "positions": [
-            [
-              11086,
-              11088
-            ]
-          ]
-        },
-        {
-          "keyword": "看多",
-          "count": 2,
-          "positions": [
-            [
-              12838,
-              12840
-            ],
-            [
-              15142,
-              15144
-            ]
-          ]
-        },
-        {
-          "keyword": "看空",
-          "count": 2,
-          "positions": [
-            [
-              12598,
-              12600
-            ],
-            [
-              14842,
-              14844
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              19705,
-              19709
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "技术分析",
@@ -1617,94 +644,19 @@
         }
       ],
       "stock_codes": [
-        "374151",
-        "166534"
+        "166534",
+        "374151"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "HIGH"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-macd.html",
       "relative_path": "knowledge\\article-macd.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 2,
-          "positions": [
-            [
-              6407,
-              6409
-            ],
-            [
-              8521,
-              8523
-            ]
-          ]
-        },
-        {
-          "keyword": "支撑位",
-          "count": 2,
-          "positions": [
-            [
-              9676,
-              9679
-            ],
-            [
-              10671,
-              10674
-            ]
-          ]
-        },
-        {
-          "keyword": "看涨",
-          "count": 5,
-          "positions": [
-            [
-              6092,
-              6094
-            ],
-            [
-              6461,
-              6463
-            ],
-            [
-              8925,
-              8927
-            ]
-          ]
-        },
-        {
-          "keyword": "看跌",
-          "count": 4,
-          "positions": [
-            [
-              6780,
-              6782
-            ],
-            [
-              8948,
-              8950
-            ],
-            [
-              9948,
-              9950
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              18951,
-              18955
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "技术分析",
@@ -1729,52 +681,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "HIGH"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-market-index.html",
       "relative_path": "knowledge\\article-market-index.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 1,
-          "positions": [
-            [
-              9822,
-              9824
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 7,
-          "positions": [
-            [
-              7427,
-              7429
-            ],
-            [
-              7614,
-              7616
-            ],
-            [
-              7648,
-              7650
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              16131,
-              16135
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "技术分析",
@@ -1798,60 +711,21 @@
         }
       ],
       "stock_codes": [
-        "000300",
-        "000001",
         "399006",
-        "334155"
+        "334155",
+        "000001",
+        "000300"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "HIGH"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-money-vs-bank.html",
       "relative_path": "knowledge\\article-money-vs-bank.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "持有",
-          "count": 3,
-          "positions": [
-            [
-              7596,
-              7598
-            ],
-            [
-              11596,
-              11598
-            ],
-            [
-              13809,
-              13811
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              20007,
-              20011
-            ]
-          ]
-        },
-        {
-          "keyword": "保本保息",
-          "count": 1,
-          "positions": [
-            [
-              10083,
-              10087
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -1866,110 +740,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-moving-average.html",
       "relative_path": "knowledge\\article-moving-average.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 2,
-          "positions": [
-            [
-              4877,
-              4879
-            ],
-            [
-              8611,
-              8613
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 1,
-          "positions": [
-            [
-              6776,
-              6778
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 6,
-          "positions": [
-            [
-              4864,
-              4866
-            ],
-            [
-              6732,
-              6734
-            ],
-            [
-              6738,
-              6740
-            ]
-          ]
-        },
-        {
-          "keyword": "压力位",
-          "count": 1,
-          "positions": [
-            [
-              9913,
-              9916
-            ]
-          ]
-        },
-        {
-          "keyword": "看涨",
-          "count": 2,
-          "positions": [
-            [
-              6518,
-              6520
-            ],
-            [
-              7591,
-              7593
-            ]
-          ]
-        },
-        {
-          "keyword": "看跌",
-          "count": 1,
-          "positions": [
-            [
-              7861,
-              7863
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              15371,
-              15375
-            ]
-          ]
-        },
-        {
-          "keyword": "暴涨",
-          "count": 1,
-          "positions": [
-            [
-              9402,
-              9404
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "技术分析",
@@ -1995,76 +772,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "HIGH"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-pe-pb-valuation.html",
       "relative_path": "knowledge\\article-pe-pb-valuation.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 3,
-          "positions": [
-            [
-              7307,
-              7309
-            ],
-            [
-              7323,
-              7325
-            ],
-            [
-              12754,
-              12756
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 2,
-          "positions": [
-            [
-              9309,
-              9311
-            ],
-            [
-              9499,
-              9501
-            ]
-          ]
-        },
-        {
-          "keyword": "看涨",
-          "count": 1,
-          "positions": [
-            [
-              4301,
-              4303
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              17702,
-              17706
-            ]
-          ]
-        },
-        {
-          "keyword": "翻倍",
-          "count": 1,
-          "positions": [
-            [
-              13045,
-              13047
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "基本面分析",
@@ -2085,80 +799,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-position-diagnosis.html",
       "relative_path": "knowledge\\article-position-diagnosis.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 16,
-          "positions": [
-            [
-              211,
-              213
-            ],
-            [
-              530,
-              532
-            ],
-            [
-              1005,
-              1007
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 1,
-          "positions": [
-            [
-              13143,
-              13145
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 13,
-          "positions": [
-            [
-              297,
-              299
-            ],
-            [
-              328,
-              330
-            ],
-            [
-              364,
-              366
-            ]
-          ]
-        },
-        {
-          "keyword": "支撑位",
-          "count": 1,
-          "positions": [
-            [
-              9031,
-              9034
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              16728,
-              16732
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -2175,98 +822,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-position-management.html",
       "relative_path": "knowledge\\article-position-management.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 6,
-          "positions": [
-            [
-              8492,
-              8494
-            ],
-            [
-              8505,
-              8507
-            ],
-            [
-              9105,
-              9107
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 5,
-          "positions": [
-            [
-              9991,
-              9993
-            ],
-            [
-              10004,
-              10006
-            ],
-            [
-              10446,
-              10448
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 1,
-          "positions": [
-            [
-              10745,
-              10747
-            ]
-          ]
-        },
-        {
-          "keyword": "支撑位",
-          "count": 1,
-          "positions": [
-            [
-              8722,
-              8725
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              18020,
-              18024
-            ]
-          ]
-        },
-        {
-          "keyword": "翻倍",
-          "count": 3,
-          "positions": [
-            [
-              5277,
-              5279
-            ],
-            [
-              5291,
-              5293
-            ],
-            [
-              7996,
-              7998
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "技术分析",
@@ -2282,137 +844,20 @@
         }
       ],
       "stock_codes": [
-        "059669",
         "475569",
+        "059669",
         "334155"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-risk.html",
       "relative_path": "knowledge\\article-risk.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 7,
-          "positions": [
-            [
-              11604,
-              11606
-            ],
-            [
-              12392,
-              12394
-            ],
-            [
-              12735,
-              12737
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 6,
-          "positions": [
-            [
-              9292,
-              9294
-            ],
-            [
-              10009,
-              10011
-            ],
-            [
-              11609,
-              11611
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 6,
-          "positions": [
-            [
-              8419,
-              8421
-            ],
-            [
-              9070,
-              9072
-            ],
-            [
-              13289,
-              13291
-            ]
-          ]
-        },
-        {
-          "keyword": "目标价",
-          "count": 2,
-          "positions": [
-            [
-              14354,
-              14357
-            ],
-            [
-              14371,
-              14374
-            ]
-          ]
-        },
-        {
-          "keyword": "止损价",
-          "count": 2,
-          "positions": [
-            [
-              12739,
-              12742
-            ],
-            [
-              15576,
-              15579
-            ]
-          ]
-        },
-        {
-          "keyword": "支撑位",
-          "count": 1,
-          "positions": [
-            [
-              14061,
-              14064
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              21247,
-              21251
-            ]
-          ]
-        },
-        {
-          "keyword": "内幕消息",
-          "count": 2,
-          "positions": [
-            [
-              11813,
-              11817
-            ],
-            [
-              11875,
-              11879
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -2427,60 +872,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-roe-guide.html",
       "relative_path": "knowledge\\article-roe-guide.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 4,
-          "positions": [
-            [
-              10848,
-              10850
-            ],
-            [
-              17352,
-              17354
-            ],
-            [
-              18729,
-              18731
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 5,
-          "positions": [
-            [
-              9927,
-              9929
-            ],
-            [
-              11404,
-              11406
-            ],
-            [
-              11700,
-              11702
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              23699,
-              23703
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "股票分析",
@@ -2503,62 +901,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "HIGH"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-stock-picking.html",
       "relative_path": "knowledge\\article-stock-picking.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 4,
-          "positions": [
-            [
-              8589,
-              8591
-            ],
-            [
-              10274,
-              10276
-            ],
-            [
-              10915,
-              10917
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 1,
-          "positions": [
-            [
-              11233,
-              11235
-            ]
-          ]
-        },
-        {
-          "keyword": "看涨",
-          "count": 1,
-          "positions": [
-            [
-              3900,
-              3902
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              17870,
-              17874
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "技术分析",
@@ -2583,98 +932,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "HIGH"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-stop-loss.html",
       "relative_path": "knowledge\\article-stop-loss.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 8,
-          "positions": [
-            [
-              4956,
-              4958
-            ],
-            [
-              5166,
-              5168
-            ],
-            [
-              6168,
-              6170
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 2,
-          "positions": [
-            [
-              4967,
-              4969
-            ],
-            [
-              5198,
-              5200
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 2,
-          "positions": [
-            [
-              5742,
-              5744
-            ],
-            [
-              9125,
-              9127
-            ]
-          ]
-        },
-        {
-          "keyword": "支撑位",
-          "count": 4,
-          "positions": [
-            [
-              5663,
-              5666
-            ],
-            [
-              5727,
-              5730
-            ],
-            [
-              6349,
-              6352
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              14583,
-              14587
-            ]
-          ]
-        },
-        {
-          "keyword": "翻倍",
-          "count": 1,
-          "positions": [
-            [
-              8707,
-              8709
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "技术分析",
@@ -2693,74 +957,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-treasury-repo.html",
       "relative_path": "knowledge\\article-treasury-repo.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 3,
-          "positions": [
-            [
-              13687,
-              13689
-            ],
-            [
-              13711,
-              13713
-            ],
-            [
-              18573,
-              18575
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 6,
-          "positions": [
-            [
-              8894,
-              8896
-            ],
-            [
-              13524,
-              13526
-            ],
-            [
-              13532,
-              13534
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 2,
-          "positions": [
-            [
-              7441,
-              7443
-            ],
-            [
-              8883,
-              8885
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              29574,
-              29578
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -2772,104 +975,27 @@
         }
       ],
       "stock_codes": [
-        "204001",
-        "204002",
-        "204014",
-        "204003",
-        "131800",
-        "204007",
-        "795548",
-        "283593",
+        "131810",
         "131811",
-        "131810"
+        "204014",
+        "204001",
+        "204003",
+        "795548",
+        "204007",
+        "283593",
+        "131800",
+        "204002"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\article-volume-price.html",
       "relative_path": "knowledge\\article-volume-price.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 2,
-          "positions": [
-            [
-              7617,
-              7619
-            ],
-            [
-              8238,
-              8240
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 2,
-          "positions": [
-            [
-              6503,
-              6505
-            ],
-            [
-              8041,
-              8043
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 3,
-          "positions": [
-            [
-              5569,
-              5571
-            ],
-            [
-              8929,
-              8931
-            ],
-            [
-              9193,
-              9195
-            ]
-          ]
-        },
-        {
-          "keyword": "支撑位",
-          "count": 1,
-          "positions": [
-            [
-              6915,
-              6918
-            ]
-          ]
-        },
-        {
-          "keyword": "看空",
-          "count": 1,
-          "positions": [
-            [
-              6816,
-              6818
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              14079,
-              14083
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "技术分析",
@@ -2888,34 +1014,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\knowledge\\index.html",
       "relative_path": "knowledge\\index.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "持有",
-          "count": 1,
-          "positions": [
-            [
-              21531,
-              21533
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              43101,
-              43105
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "股票分析",
@@ -2939,56 +1044,27 @@
         }
       ],
       "stock_codes": [
-        "166534",
-        "191722",
-        "075985",
-        "346022",
-        "202722",
-        "536422",
+        "334155",
         "144522",
-        "292524",
-        "312871",
-        "334155"
+        "191722",
+        "346022",
+        "475569",
+        "283593",
+        "053322",
+        "166534",
+        "064025",
+        "292524"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "HIGH"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\products\\alipay-yuebao.html",
       "relative_path": "products\\alipay-yuebao.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "持有",
-          "count": 5,
-          "positions": [
-            [
-              10215,
-              10217
-            ],
-            [
-              21071,
-              21073
-            ],
-            [
-              21100,
-              21102
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              31975,
-              31979
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3000,48 +1076,19 @@
         }
       ],
       "stock_codes": [
-        "856404",
-        "795548"
+        "795548",
+        "856404"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\products\\ant-wealth.html",
       "relative_path": "products\\ant-wealth.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "持有",
-          "count": 3,
-          "positions": [
-            [
-              15532,
-              15534
-            ],
-            [
-              15621,
-              15623
-            ],
-            [
-              16575,
-              16577
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              32269,
-              32273
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3056,42 +1103,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\products\\ccb-longcaifu.html",
       "relative_path": "products\\ccb-longcaifu.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "持有",
-          "count": 5,
-          "positions": [
-            [
-              12923,
-              12925
-            ],
-            [
-              13284,
-              13286
-            ],
-            [
-              22540,
-              22542
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              32068,
-              32072
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3108,7 +1126,7 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\products\\eastmoney-securities.html",
@@ -3128,18 +1146,7 @@
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\products\\huatai-securities.html",
       "relative_path": "products\\huatai-securities.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              36456,
-              36460
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3154,51 +1161,25 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\products\\index.html",
       "relative_path": "products\\index.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "保本保息",
-          "count": 2,
-          "positions": [
-            [
-              22892,
-              22896
-            ],
-            [
-              23731,
-              23735
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [],
       "stock_codes": [],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "SAFE"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\products\\jingdong-finance.html",
       "relative_path": "products\\jingdong-finance.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              20661,
-              20665
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3213,84 +1194,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\products\\savings-bond.html",
       "relative_path": "products\\savings-bond.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "建议关注",
-          "count": 1,
-          "positions": [
-            [
-              27394,
-              27398
-            ]
-          ]
-        },
-        {
-          "keyword": "买入",
-          "count": 2,
-          "positions": [
-            [
-              18717,
-              18719
-            ],
-            [
-              22234,
-              22236
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 5,
-          "positions": [
-            [
-              9866,
-              9868
-            ],
-            [
-              20351,
-              20353
-            ],
-            [
-              20443,
-              20445
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              33665,
-              33669
-            ]
-          ]
-        },
-        {
-          "keyword": "保本保息",
-          "count": 3,
-          "positions": [
-            [
-              376,
-              380
-            ],
-            [
-              6045,
-              6049
-            ],
-            [
-              26967,
-              26971
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3305,24 +1215,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\products\\template.html",
       "relative_path": "products\\template.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              15421,
-              15425
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3337,42 +1236,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\products\\tianhong-fund.html",
       "relative_path": "products\\tianhong-fund.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "持有",
-          "count": 4,
-          "positions": [
-            [
-              8219,
-              8221
-            ],
-            [
-              11937,
-              11939
-            ],
-            [
-              13400,
-              13402
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              22131,
-              22135
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3387,74 +1257,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\products\\treasury-repo.html",
       "relative_path": "products\\treasury-repo.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 4,
-          "positions": [
-            [
-              11852,
-              11854
-            ],
-            [
-              13659,
-              13661
-            ],
-            [
-              19136,
-              19138
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 3,
-          "positions": [
-            [
-              10368,
-              10370
-            ],
-            [
-              19139,
-              19141
-            ],
-            [
-              21242,
-              21244
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              27682,
-              27686
-            ]
-          ]
-        },
-        {
-          "keyword": "飙升",
-          "count": 2,
-          "positions": [
-            [
-              11826,
-              11828
-            ],
-            [
-              12614,
-              12616
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3466,50 +1275,21 @@
         }
       ],
       "stock_codes": [
-        "204001",
-        "204002",
         "204007",
-        "131810"
+        "204001",
+        "131810",
+        "204002"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\products\\weixin-licaitong.html",
       "relative_path": "products\\weixin-licaitong.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "持有",
-          "count": 3,
-          "positions": [
-            [
-              14733,
-              14735
-            ],
-            [
-              14865,
-              14867
-            ],
-            [
-              22126,
-              22128
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              30835,
-              30839
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3526,34 +1306,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\products\\weixin-lingqiantong.html",
       "relative_path": "products\\weixin-lingqiantong.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "持有",
-          "count": 1,
-          "positions": [
-            [
-              12370,
-              12372
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              28336,
-              28340
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3570,52 +1329,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\products\\zhaoshang-zhaozhaobao.html",
       "relative_path": "products\\zhaoshang-zhaozhaobao.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 1,
-          "positions": [
-            [
-              18185,
-              18187
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 3,
-          "positions": [
-            [
-              12042,
-              12044
-            ],
-            [
-              17172,
-              17174
-            ],
-            [
-              18070,
-              18072
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              33744,
-              33748
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3630,42 +1350,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\reviews\\money-fund-vs-bond-fund.html",
       "relative_path": "reviews\\money-fund-vs-bond-fund.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "持有",
-          "count": 3,
-          "positions": [
-            [
-              6516,
-              6518
-            ],
-            [
-              12989,
-              12991
-            ],
-            [
-              13946,
-              13948
-            ]
-          ]
-        },
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              20014,
-              20018
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3678,84 +1369,19 @@
       ],
       "stock_codes": [
         "217022",
-        "166534",
-        "110039"
+        "110039",
+        "166534"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\samples\\index.html",
       "relative_path": "samples\\index.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "买入",
-          "count": 3,
-          "positions": [
-            [
-              11385,
-              11387
-            ],
-            [
-              22811,
-              22813
-            ],
-            [
-              33700,
-              33702
-            ]
-          ]
-        },
-        {
-          "keyword": "卖出",
-          "count": 3,
-          "positions": [
-            [
-              11388,
-              11390
-            ],
-            [
-              22814,
-              22816
-            ],
-            [
-              33703,
-              33705
-            ]
-          ]
-        },
-        {
-          "keyword": "持有",
-          "count": 3,
-          "positions": [
-            [
-              11391,
-              11393
-            ],
-            [
-              29624,
-              29626
-            ],
-            [
-              33275,
-              33277
-            ]
-          ]
-        },
-        {
-          "keyword": "支撑位",
-          "count": 1,
-          "positions": [
-            [
-              9653,
-              9656
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "技术分析",
@@ -3767,17 +1393,17 @@
         }
       ],
       "stock_codes": [
-        "166534",
+        "300750",
+        "601633",
         "002594",
         "831843",
-        "601633",
-        "300750",
+        "166534",
         "600519"
       ],
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\services\\index.html",
@@ -3806,18 +1432,7 @@
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\tools\\calculator.html",
       "relative_path": "tools\\calculator.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              10807,
-              10811
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3832,24 +1447,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\tools\\compound-interest.html",
       "relative_path": "tools\\compound-interest.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              11278,
-              11282
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3866,24 +1470,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\tools\\index.html",
       "relative_path": "tools\\index.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              8615,
-              8619
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3894,24 +1487,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\tools\\mortgage.html",
       "relative_path": "tools\\mortgage.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              12856,
-              12860
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3926,24 +1508,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\tools\\retirement.html",
       "relative_path": "tools\\retirement.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              19044,
-              19048
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3960,24 +1531,13 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     },
     {
       "file": "c:\\Users\\刘炳君\\WorkBuddy\\Claw\\ourlyg-website\\tools\\risk-assessment.html",
       "relative_path": "tools\\risk-assessment.html",
       "status": "OK",
-      "p0_violations": [
-        {
-          "keyword": "投资顾问",
-          "count": 1,
-          "positions": [
-            [
-              8751,
-              8755
-            ]
-          ]
-        }
-      ],
+      "p0_violations": [],
       "p1_violations": [
         {
           "keyword": "投资建议",
@@ -3992,7 +1552,7 @@
       "has_risk_warning": true,
       "has_compliance_keywords": true,
       "risk_details": {},
-      "risk_level": "CRITICAL"
+      "risk_level": "MEDIUM"
     }
   ]
 }
