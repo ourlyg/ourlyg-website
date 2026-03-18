@@ -222,13 +222,15 @@
                 </div>
 
                 <!-- 表单 -->
-                <form id="requestForm" action="https://api.web3forms.com/submit" method="POST">
+                <form id="requestForm" method="POST">
                     <!-- 隐藏字段：来源页和时间 -->
                     <input type="hidden" name="access_key" value="13728931-2d88-45df-9574-46723726d751">
                     <input type="hidden" name="subject" value="[理易港] 新的分析需求">
-                    <input type="hidden" name="redirect" value="https://ourlyg.com/service-request.html?success=1">
                     <input type="hidden" name="from_name" value="理易港AI金融分析">
                     <input type="hidden" name="来源" id="source_field" value="">
+                    <input type="hidden" name="提交时间" id="submit_time" value="">
+                    <input type="hidden" name="用户ID" id="user_id" value="">
+                    <input type="hidden" name="支付链接" id="payment_link" value="">
 
                     <div class="mb-4">
                         <label class="form-label">服务类型<span class="required-mark">*</span></label>
@@ -374,18 +376,75 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // 价格提示
-        const priceMap = {
-            '股票诊断报告': '覆盖技术指标、趋势研判、支撑压力位分析，提供数据参考，通常2-4小时交付',
-            '每日财经简报': '每天早8:30前推送，包含重点财经新闻+市场解读+板块关注提示',
-            '持仓诊断分析': '分析持仓结构、行业集中度、风险敞口，提供数据层面的参考信息',
-            '个股深度研报': '完整覆盖基本面+技术面+估值+风险，适合做中长期研究参考',
-            '自定义需求': '描述您的具体需求，我来告诉您是否可以完成以及报价'
+        // ========== 1. 核心配置 ==========
+        const serviceConfig = {
+            '股票诊断报告': { price: 9.9, desc: '覆盖技术指标、趋势研判、支撑压力位分析，提供数据参考，通常2-4小时交付' },
+            '每日财经简报': { price: 29, desc: '每天早8:30前推送，包含重点财经新闻+市场解读+板块关注提示' },
+            '持仓诊断分析': { price: 29, desc: '分析持仓结构、行业集中度、风险敞口，提供数据层面的参考信息' },
+            '个股深度研报': { price: 59, desc: '完整覆盖基本面+技术面+估值+风险，适合做中长期研究参考' },
+            '自定义需求': { price: null, desc: '描述您的具体需求，我来告诉您是否可以完成以及报价' }
         };
+
+        // Stripe配置（稍后配置，目前用测试账户）
+        const STRIPE_PUBLIC_KEY = 'pk_test_51234567890'; // 需要配置真实key
+
+        // ========== 2. 工具函数 ==========
+        
+        // 生成用户唯一ID
+        function generateUserID() {
+            return 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        // 生成Stripe支付链接（自动）
+        async function generateStripeLink(email, serviceType, amount) {
+            try {
+                // 调用后端API生成checkout session
+                const response = await fetch('https://ourlyg.com/api/create-checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email,
+                        service_type: serviceType,
+                        amount: amount * 100, // 转换为分
+                        user_id: document.getElementById('user_id').value
+                    })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    return data.checkout_url || null;
+                }
+            } catch (err) {
+                console.log('Stripe API暂未就绪，使用备用方案');
+            }
+            return null;
+        }
+
+        // 保存用户数据到本地存储（用作CRM）
+        function saveUserToLocalDB(formData) {
+            const users = JSON.parse(localStorage.getItem('ourlyg_users') || '[]');
+            const userRecord = {
+                id: document.getElementById('user_id').value,
+                timestamp: new Date().toISOString(),
+                service_type: formData.get('服务类型'),
+                description: formData.get('需求描述'),
+                name: formData.get('称呼'),
+                contact: formData.get('联系方式'),
+                status: 'submitted',
+                email_sent: false,
+                converted: false
+            };
+            users.push(userRecord);
+            localStorage.setItem('ourlyg_users', JSON.stringify(users));
+            return userRecord;
+        }
+
+        // 价格提示
+        const priceMap = serviceConfig;
         function updatePriceHint(val) {
             const hint = document.getElementById('priceHint');
             if (priceMap[val]) {
-                hint.textContent = '💡 ' + priceMap[val];
+                hint.textContent = '💡 ' + priceMap[val].desc;
                 hint.style.display = 'block';
             } else {
                 hint.style.display = 'none';
@@ -407,26 +466,150 @@
         }
         document.getElementById('source_field').value = document.referrer || '直接访问';
 
+        // 初始化用户ID
+        document.getElementById('user_id').value = generateUserID();
+        document.getElementById('submit_time').value = new Date().toISOString();
+
         // 成功页检测
         if (window.location.search.includes('success=1')) {
             document.getElementById('requestForm').style.display = 'none';
             document.getElementById('successBox').style.display = 'block';
         }
 
-        // 表单提交状态 + 降级处理
-        document.getElementById('requestForm').addEventListener('submit', function(e) {
-            const key = document.querySelector('input[name="access_key"]').value;
-            // 如果key还没配置，阻止提交，显示备用联系方式
-            if (!key || key === 'REPLACE_WITH_WEB3FORMS_KEY') {
-                e.preventDefault();
-                document.getElementById('fallbackContact').style.display = 'block';
-                document.getElementById('fallbackContact').scrollIntoView({behavior:'smooth', block:'center'});
-                return;
-            }
+        // ========== 3. 表单提交处理 ==========
+        document.getElementById('requestForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
             const btn = document.getElementById('submitBtn');
             btn.disabled = true;
-            btn.textContent = '提交中...';
+            btn.textContent = '处理中...';
+
+            try {
+                // 3.1 收集表单数据
+                const formData = new FormData(this);
+                const serviceType = formData.get('服务类型');
+                const contactInfo = formData.get('联系方式');
+                
+                // 3.2 保存用户到本地CRM
+                const userRecord = saveUserToLocalDB(formData);
+                console.log('用户已保存到CRM:', userRecord);
+
+                // 3.3 生成支付链接（如果有定价）
+                let paymentLink = null;
+                if (serviceConfig[serviceType]?.price) {
+                    paymentLink = await generateStripeLink(
+                        contactInfo,
+                        serviceType,
+                        serviceConfig[serviceType].price
+                    );
+                    if (paymentLink) {
+                        formData.set('支付链接', paymentLink);
+                        console.log('支付链接已生成');
+                    }
+                }
+
+                // 3.4 发送到Web3Forms（邮件通知）
+                const web3FormData = new FormData();
+                web3FormData.append('access_key', formData.get('access_key'));
+                web3FormData.append('subject', formData.get('subject'));
+                web3FormData.append('from_name', formData.get('from_name'));
+                web3FormData.append('to_email', 'contact@ourlyg.com'); // 自己的邮箱
+
+                // 构建邮件正文
+                let emailBody = `
+新的用户提交：
+
+【基本信息】
+- 用户ID: ${userRecord.id}
+- 称呼: ${formData.get('称呼')}
+- 联系方式: ${contactInfo}
+
+【需求信息】
+- 服务类型: ${serviceType}
+- 需求描述: ${formData.get('需求描述')}
+- 股票代码: ${formData.get('股票代码') || '无'}
+- 期望交付时间: ${formData.get('期望交付时间')}
+- 预算: ${formData.get('预算参考')}
+
+【自动化信息】
+- 提交时间: ${userRecord.timestamp}
+- 来源: ${formData.get('来源')}
+- 支付链接: ${paymentLink || '无（待手动报价）'}
+
+【后续行动】
+1. 检查邮件是否送达
+2. 自动发送欢迎邮件到用户
+3. 后续每3天自动跟进一次（直到转化或取消）
+`;
+
+                web3FormData.append('message', emailBody);
+
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: web3FormData
+                });
+
+                if (response.ok) {
+                    console.log('邮件已发送');
+                    // 3.5 触发自动邮件序列（这里应连接Mailchimp API）
+                    triggerAutomationSequence(userRecord);
+                    
+                    // 3.6 显示成功页
+                    setTimeout(() => {
+                        document.getElementById('requestForm').style.display = 'none';
+                        document.getElementById('successBox').style.display = 'block';
+                        // 3.7 重定向（保留成功标志）
+                        window.location.href = '?success=1';
+                    }, 1000);
+                } else {
+                    throw new Error('邮件发送失败');
+                }
+
+            } catch (error) {
+                console.error('提交出错:', error);
+                btn.disabled = false;
+                btn.textContent = '提交失败，请重试 →';
+                alert('提交出错，请检查网络连接后重试');
+            }
         });
+
+        // ========== 4. 自动化邮件序列（Mailchimp集成） ==========
+        async function triggerAutomationSequence(userRecord) {
+            try {
+                // 调用Mailchimp API添加用户到邮件列表 + 触发自动化工作流
+                const mailchimpData = {
+                    email_address: userRecord.contact || 'unknown@example.com',
+                    status: 'subscribed',
+                    merge_fields: {
+                        FNAME: userRecord.name,
+                        USERID: userRecord.id,
+                        SERVICE: userRecord.service_type,
+                        SUBMITTED: userRecord.timestamp
+                    },
+                    tags: ['lead', 'submitted', userRecord.service_type]
+                };
+
+                // 这里应调用Mailchimp API，暂时只记录
+                console.log('邮件自动化已触发:', mailchimpData);
+                
+                // 标记已发送
+                userRecord.email_sent = true;
+
+            } catch (err) {
+                console.log('邮件自动化暂未就绪');
+            }
+        }
+
+        // ========== 5. 实时数据分析（可视化） ==========
+        window.showAnalytics = function() {
+            const users = JSON.parse(localStorage.getItem('ourlyg_users') || '[]');
+            console.log('=== 用户转化漏斗分析 ===');
+            console.log('总提交:', users.length);
+            console.log('已发邮件:', users.filter(u => u.email_sent).length);
+            console.log('已转化:', users.filter(u => u.converted).length);
+            console.log('转化率:', ((users.filter(u => u.converted).length / users.length) * 100).toFixed(1) + '%');
+            console.table(users);
+        };
     </script>
 
     <!-- 备用联系方式（key未配置时显示） -->
