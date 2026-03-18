@@ -171,14 +171,14 @@
 
                 <!-- 服务快速选择 -->
                 <div style="margin-bottom:28px; display:grid; grid-template-columns: repeat(2,1fr); gap:10px;">
-                    <a href="#" onclick="document.getElementById('serviceType').value='股票诊断报告'; updatePriceHint('股票诊断报告'); return false;" style="text-decoration:none;">
+                    <a href="#" onclick="document.getElementById('serviceType').value='股票信息整理报告'; updatePriceHint('股票信息整理报告'); return false;" style="text-decoration:none;">
                         <div style="border:2px solid #e8eaf6; border-radius:12px; padding:14px; text-align:center; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.borderColor='#667eea'; this.style.background='#f0f4ff';" onmouseout="this.style.borderColor='#e8eaf6'; this.style.background='white';">
                             <div style="font-size:22px; margin-bottom:4px;">📈</div>
                             <div style="font-weight:700; font-size:13px; color:#1a1a1a;">股票诊断</div>
                             <div style="font-size:12px; color:#667eea; font-weight:700;">¥9.9起</div>
                         </div>
                     </a>
-                    <a href="#" onclick="document.getElementById('serviceType').value='持仓诊断分析'; updatePriceHint('持仓诊断分析'); return false;" style="text-decoration:none;">
+                    <a href="#" onclick="document.getElementById('serviceType').value='持仓信息整理'; updatePriceHint('持仓信息整理'); return false;" style="text-decoration:none;">
                         <div style="border:2px solid #e8eaf6; border-radius:12px; padding:14px; text-align:center; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.borderColor='#667eea'; this.style.background='#f0f4ff';" onmouseout="this.style.borderColor='#e8eaf6'; this.style.background='white';">
                             <div style="font-size:22px; margin-bottom:4px;">🗂️</div>
                             <div style="font-weight:700; font-size:13px; color:#1a1a1a;">持仓诊断</div>
@@ -217,7 +217,7 @@
                     <span style="font-size: 20px; flex-shrink: 0;">🎁</span>
                     <div>
                         <div style="font-weight: 700; font-size: 14px; color: #92400e;">首次下单特惠</div>
-                        <div style="font-size: 13px; color: #b45309;">股票诊断报告基础版只需 <strong>¥9.9</strong>，10分钟内确认下单立即处理，不满意退款</div>
+                        <div style="font-size: 13px; color: #b45309;">股票信息整理报告基础版只需 <strong>¥9.9</strong>，10分钟内确认下单立即处理，不满意退款</div>
                     </div>
                 </div>
 
@@ -232,9 +232,9 @@
                         <label class="form-label">服务类型<span class="required-mark">*</span></label>
                         <select class="form-select" name="服务类型" id="serviceType" required onchange="updatePriceHint(this.value)">
                             <option value="" disabled selected>请选择你需要的服务</option>
-                            <option value="股票诊断报告">📈 股票诊断报告（基础版 ¥9.9起）</option>
+                            <option value="股票信息整理报告">📈 股票信息整理报告（基础版 ¥9.9起）</option>
                             <option value="每日财经简报">📰 每日财经简报（月度订阅 ¥29起）</option>
-                            <option value="持仓诊断分析">🗂️ 持仓诊断分析（单次 ¥29起）</option>
+                            <option value="持仓信息整理">🗂️ 持仓信息整理（单次 ¥29起）</option>
                             <option value="个股深度研报">🔬 个股深度研报（完整版 ¥59起）</option>
                             <option value="自定义需求">💬 其他/自定义需求</option>
                         </select>
@@ -316,7 +316,7 @@
                             报告多久能交付？
                             <span style="color:#667eea; font-size:18px;">+</span>
                         </summary>
-                        <p style="color:#666; font-size:14px; margin:10px 0 0; line-height:1.7;">基础股票诊断报告通常2-4小时完成；持仓分析和深度研报需要4-12小时；财经简报为每日定时推送。加急需求可优先处理，报价时会注明。</p>
+                        <p style="color:#666; font-size:14px; margin:10px 0 0; line-height:1.7;">基础股票信息整理报告通常2-4小时完成；持仓分析和深度研报需要4-12小时；财经简报为每日定时推送。加急需求可优先处理，报价时会注明。</p>
                     </details>
                     <details style="background:white; border-radius:12px; padding:16px 20px; border:1px solid #f0f0f0; cursor:pointer;">
                         <summary style="font-weight:600; font-size:14px; color:#333; list-style:none; display:flex; justify-content:space-between; align-items:center;">
@@ -356,9 +356,9 @@
                 <div class="col-md-4" style="margin-bottom: 32px;">
                     <h6 style="font-weight:700; margin-bottom: 16px; color:#1a1a1a;">服务项目</h6>
                     <div style="display:flex; flex-direction:column; gap:8px;">
-                        <a href="index.html#services" style="color:#666; font-size:14px; text-decoration:none;">股票诊断报告</a>
+                        <a href="index.html#services" style="color:#666; font-size:14px; text-decoration:none;">股票信息整理报告</a>
                         <a href="index.html#services" style="color:#666; font-size:14px; text-decoration:none;">财经简报定制</a>
-                        <a href="index.html#services" style="color:#666; font-size:14px; text-decoration:none;">持仓诊断分析</a>
+                        <a href="index.html#services" style="color:#666; font-size:14px; text-decoration:none;">持仓信息整理</a>
                         <a href="index.html#services" style="color:#666; font-size:14px; text-decoration:none;">个股深度研报</a>
                     </div>
                 </div>
@@ -374,7 +374,7 @@
             </div>
             <div style="border-top:1px solid #e8eaf6; margin-top: 40px; padding-top: 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
                 <p style="font-size:13px; color:#999; margin:0;">© 2026 理易港 ourlyg.com. All rights reserved.</p>
-                <p style="font-size:13px; color:#999; margin:0;">分析内容仅供参考，不构成投资建议，据此操作风险自负</p>
+                <p style="font-size:13px; color:#999; margin:0;">分析内容仅供参考，不构成信息参考，据此操作风险自负</p>
             </div>
         </div>
 
@@ -383,10 +383,10 @@
             <div class="container">
                 <p style="font-size:12px; color:rgba(255,255,255,0.35); line-height:1.8; margin:0; text-align:center;">
                     ⚠️ <strong style="color:rgba(255,255,255,0.5);">重要免责声明：</strong>
-                    本网站所有内容（包括但不限于文章、报告、分析、数据）均基于公开信息整理，<strong style="color:rgba(255,255,255,0.5);">仅供参考，不构成任何投资建议或投资顾问服务</strong>。
+                    本网站所有内容（包括但不限于文章、报告、分析、数据）均基于公开信息整理，<strong style="color:rgba(255,255,255,0.5);">仅供参考，不构成任何信息参考或信息服务服务</strong>。
                     市场有风险，投资须谨慎。历史表现不代表未来收益，任何分析均存在不确定性。
                     投资者应根据自身财务状况、风险承受能力及投资目标，独立作出投资判断，并承担相应风险。
-                    如需专业投资建议，请咨询具有合法资质的持牌金融机构或金融顾问。
+                    如需专业信息参考，请咨询具有合法资质的持牌金融机构或金融顾问。
                     本平台不对任何因参考本网站内容而产生的投资损失承担责任。
                 </p>
             </div>
@@ -399,9 +399,9 @@
 
         // 价格配置
         const serviceConfig = {
-            '股票诊断报告': { price: 9.9, desc: '覆盖技术指标、趋势研判、支撑压力位分析，提供数据参考，通常2-4小时交付' },
+            '股票信息整理报告': { price: 9.9, desc: '覆盖技术指标、趋势展示、支撑压力位分析，提供数据参考，通常2-4小时交付' },
             '每日财经简报': { price: 29, desc: '每天早8:30前推送，包含重点财经新闻+市场解读+板块关注提示' },
-            '持仓诊断分析': { price: 29, desc: '分析持仓结构、行业集中度、风险敞口，提供数据层面的参考信息' },
+            '持仓信息整理': { price: 29, desc: '分析持仓结构、行业集中度、风险敞口，提供数据层面的参考信息' },
             '个股深度研报': { price: 59, desc: '完整覆盖基本面+技术面+估值+风险，适合做中长期研究参考' },
             '自定义需求': { price: null, desc: '描述您的具体需求，我来告诉您是否可以完成以及报价' }
         };
