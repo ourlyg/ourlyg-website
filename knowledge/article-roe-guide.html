@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ROE是什么？为什么巴菲特和价值投资者最看重这个指标？完全解析ROE计算、行业对标、杜邦分析、20%判断线、ROE陷阱识别。">
+    <meta name="keywords" content="ROE,净资产收益率,巴菲特,基本面分析,财务指标,价值投资,杜邦分析">
+    <meta name="author" content="ourlyg.com">
+    <meta name="theme-color" content="#0066cc">
+    
+    <!-- Open Graph 社交分享 -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ROE是什么？为什么巴菲特最看重这个指标">
+    <meta property="og:description" content="掌握ROE这一个指标，就能看穿上市公司的真实盈利能力。完整解析计算、对标、陷阱识别。">
+    <meta property="og:url" content="https://ourlyg.com/knowledge/article-roe-guide.html">
+    <meta property="og:site_name" content="ourlyg - AI股票分析">
+    <meta property="og:image" content="https://ourlyg.com/images/default-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ROE指标完全指南">
+    <meta name="twitter:description" content="巴菲特最看重的财务指标">
+    <meta name="twitter:image" content="https://ourlyg.com/images/default-og.jpg">
+    
+    <!-- JSON-LD 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "ROE是什么？为什么巴菲特最看重这个指标",
+        "description": "完整的ROE指标分析指南，包含计算、对标、杜邦分析、陷阱识别",
+        "image": "https://ourlyg.com/images/default-og.jpg",
+        "author": {
+            "@type": "Organization",
+            "name": "ourlyg.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "ourlyg.com",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://ourlyg.com/images/logo.png"
+            }
+        },
+        "datePublished": "2026-03-18",
+        "dateModified": "2026-03-18"
+    }
+    </script>
+    
+    <link rel="canonical" href="https://ourlyg.com/knowledge/article-roe-guide.html">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .article-header {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 40px 20px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin: 40px 0 20px 0;
+            border-left: 4px solid #2ecc71;
+            padding-left: 15px;
+        }
+        .subsection-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #555;
+            margin: 30px 0 15px 0;
+        }
+        .key-point {
+            background: #d4edda;
+            border-left: 4px solid #2ecc71;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+        .comparison-table th {
+            background: #2ecc71;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+        .comparison-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .success-box {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .calculation-box {
+            background: #e7f9f5;
+            border-left: 4px solid #2ecc71;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .dupont-tree {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .dupont-level {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .roe-grade {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .roe-card {
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+        }
+        .roe-excellent { background: #27ae60; }
+        .roe-good { background: #2ecc71; }
+        .roe-fair { background: #f39c12; color: #333; }
+        .roe-poor { background: #e74c3c; }
+        .cta-section {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 50px 0 20px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #2ecc71;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+    </style>
+    <title>ROE是什么？为什么巴菲特最看重这个指标 - ourlyg</title>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html"><strong>ourlyg</strong> AI股票分析</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products/">产品测评</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tools/">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../knowledge/">知识科普</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../services/">服务介绍</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 文章头 -->
+    <div class="article-header">
+        <h1 style="margin: 0 0 15px 0; font-size: 42px;">ROE是什么？</h1>
+        <p style="margin: 0; font-size: 18px;">为什么巴菲特最看重这个指标</p>
+        <small style="display: block; margin-top: 15px; opacity: 0.9;">
+            📅 2026年3月 | ⏱ 约20分钟 | 👤 价值投资者必读
+        </small>
+    </div>
+
+    <!-- 正文 -->
+    <div class="article-content">
+        <div class="key-point">
+            <strong>核心观点：</strong>ROE（净资产收益率）是判断上市公司盈利能力最重要的单一指标。巴菲特说过："如果我只能选一个财务指标来评判一家公司，那就是ROE。"掌握ROE，就能看穿99%的上市公司。
+        </div>
+
+        <h2 class="section-title">第一部分：什么是ROE？为什么这么重要？</h2>
+        
+        <h3 class="subsection-title">ROE的定义</h3>
+        
+        <div class="calculation-box">
+            <strong>ROE（Return on Equity）= 净利润 / 平均净资产 × 100%</strong><br><br>
+            <strong>通俗理解：</strong><br>
+            假设公司用100元自有资金（股东投入），一年赚20元利润，那ROE = 20% <br>
+            意思是：你投入100块，公司每年给你产生20块利润，效率很高。
+        </div>
+
+        <h3 class="subsection-title">为什么ROE这么重要？</h3>
+        
+        <p><strong>1. 衡量资本使用效率</strong></p>
+        <ul>
+            <li>高ROE = 用较少的资本产生大利润，说明公司竞争力强</li>
+            <li>低ROE = 即使赚钱，效率也一般，可能有潜藏问题</li>
+        </ul>
+        
+        <p style="margin-top: 20px;"><strong>2. 决定股价增长上限</strong></p>
+        <ul>
+            <li>如果公司ROE = 15%，且利润全部用于再投资，长期增速不会超过15%</li>
+            <li>反过来说，如果股价要长期增长50%，必须公司ROE ≥ 25%</li>
+        </ul>
+        
+        <p style="margin-top: 20px;"><strong>3. 识别"真成长"vs"虚成长"</strong></p>
+        <div class="warning-box">
+            <strong>⚠️ 区别：</strong><br>
+            • 真成长：销售额增长 + ROE保持高位 → 利润真的在增加<br>
+            • 虚成长：销售额增长 + ROE不断下降 → 利润增速快崩，股价陷阱
+        </div>
+
+        <h2 class="section-title">第二部分：ROE的5个关键级别</h2>
+        
+        <div class="roe-grade">
+            <div class="roe-card roe-excellent">
+                <h4>超优秀</h4>
+                <p style="font-size: 20px; margin: 10px 0;">ROE ≥ 25%</p>
+                <p>巴菲特的标准选手</p>
+            </div>
+            <div class="roe-card roe-good">
+                <h4>优秀</h4>
+                <p style="font-size: 20px; margin: 10px 0;">15-25%</p>
+                <p>值得长期持有</p>
+            </div>
+            <div class="roe-card roe-fair">
+                <h4>合格</h4>
+                <p style="font-size: 20px; margin: 10px 0;">8-15%</p>
+                <p>高于平均水准</p>
+            </div>
+            <div class="roe-card roe-poor">
+                <h4>不合格</h4>
+                <p style="font-size: 20px; margin: 10px 0;">ROE ≤ 8%</p>
+                <p>谨慎或规避</p>
+            </div>
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>ROE 区间</th>
+                    <th>评级</th>
+                    <th>行业对标</th>
+                    <th>投资建议</th>
+                    <th>典型公司</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>≥ 25%</strong></td>
+                    <td>⭐⭐⭐⭐⭐ 超优秀</td>
+                    <td>远超行业平均</td>
+                    <td>核心持股，长期买入</td>
+                    <td>贵州茅台(25%)、招商银行(18%)、海天味业(20%)</td>
+                </tr>
+                <tr style="background: #d4edda;">
+                    <td><strong>15-25%</strong></td>
+                    <td>⭐⭐⭐⭐ 优秀</td>
+                    <td>行业一流水准</td>
+                    <td>优先配置，主要持股</td>
+                    <td>片仔癀(22%)、伊利股份(17%)、平安保险(16%)</td>
+                </tr>
+                <tr>
+                    <td><strong>8-15%</strong></td>
+                    <td>⭐⭐⭐ 合格</td>
+                    <td>略高于行业平均</td>
+                    <td>可以持有，但不是主要配置</td>
+                    <td>中国平安(14%)、万华化学(12%)、美的集团(11%)</td>
+                </tr>
+                <tr style="background: #fff3cd;">
+                    <td><strong>0-8%</strong></td>
+                    <td>⭐⭐ 不合格</td>
+                    <td>行业平均以下</td>
+                    <td>谨慎持有，考虑减持</td>
+                    <td>大多数周期股、房企、钢铁</td>
+                </tr>
+                <tr style="background: #ffe6e6;">
+                    <td><strong>0% 或负数</strong></td>
+                    <td>❌ 严重问题</td>
+                    <td>行业垫底</td>
+                    <td>规避或做空</td>
+                    <td>ST股票、亏损企业</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="section-title">第三部分：ROE的3层分解 - 杜邦分析</h2>
+        
+        <p>ROE不是凭空产生的，它由3个关键指标共同决定。掌握这3层，就能看穿ROE的真相。</p>
+        
+        <div class="calculation-box">
+            <strong>杜邦分析（3层分解）：</strong><br><br>
+            ROE = 净利率 × 资产周转率 × 杠杆倍数<br><br>
+            = (净利润 / 销售收入) × (销售收入 / 总资产) × (总资产 / 净资产)<br><br>
+            <strong>通俗理解：</strong><br>
+            ROE = 赚钱能力 × 效率 × 杠杆
+        </div>
+
+        <div class="dupont-tree">
+            <h4 style="margin-top: 0;">🔍 3层含义详解</h4>
+            
+            <div class="dupont-level">
+                <strong>第1层：净利率（赚钱能力）</strong><br>
+                = 净利润 / 销售收入<br><br>
+                <strong>含义：</strong>每卖100块商品，能赚多少利润<br>
+                <strong>高行业：</strong>白酒(30%+)、制药(20%+)、软件(15%+)<br>
+                <strong>低行业：</strong>超市(2-3%)、制造(3-5%)、房产(8-12%)<br>
+                <strong>判断：</strong>净利率越高，说明产品越值钱
+            </div>
+            
+            <div class="dupont-level">
+                <strong>第2层：资产周转率（运营效率）</strong><br>
+                = 销售收入 / 总资产<br><br>
+                <strong>含义：</strong>用100块资产，一年能产生多少销售收入<br>
+                <strong>高行业：</strong>零售(2.0+)、互联网(1.5+)<br>
+                <strong>低行业：</strong>电力(0.5)、重工业(0.6)、房产(0.4)<br>
+                <strong>判断：</strong>周转率高说明资产利用效率好，周转率低不一定是坏事（重资产行业往往周转慢但利润率高）
+            </div>
+            
+            <div class="dupont-level">
+                <strong>第3层：杠杆倍数（财务杠杆）</strong><br>
+                = 总资产 / 净资产<br><br>
+                <strong>含义：</strong>1块股东资本对应多少总资产（贷了多少债）<br>
+                <strong>健康范围：</strong>1.5-3.0倍（行业差异大）<br>
+                <strong>危险信号：</strong>&gt; 5倍（高风险）、上升趋势（债务不断增加）<br>
+                <strong>判断：</strong>杠杆倍数太高，一旦出现波动就可能爆雷（见2024年房企爆仓）
+            </div>
+        </div>
+
+        <h2 class="section-title">第四部分：3个高ROE陷阱 - 必须避开</h2>
+        
+        <h3 class="subsection-title">❌ 陷阱1：高ROE但杠杆失控</h3>
+        <p><strong>症状：</strong>ROE看起来不错（20%+），但总资产/净资产的比值在4-6倍以上。</p>
+        <div class="warning-box">
+            <strong>⚠️ 风险：</strong>这是典型的"高杠杆套利"——借大量债务，用这些债务投资高收益项目。一旦项目出问题或利率上升，公司可能立刻破产。<br><br>
+            <strong>历史案例：</strong>房企在2020-2021年普遍ROE 15-20%，杠杆倍数4-5倍。2022年一旦融资困难，恒大、融创等纷纷爆仓。
+        </div>
+        <div class="success-box">
+            <strong>✅ 避坑方法：</strong>永远看完整3层指标，不要只看ROE总数。查杠杆倍数和负债率，≤ 3倍、负债率 ≤ 60% 才算安全。
+        </div>
+
+        <h3 class="subsection-title">❌ 陷阱2：高ROE但利率在下降</h3>
+        <p><strong>症状：</strong>公司ROE达到20%，但这来自于借债成本很低（利率2-3%）的环境下。</p>
+        <div class="warning-box">
+            <strong>⚠️ 风险：</strong>一旦利率上升，借债成本从2%上升到5%，利差被吃掉，ROE会大幅下降。这是"伪高ROE"。<br><br>
+            <strong>案例：</strong>2019-2021年不少房企因借债成本低，ROE看似不错。2022年后借债成本上升，ROE纷纷下滑。
+        </div>
+        <div class="success-box">
+            <strong>✅ 避坑方法：</strong>追踪"平均融资成本"这个指标。如果融资成本上升，要警惕ROE可能虚高。
+        </div>
+
+        <h3 class="subsection-title">❌ 陷阱3：高ROE但来自非经营性收益</h3>
+        <p><strong>症状：</strong>主营业务利润一般，但因为投资收益、政府补贴等非经营项目，导致最终净利润（和ROE）虚高。</p>
+        <div class="warning-box">
+            <strong>⚠️ 风险：</strong>这类收益不可持续，财报里"转回"一笔就没了。比如卖掉一块房产、获得一次性政府补贴、投资某公司股票升值。这种ROE是"虚水分"。<br><br>
+            <strong>识别方法：</strong>看"经营现金流"是否与利润相符。如果利润很高但现金流很低，说明利润含水量大。
+        </div>
+        <div class="success-box">
+            <strong>✅ 避坑方法：</strong>选择"扣非ROE"（剔除非经营项目后的ROE）作为参考，而不是含有虚水的总体ROE。
+        </div>
+
+        <h2 class="section-title">第五部分：如何用ROE选股</h2>
+        
+        <h3 class="subsection-title">第1步：行业对标</h3>
+        <p>不同行业的ROE差异巨大。必须跟同行业对比，而不是跟全部行业对比。</p>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>行业</th>
+                    <th>平均 ROE</th>
+                    <th>优秀 ROE</th>
+                    <th>代表公司</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>白酒</strong></td>
+                    <td>15-18%</td>
+                    <td>25%+</td>
+                    <td>贵州茅台(25%)、五粮液(18%)</td>
+                </tr>
+                <tr>
+                    <td><strong>食品饮料</strong></td>
+                    <td>12-15%</td>
+                    <td>20%+</td>
+                    <td>海天味业(20%)、伊利股份(17%)</td>
+                </tr>
+                <tr>
+                    <td><strong>银行</strong></td>
+                    <td>10-15%</td>
+                    <td>18%+</td>
+                    <td>招商银行(18%)、平安银行(14%)</td>
+                </tr>
+                <tr>
+                    <td><strong>房产</strong></td>
+                    <td>8-12%</td>
+                    <td>15%+</td>
+                    <td>保利地产(11%)、碧桂园(5%-10%)</td>
+                </tr>
+                <tr>
+                    <td><strong>汽车</strong></td>
+                    <td>5-10%</td>
+                    <td>12%+</td>
+                    <td>比亚迪(12%+)、上汽集团(7%)</td>
+                </tr>
+                <tr>
+                    <td><strong>钢铁</strong></td>
+                    <td>5-8%</td>
+                    <td>10%+</td>
+                    <td>宝钢股份(8%)、华菱钢铁(6%)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">第2步：持续性判断</h3>
+        <p>ROE不是看一年，而要看过去5年的趋势。</p>
+        <div class="key-point">
+            <strong>优先级排序：</strong><br>
+            🥇 最优：过去5年ROE始终 ≥ 15%，非常稳定 → 长期买入<br>
+            🥈 次优：过去5年ROE从8%上升到15% → 企业在改善，值得关注<br>
+            🥉 一般：过去5年ROE波动大，有高有低 → 业务不稳定<br>
+            ❌ 最差：过去5年ROE持续下降 → 竞争力下滑
+        </div>
+
+        <h3 class="subsection-title">第3步：价格合理性检验</h3>
+        <p>即使ROE很高，买贵了也是亏的。要配合估值指标。</p>
+        
+        <div class="calculation-box">
+            <strong>ROE的理论估值法（简化版）：</strong><br><br>
+            合理PE = ROE × 1.5<br><br>
+            示例：<br>
+            • 公司ROE = 20%<br>
+            • 合理PE = 20% × 1.5 = 30倍<br>
+            • 如果当前PE ＜ 30倍，说明相对便宜<br>
+            • 如果当前PE ＞ 30倍，说明价格太高
+        </div>
+
+        <h2 class="section-title">第六部分：3类公司的ROE特点</h2>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>公司类型</th>
+                    <th>典型 ROE</th>
+                    <th>特点</th>
+                    <th>投资建议</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: #d4edda;">
+                    <td><strong>高ROE消费品</strong><br>（茅台、海天、伊利）</td>
+                    <td>15-25%</td>
+                    <td>品牌溢价高、利润率高、资本需求低</td>
+                    <td>最适合长期持有，高增长+安全边际</td>
+                </tr>
+                <tr>
+                    <td><strong>中等ROE周期股</strong><br>（银行、煤炭、钢铁）</td>
+                    <td>8-15%</td>
+                    <td>ROE随景气周期波动，差异很大</td>
+                    <td>不能机械买入，要判断周期位置</td>
+                </tr>
+                <tr style="background: #ffe6e6;">
+                    <td><strong>低ROE成长股</strong><br>（芯片、生物科技）</td>
+                    <td>常年 0-8%</td>
+                    <td>早期投入大、烧钱模式、ROE不重要</td>
+                    <td>不能用ROE评估，要看增长&创新</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="section-title">总结：ROE的5分钟快速判断法</h2>
+        
+        <div class="key-point">
+            <strong>看财报时，3秒钟快速判断一家公司：</strong><br><br>
+            1️⃣ <strong>ROE在哪个区间？</strong><br>
+               ≥ 25% → 巴菲特式优秀企业，长期买入信号<br>
+               15-25% → 优质企业，主要配置对象<br>
+               8-15% → 普通公司，看估值再决定<br>
+               ＜ 8% → 谨慎持有或规避<br><br>
+            
+            2️⃣ <strong>过去5年ROE趋势如何？</strong><br>
+               保持稳定或上升 → 竞争力稳定或改善，继续看<br>
+               大幅下降 → 竞争力下滑的警示信号，减仓<br><br>
+            
+            3️⃣ <strong>杠杆倍数多少？</strong><br>
+               ≤ 3倍 → 财务安全，这个ROE可信<br>
+               ＞ 5倍 → 高杠杆，ROE有水分，谨慎<br><br>
+            
+            4️⃣ <strong>是不是同行业最优？</strong><br>
+               行业对标后，ROE排名前10% → 竞争力突出，优先配置
+        </div>
+
+        <div class="cta-section">
+            <h3 style="margin-top: 0;">想深度诊断你的持仓ROE？</h3>
+            <p>本文讲的是ROE理论。但判断具体的公司股票是否值得买，还需要：</p>
+            <ul style="color: white; text-align: left; display: inline-block;">
+                <li>对比历史ROE趋势（5年数据）</li>
+                <li>行业ROE排名</li>
+                <li>杜邦分析解读</li>
+                <li>当前估值是否合理</li>
+                <li>持仓组合的ROE配置均衡性</li>
+            </ul>
+            <a href="../service-request.html?service=股票诊断报告" class="cta-button">
+                立即咨询 (仅需 ¥99)
+            </a>
+            <p style="margin-top: 10px; font-size: 13px;">或 <a href="../samples/" style="color: white; text-decoration: underline;">先看诊断样本报告</a></p>
+        </div>
+
+        <p style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #888; font-size: 13px;">
+            <strong>免责声明：</strong>本文仅供学习参考，不构成投资建议。过往ROE高不代表未来保持高ROE，市场波动可能导致股价下跌。请根据自身风险承受能力谨慎投资。
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light py-40 mt-60" style="margin-top: 60px;">
+        <div class="container text-center">
+            <p style="color: #666; margin-bottom: 20px;">
+                © 2026 ourlyg.com - AI股票分析平台
+            </p>
+            <p style="color: #999; font-size: 12px;">
+                <a href="../index.html" style="color: #666; text-decoration: none;">首页</a> | 
+                <a href="../services/" style="color: #666; text-decoration: none;">服务介绍</a> | 
+                <a href="../samples/" style="color: #666; text-decoration: none;">样本报告</a> | 
+                <a href="../knowledge/" style="color: #666; text-decoration: none;">知识科普</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
