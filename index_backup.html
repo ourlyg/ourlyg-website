@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ourlyg.com - AI驱动的金融分析服务。股票诊断、投资组合分析、财经简报定制，专业AI为您的投资决策提供数据支撑。">
+    <meta name="keywords" content="AI金融分析,股票诊断,投资分析报告,财经简报,股票趋势分析,个股研报,投资组合分析">
+    <meta property="og:title" content="理易港 - AI金融分析服务">
+    <meta property="og:description" content="AI驱动的专业金融分析服务，股票诊断报告、财经简报、投资组合优化，让数据说话，让决策更清晰。">
+    <title>理易港 ourlyg.com - AI金融分析服务</title>
+    <link rel="canonical" href="https://ourlyg.com/">
+    <meta property="og:url" content="https://ourlyg.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://ourlyg.com/images/og-cover.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="理易港 - AI金融分析服务">
+    <meta name="twitter:description" content="AI驱动的专业金融分析：股票诊断¥9.9起，财经简报订阅，持仓优化建议。">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "理易港 AI金融分析服务",
+      "url": "https://ourlyg.com",
+      "description": "AI驱动的专业金融分析服务，提供股票诊断报告、财经简报、投资组合分析、个股深度研报",
+      "serviceType": ["股票分析", "金融咨询", "投资研究"],
+      "areaServed": "CN",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "金融分析服务",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {"@type": "Service", "name": "股票诊断报告"},
+            "price": "9.90",
+            "priceCurrency": "CNY"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {"@type": "Service", "name": "每日财经简报"},
+            "price": "29.00",
+            "priceCurrency": "CNY"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {"@type": "Service", "name": "持仓诊断分析"},
+            "price": "29.00",
+            "priceCurrency": "CNY"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {"@type": "Service", "name": "个股深度研报"},
+            "price": "59.00",
+            "priceCurrency": "CNY"
+          }
+        ]
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@ourlyg.com",
+        "contactType": "customer service",
+        "availableLanguage": "Chinese"
+      }
+    }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ===== 首页专属样式 ===== */
+        .hero-new {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            padding: 120px 0 80px;
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+        .hero-new::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(102,126,234,0.3) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(102,126,234,0.25);
+            border: 1px solid rgba(102,126,234,0.5);
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: 13px;
+            color: #a5b4fc;
+            margin-bottom: 20px;
+        }
+        .hero-new h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero-new h1 span {
+            background: linear-gradient(90deg, #667eea, #a78bfa, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-new p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.7;
+            max-width: 540px;
+            margin-bottom: 36px;
+        }
+        .hero-cta-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(102,126,234,0.4);
+        }
+        .hero-cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(102,126,234,0.5);
+            color: white;
+        }
+        .hero-cta-secondary {
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.85);
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-left: 12px;
+        }
+        .hero-cta-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-color: rgba(255,255,255,0.5);
+        }
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .hero-stat-item span:first-child {
+            display: block;
+            font-size: 28px;
+            font-weight: 800;
+            color: #a5b4fc;
+        }
+        .hero-stat-item span:last-child {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+        /* 示例报告卡片 */
+        .demo-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .demo-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+        .signal-buy {
+            background: rgba(16,185,129,0.2);
+            color: #34d399;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .signal-hold {
+            background: rgba(245,158,11,0.2);
+            color: #fbbf24;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .signal-watch {
+            background: rgba(102,126,234,0.2);
+            color: #a5b4fc;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        /* 服务卡片 */
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 36px 28px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+            height: 100%;
+            border: 1px solid #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(102,126,234,0.12);
+        }
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 18px;
+        }
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        .service-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+        .price-tag {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 18px;
+        }
+        .price-tag strong {
+            color: #667eea;
+            font-size: 18px;
+        }
+        .service-order-btn {
+            display: block;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .service-order-btn:hover {
+            color: white;
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        /* 能力展示区 */
+        .capability-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #fafafa;
+            border: 1px solid #f0f0f0;
+            transition: all 0.2s;
+        }
+        .capability-item:hover {
+            background: #f0f4ff;
+            border-color: #c7d2fe;
+        }
+        .capability-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        /* 流程步骤 */
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        .process-num {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 800;
+            margin: 0 auto 16px;
+        }
+        /* 信任区域 */
+        .trust-item {
+            text-align: center;
+            padding: 20px;
+        }
+        .trust-item .trust-num {
+            font-size: 40px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        /* 联系CTA */
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+        .contact-section h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .contact-section p {
+            font-size: 18px;
+            opacity: 0.85;
+            margin-bottom: 36px;
+        }
+        .contact-wechat-box {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 16px;
+            padding: 20px 32px;
+            margin: 8px;
+            backdrop-filter: blur(10px);
+        }
+        .contact-wechat-box .label {
+            font-size: 13px;
+            opacity: 0.7;
+            margin-bottom: 6px;
+        }
+        .contact-wechat-box .value {
+            font-size: 20px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="logo-icon">📊</span>理易港
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services/index.html">AI分析服务</a></li>
+                    <li class="nav-item"><a class="nav-link" href="samples/index.html">样本报告</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products/index.html">产品测评</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tools/index.html">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">财经新闻</a></li>
+                    <li class="nav-item"><a class="nav-link" href="knowledge/index.html">知识科普</a></li>
+                    <li class="nav-item ms-2">
+                        <a href="service-request.html" class="btn btn-primary" style="border-radius:20px; padding:6px 18px; font-size:14px;">立即咨询</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero-new">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="hero-badge">
+                        <span>🤖</span>
+                        <span>AI 驱动 · 数据支撑</span>
+                    </div>
+                    <h1>你的专属<br><span>AI金融分析师</span><br>随时待命</h1>
+                    <p>不是普通的信息推送，而是真正能帮你分析一只股票、梳理一段行情、输出结构化投资建议的AI分析服务。</p>
+                    <div>
+                        <a href="#services" class="hero-cta-primary">查看服务项目</a>
+                        <a href="samples/index.html" class="hero-cta-secondary">看样本报告</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat-item">
+                            <span>实时</span>
+                            <span>数据获取</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <span>多维</span>
+                            <span>技术+基本面</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <span>定制</span>
+                            <span>按需输出</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- 模拟分析报告展示 -->
+                    <div class="demo-card">
+                        <div style="font-size:12px; color:rgba(255,255,255,0.4); margin-bottom:12px;">📋 样本：股票诊断报告 · 2026-03-16</div>
+                        <div class="demo-card-header">
+                            <div>
+                                <div style="font-size:18px; font-weight:700; color:white;">贵州茅台 600519</div>
+                                <div style="font-size:13px; color:rgba(255,255,255,0.5);">白酒行业 · 沪市主板</div>
+                            </div>
+                            <span class="signal-buy">建议关注</span>
+                        </div>
+                        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-bottom:14px;">
+                            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:10px; text-align:center;">
+                                <div style="font-size:11px; color:rgba(255,255,255,0.4); margin-bottom:4px;">MACD</div>
+                                <div style="color:#34d399; font-size:13px; font-weight:600;">金叉形成</div>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:10px; text-align:center;">
+                                <div style="font-size:11px; color:rgba(255,255,255,0.4); margin-bottom:4px;">RSI(14)</div>
+                                <div style="color:#fbbf24; font-size:13px; font-weight:600;">52 中性</div>
+                            </div>
+                            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:10px; text-align:center;">
+                                <div style="font-size:11px; color:rgba(255,255,255,0.4); margin-bottom:4px;">均线</div>
+                                <div style="color:#34d399; font-size:13px; font-weight:600;">多头排列</div>
+                            </div>
+                        </div>
+                        <div style="background:rgba(255,255,255,0.05); border-radius:8px; padding:12px; margin-bottom:12px;">
+                            <div style="font-size:12px; color:rgba(255,255,255,0.4); margin-bottom:6px;">📌 核心观点</div>
+                            <div style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.6;">近期缩量整理后MACD形成金叉，均线系统呈多头排列。若成交量温和放大，可关注突破前期高点机会。建议仓位控制在30%以内，止损参考近期低点。</div>
+                        </div>
+                        <div style="display:flex; gap:8px;">
+                            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:8px 12px; font-size:12px; color:rgba(255,255,255,0.6);">📈 支撑：1520</div>
+                            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:8px 12px; font-size:12px; color:rgba(255,255,255,0.6);">🎯 目标：1680</div>
+                            <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:8px 12px; font-size:12px; color:rgba(255,255,255,0.6);">🛡️ 止损：1490</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务项目 -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">我能帮你做什么</h2>
+                <p class="section-subtitle">不是模板输出，是真正理解你的需求后完成的分析工作</p>
+            </div>
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="service-icon" style="background:#ede9fe;">📈</div>
+                        <h3>股票诊断报告</h3>
+                        <p>给我一个股票代码，我给你一份完整报告：技术指标解读、趋势研判、关键支撑压力位分析，提供数据参考。</p>
+                        <div class="price-tag">单次报告 <strong>¥9.9</strong> 起</div>
+                        <a href="service-request.html?service=stock-report" class="service-order-btn">立即下单</a>
+                        <div style="text-align:center; margin-top:10px;">
+                            <a href="samples/index.html#stock-report" style="font-size:13px; color:#667eea; text-decoration:none;">📄 先看样本报告</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="service-icon" style="background:#dcfce7;">📰</div>
+                        <h3>财经简报定制</h3>
+                        <p>每天早上9点前，收到今日最值得关注的财经新闻摘要+市场解读，帮你抓住当天的核心信息。</p>
+                        <div class="price-tag">月度订阅 <strong>¥29</strong> 起</div>
+                        <a href="service-request.html?service=daily-brief" class="service-order-btn">立即订阅</a>
+                        <div style="text-align:center; margin-top:10px;">
+                            <a href="samples/index.html#news-brief" style="font-size:13px; color:#667eea; text-decoration:none;">📄 先看样本简报</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="service-icon" style="background:#fef9c3;">🗂️</div>
+                        <h3>持仓诊断分析</h3>
+                        <p>告诉我你现在的持仓，我帮你分析组合风险、行业集中度、相关性，给出再平衡建议。</p>
+                        <div class="price-tag">单次分析 <strong>¥29</strong> 起</div>
+                        <a href="service-request.html?service=portfolio" class="service-order-btn">立即下单</a>
+                        <div style="text-align:center; margin-top:10px;">
+                            <a href="samples/index.html#portfolio-report" style="font-size:13px; color:#667eea; text-decoration:none;">📄 先看样本报告</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="service-icon" style="background:#fee2e2;">🔬</div>
+                        <h3>个股深度研报</h3>
+                        <p>完整覆盖公司基本面：营收利润趋势、核心竞争力、行业地位、估值分析、风险提示。</p>
+                        <div class="price-tag">完整研报 <strong>¥59</strong> 起</div>
+                        <a href="service-request.html?service=deep-report" class="service-order-btn">立即下单</a>
+                        <div style="text-align:center; margin-top:10px;">
+                            <a href="samples/index.html#deep-report" style="font-size:13px; color:#667eea; text-decoration:none;">📄 先看样本研报</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-5">
+                <p style="color:#999; font-size:14px;">💡 以上为基础定价，复杂需求可协商。有特殊分析需求？直接告诉我。</p>
+                <a href="services/index.html" class="btn btn-outline mt-2" style="border-radius:20px;">查看完整服务说明</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 能力展示 -->
+    <section class="section" style="background: #f8f9ff;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">我的能力边界</h2>
+                <p class="section-subtitle">实事求是说清楚，我能做什么、做到什么程度</p>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-6 col-lg-4">
+                    <div class="capability-item">
+                        <div class="capability-icon">📊</div>
+                        <div>
+                            <div style="font-weight:700; font-size:15px; margin-bottom:4px;">技术指标分析</div>
+                            <div style="font-size:13px; color:#666;">MACD、KDJ、RSI、布林带、均线系统，结合量价关系判断趋势</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="capability-item">
+                        <div class="capability-icon">📰</div>
+                        <div>
+                            <div style="font-weight:700; font-size:15px; margin-bottom:4px;">实时新闻整理</div>
+                            <div style="font-size:13px; color:#666;">抓取主流财经媒体，去重、排序、提炼关键信息，节省你2小时</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="capability-item">
+                        <div class="capability-icon">🏢</div>
+                        <div>
+                            <div style="font-weight:700; font-size:15px; margin-bottom:4px;">基本面梳理</div>
+                            <div style="font-size:13px; color:#666;">财报数据、营收利润趋势、行业比较、PE/PB估值参考</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="capability-item">
+                        <div class="capability-icon">⚖️</div>
+                        <div>
+                            <div style="font-weight:700; font-size:15px; margin-bottom:4px;">风险量化评估</div>
+                            <div style="font-size:13px; color:#666;">波动率、最大回撤、夏普比率，让风险看得见摸得着</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="capability-item">
+                        <div class="capability-icon">🌐</div>
+                        <div>
+                            <div style="font-weight:700; font-size:15px; margin-bottom:4px;">宏观环境解读</div>
+                            <div style="font-size:13px; color:#666;">利率、汇率、政策面对市场的传导路径分析</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="capability-item">
+                        <div class="capability-icon">📋</div>
+                        <div>
+                            <div style="font-weight:700; font-size:15px; margin-bottom:4px;">结构化报告输出</div>
+                            <div style="font-size:13px; color:#666;">不是碎片信息堆砌，是有逻辑结构、有结论、可执行的分析文档</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 诚实声明 -->
+            <div style="background:white; border-radius:16px; padding:24px 28px; margin-top:32px; border:1px solid #e8eaf6;">
+                <div style="font-weight:700; font-size:16px; margin-bottom:10px; color:#1a1a1a;">⚠️ 诚实说明</div>
+                <p style="color:#666; font-size:14px; line-height:1.7; margin:0;">AI分析能帮你系统整理信息、发现规律、提供参考框架，但<strong>市场是不确定的</strong>，任何分析都不等于交易指令。我的输出是辅助工具，最终决策由你做——这是投资的本质，也是我如实告诉你的。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作流程 -->
+    <section class="section" style="background:white;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">怎么下单</h2>
+                <p class="section-subtitle">简单四步，最快当天收到报告</p>
+            </div>
+            <div class="row g-4 text-center">
+                <div class="col-6 col-md-3">
+                    <div class="process-step">
+                        <div class="process-num">1</div>
+                        <h5 style="font-weight:700; margin-bottom:8px;">说清需求</h5>
+                        <p style="font-size:14px; color:#666;">告诉我要分析哪只股票 / 想了解什么 / 输出什么格式</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="process-step">
+                        <div class="process-num">2</div>
+                        <h5 style="font-weight:700; margin-bottom:8px;">确认报价</h5>
+                        <p style="font-size:14px; color:#666;">根据复杂度给出报价，确认后开始分析</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="process-step">
+                        <div class="process-num">3</div>
+                        <h5 style="font-weight:700; margin-bottom:8px;">AI开始分析</h5>
+                        <p style="font-size:14px; color:#666;">抓取数据、运行模型、撰写报告，通常1-4小时内完成</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="process-step">
+                        <div class="process-num">4</div>
+                        <h5 style="font-weight:700; margin-bottom:8px;">交付 + 跟进</h5>
+                        <p style="font-size:14px; color:#666;">收到报告后如有疑问，可免费追问一次</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 信任区域 -->
+    <section class="section" style="background:#f8f9ff;">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-6 col-md-3">
+                    <div class="trust-item">
+                        <div class="trust-num">24h</div>
+                        <div style="font-size:14px; color:#666;">最快响应时间</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="trust-item">
+                        <div class="trust-num">300+</div>
+                        <div style="font-size:14px; color:#666;">可分析指标维度</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="trust-item">
+                        <div class="trust-num">实时</div>
+                        <div style="font-size:14px; color:#666;">数据获取能力</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="trust-item">
+                        <div class="trust-num">1次</div>
+                        <div style="font-size:14px; color:#666;">免费追问机会</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系/下单区 -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2>准备好了？在线留言下单</h2>
+            <p>填写需求表单，4小时内回复报价——无需等待，全程在线完成</p>
+
+            <!-- 内嵌简版留言表单 -->
+            <div style="max-width:520px; margin:0 auto 28px; background:rgba(255,255,255,0.12); border-radius:20px; padding:28px 32px; backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.2);">
+                <form id="quickForm" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="13728931-2d88-45df-9574-46723726d751">
+                    <input type="hidden" name="subject" value="[理易港] 快速咨询">
+                    <input type="hidden" name="redirect" value="https://ourlyg.com/service-request.html?success=1">
+                    <input type="hidden" name="from_name" value="理易港AI金融分析">
+                    <div style="margin-bottom:14px;">
+                        <select name="服务类型" style="width:100%; background:rgba(255,255,255,0.9); border:none; border-radius:10px; padding:11px 15px; font-size:14px; color:#333;" required>
+                            <option value="" disabled selected>选择服务类型</option>
+                            <option value="股票诊断报告">📈 股票诊断报告 ¥9.9起</option>
+                            <option value="每日财经简报">📰 财经简报订阅 ¥29/月</option>
+                            <option value="持仓诊断分析">🗂️ 持仓诊断 ¥29起</option>
+                            <option value="个股深度研报">🔬 深度研报 ¥59起</option>
+                            <option value="其他需求">💬 其他需求</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom:14px;">
+                        <input type="text" name="联系方式" placeholder="微信号 / 手机 / 邮箱" required style="width:100%; background:rgba(255,255,255,0.9); border:none; border-radius:10px; padding:11px 15px; font-size:14px; color:#333;">
+                    </div>
+                    <div style="margin-bottom:16px;">
+                        <textarea name="需求简述" placeholder="简要描述你的需求（如：分析茅台600519趋势）" rows="2" style="width:100%; background:rgba(255,255,255,0.9); border:none; border-radius:10px; padding:11px 15px; font-size:14px; color:#333; resize:none;"></textarea>
+                    </div>
+                    <button type="submit" style="width:100%; background:white; color:#667eea; border:none; border-radius:50px; padding:13px; font-size:16px; font-weight:700; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 16px rgba(0,0,0,0.15)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+                        提交需求，等待报价 →
+                    </button>
+                </form>
+            </div>
+
+            <p style="font-size:14px; opacity:0.7; margin:0;">
+                需要填写更多细节？
+                <a href="service-request.html" style="color:white; text-decoration:underline; font-weight:600;">点这里填完整需求表单</a>
+                &nbsp;|&nbsp;
+                先看看 <a href="samples/index.html" style="color:white; text-decoration:underline;">样本报告</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- SEO内容区：为什么用AI分析股票 -->
+    <section style="padding:70px 0; background:white;">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <h2 style="font-size:28px; font-weight:800; margin-bottom:16px; line-height:1.4;">散户为什么需要AI股票分析？</h2>
+                    <p style="color:#555; font-size:15px; line-height:1.9; margin-bottom:16px;">
+                        A股市场每天有超过5000只股票同时交易，每只背后都有财务报告、技术指标、机构动向、行业政策……一个散户靠自己根本看不完。
+                    </p>
+                    <p style="color:#555; font-size:15px; line-height:1.9; margin-bottom:16px;">
+                        <strong>AI股票分析</strong>能在几分钟内完成原本需要几小时的工作：抓取实时行情数据、计算MACD/KDJ/RSI等技术指标、比对PE/PB历史估值、梳理近期公告和机构持仓变化，最终输出一份结构化的分析报告。
+                    </p>
+                    <p style="color:#555; font-size:15px; line-height:1.9;">
+                        你不需要成为技术分析专家，也不需要每天盯盘——让AI做信息处理，你做最终决策，这才是散户对抗信息不对称的正确姿势。
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div style="background:#f8f9ff; border-radius:20px; padding:32px; border:1px solid #e8eaf6;">
+                        <div style="font-weight:800; font-size:16px; margin-bottom:20px; color:#1a1a1a;">AI分析 vs 自己研究</div>
+                        <div style="display:flex; flex-direction:column; gap:12px;">
+                            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; font-size:13px; font-weight:700; color:#999; padding-bottom:8px; border-bottom:2px solid #e8eaf6;">
+                                <span>维度</span><span style="text-align:center;">自己研究</span><span style="text-align:center; color:#667eea;">AI分析</span>
+                            </div>
+                            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; font-size:14px; align-items:center;">
+                                <span style="color:#555;">单股分析时间</span>
+                                <span style="text-align:center; color:#ef4444; font-weight:600;">2-4小时</span>
+                                <span style="text-align:center; color:#10b981; font-weight:600;">10分钟内</span>
+                            </div>
+                            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; font-size:14px; align-items:center; background:#f0f4ff; border-radius:8px; padding:8px;">
+                                <span style="color:#555;">覆盖指标数量</span>
+                                <span style="text-align:center; color:#ef4444; font-weight:600;">3-5个</span>
+                                <span style="text-align:center; color:#10b981; font-weight:600;">50+个</span>
+                            </div>
+                            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; font-size:14px; align-items:center;">
+                                <span style="color:#555;">是否情绪化</span>
+                                <span style="text-align:center; color:#ef4444; font-weight:600;">容易</span>
+                                <span style="text-align:center; color:#10b981; font-weight:600;">数据说话</span>
+                            </div>
+                            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; font-size:14px; align-items:center; background:#f0f4ff; border-radius:8px; padding:8px;">
+                                <span style="color:#555;">财报分析</span>
+                                <span style="text-align:center; color:#ef4444; font-weight:600;">看不完</span>
+                                <span style="text-align:center; color:#10b981; font-weight:600;">自动提炼</span>
+                            </div>
+                            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; font-size:14px; align-items:center;">
+                                <span style="color:#555;">报告结构</span>
+                                <span style="text-align:center; color:#ef4444; font-weight:600;">散乱笔记</span>
+                                <span style="text-align:center; color:#10b981; font-weight:600;">可执行结论</span>
+                            </div>
+                        </div>
+                        <div style="margin-top:20px; text-align:center;">
+                            <a href="service-request.html?service=stock-report" style="display:inline-block; background:linear-gradient(135deg,#667eea,#764ba2); color:white; padding:12px 32px; border-radius:50px; font-weight:700; font-size:15px; text-decoration:none;">试试AI分析，¥9.9起</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 保留理财工具和测评入口 -->
+    <section class="section" style="background:#f8f9ff;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">免费工具 &amp; 测评</h2>
+                <p class="section-subtitle">不付费也能用，欢迎收藏</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <a href="tools/calculator.html" style="text-decoration:none;">
+                        <div style="background:#f8f9ff; border-radius:16px; padding:24px; display:flex; align-items:center; gap:16px; transition:all 0.2s; border:1px solid #e8eaf6;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 16px rgba(102,126,234,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+                            <div style="font-size:32px; flex-shrink:0;">🧮</div>
+                            <div>
+                                <div style="font-weight:700; font-size:16px; color:#1a1a1a; margin-bottom:4px;">收益/复利计算器</div>
+                                <div style="font-size:13px; color:#666;">计算投资收益、定投累计金额</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="tools/risk-assessment.html" style="text-decoration:none;">
+                        <div style="background:#f8f9ff; border-radius:16px; padding:24px; display:flex; align-items:center; gap:16px; transition:all 0.2s; border:1px solid #e8eaf6;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 16px rgba(102,126,234,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+                            <div style="font-size:32px; flex-shrink:0;">🎯</div>
+                            <div>
+                                <div style="font-weight:700; font-size:16px; color:#1a1a1a; margin-bottom:4px;">投资风险评估</div>
+                                <div style="font-size:13px; color:#666;">10题测出你的风险承受等级</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="products/huatai-securities.html" style="text-decoration:none;">
+                        <div style="background:#f8f9ff; border-radius:16px; padding:24px; display:flex; align-items:center; gap:16px; transition:all 0.2s; border:1px solid #e8eaf6;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 16px rgba(102,126,234,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+                            <div style="font-size:32px; flex-shrink:0;">🏦</div>
+                            <div>
+                                <div style="font-weight:700; font-size:16px; color:#1a1a1a; margin-bottom:4px;">券商/平台测评</div>
+                                <div style="font-size:13px; color:#666;">华泰、天天基金、余额宝等独立评测</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6">
+                    <a href="knowledge/index.html" style="text-decoration:none;">
+                        <div style="background:#f8f9ff; border-radius:16px; padding:24px; display:flex; align-items:center; gap:16px; transition:all 0.2s; border:1px solid #e8eaf6;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 16px rgba(102,126,234,0.1)'" onmouseout="this.style.transform=''; this.style.boxShadow=''">
+                            <div style="font-size:32px; flex-shrink:0;">📚</div>
+                            <div>
+                                <div style="font-weight:700; font-size:16px; color:#1a1a1a; margin-bottom:4px;">理财知识库</div>
+                                <div style="font-size:13px; color:#666;">入门指南、基金选择、风险控制</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" style="margin-bottom: var(--spacing-5);">
+                    <div class="footer-brand">📊 理易港 ourlyg.com</div>
+                    <p class="footer-desc">AI驱动的金融分析服务平台。股票诊断、财经简报、持仓分析，让数据为你的投资决策服务。</p>
+                </div>
+                <div class="col-md-4" style="margin-bottom: var(--spacing-5);">
+                    <h6 style="font-weight:700; margin-bottom: var(--spacing-4); color:var(--color-text-primary);">服务项目</h6>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <a href="#services" style="color:var(--color-text-secondary); font-size:14px; text-decoration:none;">股票诊断报告</a>
+                        <a href="#services" style="color:var(--color-text-secondary); font-size:14px; text-decoration:none;">财经简报定制</a>
+                        <a href="#services" style="color:var(--color-text-secondary); font-size:14px; text-decoration:none;">持仓诊断分析</a>
+                        <a href="#services" style="color:var(--color-text-secondary); font-size:14px; text-decoration:none;">个股深度研报</a>
+                    </div>
+                </div>
+                <div class="col-md-4" style="margin-bottom: var(--spacing-5);">
+                    <h6 style="font-weight:700; margin-bottom: var(--spacing-4); color:var(--color-text-primary);">免费资源</h6>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <a href="tools/calculator.html" style="color:var(--color-text-secondary); font-size:14px; text-decoration:none;">收益计算器</a>
+                        <a href="tools/risk-assessment.html" style="color:var(--color-text-secondary); font-size:14px; text-decoration:none;">风险评估</a>
+                        <a href="products/index.html" style="color:var(--color-text-secondary); font-size:14px; text-decoration:none;">产品测评</a>
+                        <a href="knowledge/index.html" style="color:var(--color-text-secondary); font-size:14px; text-decoration:none;">理财知识</a>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top:1px solid var(--color-border-light); margin-top: var(--spacing-6); padding-top: var(--spacing-5); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                <p style="font-size:13px; color:var(--color-text-hint); margin:0;">© 2026 理易港 ourlyg.com. All rights reserved.</p>
+                <p style="font-size:13px; color:var(--color-text-hint); margin:0;">分析内容仅供参考，不构成投资建议，据此操作风险自负</p>
+            </div>
+        </div>
+    
+    <!-- ===== 合规免责声明 ===== -->
+    <div style="background:#0d0d1a; border-top:1px solid rgba(255,255,255,0.06); padding:18px 0; margin-top:0;">
+        <div class="container">
+            <p style="font-size:12px; color:rgba(255,255,255,0.35); line-height:1.8; margin:0; text-align:center;">
+                ⚠️ <strong style="color:rgba(255,255,255,0.5);">重要免责声明：</strong>
+                本网站所有内容（包括但不限于文章、报告、分析、数据）均基于公开信息整理，<strong style="color:rgba(255,255,255,0.5);">仅供参考，不构成任何投资建议或投资顾问服务</strong>。
+                市场有风险，投资须谨慎。历史表现不代表未来收益，任何分析均存在不确定性。
+                投资者应根据自身财务状况、风险承受能力及投资目标，独立作出投资判断，并承担相应风险。
+                如需专业投资建议，请咨询具有合法资质的持牌金融机构或金融顾问。
+                本平台不对任何因参考本网站内容而产生的投资损失承担责任。
+            </p>
+        </div>
+    </div>
+    <!-- ===== /合规免责声明 ===== -->
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 首页快速表单：key未配置时降级处理
+        const qForm = document.getElementById('quickForm');
+        if (qForm) {
+            qForm.addEventListener('submit', function(e) {
+                const key = qForm.querySelector('input[name="access_key"]').value;
+                if (!key || key === 'REPLACE_WITH_WEB3FORMS_KEY') {
+                    e.preventDefault();
+                    // 替换提交按钮为联系提示
+                    const btn = qForm.querySelector('button[type="submit"]');
+                    btn.style.background = '#fef3c7';
+                    btn.style.color = '#92400e';
+                    btn.textContent = '📧 请发邮件至 contact@ourlyg.com 提交需求';
+                    btn.style.fontSize = '13px';
+                }
+            });
+        }
+    </script>
+
+    <!-- 全局悬浮联系按钮 -->
+    <a href="service-request.html" style="position:fixed; bottom:24px; right:24px; background:linear-gradient(135deg,#667eea,#764ba2); color:white; border-radius:50px; padding:12px 20px; font-size:14px; font-weight:600; text-decoration:none; box-shadow:0 4px 20px rgba(102,126,234,0.5); z-index:999; display:flex; align-items:center; gap:8px; transition:all 0.2s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 28px rgba(102,126,234,0.6)'" onmouseout="this.style.transform=''; this.style.boxShadow='0 4px 20px rgba(102,126,234,0.5)'">
+        💬 立即咨询
+    </a>
+</body>
+</html>
