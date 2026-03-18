@@ -264,219 +264,53 @@
         </div>
     </section>
 
+        <!-- 统一页脚 -->
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="footer-brand">💰 我们的理易港</div>
-                    <p class="footer-desc">专注于理财产品评测和理财知识普及，帮助每个人做出更明智的财务决策。</p>
+                <div class="col-md-4" style="margin-bottom: 32px;">
+                    <div class="footer-brand">📊 理易港 ourlyg.com</div>
+                    <p class="footer-desc">AI驱动的金融分析服务平台。股票诊断、财经简报、持仓分析，让数据为你的投资决策服务。</p>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <p style="color: var(--color-text-hint); font-size: 13px; margin-top: var(--spacing-4);">本工具仅供参考，不构成投资建议。实际退休规划请咨询专业顾问。</p>
+                <div class="col-md-4" style="margin-bottom: 32px;">
+                    <h6 style="font-weight:700; margin-bottom: 16px; color:#1a1a1a;">服务项目</h6>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <a href="index.html#services" style="color:#666; font-size:14px; text-decoration:none;">股票诊断报告</a>
+                        <a href="index.html#services" style="color:#666; font-size:14px; text-decoration:none;">财经简报定制</a>
+                        <a href="index.html#services" style="color:#666; font-size:14px; text-decoration:none;">持仓诊断分析</a>
+                        <a href="index.html#services" style="color:#666; font-size:14px; text-decoration:none;">个股深度研报</a>
+                    </div>
+                </div>
+                <div class="col-md-4" style="margin-bottom: 32px;">
+                    <h6 style="font-weight:700; margin-bottom: 16px; color:#1a1a1a;">免费资源</h6>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <a href="tools/calculator.html" style="color:#666; font-size:14px; text-decoration:none;">收益计算器</a>
+                        <a href="tools/risk-assessment.html" style="color:#666; font-size:14px; text-decoration:none;">风险评估</a>
+                        <a href="products/index.html" style="color:#666; font-size:14px; text-decoration:none;">产品测评</a>
+                        <a href="knowledge/index.html" style="color:#666; font-size:14px; text-decoration:none;">理财知识</a>
+                    </div>
                 </div>
             </div>
+            <div style="border-top:1px solid #e8eaf6; margin-top: 40px; padding-top: 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                <p style="font-size:13px; color:#999; margin:0;">© 2026 理易港 ourlyg.com. All rights reserved.</p>
+                <p style="font-size:13px; color:#999; margin:0;">分析内容仅供参考，不构成投资建议，据此操作风险自负</p>
+            </div>
         </div>
-    
-    <!-- ===== 合规免责声明 ===== -->
-    <div style="background:#0d0d1a; border-top:1px solid rgba(255,255,255,0.06); padding:18px 0; margin-top:0;">
-        <div class="container">
-            <p style="font-size:12px; color:rgba(255,255,255,0.35); line-height:1.8; margin:0; text-align:center;">
-                ⚠️ <strong style="color:rgba(255,255,255,0.5);">重要免责声明：</strong>
-                本网站所有内容（包括但不限于文章、报告、分析、数据）均基于公开信息整理，<strong style="color:rgba(255,255,255,0.5);">仅供参考，不构成任何投资建议或投资顾问服务</strong>。
-                市场有风险，投资须谨慎。历史表现不代表未来收益，任何分析均存在不确定性。
-                投资者应根据自身财务状况、风险承受能力及投资目标，独立作出投资判断，并承担相应风险。
-                如需专业投资建议，请咨询具有合法资质的持牌金融机构或金融顾问。
-                本平台不对任何因参考本网站内容而产生的投资损失承担责任。
-            </p>
-        </div>
-    </div>
-    <!-- ===== /合规免责声明 ===== -->
 
+        <!-- 合规免责声明 -->
+        <div style="background:#0d0d1a; border-top:1px solid rgba(255,255,255,0.06); padding:24px 0; margin-top:0;">
+            <div class="container">
+                <p style="font-size:12px; color:rgba(255,255,255,0.35); line-height:1.8; margin:0; text-align:center;">
+                    ⚠️ <strong style="color:rgba(255,255,255,0.5);">重要免责声明：</strong>
+                    本网站所有内容（包括但不限于文章、报告、分析、数据）均基于公开信息整理，<strong style="color:rgba(255,255,255,0.5);">仅供参考，不构成任何投资建议或投资顾问服务</strong>。
+                    市场有风险，投资须谨慎。历史表现不代表未来收益，任何分析均存在不确定性。
+                    投资者应根据自身财务状况、风险承受能力及投资目标，独立作出投资判断，并承担相应风险。
+                    如需专业投资建议，请咨询具有合法资质的持牌金融机构或金融顾问。
+                    本平台不对任何因参考本网站内容而产生的投资损失承担责任。
+                </p>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function syncRange(id, valId) {
-            const el = document.getElementById(id);
-            const valEl = document.getElementById(valId);
-            let val = parseFloat(el.value);
-            if (id === 'returnRate' || id === 'inflationRate') {
-                valEl.textContent = val + '%';
-            } else {
-                valEl.textContent = val + '岁';
-            }
-            calculate();
-        }
-
-        function fmt(n) {
-            if (n >= 100000000) return (n / 100000000).toFixed(2) + '亿';
-            if (n >= 10000) return (n / 10000).toFixed(1) + '万';
-            return Math.round(n).toLocaleString();
-        }
-
-        function calcRequiredMonthly(target, currentSaving, years, annualRate) {
-            if (years <= 0) return 0;
-            const r = annualRate / 100 / 12;
-            const n = years * 12;
-            const futureCurrentSaving = currentSaving * Math.pow(1 + r, n);
-            const remaining = target - futureCurrentSaving;
-            if (remaining <= 0) return 0;
-            if (r === 0) return remaining / n;
-            return remaining * r / (Math.pow(1 + r, n) - 1);
-        }
-
-        function calculate() {
-            const currentAge = parseInt(document.getElementById('currentAge').value);
-            const retireAge = parseInt(document.getElementById('retireAge').value);
-            const lifeAge = parseInt(document.getElementById('lifeAge').value);
-            const monthlyExpense = parseFloat(document.getElementById('monthlyExpense').value) || 10000;
-            const currentSaving = parseFloat(document.getElementById('currentSaving').value) || 0;
-            const monthlySaving = parseFloat(document.getElementById('monthlySaving').value) || 0;
-            const returnRate = parseFloat(document.getElementById('returnRate').value) / 100;
-            const inflationRate = parseFloat(document.getElementById('inflationRate').value) / 100;
-            const monthlyPension = parseFloat(document.getElementById('monthlyPension').value) || 0;
-
-            if (retireAge <= currentAge) {
-                document.getElementById('targetAmount').textContent = '请设置退休年龄大于当前年龄';
-                return;
-            }
-
-            const yearsToRetire = retireAge - currentAge;
-            const retireYears = lifeAge - retireAge;
-
-            // 退休时每月净支出（经通胀调整后的今日购买力）
-            const netMonthlyNeed = Math.max(0, monthlyExpense - monthlyPension);
-
-            // 退休时需要的资金（用退休后实际收益率 = 真实收益率计算 present value of annuity）
-            // 真实收益率（去除通胀）
-            const realRate = (returnRate - inflationRate) / (1 + inflationRate);
-            const realRateMonthly = realRate / 12;
-            const retireMonths = retireYears * 12;
-
-            let targetNominal;
-            if (Math.abs(realRateMonthly) < 0.0001) {
-                targetNominal = netMonthlyNeed * retireMonths;
-            } else {
-                // PV of annuity (今日购买力)
-                targetNominal = netMonthlyNeed * (1 - Math.pow(1 + realRateMonthly, -retireMonths)) / realRateMonthly;
-            }
-
-            // 当前储蓄在退休时的名义价值
-            const nominalReturnMonthly = returnRate / 12;
-            const savingYearsN = yearsToRetire * 12;
-            const futureCurrentSaving = currentSaving * Math.pow(1 + nominalReturnMonthly, savingYearsN);
-            // 月储蓄的未来价值
-            let futureMonthlySaving;
-            if (nominalReturnMonthly === 0) {
-                futureMonthlySaving = monthlySaving * savingYearsN;
-            } else {
-                futureMonthlySaving = monthlySaving * (Math.pow(1 + nominalReturnMonthly, savingYearsN) - 1) / nominalReturnMonthly;
-            }
-            // 退休时名义积累额 → 换算成今日购买力
-            const inflationFactor = Math.pow(1 + inflationRate, yearsToRetire);
-            const projectedReal = (futureCurrentSaving + futureMonthlySaving) / inflationFactor;
-            const gap = projectedReal - targetNominal;
-
-            document.getElementById('targetAmount').textContent = '¥ ' + fmt(targetNominal);
-            document.getElementById('targetNote').textContent = `退休后 ${retireYears} 年，每月净支出 ¥${netMonthlyNeed.toLocaleString()} 元（今日购买力）`;
-            document.getElementById('yearsToRetire').textContent = yearsToRetire + ' 年';
-            document.getElementById('retireYears').textContent = retireYears + ' 年';
-            document.getElementById('projectedAmount').textContent = '¥ ' + fmt(projectedReal);
-
-            if (gap >= 0) {
-                document.getElementById('gap').textContent = '+ ¥ ' + fmt(gap);
-                document.getElementById('gap').style.color = '#2e7d32';
-                document.getElementById('gapLabel').textContent = '资金盈余 🎉';
-            } else {
-                document.getElementById('gap').textContent = '- ¥ ' + fmt(Math.abs(gap));
-                document.getElementById('gap').style.color = '#c62828';
-                document.getElementById('gapLabel').textContent = '资金缺口 ⚠️';
-            }
-
-            // 阶段分解（每5年一节点）
-            const phases = [];
-            for (let y = 5; y <= yearsToRetire; y += 5) {
-                const n = y * 12;
-                const fcs = currentSaving * Math.pow(1 + nominalReturnMonthly, n);
-                let fms;
-                if (nominalReturnMonthly === 0) {
-                    fms = monthlySaving * n;
-                } else {
-                    fms = monthlySaving * (Math.pow(1 + nominalReturnMonthly, n) - 1) / nominalReturnMonthly;
-                }
-                const realVal = (fcs + fms) / Math.pow(1 + inflationRate, y);
-                phases.push({ year: currentAge + y, value: realVal });
-            }
-
-            const maxVal = Math.max(targetNominal, projectedReal);
-            const colors = ['#667eea', '#764ba2', '#f093fb', '#f5576c', '#4facfe', '#00f2fe'];
-            let phaseHTML = '';
-            phases.forEach((p, i) => {
-                const pct = Math.min(100, Math.round(p.value / targetNominal * 100));
-                phaseHTML += `
-                <div class="phase-row">
-                    <div class="phase-dot" style="background:${colors[i % colors.length]}"></div>
-                    <div style="width:60px; font-size:14px; color:var(--color-text-secondary);">${p.year}岁</div>
-                    <div class="phase-bar-wrap">
-                        <div class="phase-bar" style="width:${pct}%; background:${colors[i % colors.length]};"></div>
-                    </div>
-                    <div style="width:80px; text-align:right; font-size:14px; font-weight:600;">¥${fmt(p.value)}</div>
-                    <div style="width:44px; text-align:right; font-size:12px; color:var(--color-text-hint);">${pct}%</div>
-                </div>`;
-            });
-            document.getElementById('phaseList').innerHTML = phaseHTML || '<p style="color:var(--color-text-hint);">距退休不足5年，无需分阶段预测</p>';
-
-            // 三种收益率下需要的月储蓄
-            const rates = [4, 6, 8];
-            const ids = ['savingConservative', 'savingModerate', 'savingAggressive'];
-            rates.forEach((r, i) => {
-                // 在指定收益率下退休时的名义目标
-                const rr = r / 100;
-                const rrM = rr / 12;
-                const realRateR = (rr - inflationRate) / (1 + inflationRate);
-                const realRateRM = realRateR / 12;
-                let tgtR;
-                if (Math.abs(realRateRM) < 0.0001) {
-                    tgtR = netMonthlyNeed * retireMonths;
-                } else {
-                    tgtR = netMonthlyNeed * (1 - Math.pow(1 + realRateRM, -retireMonths)) / realRateRM;
-                }
-                // 名义目标
-                const tgtNom = tgtR * Math.pow(1 + inflationRate, yearsToRetire);
-                const fcsR = currentSaving * Math.pow(1 + rrM, savingYearsN);
-                const remaining = tgtNom - fcsR;
-                let ms;
-                if (remaining <= 0) {
-                    ms = 0;
-                } else if (rrM === 0) {
-                    ms = remaining / savingYearsN;
-                } else {
-                    ms = remaining * rrM / (Math.pow(1 + rrM, savingYearsN) - 1);
-                }
-                document.getElementById(ids[i]).textContent = ms <= 0 ? '已足够' : '¥' + fmt(Math.ceil(ms));
-            });
-        }
-
-        // 初始化
-        ['currentAge', 'retireAge', 'lifeAge', 'returnRate', 'inflationRate'].forEach(id => {
-            const el = document.getElementById(id);
-            const valId = id + 'Val';
-            if (id === 'returnRate' || id === 'inflationRate') {
-                document.getElementById(valId).textContent = el.value + '%';
-            } else {
-                document.getElementById(valId).textContent = el.value + '岁';
-            }
-            el.addEventListener('input', () => {
-                if (id === 'returnRate' || id === 'inflationRate') {
-                    document.getElementById(valId).textContent = el.value + '%';
-                } else {
-                    document.getElementById(valId).textContent = el.value + '岁';
-                }
-                calculate();
-            });
-        });
-
-        calculate();
-    </script>
-</body>
+    </body>
 </html>
