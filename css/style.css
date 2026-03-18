@@ -379,8 +379,7 @@ body {
 footer {
     background: white;
     border-top: 1px solid var(--color-border-light);
-    padding: var(--spacing-10) 0 var(--spacing-8);
-    text-align: center;
+    padding: 0;
 }
 
 footer p {
@@ -389,25 +388,95 @@ footer p {
     margin-bottom: var(--spacing-2);
 }
 
-/* ==================== 新版页脚 ==================== */
+/* ==================== 统一页脚样式 ==================== */
 .footer {
     background: white;
-    border-top: 1px solid var(--color-border-light);
-    padding: var(--spacing-10) 0 var(--spacing-8);
+    border-top: 1px solid #e8eaf6;
+    padding: 60px 0 0;
+    margin-top: 80px;
+}
+
+.footer .container {
+    padding-top: 60px;
+    padding-bottom: 0;
 }
 
 .footer-brand {
     font-size: 18px;
     font-weight: 700;
-    color: var(--color-text-primary);
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: var(--spacing-3);
+    display: inline-block;
 }
 
 .footer-desc {
     font-size: 14px;
-    color: var(--color-text-secondary);
-    line-height: 1.7;
+    color: #666;
+    line-height: 1.8;
     max-width: 320px;
+}
+
+/* 页脚链接样式 */
+.footer a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer a:hover {
+    color: #667eea;
+    text-decoration: none;
+}
+
+/* 页脚分栏标题 */
+.footer h6 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+/* 页脚版权栏 */
+.footer-bottom {
+    border-top: 1px solid #e8eaf6;
+    margin-top: 40px;
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: #999;
+    margin: 0;
+}
+
+/* 页脚免责声明区域 */
+.footer-disclaimer {
+    background: #0d0d1a;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 24px 0;
+    margin-top: 0;
+}
+
+.footer-disclaimer p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.8;
+    margin: 0;
+    text-align: center;
+}
+
+.footer-disclaimer strong {
+    color: rgba(255,255,255,0.5);
 }
 
 /* ==================== 文章/产品卡片链接 ==================== */
