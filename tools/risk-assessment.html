@@ -93,106 +93,53 @@
         </div>
     </section>
 
-    <footer><div class="container"><p>&copy; 2026 我们的理易港. All rights reserved.</p><p style="margin-top:var(--spacing-2);">让理财变得简单</p></div>
-    <!-- ===== 合规免责声明 ===== -->
-    <div style="background:#0d0d1a; border-top:1px solid rgba(255,255,255,0.06); padding:18px 0; margin-top:0;">
+        <!-- 统一页脚 -->
+    <footer class="footer">
         <div class="container">
-            <p style="font-size:12px; color:rgba(255,255,255,0.35); line-height:1.8; margin:0; text-align:center;">
-                ⚠️ <strong style="color:rgba(255,255,255,0.5);">重要免责声明：</strong>
-                本网站所有内容（包括但不限于文章、报告、分析、数据）均基于公开信息整理，<strong style="color:rgba(255,255,255,0.5);">仅供参考，不构成任何投资建议或投资顾问服务</strong>。
-                市场有风险，投资须谨慎。历史表现不代表未来收益，任何分析均存在不确定性。
-                投资者应根据自身财务状况、风险承受能力及投资目标，独立作出投资判断，并承担相应风险。
-                如需专业投资建议，请咨询具有合法资质的持牌金融机构或金融顾问。
-                本平台不对任何因参考本网站内容而产生的投资损失承担责任。
-            </p>
-        </div>
-    </div>
-    <!-- ===== /合规免责声明 ===== -->
-
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-    const questions = [
-        { q: '你的年龄是？', opts: ['60岁以上（1分）','50~60岁（2分）','40~50岁（3分）','30~40岁（4分）','30岁以下（5分）'], scores: [1,2,3,4,5] },
-        { q: '你的主要理财目标是？', opts: ['保本，绝对不能亏（1分）','保本优先，少量增值（2分）','稳定收益，可承受小幅波动（3分）','追求较高收益，可承受中等波动（4分）','追求最大收益，可承受较大波动（5分）'], scores: [1,2,3,4,5] },
-        { q: '如果你的投资下跌了10%，你会？', opts: ['立刻全部卖出，不能再亏了（1分）','卖出大部分，留一点观望（2分）','继续持有，等待反弹（3分）','继续持有，考虑小幅加仓（4分）','大幅加仓，机会来了（5分）'], scores: [1,2,3,4,5] },
-        { q: '你目前的投资经验是？', opts: ['从来没投资过（1分）','只买过货币基金/定期（2分）','有过银行理财/债券基金经历（3分）','买过股票型基金（4分）','有炒股经验，了解各种投资品种（5分）'], scores: [1,2,3,4,5] },
-        { q: '你的月收入和月支出比例？', opts: ['入不敷出，有时需要借钱（1分）','刚好够用，几乎没有结余（2分）','有一点结余，约10%-20%（3分）','结余较多，约20%-40%（4分）','结余充裕，超过40%（5分）'], scores: [1,2,3,4,5] },
-        { q: '你这笔投资资金的用途是？', opts: ['半年内要用到（1分）','1-2年内要用（2分）','3-5年内可能用到（3分）','5-10年后才需要（4分）','10年以上不需要动（5分）'], scores: [1,2,3,4,5] },
-        { q: '你的家庭责任负担情况？', opts: ['有房贷+赡养老人+抚养子女（1分）','有房贷或赡养、抚养其中一项（2分）','有房贷，无赡养抚养压力（3分）','无房贷，有轻微家庭负担（4分）','单身/无负担，收入自由支配（5分）'], scores: [1,2,3,4,5] },
-        { q: '你对投资亏损的心理承受力？', opts: ['亏了5%就睡不着觉（1分）','亏10%会焦虑，频繁查行情（2分）','亏20%勉强能接受（3分）','亏30%能冷静分析（4分）','亏50%也能理性应对（5分）'], scores: [1,2,3,4,5] },
-        { q: '你目前有多少流动性备用资金（不用来投资的）？', opts: ['不足1个月支出（1分）','1~3个月支出（2分）','3~6个月支出（3分）','6~12个月支出（4分）','超过12个月支出（5分）'], scores: [1,2,3,4,5] },
-        { q: '你对下面哪种说法更认同？', opts: ['我投资的首要目标是不亏钱（1分）','我希望稳定增值，不想波动太大（2分）','我接受一定波动，追求长期稳健收益（3分）','我相信长期持有权益资产能获得更好回报（4分）','我愿意承担高风险换取高收益（5分）'], scores: [1,2,3,4,5] },
-    ];
-
-    let answers = new Array(questions.length).fill(null);
-    let cur = 0;
-
-    const types = [
-        { min: 10, max: 18, name: '保守型', emoji: '🛡️', color: '#4CAF50', desc: '你非常重视本金安全，无法承受明显亏损。适合以保本增值为核心策略，远离高波动品种。', products: ['货币基金（余额宝/理财通活期+）','国债逆回购（低风险，节假日前收益高）','银行定期存款','招商银行朝朝宝等低风险银行理财'] },
-        { min: 19, max: 27, name: '稳健型', emoji: '⚖️', color: '#2196F3', desc: '你希望在控制风险的前提下获得一定收益，可以接受小幅波动，但不愿承担较大亏损。', products: ['债券基金（纯债/短债）','货币基金+银行理财组合','招商银行朝朝宝等R2银行理财','少量配置混合型基金（不超过20%）'] },
-        { min: 28, max: 36, name: '平衡型', emoji: '📊', color: '#FF9800', desc: '你能接受一定波动，希望资产长期增值，适合股债结合的均衡配置策略。', products: ['混合型基金（股债比例6:4左右）','指数基金定投（沪深300/中证A500）','天天基金平台选择优质基金','部分配置国内外股票基金'] },
-        { min: 37, max: 45, name: '成长型', emoji: '🚀', color: '#9C27B0', desc: '你具备一定的投资经验，愿意承担较大波动以换取更高长期回报，适合以权益资产为主的配置。', products: ['主动管理股票型基金','沪深300、中证500指数基金','个股投资（建议先从ETF开始）','天天基金/华泰证券等平台'] },
-        { min: 46, max: 50, name: '进取型', emoji: '⚡', color: '#F44336', desc: '你风险承受能力极强，追求高收益，能从容面对较大幅度的资产波动。适合较高比例配置权益资产。', products: ['股票直接投资（需要较强研究能力）','行业/主题ETF（科技、新能源等）','创业板/科创板优质成长股','部分配置港股/美股基金'] },
-    ];
-
-    function render() {
-        const q = questions[cur];
-        document.getElementById('progressText').textContent = `第 ${cur+1} 题 / 共 ${questions.length} 题`;
-        const pct = Math.round(cur / questions.length * 100);
-        document.getElementById('progressPct').textContent = pct + '%';
-        document.getElementById('progressFill').style.width = pct + '%';
-        document.getElementById('questionBox').innerHTML = `
-            <div class="question-card">
-                <h4 style="font-size:18px; font-weight:600; color:var(--color-text-primary); margin-bottom: var(--spacing-5);">Q${cur+1}. ${q.q}</h4>
-                ${q.opts.map((o,i) => `<button class="option-btn ${answers[cur]===i?'selected':''}" onclick="select(${i})">${o}</button>`).join('')}
-            </div>`;
-        document.getElementById('prevBtn').style.display = cur > 0 ? '' : 'none';
-        document.getElementById('nextBtn').disabled = answers[cur] === null;
-        document.getElementById('nextBtn').textContent = cur === questions.length-1 ? '查看结果 ✓' : '下一题 →';
-    }
-
-    function select(i) {
-        answers[cur] = i;
-        document.querySelectorAll('.option-btn').forEach((b,idx) => b.classList.toggle('selected', idx===i));
-        document.getElementById('nextBtn').disabled = false;
-    }
-
-    function next() {
-        if (cur < questions.length-1) { cur++; render(); }
-        else { showResult(); }
-    }
-    function prev() { if (cur > 0) { cur--; render(); } }
-
-    function showResult() {
-        const total = answers.reduce((s, a, i) => s + questions[i].scores[a], 0);
-        const type = types.find(t => total >= t.min && total <= t.max) || types[2];
-        document.getElementById('questionArea').style.display = 'none';
-        document.getElementById('resultArea').style.display = '';
-        document.getElementById('resultArea').innerHTML = `
-            <div class="result-box" style="background:linear-gradient(135deg, #667eea11, #764ba211); border: 2px solid ${type.color}30; margin-bottom: var(--spacing-8);">
-                <p style="font-size:48px; margin-bottom: var(--spacing-2);">${type.emoji}</p>
-                <span class="type-badge" style="background:${type.color}; color:white;">${type.name}投资者</span>
-                <p style="font-size:16px; color:var(--color-text-secondary); line-height:1.75; max-width:500px; margin:0 auto;">${type.desc}</p>
-                <div style="margin-top: var(--spacing-4); font-size: 14px; color: var(--color-text-hint);">你的总得分：${total} 分 / 50 分</div>
+            <div class="row">
+                <div class="col-md-4" style="margin-bottom: 32px;">
+                    <div class="footer-brand">📊 理易港 ourlyg.com</div>
+                    <p class="footer-desc">AI驱动的金融分析服务平台。股票诊断、财经简报、持仓分析，让数据为你的投资决策服务。</p>
+                </div>
+                <div class="col-md-4" style="margin-bottom: 32px;">
+                    <h6 style="font-weight:700; margin-bottom: 16px; color:#1a1a1a;">服务项目</h6>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <a href="index.html#services" style="color:#666; font-size:14px; text-decoration:none;">股票诊断报告</a>
+                        <a href="index.html#services" style="color:#666; font-size:14px; text-decoration:none;">财经简报定制</a>
+                        <a href="index.html#services" style="color:#666; font-size:14px; text-decoration:none;">持仓诊断分析</a>
+                        <a href="index.html#services" style="color:#666; font-size:14px; text-decoration:none;">个股深度研报</a>
+                    </div>
+                </div>
+                <div class="col-md-4" style="margin-bottom: 32px;">
+                    <h6 style="font-weight:700; margin-bottom: 16px; color:#1a1a1a;">免费资源</h6>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <a href="tools/calculator.html" style="color:#666; font-size:14px; text-decoration:none;">收益计算器</a>
+                        <a href="tools/risk-assessment.html" style="color:#666; font-size:14px; text-decoration:none;">风险评估</a>
+                        <a href="products/index.html" style="color:#666; font-size:14px; text-decoration:none;">产品测评</a>
+                        <a href="knowledge/index.html" style="color:#666; font-size:14px; text-decoration:none;">理财知识</a>
+                    </div>
+                </div>
             </div>
-            <h4 style="font-weight:600; margin-bottom: var(--spacing-4);">📋 适合你的投资品种</h4>
-            ${type.products.map(p => `<div class="product-rec"><span style="font-size:20px;">✅</span><span style="font-size:15px; color:var(--color-text-primary);">${p}</span></div>`).join('')}
-            <div style="text-align:center; margin-top: var(--spacing-8);">
-                <button class="btn btn-outline btn-lg" onclick="restart()" style="margin-right: var(--spacing-3);">重新测试</button>
-                <a href="../products/index.html" class="btn btn-primary btn-lg">查看适合的产品测评</a>
-            </div>`;
-    }
+            <div style="border-top:1px solid #e8eaf6; margin-top: 40px; padding-top: 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                <p style="font-size:13px; color:#999; margin:0;">© 2026 理易港 ourlyg.com. All rights reserved.</p>
+                <p style="font-size:13px; color:#999; margin:0;">分析内容仅供参考，不构成投资建议，据此操作风险自负</p>
+            </div>
+        </div>
 
-    function restart() {
-        answers = new Array(questions.length).fill(null);
-        cur = 0;
-        document.getElementById('questionArea').style.display = '';
-        document.getElementById('resultArea').style.display = 'none';
-        render();
-    }
+        <!-- 合规免责声明 -->
+        <div style="background:#0d0d1a; border-top:1px solid rgba(255,255,255,0.06); padding:24px 0; margin-top:0;">
+            <div class="container">
+                <p style="font-size:12px; color:rgba(255,255,255,0.35); line-height:1.8; margin:0; text-align:center;">
+                    ⚠️ <strong style="color:rgba(255,255,255,0.5);">重要免责声明：</strong>
+                    本网站所有内容（包括但不限于文章、报告、分析、数据）均基于公开信息整理，<strong style="color:rgba(255,255,255,0.5);">仅供参考，不构成任何投资建议或投资顾问服务</strong>。
+                    市场有风险，投资须谨慎。历史表现不代表未来收益，任何分析均存在不确定性。
+                    投资者应根据自身财务状况、风险承受能力及投资目标，独立作出投资判断，并承担相应风险。
+                    如需专业投资建议，请咨询具有合法资质的持牌金融机构或金融顾问。
+                    本平台不对任何因参考本网站内容而产生的投资损失承担责任。
+                </p>
+            </div>
+        </div>
+    </footer>
 
-    document.addEventListener('DOMContentLoaded', render);
-    </script>
-</body>
+    </body>
 </html>
