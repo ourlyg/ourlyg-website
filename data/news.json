@@ -1,102 +1,109 @@
-[
-  {
-    "title": "2026百亿私募巡礼",
-    "summary": "2026百亿私募巡礼",
-    "url": "https://finance.sina.com.cn/zt_d/subject-1772702199/",
-    "source": "新浪财经",
-    "publish_time": "2026-03-18T15:35:03.987769",
-    "category": "财经",
-    "score": 100.0,
-    "importance": "⭐⭐⭐ 重要"
+{
+  "metadata": {
+    "updated_at": "2026-03-18T15:45:30.837464",
+    "total_news": 10,
+    "data_version": "1.0"
   },
-  {
-    "title": "券商掌舵人解码两会",
-    "summary": "券商掌舵人解码两会",
-    "url": "https://finance.sina.com.cn/zt_d/subject-1772793087",
-    "source": "新浪财经",
-    "publish_time": "2026-03-18T15:35:03.987720",
-    "category": "财经",
-    "score": 97.0,
-    "importance": "⭐⭐⭐ 重要"
-  },
-  {
-    "title": "双主线行情有望延续",
-    "summary": "双主线行情有望延续",
-    "url": "https://finance.sina.com.cn/zt_d/subject-1773017538",
-    "source": "新浪财经",
-    "publish_time": "2026-03-18T15:35:03.987791",
-    "category": "财经",
-    "score": 97.0,
-    "importance": "⭐⭐⭐ 重要"
-  },
-  {
-    "title": "网易公开课",
-    "summary": "网易公开课",
-    "url": "https://open.163.com/#f=topnav",
-    "source": "网易财经",
-    "publish_time": "2026-03-18T15:35:11.621753",
-    "category": "财经",
-    "score": 95.0,
-    "importance": "⭐⭐⭐ 重要"
-  },
-  {
-    "title": "网易云课堂",
-    "summary": "网易云课堂",
-    "url": "https://study.163.com/client/download.htm?from=163app&utm_source=163.com&utm_medium=web_app&utm_campaign=business",
-    "source": "网易财经",
-    "publish_time": "2026-03-18T15:35:11.621817",
-    "category": "财经",
-    "score": 95.0,
-    "importance": "⭐⭐⭐ 重要"
-  },
-  {
-    "id": 1,
-    "title": "央行：坚持稳健中性的货币政策，促进经济平稳增长",
-    "summary": "中国人民银行表示，将继续坚持稳健中性的货币政策取向，保持流动性合理充裕，促进金融更好服务实体经济...",
-    "url": "https://finance.sina.com.cn/",
-    "source": "新浪财经",
-    "publish_time": "2026-03-18T18:30:00Z",
-    "category": "政策",
-    "fetch_time": "2026-03-18T18:35:00Z"
-  },
-  {
-    "id": 2,
-    "title": "A股三大指数今日收涨，科技股表现强劲",
-    "summary": "今日沪深两市双双上涨，上证指数收报3200点，深成指报12000点。其中科技股表现抢眼，多只科技龙头股创新高...",
-    "url": "https://finance.eastmoney.com/",
-    "source": "东方财富",
-    "publish_time": "2026-03-18T15:00:00Z",
-    "category": "股市",
-    "fetch_time": "2026-03-18T15:05:00Z"
-  },
-  {
-    "id": 3,
-    "title": "基金市场：权益类基金持续热销，发行规模创新高",
-    "summary": "数据显示，今年以来权益类基金发行规模创历史新高，投资者热情高涨。分析人士认为，这反映了市场对未来经济前景的看好...",
-    "url": "https://money.163.com/",
-    "source": "网易财经",
-    "publish_time": "2026-03-18T12:45:00Z",
-    "category": "基金",
-    "fetch_time": "2026-03-18T12:50:00Z"
-  },
-  {
-    "id": 4,
-    "title": "36氪独家：某头部互联网公司获得新一轮融资，估值创新高",
-    "summary": "36氪获悉，某知名互联网公司完成C轮融资，融资金额高达5亿美元，估值达到100亿美元。本轮融资由多家头部基金参与...",
-    "url": "https://36kr.com/",
-    "source": "36 氪",
-    "publish_time": "2026-03-18T10:20:00Z",
-    "category": "财经",
-    "fetch_time": "2026-03-18T10:25:00Z"
-  },
-  {
-    "id": 5,
-    "title": "理财产品收益率下行，银行存款成新宠",
-    "summary": "随着市场流动性充裕，银行理财产品收益率呈现下行趋势。部分投资者开始转向高收益的定期存款产品...",
-    "url": "https://www.hexun.com/",
-    "source": "和讯网",
-    "publish_time": "2026-03-18T09:15:00Z",
-    "category": "理财",
-    "fetch_time": "2026-03-18T09:20:00Z"
-  }
-]
+  "news": [
+    {
+      "title": "2026百亿私募巡礼",
+      "summary": "2026百亿私募巡礼",
+      "url": "https://finance.sina.com.cn/zt_d/subject-1772702199/",
+      "source": "新浪财经",
+      "publish_time": "2026-03-18T15:35:03.987769",
+      "category": "财经",
+      "score": 100.0,
+      "importance": "⭐⭐⭐ 重要"
+    },
+    {
+      "title": "券商掌舵人解码两会",
+      "summary": "券商掌舵人解码两会",
+      "url": "https://finance.sina.com.cn/zt_d/subject-1772793087",
+      "source": "新浪财经",
+      "publish_time": "2026-03-18T15:35:03.987720",
+      "category": "财经",
+      "score": 97.0,
+      "importance": "⭐⭐⭐ 重要"
+    },
+    {
+      "title": "双主线行情有望延续",
+      "summary": "双主线行情有望延续",
+      "url": "https://finance.sina.com.cn/zt_d/subject-1773017538",
+      "source": "新浪财经",
+      "publish_time": "2026-03-18T15:35:03.987791",
+      "category": "财经",
+      "score": 97.0,
+      "importance": "⭐⭐⭐ 重要"
+    },
+    {
+      "title": "网易公开课",
+      "summary": "网易公开课",
+      "url": "https://open.163.com/#f=topnav",
+      "source": "网易财经",
+      "publish_time": "2026-03-18T15:35:11.621753",
+      "category": "财经",
+      "score": 95.0,
+      "importance": "⭐⭐⭐ 重要"
+    },
+    {
+      "title": "网易云课堂",
+      "summary": "网易云课堂",
+      "url": "https://study.163.com/client/download.htm?from=163app&utm_source=163.com&utm_medium=web_app&utm_campaign=business",
+      "source": "网易财经",
+      "publish_time": "2026-03-18T15:35:11.621817",
+      "category": "财经",
+      "score": 95.0,
+      "importance": "⭐⭐⭐ 重要"
+    },
+    {
+      "id": 1,
+      "title": "央行：坚持稳健中性的货币政策，促进经济平稳增长",
+      "summary": "中国人民银行表示，将继续坚持稳健中性的货币政策取向，保持流动性合理充裕，促进金融更好服务实体经济...",
+      "url": "https://finance.sina.com.cn/",
+      "source": "新浪财经",
+      "publish_time": "2026-03-18T18:30:00Z",
+      "category": "政策",
+      "fetch_time": "2026-03-18T18:35:00Z"
+    },
+    {
+      "id": 2,
+      "title": "A股三大指数今日收涨，科技股表现强劲",
+      "summary": "今日沪深两市双双上涨，上证指数收报3200点，深成指报12000点。其中科技股表现抢眼，多只科技龙头股创新高...",
+      "url": "https://finance.eastmoney.com/",
+      "source": "东方财富",
+      "publish_time": "2026-03-18T15:00:00Z",
+      "category": "股市",
+      "fetch_time": "2026-03-18T15:05:00Z"
+    },
+    {
+      "id": 3,
+      "title": "基金市场：权益类基金持续热销，发行规模创新高",
+      "summary": "数据显示，今年以来权益类基金发行规模创历史新高，投资者热情高涨。分析人士认为，这反映了市场对未来经济前景的看好...",
+      "url": "https://money.163.com/",
+      "source": "网易财经",
+      "publish_time": "2026-03-18T12:45:00Z",
+      "category": "基金",
+      "fetch_time": "2026-03-18T12:50:00Z"
+    },
+    {
+      "id": 4,
+      "title": "36氪独家：某头部互联网公司获得新一轮融资，估值创新高",
+      "summary": "36氪获悉，某知名互联网公司完成C轮融资，融资金额高达5亿美元，估值达到100亿美元。本轮融资由多家头部基金参与...",
+      "url": "https://36kr.com/",
+      "source": "36 氪",
+      "publish_time": "2026-03-18T10:20:00Z",
+      "category": "财经",
+      "fetch_time": "2026-03-18T10:25:00Z"
+    },
+    {
+      "id": 5,
+      "title": "理财产品收益率下行，银行存款成新宠",
+      "summary": "随着市场流动性充裕，银行理财产品收益率呈现下行趋势。部分投资者开始转向高收益的定期存款产品...",
+      "url": "https://www.hexun.com/",
+      "source": "和讯网",
+      "publish_time": "2026-03-18T09:15:00Z",
+      "category": "理财",
+      "fetch_time": "2026-03-18T09:20:00Z"
+    }
+  ]
+}
