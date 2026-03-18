@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP订阅 - ourlyg.com</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0066cc;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .subscription-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* 价格卡片 */
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .pricing-card.featured {
+            border: 3px solid var(--primary);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+        
+        .plan-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .plan-price {
+            font-size: 2.5rem;
+            color: var(--primary);
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .plan-price small {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .plan-description {
+            color: #666;
+            margin-bottom: 30px;
+            min-height: 40px;
+        }
+        
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        
+        .plan-features li {
+            padding: 10px 0;
+            color: #555;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .plan-features i {
+            color: var(--success);
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .btn-subscribe {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-subscribe-primary {
+            background: var(--primary);
+            color: white;
+            border: none;
+        }
+        
+        .btn-subscribe-primary:hover {
+            background: #0052a3;
+            color: white;
+        }
+        
+        .btn-subscribe-outline {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-subscribe-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* 功能对比表 */
+        .comparison-table {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 50px;
+        }
+        
+        .comparison-table h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        
+        .table {
+            margin: 0;
+        }
+        
+        .table th {
+            background: #f8f9fa;
+            border: none;
+            padding: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .table td {
+            padding: 20px;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+        
+        .table td:first-child {
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .feature-check {
+            color: var(--success);
+            font-size: 1.3rem;
+        }
+        
+        .feature-cross {
+            color: #ccc;
+            font-size: 1.3rem;
+        }
+        
+        /* FAQ部分 */
+        .faq-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 50px;
+        }
+        
+        .faq-section h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+        }
+        
+        .faq-question {
+            background: #f8f9fa;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            color: #666;
+            display: none;
+        }
+        
+        .faq-answer.show {
+            display: block;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.open .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* 用户登录部分 */
+        .user-info-panel {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .user-info-panel h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .form-group input {
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+        }
+        
+        /* 模态框 */
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+        }
+        
+        .modal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+        }
+        
+        .modal-title {
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-10px) scale(1);
+            }
+            
+            .section-title h1 {
+                font-size: 1.8rem;
+            }
+            
+            .plan-price {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="subscription-container">
+        <!-- 标题 -->
+        <div class="section-title">
+            <h1>💎 VIP订阅计划</h1>
+            <p>解锁高级功能，享受专业投资工具</p>
+        </div>
+        
+        <!-- 用户信息 -->
+        <div class="user-info-panel">
+            <h3>个人信息</h3>
+            <form id="userForm">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="userId">用户ID</label>
+                            <input type="text" class="form-control" id="userId" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="userEmail">邮箱</label>
+                            <input type="email" class="form-control" id="userEmail" required>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <!-- 价格卡片 -->
+        <div class="pricing-cards">
+            <!-- 基础版 -->
+            <div class="pricing-card">
+                <div class="plan-name">基础版</div>
+                <div class="plan-price">¥9.9<small>/月</small></div>
+                <div class="plan-description">适合个人投资者</div>
+                <ul class="plan-features">
+                    <li><i class="bi bi-check-circle"></i> 每天财经新闻聚合</li>
+                    <li><i class="bi bi-check-circle"></i> 新闻分类筛选</li>
+                    <li><i class="bi bi-check-circle"></i> 基础排序算法</li>
+                    <li><i class="bi bi-check-circle"></i> 单设备使用</li>
+                </ul>
+                <button class="btn btn-subscribe btn-subscribe-outline" onclick="selectPlan('basic')">
+                    <i class="bi bi-cart-plus"></i> 立即订阅
+                </button>
+            </div>
+            
+            <!-- 专业版 -->
+            <div class="pricing-card featured">
+                <div class="plan-badge">⭐ 推荐</div>
+                <div class="plan-name">专业版</div>
+                <div class="plan-price">¥19.9<small>/月</small></div>
+                <div class="plan-description">适合专业投资者</div>
+                <ul class="plan-features">
+                    <li><i class="bi bi-check-circle"></i> 每天财经新闻聚合</li>
+                    <li><i class="bi bi-check-circle"></i> 高级分类筛选</li>
+                    <li><i class="bi bi-check-circle"></i> 权重排序算法</li>
+                    <li><i class="bi bi-check-circle"></i> 实时新闻预警</li>
+                    <li><i class="bi bi-check-circle"></i> 个股推荐分析</li>
+                    <li><i class="bi bi-check-circle"></i> 多设备使用</li>
+                </ul>
+                <button class="btn btn-subscribe btn-subscribe-primary" onclick="selectPlan('pro')">
+                    <i class="bi bi-star-fill"></i> 立即订阅
+                </button>
+            </div>
+            
+            <!-- 企业版 -->
+            <div class="pricing-card">
+                <div class="plan-name">企业版</div>
+                <div class="plan-price">¥99.9<small>/月</small></div>
+                <div class="plan-description">适合机构投资者</div>
+                <ul class="plan-features">
+                    <li><i class="bi bi-check-circle"></i> 所有专业版功能</li>
+                    <li><i class="bi bi-check-circle"></i> API接口访问</li>
+                    <li><i class="bi bi-check-circle"></i> 数据自定义导出</li>
+                    <li><i class="bi bi-check-circle"></i> 多账户管理</li>
+                    <li><i class="bi bi-check-circle"></i> 优先技术支持</li>
+                    <li><i class="bi bi-check-circle"></i> 定制化分析报告</li>
+                </ul>
+                <button class="btn btn-subscribe btn-subscribe-outline" onclick="selectPlan('enterprise')">
+                    <i class="bi bi-briefcase"></i> 立即订阅
+                </button>
+            </div>
+        </div>
+        
+        <!-- 功能对比表 -->
+        <div class="comparison-table">
+            <h2>功能对比</h2>
+            <div style="overflow-x: auto;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>功能</th>
+                            <th>免费版</th>
+                            <th>基础版</th>
+                            <th>专业版</th>
+                            <th>企业版</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>每日新闻数量</td>
+                            <td>10条</td>
+                            <td>100条</td>
+                            <td>1000条</td>
+                            <td>无限</td>
+                        </tr>
+                        <tr>
+                            <td>历史查看天数</td>
+                            <td>7天</td>
+                            <td>90天</td>
+                            <td>365天</td>
+                            <td>无限</td>
+                        </tr>
+                        <tr>
+                            <td>每日导出次数</td>
+                            <td>5次</td>
+                            <td>50次</td>
+                            <td>500次</td>
+                            <td>无限</td>
+                        </tr>
+                        <tr>
+                            <td>API调用</td>
+                            <td><i class="bi bi-x feature-cross"></i></td>
+                            <td><i class="bi bi-x feature-cross"></i></td>
+                            <td>1000/天</td>
+                            <td>无限</td>
+                        </tr>
+                        <tr>
+                            <td>实时预警</td>
+                            <td><i class="bi bi-x feature-cross"></i></td>
+                            <td><i class="bi bi-x feature-cross"></i></td>
+                            <td><i class="bi bi-check-circle feature-check"></i></td>
+                            <td><i class="bi bi-check-circle feature-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>个股推荐</td>
+                            <td><i class="bi bi-x feature-cross"></i></td>
+                            <td><i class="bi bi-x feature-cross"></i></td>
+                            <td><i class="bi bi-check-circle feature-check"></i></td>
+                            <td><i class="bi bi-check-circle feature-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>定制化报告</td>
+                            <td><i class="bi bi-x feature-cross"></i></td>
+                            <td><i class="bi bi-x feature-cross"></i></td>
+                            <td><i class="bi bi-x feature-cross"></i></td>
+                            <td><i class="bi bi-check-circle feature-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td>多设备支持</td>
+                            <td>1个</td>
+                            <td>1个</td>
+                            <td>3个</td>
+                            <td>无限</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2>常见问题</h2>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>支付宝支持的支付方式有哪些？</span>
+                    <i class="bi bi-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>支付宝支持多种支付方式，包括支付宝余额、花呗、银行卡等。您可以根据自己的需求选择合适的支付方式。</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>订阅后可以取消吗？</span>
+                    <i class="bi bi-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>可以的。您可以在订阅有效期内的任何时间取消订阅。如果在7天内取消，我们将给予全额退款。</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>如何切换不同的VIP计划？</span>
+                    <i class="bi bi-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>您可以随时升级或降级您的VIP计划。升级会立即生效，降级将在当前订阅期结束时生效。</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>支付完成后多久能使用？</span>
+                    <i class="bi bi-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>支付完成后，您的VIP权限会立即激活，您可以立即享受所有高级功能。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 支付模态框 -->
+    <div class="modal fade" id="paymentModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">确认订阅</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="paymentPlanName"></p>
+                    <p id="paymentPrice"></p>
+                    <div class="form-group">
+                        <label>订阅月数</label>
+                        <select class="form-control" id="monthsSelect">
+                            <option value="1">1个月</option>
+                            <option value="3">3个月 (优惠10%)</option>
+                            <option value="12">12个月 (优惠20%)</option>
+                        </select>
+                    </div>
+                    <p id="totalPrice" style="font-size: 1.3rem; color: #0066cc; font-weight: bold;"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="confirmPayment()">
+                        <i class="bi bi-credit-card"></i> 前往支付
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let selectedPlan = '';
+        const planPrices = {
+            'basic': 9.9,
+            'pro': 19.9,
+            'enterprise': 99.9
+        };
+        const planNames = {
+            'basic': '基础版',
+            'pro': '专业版',
+            'enterprise': '企业版'
+        };
+        
+        function selectPlan(plan) {
+            selectedPlan = plan;
+            
+            // 更新模态框内容
+            document.getElementById('paymentPlanName').innerHTML = 
+                `<strong>选择计划：${planNames[plan]}</strong>`;
+            document.getElementById('paymentPrice').innerHTML = 
+                `原价：¥${planPrices[plan]}/月`;
+            
+            // 显示模态框
+            const modal = new bootstrap.Modal(document.getElementById('paymentModal'));
+            modal.show();
+            
+            // 更新总价
+            updateTotalPrice();
+        }
+        
+        function updateTotalPrice() {
+            const months = parseInt(document.getElementById('monthsSelect').value);
+            let basePrice = planPrices[selectedPlan];
+            let discount = 1;
+            
+            if (months === 3) {
+                discount = 0.9; // 10% 优惠
+            } else if (months === 12) {
+                discount = 0.8; // 20% 优惠
+            }
+            
+            const total = (basePrice * months * discount).toFixed(2);
+            document.getElementById('totalPrice').innerHTML = 
+                `<i class="bi bi-yuan"></i> ${total}`;
+        }
+        
+        function confirmPayment() {
+            const userId = document.getElementById('userId').value;
+            const userEmail = document.getElementById('userEmail').value;
+            const months = parseInt(document.getElementById('monthsSelect').value);
+            
+            if (!userId || !userEmail) {
+                alert('请填写用户ID和邮箱');
+                return;
+            }
+            
+            // 这里应该调用后端API创建支付会话
+            console.log(`创建支付会话: 用户=${userId}, 邮箱=${userEmail}, 计划=${selectedPlan}, 月数=${months}`);
+            alert(`即将跳转到支付宝支付页面\n计划: ${planNames[selectedPlan]}\n月数: ${months}个月`);
+            
+            // 实际生产中应该调用 API: /api/payment/create-session
+            // 然后重定向到支付链接
+        }
+        
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            
+            // 关闭其他打开的FAQ
+            document.querySelectorAll('.faq-item').forEach(el => {
+                if (el !== item) {
+                    el.classList.remove('open');
+                    el.querySelector('.faq-answer').classList.remove('show');
+                }
+            });
+            
+            // 切换当前FAQ
+            item.classList.toggle('open');
+            answer.classList.toggle('show');
+        }
+        
+        // 月数变化时更新价格
+        document.getElementById('monthsSelect')?.addEventListener('change', updateTotalPrice);
+    </script>
+</body>
+</html>
