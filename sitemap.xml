@@ -355,6 +355,24 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- 债券基金避坑指南 -->
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-bond-fund-guide.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ROE指标完全指南 -->
+  <url>
+    <loc>https://ourlyg.com/knowledge/article-roe-guide.html</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+
+
 
 
 
