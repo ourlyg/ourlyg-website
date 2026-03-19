@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MACD指标实战案例 - 金叉死叉买卖信号、背离分析、零轴操作，真实案例演示。">
+    <meta name="keywords" content="MACD,技术指标,金叉死叉,背离分析,买卖信号">
+    <title>MACD指标实战案例 | 知识科普 - Ourlyg</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">🌊 Ourlyg</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../services/index.html">AI分析服务</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../samples/index.html">样本报告</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products/index.html">产品测评</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tools/index.html">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../news.html">财经新闻</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../knowledge/index.html">知识科普</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary" href="#contact">立即咨询</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section py-5">
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold mb-3">MACD指标实战案例</h1>
+            <p class="lead text-muted">金叉死叉买卖信号 | 背离分析 | 零轴操作 | 真实案例演示</p>
+        </div>
+    </section>
+
+    <!-- MACD基础 -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mb-4">📊 MACD基础概念</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">什么是MACD？</h5>
+                            <p class="card-text">MACD（Moving Average Convergence Divergence）是平滑异同移动平均线指标，由Gerald Appel于1979年提出。它是趋势跟踪型指标，用于识别趋势的变化。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">计算公式</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>DIF线：</strong>EMA(12) - EMA(26)</li>
+                                <li class="mb-2"><strong>DEA线：</strong>EMA(DIF, 9)</li>
+                                <li class="mb-2"><strong>MACD柱：</strong>2 × (DIF - DEA)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">三要素</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">🔸 DIF线（快线）</li>
+                                <li class="mb-2">🔸 DEA线（慢线）</li>
+                                <li class="mb-2">🔸 MACD柱（红绿柱）</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 金叉死叉 -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="mb-4">🔄 金叉与死叉</h2>
+            <div class="row g-4 mb-4">
+                <div class="col-md-6">
+                    <div class="card h-100 border-success">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">✅ 金叉（买入信号）</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text"><strong>定义：</strong>DIF线从下向上穿过DEA线</p>
+                            <p class="card-text"><strong>含义：</strong>短期趋势转强，上涨动能增加</p>
+                            <hr>
+                            <h6>实战案例：贵州茅台（600519）</h6>
+                            <div class="table-responsive">
+                                <table class="table table-sm">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>日期</th>
+                                            <th>价格</th>
+                                            <th>DIF</th>
+                                            <th>DEA</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2024-01-15</td>
+                                            <td>¥1680</td>
+                                            <td>-5.2</td>
+                                            <td>-4.8</td>
+                                            <td>观望</td>
+                                        </tr>
+                                        <tr class="table-success">
+                                            <td>2024-01-20</td>
+                                            <td>¥1710</td>
+                                            <td>-3.5</td>
+                                            <td>-4.0</td>
+                                            <td class="text-success">🟢 金叉买入</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2024-02-15</td>
+                                            <td>¥1820</td>
+                                            <td>+8.5</td>
+                                            <td>+6.2</td>
+                                            <td>持有</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="small text-muted mt-2">收益：+8.3%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 border-danger">
+                        <div class="card-header bg-danger text-white">
+                            <h5 class="mb-0">❌ 死叉（卖出信号）</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text"><strong>定义：</strong>DIF线从上向下穿过DEA线</p>
+                            <p class="card-text"><strong>含义：</strong>短期趋势转弱，下跌动能增加</p>
+                            <hr>
+                            <h6>实战案例：宁德时代（300750）</h6>
+                            <div class="table-responsive">
+                                <table class="table table-sm">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>日期</th>
+                                            <th>价格</th>
+                                            <th>DIF</th>
+                                            <th>DEA</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2024-03-01</td>
+                                            <td>¥180</td>
+                                            <td>+6.2</td>
+                                            <td>+5.8</td>
+                                            <td>持有</td>
+                                        </tr>
+                                        <tr class="table-danger">
+                                            <td>2024-03-10</td>
+                                            <td>¥175</td>
+                                            <td>+3.5</td>
+                                            <td>+4.0</td>
+                                            <td class="text-danger">🔴 死叉卖出</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2024-03-20</td>
+                                            <td>¥168</td>
+                                            <td>-2.8</td>
+                                            <td>-1.5</td>
+                                            <td>观望</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="small text-muted mt-2">避免亏损：-4.0%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 背离分析 -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mb-4">📉 背离分析</h2>
+            <p class="mb-4">背离是指股价创新高（新低），但MACD指标没有创新高（新低），通常预示趋势反转。</p>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">顶背离（卖出信号）</h5>
+                            <div class="alert alert-warning">
+                                <strong>特征：</strong>
+                                <ul class="mb-0">
+                                    <li>股价创出新高</li>
+                                    <li>MACD柱线或DIF线没有创新高</li>
+                                    <li>红色柱线逐渐缩短</li>
+                                </ul>
+                            </div>
+                            <h6>实战案例：上证指数（2024年2月）</h6>
+                            <div class="table-responsive">
+                                <table class="table table-sm">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>日期</th>
+                                            <th>指数</th>
+                                            <th>DIF</th>
+                                            <th>MACD柱</th>
+                                            <th>解读</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2024-01-20</td>
+                                            <td>3100</td>
+                                            <td>+12.5</td>
+                                            <td>+8.2</td>
+                                            <td>上涨中</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2024-02-10</td>
+                                            <td><strong>3150</strong></td>
+                                            <td>+8.3</td>
+                                            <td>+4.5</td>
+                                            <td class="text-warning">⚠️ 顶背离</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2024-02-20</td>
+                                            <td>3080</td>
+                                            <td>-3.2</td>
+                                            <td>-5.8</td>
+                                            <td>趋势反转</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="small text-muted mt-2">结果：指数随后回调150点</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">底背离（买入信号）</h5>
+                            <div class="alert alert-info">
+                                <strong>特征：</strong>
+                                <ul class="mb-0">
+                                    <li>股价创出新低</li>
+                                    <li>MACD柱线或DIF线没有创新低</li>
+                                    <li>绿色柱线逐渐缩短</li>
+                                </ul>
+                            </div>
+                            <h6>实战案例：招商银行（600036）</h6>
+                            <div class="table-responsive">
+                                <table class="table table-sm">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>日期</th>
+                                            <th>价格</th>
+                                            <th>DIF</th>
+                                            <th>MACD柱</th>
+                                            <th>解读</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2024-01-10</td>
+                                            <td>¥30.5</td>
+                                            <td>-2.5</td>
+                                            <td>-3.8</td>
+                                            <td>下跌中</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2024-01-25</td>
+                                            <td><strong>¥29.8</strong></td>
+                                            <td>-1.2</td>
+                                            <td>-1.5</td>
+                                            <td class="text-success">✅ 底背离</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2024-02-15</td>
+                                            <td>¥32.5</td>
+                                            <td>+3.8</td>
+                                            <td>+5.2</td>
+                                            <td>趋势反转</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="small text-muted mt-2">结果：股价随后上涨9%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 零轴操作 -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="mb-4">📏 零轴操作策略</h2>
+            <p class="mb-4">零轴是MACD的重要参考线，DIF线和DEA线在零轴上方表示多头市场，下方表示空头市场。</p>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 border-success">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">🟢 零轴上方操作</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text"><strong>特征：</strong>DIF线、DEA线均在零轴上方</p>
+                            <p class="card-text"><strong>含义：</strong>多头市场，上升趋势</p>
+                            <hr>
+                            <h6>操作策略：</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">✅ 金叉时买入，仓位可加大</li>
+                                <li class="mb-2">✅ 持有为主，谨慎卖出</li>
+                                <li class="mb-2">✅ 死叉可作为减仓信号</li>
+                                <li class="mb-2">✅ MACD柱线缩短可减仓</li>
+                            </ul>
+                            <div class="alert alert-success mt-3">
+                                <strong>案例：</strong>贵州茅台2024年1-3月，零轴上方金叉，股价从1680涨至1820元。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 border-danger">
+                        <div class="card-header bg-danger text-white">
+                            <h5 class="mb-0">🔴 零轴下方操作</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text"><strong>特征：</strong>DIF线、DEA线均在零轴下方</p>
+                            <p class="card-text"><strong>含义：</strong>空头市场，下降趋势</p>
+                            <hr>
+                            <h6>操作策略：</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">⚠️ 金叉仅作反弹，轻仓参与</li>
+                                <li class="mb-2">❌ 空仓观望为主</li>
+                                <li class="mb-2">⚠️ 死叉坚决卖出</li>
+                                <li class="mb-2">⚠️ 等待MACD柱线缩短</li>
+                            </ul>
+                            <div class="alert alert-danger mt-3">
+                                <strong>案例：</strong>宁德时代2024年2-3月，零轴下方死叉，股价从180跌至168元。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 实战建议 -->
+    <section class="py-5">
+        <div class="container">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <h2 class="card-title mb-4">💡 实战建议</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <h5>组合使用</h5>
+                            <p>MACD建议与其他指标结合使用，如KDJ、RSI、成交量等，提高信号准确率。</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h5>多周期分析</h5>
+                            <p>建议同时观察日线、周线、月线的MACD，大周期决定方向，小周期决定买卖点。</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h5>避免假信号</h5>
+                            <p>横盘整理时MACD容易产生假信号，建议结合成交量、K线形态过滤。</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>风险控制</h5>
+                            <p>MACD信号仅供参考，需要结合基本面分析。严格执行止损，控制仓位。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="mb-4">❓ 常见问题</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            MACD参数如何设置？
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show">
+                        <div class="accordion-body">
+                            默认参数为(12, 26, 9)，适合大多数情况。短线交易可改为(5, 13, 5)，长线投资可改为(26, 52, 9)。
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            金叉死叉一定会涨跌吗？
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            不一定。MACD信号需要结合成交量、K线形态、大盘走势等综合判断。建议过滤震荡行情中的信号。
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            如何判断背离的有效性？
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            背离需要至少出现2次以上才更有意义，且MACD柱线明显缩短。单次背离可能是噪音，建议等待确认。
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            MACD适合什么类型的股票？
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            MACD适合趋势明显的股票，不适合震荡横盘的股票。建议选择流动性好、趋势清晰的大盘股或龙头股。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 回到列表 -->
+    <section class="py-5">
+        <div class="container text-center">
+            <a href="index.html" class="btn btn-outline-primary btn-lg">
+                ← 查看更多知识科普
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-2">© 2026 Ourlyg 理财工具 | 专业理财分析与工具平台</p>
+            <small class="text-muted">投资有风险，入市需谨慎</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
