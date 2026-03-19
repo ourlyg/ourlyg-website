@@ -1,0 +1,119 @@
+{
+  "site_info": {
+    "name": "Ourlyg - 智能理财分析平台",
+    "url": "https://ourlyg.com",
+    "description": "提供专业的理财产品测评、基金分析、股票诊断服务，AI驱动的智能理财决策助手",
+    "keywords": "理财, 投资, 基金测评, 股票分析, 金融产品, 智能投顾, 财经资讯",
+    "category": "财经/投资/理财",
+    "contact_email": "contact@ourlyg.com"
+  },
+  "submission_sites": [
+    {
+      "name": "翱联名单目录",
+      "url": "https://www.mingdanwang.com",
+      "submit_url": "https://www.mingdanwang.com/add",
+      "type": "免费目录",
+      "notes": "中文站长分类目录，收录速度快"
+    },
+    {
+      "name": "SEO网站目录",
+      "url": "https://www.seo123.net",
+      "submit_url": "https://www.seo123.net/submit",
+      "type": "免费目录",
+      "notes": "全人工编辑，SEO外链权重高"
+    },
+    {
+      "name": "软文轩网站目录",
+      "url": "https://www.ruanwenxuan.com",
+      "submit_url": "https://www.ruanwenxuan.com/submit",
+      "type": "免费目录",
+      "notes": "专业免费收录各行业网站"
+    },
+    {
+      "name": "维度狐网站目录",
+      "url": "https://www.wdfox.com",
+      "submit_url": "https://www.wdfox.com/submit",
+      "type": "免费目录",
+      "notes": "中文网站分类目录，站长免费提交"
+    },
+    {
+      "name": "财经网址大全",
+      "url": "https://www.zueiai.com/caijing",
+      "submit_url": "mailto:contact@zueiai.com",
+      "type": "财经导航",
+      "notes": "需要邮件联系提交"
+    },
+    {
+      "name": "UpSort财经导航",
+      "url": "https://upsort.com/dh",
+      "submit_url": "https://upsort.com/submit",
+      "type": "财经导航",
+      "notes": "财经资讯导航站"
+    },
+    {
+      "name": "酷链儿财经导航",
+      "url": "https://www.kulianer.com/finance",
+      "submit_url": "https://www.kulianer.com/submit",
+      "type": "财经导航",
+      "notes": "财经网站分类导航"
+    },
+    {
+      "name": "AMZ123财经导航",
+      "url": "https://www.amz123.com/caijing",
+      "submit_url": "https://www.amz123.com/submit",
+      "type": "财经导航",
+      "notes": "跨境导航收录财经网站"
+    },
+    {
+      "name": "赢富财经导航",
+      "url": "http://hao.yingfu001.com",
+      "submit_url": "mailto:contact@yingfu001.com",
+      "type": "财经导航",
+      "notes": "需要邮件联系提交"
+    },
+    {
+      "name": "企业导航网",
+      "url": "https://daohang.zhooqi.com",
+      "submit_url": "https://daohang.zhooqi.com/submit",
+      "type": "免费目录",
+      "notes": "免费收录，外链发布工具"
+    },
+    {
+      "name": "OpenAIToolsHub目录",
+      "url": "https://www.openaitoolshub.org",
+      "submit_url": "https://www.openaitoolshub.org/submit",
+      "type": "AI工具目录",
+      "notes": "AI工具导航，高质量外链"
+    },
+    {
+      "name": "MyBacklinks目录",
+      "url": "https://mybacklinks.app",
+      "submit_url": "https://mybacklinks.app/submit",
+      "type": "SEO外链",
+      "notes": "500+免费外链网站"
+    }
+  ],
+  "community_platforms": [
+    {
+      "name": "V2EX",
+      "url": "https://www.v2ex.com",
+      "submit_url": "https://www.v2ex.com/planes",
+      "type": "技术社区",
+      "notes": "发布"Show"页面展示项目"
+    },
+    {
+      "name": "掘金",
+      "url": "https://juejin.cn",
+      "submit_url": "https://juejin.cn/publish",
+      "type": "技术社区",
+      "notes": "发布技术文章引流"
+    },
+    {
+      "name": "知乎",
+      "url": "https://www.zhihu.com",
+      "submit_url": "https://www.zhihu.com/publish",
+      "type": "知识社区",
+      "notes": "写理财相关文章和回答"
+    }
+  ]
+}
