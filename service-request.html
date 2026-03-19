@@ -141,7 +141,7 @@
 </head>
 <body>
     <!-- 导航栏 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <span class="logo-icon">📊</span>理易港
@@ -528,5 +528,28 @@ ${new Date().toLocaleString('zh-CN')}
         <div style="font-size:12px; opacity:0.7; margin-bottom:10px;">发送你的需求，4小时内回复</div>
         <button onclick="document.getElementById('fallbackContact').style.display='none'" style="background:rgba(255,255,255,0.25); border:none; color:white; border-radius:50px; padding:6px 18px; cursor:pointer; font-size:13px;">关闭</button>
     </div>
+    <!-- 移动端底部Tab导航 -->
+    <nav class="mobile-bottom-nav">
+        <a href="index.html">
+            <span class="tab-icon">🏠</span>
+            <span class="tab-label">首页</span>
+        </a>
+        <a href="services/index.html">
+            <span class="tab-icon">🤖</span>
+            <span class="tab-label">AI服务</span>
+        </a>
+        <a href="products/index.html">
+            <span class="tab-icon">📋</span>
+            <span class="tab-label">测评</span>
+        </a>
+        <a href="tools/index.html">
+            <span class="tab-icon">🧮</span>
+            <span class="tab-label">工具</span>
+        </a>
+        <a href="knowledge/index.html">
+            <span class="tab-icon">📚</span>
+            <span class="tab-label">知识</span>
+        </a>
+    </nav>
 </body>
 </html>
