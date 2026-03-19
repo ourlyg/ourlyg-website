@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="股票筛选工具 - 按PE/PB/ROE筛选优质股票，实时更新数据，支持自定义筛选条件。">
+    <meta name="keywords" content="股票筛选,PE,PB,ROE,价值投资,股票工具">
+    <title>股票筛选工具 | 理财工具 - Ourlyg</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">🌊 Ourlyg</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../services/index.html">AI分析服务</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../samples/index.html">样本报告</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products/index.html">产品测评</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../tools/index.html">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../news.html">财经新闻</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../knowledge/index.html">知识科普</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary" href="#contact">立即咨询</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section py-5">
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold mb-3">股票筛选工具</h1>
+            <p class="lead text-muted">按PE/PB/ROE筛选优质股票 | 实时更新数据 | 支持自定义筛选条件</p>
+        </div>
+    </section>
+
+    <!-- 筛选条件 -->
+    <section class="py-5">
+        <div class="container">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">🔍 筛选条件</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label class="form-label">PE（市盈率）范围</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="peMin" placeholder="最小值" value="0">
+                                <span class="input-group-text">-</span>
+                                <input type="number" class="form-control" id="peMax" placeholder="最大值" value="30">
+                            </div>
+                            <small class="text-muted">建议：0-30为合理区间</small>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">PB（市净率）范围</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="pbMin" placeholder="最小值" value="0">
+                                <span class="input-group-text">-</span>
+                                <input type="number" class="form-control" id="pbMax" placeholder="最大值" value="3">
+                            </div>
+                            <small class="text-muted">建议：0-3为合理区间</small>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">ROE（净资产收益率）范围</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="roeMin" placeholder="最小值" value="15">
+                                <span class="input-group-text">-</span>
+                                <input type="number" class="form-control" id="roeMax" placeholder="最大值" value="100">
+                            </div>
+                            <small class="text-muted">建议：15%以上为优秀</small>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">行业</label>
+                            <select class="form-select" id="industry">
+                                <option value="">全部行业</option>
+                                <option value="消费">消费</option>
+                                <option value="医药">医药</option>
+                                <option value="科技">科技</option>
+                                <option value="金融">金融</option>
+                                <option value="新能源">新能源</option>
+                                <option value="制造">制造</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">排序方式</label>
+                            <select class="form-select" id="sortBy">
+                                <option value="roe">按ROE降序</option>
+                                <option value="pe">按PE升序</option>
+                                <option value="pb">按PB升序</option>
+                                <option value="marketcap">按市值降序</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 d-flex align-items-end">
+                            <button class="btn btn-primary w-100" onclick="filterStocks()">
+                                🔍 开始筛选
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 筛选结果 -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 id="resultTitle">📊 筛选结果</h2>
+                <span class="badge bg-primary" id="stockCount">共0只股票</span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover" id="stockTable">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>股票名称</th>
+                            <th>股票代码</th>
+                            <th>行业</th>
+                            <th>PE</th>
+                            <th>PB</th>
+                            <th>ROE</th>
+                            <th>市值（亿）</th>
+                            <th>评级</th>
+                        </tr>
+                    </thead>
+                    <tbody id="stockTableBody">
+                        <!-- 数据将通过JavaScript填充 -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 预设方案 -->
+            <div class="mt-5">
+                <h4 class="mb-3">⚡ 快速筛选方案</h4>
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <button class="btn btn-outline-success w-100" onclick="applyPreset('value')">
+                            💎 价值投资型
+                            <small class="d-block">PE<20, PB<2, ROE>15%</small>
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-outline-primary w-100" onclick="applyPreset('growth')">
+                            📈 成长型
+                            <small class="d-block">PE<40, PB<4, ROE>20%</small>
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-outline-warning w-100" onclick="applyPreset('quality')">
+                            ⭐ 优质蓝筹型
+                            <small class="d-block">PE<25, PB<3, ROE>18%</small>
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-outline-danger w-100" onclick="applyPreset('turnaround')">
+                            🔄 困境反转型
+                            <small class="d-block">PE<10, PB<1.5, ROE>10%</small>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 评分说明 -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="mb-4">📝 评分说明</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">PE（市盈率）</h5>
+                            <p class="card-text">股价/每股收益。PE越低，理论上回本越快。</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><span class="badge bg-success">优秀</span> PE < 15</li>
+                                <li class="mb-2"><span class="badge bg-primary">良好</span> 15 ≤ PE < 25</li>
+                                <li><span class="badge bg-warning">一般</span> PE ≥ 25</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">PB（市净率）</h5>
+                            <p class="card-text">股价/每股净资产。PB越低，投资价值越高。</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><span class="badge bg-success">优秀</span> PB < 1.5</li>
+                                <li class="mb-2"><span class="badge bg-primary">良好</span> 1.5 ≤ PB < 2.5</li>
+                                <li><span class="badge bg-warning">一般</span> PB ≥ 2.5</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">ROE（净资产收益率）</h5>
+                            <p class="card-text">净利润/净资产。ROE越高，盈利能力越强。</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><span class="badge bg-success">优秀</span> ROE > 20%</li>
+                                <li class="mb-2"><span class="badge bg-primary">良好</span> 15% ≤ ROE ≤ 20%</li>
+                                <li><span class="badge bg-warning">一般</span> ROE < 15%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用建议 -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <h2 class="card-title mb-4">💡 使用建议</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <h5>价值投资</h5>
+                            <p>选择PE<20、PB<2、ROE>15%的股票，适合长期持有，追求稳健收益。</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h5>成长型投资</h5>
+                            <p>选择ROE>20%但PE、PB相对较高的股票，适合看好行业前景的投资者。</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <h5>困境反转</h5>
+                            <p>选择PE<10、PB<1.5的股票，可能有被低估的价值，但风险较高。</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>综合评分</h5>
+                            <p>建议结合PE、PB、ROE三个指标综合判断，不要只看单一指标。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 回到列表 -->
+    <section class="py-5">
+        <div class="container text-center">
+            <a href="index.html" class="btn btn-outline-primary btn-lg">
+                ← 查看更多理财工具
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-2">© 2026 Ourlyg 理财工具 | 专业理财分析与工具平台</p>
+            <small class="text-muted">投资有风险，入市需谨慎</small>
+        </div>
+    </footer>
+
+    <script>
+        // 模拟股票数据
+        const stockData = [
+            { name: "贵州茅台", code: "600519", industry: "消费", pe: 28.5, pb: 9.2, roe: 32.5, marketcap: 21000 },
+            { name: "宁德时代", code: "300750", industry: "新能源", pe: 32.8, pb: 5.8, roe: 17.6, marketcap: 8500 },
+            { name: "招商银行", code: "600036", industry: "金融", pe: 6.2, pb: 0.95, roe: 15.3, marketcap: 9500 },
+            { name: "五粮液", code: "000858", industry: "消费", pe: 22.5, pb: 7.8, roe: 25.8, marketcap: 9200 },
+            { name: "迈瑞医疗", code: "300760", industry: "医药", pe: 35.2, pb: 12.5, roe: 35.5, marketcap: 4800 },
+            { name: "海天味业", code: "603288", industry: "消费", pe: 38.5, pb: 8.2, roe: 21.2, marketcap: 3600 },
+            { name: "中国平安", code: "601318", industry: "金融", pe: 8.5, pb: 0.85, roe: 10.2, marketcap: 7800 },
+            { name: "美的集团", code: "000333", industry: "制造", pe: 14.2, pb: 3.5, roe: 24.8, marketcap: 4200 },
+            { name: "比亚迪", code: "002594", industry: "新能源", pe: 28.5, pb: 4.2, roe: 14.8, marketcap: 6800 },
+            { name: "药明康德", code: "603259", industry: "医药", pe: 42.5, pb: 6.8, roe: 16.2, marketcap: 3100 },
+            { name: "格力电器", code: "000651", industry: "制造", pe: 8.8, pb: 2.2, roe: 25.2, marketcap: 2900 },
+            { name: "恒瑞医药", code: "600276", industry: "医药", pe: 45.2, pb: 8.5, roe: 18.8, marketcap: 3800 },
+            { name: "万科A", code: "000002", industry: "制造", pe: 6.5, pb: 0.75, roe: 11.5, marketcap: 2400 },
+            { name: "中国中免", code: "601888", industry: "消费", pe: 28.5, pb: 6.2, roe: 21.5, marketcap: 4200 },
+            { name: "隆基绿能", code: "601012", industry: "新能源", pe: 18.5, pb: 2.8, roe: 15.2, marketcap: 2800 },
+            { name: "长江电力", code: "600900", industry: "金融", pe: 18.2, pb: 2.2, roe: 12.2, marketcap: 5200 },
+            { name: "伊利股份", code: "600887", industry: "消费", pe: 22.8, pb: 4.5, roe: 19.8, marketcap: 2100 },
+            { name: "立讯精密", code: "002475", industry: "科技", pe: 25.5, pb: 4.8, roe: 18.5, marketcap: 2600 },
+            { name: "通威股份", code: "600438", industry: "新能源", pe: 12.5, pb: 2.5, roe: 19.8, marketcap: 1800 },
+            { name: "山西汾酒", code: "600809", industry: "消费", pe: 32.5, pb: 9.8, roe: 30.2, marketcap: 2800 }
+        ];
+
+        // 评级函数
+        function getRating(stock) {
+            let score = 0;
+            if (stock.pe < 15) score += 3;
+            else if (stock.pe < 25) score += 2;
+            else if (stock.pe < 35) score += 1;
+
+            if (stock.pb < 1.5) score += 3;
+            else if (stock.pb < 2.5) score += 2;
+            else if (stock.pb < 3.5) score += 1;
+
+            if (stock.roe > 20) score += 3;
+            else if (stock.roe > 15) score += 2;
+            else if (stock.roe > 10) score += 1;
+
+            if (score >= 7) return '<span class="badge bg-success">⭐⭐⭐ 优秀</span>';
+            if (score >= 5) return '<span class="badge bg-primary">⭐⭐ 良好</span>';
+            if (score >= 3) return '<span class="badge bg-warning">⭐ 一般</span>';
+            return '<span class="badge bg-secondary">⚠️ 谨慎</span>';
+        }
+
+        // 筛选函数
+        function filterStocks() {
+            const peMin = parseFloat(document.getElementById('peMin').value) || 0;
+            const peMax = parseFloat(document.getElementById('peMax').value) || 9999;
+            const pbMin = parseFloat(document.getElementById('pbMin').value) || 0;
+            const pbMax = parseFloat(document.getElementById('pbMax').value) || 9999;
+            const roeMin = parseFloat(document.getElementById('roeMin').value) || 0;
+            const roeMax = parseFloat(document.getElementById('roeMax').value) || 100;
+            const industry = document.getElementById('industry').value;
+            const sortBy = document.getElementById('sortBy').value;
+
+            let filtered = stockData.filter(stock => {
+                return stock.pe >= peMin && stock.pe <= peMax &&
+                       stock.pb >= pbMin && stock.pb <= pbMax &&
+                       stock.roe >= roeMin && stock.roe <= roeMax &&
+                       (industry === '' || stock.industry === industry);
+            });
+
+            // 排序
+            filtered.sort((a, b) => {
+                if (sortBy === 'roe') return b.roe - a.roe;
+                if (sortBy === 'pe') return a.pe - b.pe;
+                if (sortBy === 'pb') return a.pb - b.pb;
+                if (sortBy === 'marketcap') return b.marketcap - a.marketcap;
+                return 0;
+            });
+
+            // 渲染结果
+            renderTable(filtered);
+        }
+
+        // 渲染表格
+        function renderTable(stocks) {
+            const tbody = document.getElementById('stockTableBody');
+            document.getElementById('stockCount').textContent = `共${stocks.length}只股票`;
+
+            if (stocks.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" class="text-center text-muted">没有符合条件的股票，请调整筛选条件</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = stocks.map(stock => `
+                <tr>
+                    <td><strong>${stock.name}</strong></td>
+                    <td><small>${stock.code}</small></td>
+                    <td>${stock.industry}</td>
+                    <td>${stock.pe.toFixed(2)}</td>
+                    <td>${stock.pb.toFixed(2)}</td>
+                    <td class="${stock.roe >= 20 ? 'text-success fw-bold' : ''}">${stock.roe.toFixed(2)}%</td>
+                    <td>${(stock.marketcap / 100).toFixed(0)}亿</td>
+                    <td>${getRating(stock)}</td>
+                </tr>
+            `).join('');
+        }
+
+        // 预设方案
+        function applyPreset(type) {
+            const presets = {
+                'value': { peMax: 20, pbMax: 2, roeMin: 15 },
+                'growth': { peMax: 40, pbMax: 4, roeMin: 20 },
+                'quality': { peMax: 25, pbMax: 3, roeMin: 18 },
+                'turnaround': { peMax: 10, pbMax: 1.5, roeMin: 10 }
+            };
+
+            const preset = presets[type];
+            document.getElementById('peMin').value = 0;
+            document.getElementById('peMax').value = preset.peMax;
+            document.getElementById('pbMin').value = 0;
+            document.getElementById('pbMax').value = preset.pbMax;
+            document.getElementById('roeMin').value = preset.roeMin;
+            document.getElementById('roeMax').value = 100;
+            document.getElementById('industry').value = '';
+
+            filterStocks();
+        }
+
+        // 初始化
+        filterStocks();
+    </script>
+</body>
+</html>
