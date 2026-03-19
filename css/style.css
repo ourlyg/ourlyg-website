@@ -123,8 +123,8 @@ body {
     color: white;
 }
 
-/* ==================== PC端导航强制横排（所有断点 ≥768px）==================== */
-@media (min-width: 768px) {
+/* ==================== PC端导航强制横排（所有断点 ≥992px）==================== */
+@media (min-width: 992px) {
     .navbar-collapse {
         display: flex !important;
         flex-basis: auto;
