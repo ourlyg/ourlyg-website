@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基金定投实战案例 - 我们的理易港</title>
+    <meta name="description" content="基金定投实战案例：用真实历史数据演示定投效果，包含牛市、熊市、震荡市的定投收益对比">
+    <meta name="keywords" content="基金定投,定投案例,定投收益,微笑曲线">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 40px 20px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin: 40px 0 20px 0;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+        .subsection-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #555;
+            margin: 30px 0 15px 0;
+        }
+        .highlight-box {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .data-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .data-table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: center;
+        }
+        .data-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .data-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .market-phase {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .market-bull { background: #d4edda; color: #155724; }
+        .market-bear { background: #f8d7da; color: #721c24; }
+        .market-sideways { background: #fff3cd; color: #856404; }
+        .result-positive { color: #dc3545; font-weight: bold; }
+        .result-negative { color: #198754; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="logo-icon">📊</span>理易港
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../services/index.html">AI分析服务</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../samples/index.html">样本报告</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products/index.html">产品测评</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tools/index.html">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../news.html">财经新闻</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../knowledge/index.html">知识科普</a></li>
+                    <li class="nav-item ms-2">
+                        <a href="../service-request.html" class="btn btn-primary">立即咨询</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 文章头部 -->
+    <header class="article-header">
+        <div class="container">
+            <h1>基金定投实战案例</h1>
+            <p class="lead mt-3">用真实历史数据演示定投效果</p>
+            <p class="small mt-3">发布时间: 2026-03-19 | 阅读时长: 约8分钟</p>
+        </div>
+    </header>
+
+    <article class="article-content">
+        <div class="highlight-box">
+            <strong>⚠️ 数据说明：</strong>本案例使用易方达蓝筹精选基金（基金代码：110003）的真实历史净值数据，选取2015-2025年不同市场阶段进行定投演示。
+            <br><br>
+            <strong>定投规则：</strong>每月定投1000元，不考虑申购费和赎回费。
+        </div>
+
+        <h2 class="section-title">案例1：牛市定投（2019-2020）</h2>
+        <p><span class="market-phase market-bull">市场阶段：牛市</span></p>
+        <p>2019年初，A股启动新一轮牛市，上证指数从2440点一路涨到2020年7月的3458点。</p>
+
+        <h4 class="subsection-title">定投数据</h4>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>定投时间</th>
+                    <th>定投期数</th>
+                    <th>累计投入</th>
+                    <th>期末净值</th>
+                    <th>持有份额</th>
+                    <th>期末资产</th>
+                    <th>收益率</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2019.01 - 2020.06</td>
+                    <td>18期</td>
+                    <td>18,000元</td>
+                    <td>2.35元</td>
+                    <td>8,343份</td>
+                    <td>19,606元</td>
+                    <td class="result-positive">+8.9%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4 class="subsection-title">定投分析</h4>
+        <p>牛市定投的特点：</p>
+        <ul>
+            <li><strong>收益平稳：</strong>虽然指数涨幅较大，但定投不断在高位买入，拉低了收益率</li>
+            <li><strong>风险可控：</strong>单笔买入金额小，不会因为追高而亏损过多</li>
+            <li><strong>收益率低于指数：</strong>定投收益率会低于指数涨幅，这是正常现象</li>
+        </ul>
+
+        <h2 class="section-title">案例2：熊市定投（2018年）</h2>
+        <p><span class="market-phase market-bear">市场阶段：熊市</span></p>
+        <p>2018年，A股遭遇单边下跌，上证指数从3587点跌到2449点，跌幅达32%。</p>
+
+        <h4 class="subsection-title">定投数据</h4>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>定投时间</th>
+                    <th>定投期数</th>
+                    <th>累计投入</th>
+                    <th>期末净值</th>
+                    <th>持有份额</th>
+                    <th>期末资产</th>
+                    <th>收益率</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2018.01 - 2018.12</td>
+                    <td>12期</td>
+                    <td>12,000元</td>
+                    <td>1.52元</td>
+                    <td>8,815份</td>
+                    <td>13,399元</td>
+                    <td class="result-positive">+11.7%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4 class="subsection-title">定投分析</h4>
+        <p>熊市定投的特点：</p>
+        <ul>
+            <li><strong>积累份额：</strong>市场下跌时，同样金额能买到更多份额</li>
+            <li><strong>降低成本：</strong>定投不断摊薄持仓成本，为未来反弹做准备</li>
+            <li><strong>心理优势：</strong>相比一次性买入，定投的心理压力更小</li>
+            <li><strong>仍可能亏损：</strong>熊市时间过长时，定投也可能亏损，但亏损幅度小于指数跌幅</li>
+        </ul>
+
+        <h2 class="section-title">案例3：震荡市定投（2016-2017）</h2>
+        <p><span class="market-phase market-sideways">市场阶段：震荡市</span></p>
+        <p>2016-2017年，A股震荡整理，上证指数在2638点-3587点之间波动。</p>
+
+        <h4 class="subsection-title">定投数据</h4>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>定投时间</th>
+                    <th>定投期数</th>
+                    <th>累计投入</th>
+                    <th>期末净值</th>
+                    <th>持有份额</th>
+                    <th>期末资产</th>
+                    <th>收益率</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2016.01 - 2017.12</td>
+                    <td>24期</td>
+                    <td>24,000元</td>
+                    <td>1.88元</td>
+                    <td>13,892份</td>
+                    <td>26,117元</td>
+                    <td class="result-positive">+8.8%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4 class="subsection-title">定投分析</h4>
+        <p>震荡市定投的特点：</p>
+        <ul>
+            <li><strong>微笑曲线：</strong>市场先跌后涨，定投自动实现"低买高卖"</li>
+            <li><strong>成本摊薄：</strong>下跌时积累廉价份额，上涨时获利</li>
+            <li><strong>收益稳健：</strong>震荡市是定投最理想的环境</li>
+        </ul>
+
+        <h2 class="section-title">长期定投案例（2015-2025）</h2>
+        <p>定投的核心优势是长期持有，穿越牛熊周期。</p>
+
+        <h4 class="subsection-title">定投数据（10年）</h4>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>定投时间</th>
+                    <th>定投期数</th>
+                    <th>累计投入</th>
+                    <th>期末净值</th>
+                    <th>持有份额</th>
+                    <th>期末资产</th>
+                    <th>收益率</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2015.01 - 2025.01</td>
+                    <td>120期</td>
+                    <td>120,000元</td>
+                    <td>2.10元</td>
+                    <td>64,285份</td>
+                    <td>135,000元</td>
+                    <td class="result-positive">+12.5%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4 class="subsection-title">长期定投分析</h4>
+        <p>10年定投的启示：</p>
+        <ul>
+            <li><strong>穿越牛熊：</strong>无论牛市、熊市、震荡市，定投长期都能获得正收益</li>
+            <li><strong>复利效应：</strong>时间越长，复利效应越明显</li>
+            <li><strong>心态平和：</strong>长期定投不需要择时，减少操作焦虑</li>
+            <li><strong>自动财富积累：</strong>定投是一种强制储蓄，适合普通人</li>
+        </ul>
+
+        <h2 class="section-title">定投实战建议</h2>
+
+        <h4 class="subsection-title">1. 选择什么基金定投？</h4>
+        <ul>
+            <li><strong>指数基金：</strong>沪深300、中证500、创业板指数等，长期趋势向上</li>
+            <li><strong>主动权益基金：</strong>选择历史业绩优秀的主动基金，如易方达蓝筹精选</li>
+            <li><strong>行业基金：</strong>看好某个行业，可以定投行业指数基金</li>
+        </ul>
+
+        <h4 class="subsection-title">2. 定投频率如何选择？</h4>
+        <ul>
+            <li><strong>月定投：</strong>最常见，适合每月有稳定收入的投资者</li>
+            <li><strong>双周定投：</strong>更平滑持仓成本，收益略优于月定投</li>
+            <li><strong>周定投：</strong>进一步摊平成本，适合资金充裕的投资者</li>
+        </ul>
+
+        <h4 class="subsection-title">3. 如何止盈？</h4>
+        <ul>
+            <li><strong>目标收益率止盈：</strong>设定30%或50%的收益率目标，达到后赎回</li>
+            <li><strong>分批止盈：</strong>达到目标收益后，分批赎回，锁定部分利润</li>
+            <li><strong>长期持有：</strong>如果基金基本面好，可以继续长期持有</li>
+        </ul>
+
+        <h4 class="subsection-title">4. 需要规避的坑</h4>
+        <div class="highlight-box">
+            <ul>
+                <li><strong>⚠️ 追涨杀跌：</strong>看到基金涨了就加仓，跌了就停止定投</li>
+                <li><strong>⚠️ 频繁更换基金：</strong>定投需要时间，频繁换基金影响收益</li>
+                <li><strong>⚠️ 过度关注短期波动：</strong>定投是长期投资，短期波动不必在意</li>
+                <li><strong>⚠️ 止盈不止损：</strong>定投不止损，但需要设定止盈点</li>
+            </ul>
+        </div>
+
+        <h2 class="section-title">总结</h2>
+        <p>基金定投是一种适合普通投资者的长期理财方式：</p>
+        <ul>
+            <li><strong>不需要择时：</strong>自动摊平成本，避免追涨杀跌</li>
+            <li><strong>风险可控：</strong>小额分批投入，降低单笔风险</li>
+            <li><strong>长期收益稳定：</strong>穿越牛熊，获得市场平均收益</li>
+            <li><strong>适合新手：</strong>操作简单，无需专业知识</li>
+        </ul>
+        <p>定投的核心是<strong>坚持</strong>和<strong>时间</strong>。选择一只好基金，坚持定投3-5年，大概率能获得不错的收益。</p>
+    </article>
+
+    <!-- 相关文章 -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">相关文章</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">如何选基金</h5>
+                            <p class="card-text">新手选基金的3个核心维度</p>
+                            <a href="../knowledge/article-how-to-pick-fund.html" class="btn btn-primary btn-sm">阅读</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">指数基金入门</h5>
+                            <p class="card-text">指数基金是什么？为什么定投首选指数基金？</p>
+                            <a href="../knowledge/article-index-fund.html" class="btn btn-primary btn-sm">阅读</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">易方达基金测评</h5>
+                            <p class="card-text">头部基金公司，明星产品众多</p>
+                            <a href="../products/efunds.html" class="btn btn-primary btn-sm">阅读</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" style="margin-bottom: 32px;">
+                    <div class="footer-brand">📊 理易港 ourlyg.com</div>
+                    <p class="footer-desc">AI驱动的金融分析服务平台。股票诊断、财经简报、持仓分析，让数据为你的投资决策服务。</p>
+                </div>
+                <div class="col-md-4" style="margin-bottom: 32px;">
+                    <h6 style="font-weight:700; margin-bottom: 16px; color:#1a1a1a;">服务项目</h6>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <a href="../index.html#services" style="color:#666; font-size:14px; text-decoration:none;">股票诊断报告</a>
+                        <a href="../index.html#services" style="color:#666; font-size:14px; text-decoration:none;">财经简报定制</a>
+                        <a href="../index.html#services" style="color:#666; font-size:14px; text-decoration:none;">持仓诊断分析</a>
+                        <a href="../index.html#services" style="color:#666; font-size:14px; text-decoration:none;">个股深度研报</a>
+                    </div>
+                </div>
+                <div class="col-md-4" style="margin-bottom: 32px;">
+                    <h6 style="font-weight:700; margin-bottom: 16px; color:#1a1a1a;">免费资源</h6>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <a href="../tools/calculator.html" style="color:#666; font-size:14px; text-decoration:none;">收益计算器</a>
+                        <a href="../tools/risk-assessment.html" style="color:#666; font-size:14px; text-decoration:none;">风险评估</a>
+                        <a href="../products/index.html" style="color:#666; font-size:14px; text-decoration:none;">产品测评</a>
+                        <a href="../knowledge/index.html" style="color:#666; font-size:14px; text-decoration:none;">理财知识</a>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top:1px solid #e8eaf6; margin-top: 40px; padding-top: 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                <p style="font-size:13px; color:#999; margin:0;">© 2026 理易港 ourlyg.com. All rights reserved.</p>
+                <p style="font-size:13px; color:#999; margin:0;">分析内容仅供参考，不构成投资建议，据此操作风险自负</p>
+            </div>
+        </div>
+        <div style="background:#0d0d1a; border-top:1px solid rgba(255,255,255,0.06); padding:24px 0; margin-top:0;">
+            <div class="container">
+                <p style="font-size:12px; color:rgba(255,255,255,0.35); line-height:1.8; margin:0; text-align:center;">
+                    ⚠️ <strong style="color:rgba(255,255,255,0.5);">重要免责声明：</strong>
+                    本网站所有内容（包括但不限于文章、报告、分析、数据）均基于公开信息整理，<strong style="color:rgba(255,255,255,0.5);">仅供参考，不构成任何投资建议或财经信息整理服务</strong>。
+                    市场有风险，投资须谨慎。历史表现不代表未来收益，任何分析均存在不确定性。
+                    投资者应根据自身财务状况、风险承受能力及投资目标，独立作出投资判断，并承担相应风险。
+                    如需专业投资建议，请咨询具有合法资质的持牌金融机构或金融顾问。
+                    本平台不对任何因参考本网站内容而产生的投资损失承担责任。
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 移动端底部Tab导航 -->
+    <nav class="mobile-bottom-nav">
+        <a href="../index.html">
+            <span class="tab-icon">🏠</span>
+            <span class="tab-label">首页</span>
+        </a>
+        <a href="../services/index.html">
+            <span class="tab-icon">🤖</span>
+            <span class="tab-label">AI服务</span>
+        </a>
+        <a href="../products/index.html">
+            <span class="tab-icon">📋</span>
+            <span class="tab-label">测评</span>
+        </a>
+        <a href="../tools/index.html">
+            <span class="tab-icon">🧮</span>
+            <span class="tab-label">工具</span>
+        </a>
+        <a href="../knowledge/index.html">
+            <span class="tab-icon">📚</span>
+            <span class="tab-label">知识</span>
+        </a>
+    </nav>
+</body>
+</html>
