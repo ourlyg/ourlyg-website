@@ -1,0 +1,366 @@
+{
+  "system_name": "狗子任务猎手系统 (Doggy Task Hunter System)",
+  "version": "1.0",
+  "description": "多Agent并行任务发现与执行系统，自动寻找变现机会",
+  "created_date": "2026-03-19",
+
+  "master_coordinator": {
+    "name": "任务猎手主控Agent",
+    "role": "协调所有猎手Agent，分配任务，跟踪进度，汇总结果",
+    "responsibilities": [
+      "启动所有猎手Agent",
+      "监控各Agent发现的任务数量",
+      "任务去重和优先级排序",
+      "任务价值评估和报价生成",
+      "任务分配给执行Agent",
+      "进度跟踪和结果汇总"
+    ]
+  },
+
+  "hunter_agents": [
+    {
+      "name": "GitHub猎手",
+      "platform": "GitHub",
+      "target_keywords": [
+        "issue", "help wanted", "good first issue", "bug",
+        "data analysis", "visualization", "report", "document",
+        "excel", "ppt", "pdf", "script", "tool"
+      ],
+      "search_queries": [
+        "label:\"good first issue\" language:python",
+        "label:\"help wanted\" language:javascript",
+        "data visualization",
+        "excel automation",
+        "pdf processing",
+        "ppt generation"
+      ],
+      "output_format": {
+        "task_id": "GitHub issue URL",
+        "task_title": "Issue标题",
+        "task_description": "Issue描述",
+        "difficulty": "简单/中等/困难",
+        "estimated_time": "预估工时（小时）",
+        "prize": "赏金（如果有）",
+        "labels": ["标签列表"]
+      },
+      "notes": "寻找开源项目中的issue，提供修复方案，换取贡献和曝光"
+    },
+    {
+      "name": "知乎猎手",
+      "platform": "知乎",
+      "target_keywords": [
+        "求助", "求大神", "请问", "怎么",
+        "数据分析", "可视化", "报表", "Python",
+        "Excel", "PPT", "Word", "自动化"
+      ],
+      "search_topics": [
+        "数据可视化", "Python自动化", "Excel处理",
+        "PPT制作", "PDF转换", "数据分析"
+      ],
+      "target_questions": [
+        "如何用Python自动化处理Excel",
+        "如何制作专业的数据可视化PPT",
+        "如何批量处理PDF文件",
+        "如何用Python做数据分析报告"
+      ],
+      "output_format": {
+        "task_id": "知乎问题URL",
+        "question_title": "问题标题",
+        "question_detail": "问题详情",
+        "answer_count": "回答数量",
+        "followers": "关注者数量",
+        "urgency": "紧急/一般"
+      },
+      "notes": "回答专业问题，展示能力，引导私信接单"
+    },
+    {
+      "name": "V2EX猎手",
+      "platform": "V2EX",
+      "target_keywords": [
+        "外包", "接单", "求大神", "求助",
+        "Python", "Web", "前端", "数据", "脚本"
+      ],
+      "search_nodes": [
+        "freelancer", "python", "web", "data"
+      ],
+      "output_format": {
+        "task_id": "V2EX帖子URL",
+        "task_title": "帖子标题",
+        "task_description": "需求描述",
+        "budget": "预算范围",
+        "deadline": "截止时间",
+        "contact_info": "联系方式"
+      },
+      "notes": "技术外包需求密集，适合接单"
+    },
+    {
+      "name": "CSDN猎手",
+      "platform": "CSDN",
+      "target_keywords": [
+        "求助", "求助帖", "外包", "开发",
+        "Python", "Excel", "数据分析", "可视化"
+      ],
+      "output_format": {
+        "task_id": "CSDN帖子URL",
+        "task_title": "帖子标题",
+        "task_description": "需求描述",
+        "views": "浏览量",
+        "comments": "评论数"
+      },
+      "notes": "技术社区，外包和求助帖较多"
+    },
+    {
+      "name": "Boss直聘猎手",
+      "platform": "Boss直聘",
+      "target_job_types": [
+        "数据分析师", "Python开发", "前端开发",
+        "数据可视化", "自动化工程师", "文案策划"
+      ],
+      "target_keywords": [
+        "远程", "兼职", "外包", "项目",
+        "数据分析", "可视化", "自动化"
+      ],
+      "output_format": {
+        "task_id": "职位URL",
+        "company": "公司名称",
+        "job_title": "职位名称",
+        "salary": "薪资范围",
+        "work_type": "全职/兼职/远程",
+        "requirements": "技能要求"
+      },
+      "notes": "寻找远程/兼职项目机会"
+    },
+    {
+      "name": "闲鱼猎手",
+      "platform": "闲鱼",
+      "target_categories": [
+        "PPT定制", "文档处理", "数据分析",
+        "Excel制作", "脚本开发", "网站制作"
+      ],
+      "search_keywords": [
+        "PPT", "Excel", "数据分析", "文档处理",
+        "Python", "自动化", "网站"
+      ],
+      "output_format": {
+        "task_id": "商品URL",
+        "title": "商品标题",
+        "price": "价格",
+        "seller": "卖家信息",
+        "demand": "需求描述"
+      },
+      "notes": "了解市场定价，寻找竞品"
+    }
+  ],
+
+  "task_evaluation_criteria": {
+    "complexity_weight": 0.3,
+    "urgency_weight": 0.2,
+    "budget_weight": 0.3,
+    "difficulty_weight": 0.1,
+    "time_weight": 0.1,
+    "scoring": "总分 = 复杂度×0.3 + 紧急度×0.2 + 预算×0.3 + 难度×0.1 + 时间×0.1"
+  },
+
+  "pricing_strategy": {
+    "base_rates": {
+      "PPT制作": {
+        "simple": "200-500元/份",
+        "standard": "500-1000元/份",
+        "complex": "1000-3000元/份"
+      },
+      "数据分析报告": {
+        "simple": "500-1000元/份",
+        "standard": "1000-3000元/份",
+        "complex": "3000-10000元/份"
+      },
+      "Excel开发": {
+        "simple": "300-800元/个",
+        "standard": "800-2000元/个",
+        "complex": "2000-5000元/个"
+      },
+      "PDF处理": {
+        "simple": "100-300元/批",
+        "standard": "300-800元/批",
+        "complex": "800-2000元/批"
+      },
+      "网站开发": {
+        "simple": "1000-3000元/站",
+        "standard": "3000-8000元/站",
+        "complex": "8000-20000元/站"
+      },
+      "脚本开发": {
+        "simple": "500-1000元/个",
+        "standard": "1000-3000元/个",
+        "complex": "3000-8000元/个"
+      },
+      "文档处理": {
+        "simple": "100-300元/份",
+        "standard": "300-800元/份",
+        "complex": "800-2000元/份"
+      }
+    },
+    "adjustment_factors": {
+      "urgency": {
+        "紧急": "+50%",
+        "一般": "基准"
+      },
+      "difficulty": {
+        "困难": "+30%",
+        "中等": "基准",
+        "简单": "-20%"
+      },
+      "volume": {
+        "批量合作": "-20%",
+        "长期合作": "-30%"
+      }
+    }
+  },
+
+  "service_catalog": {
+    "data_analysis": {
+      "title": "数据分析与可视化",
+      "description": "专业的数据分析服务，提供数据清洗、统计分析、可视化报告",
+      "services": [
+        {
+          "name": "数据清洗",
+          "description": "清洗杂乱数据，处理缺失值，统一格式",
+          "price": "200-800元/次"
+        },
+        {
+          "name": "统计分析报告",
+          "description": "描述性统计、趋势分析、相关性分析",
+          "price": "500-2000元/份"
+        },
+        {
+          "name": "可视化图表",
+          "description": "专业图表制作，支持交互式和静态图表",
+          "price": "100-500元/张"
+        },
+        {
+          "name": "数据分析仪表板",
+          "description": "交互式数据仪表板，支持筛选和联动",
+          "price": "1000-5000元/个"
+        }
+      ]
+    },
+    "document_processing": {
+      "title": "文档处理与自动化",
+      "description": "高效处理各类文档，提供自动化解决方案",
+      "services": [
+        {
+          "name": "Excel处理",
+          "description": "数据录入、公式开发、数据透视表",
+          "price": "300-2000元/次"
+        },
+        {
+          "name": "PPT制作",
+          "description": "专业演示文稿制作，数据可视化PPT",
+          "price": "200-3000元/份"
+        },
+        {
+          "name": "PDF处理",
+          "description": "PDF转格式、PDF合并、PDF表单填写",
+          "price": "100-2000元/次"
+        },
+        {
+          "name": "Word文档",
+          "description": "文档编辑、格式调整、批量处理",
+          "price": "100-800元/份"
+        }
+      ]
+    },
+    "web_development": {
+      "title": "Web开发与自动化",
+      "description": "快速构建Web应用和自动化脚本",
+      "services": [
+        {
+          "name": "静态网站",
+          "description": "响应式网站，多端适配",
+          "price": "1000-5000元/站"
+        },
+        {
+          "name": "数据仪表板",
+          "description": "实时数据展示平台",
+          "price": "2000-10000元/个"
+        },
+        {
+          "name": "自动化脚本",
+          "description": "数据处理、爬虫、报表自动化",
+          "price": "500-3000元/个"
+        },
+        {
+          "name": "浏览器自动化",
+          "description": "自动填表、自动操作、数据抓取",
+          "price": "500-2000元/个"
+        }
+      ]
+    },
+    "financial_services": {
+      "title": "财务分析支持",
+      "description": "专业的财务报表和分析服务",
+      "services": [
+        {
+          "name": "财务报表生成",
+          "description": "利润表、资产负债表、现金流量表",
+          "price": "500-2000元/份"
+        },
+        {
+          "name": "财务数据分析",
+          "description": "趋势分析、同比分析、差异分析",
+          "price": "800-3000元/份"
+        },
+        {
+          "name": "对账服务",
+          "description": "银行对账、内部对账",
+          "price": "300-1500元/次"
+        },
+        {
+          "name": "审计支持",
+          "description": "审计工作底稿、控制测试文档",
+          "price": "1000-5000元/份"
+        }
+      ]
+    }
+  },
+
+  "workflow": {
+    "discovery_phase": {
+      "duration": "每日执行",
+      "agents": ["所有猎手Agent"],
+      "output": ["任务发现报告.json"]
+    },
+    "evaluation_phase": {
+      "duration": "任务发现后1小时内",
+      "criteria": ["任务评分", "匹配度", "价值评估"],
+      "output": ["任务评估报告.json"]
+    },
+    "quotation_phase": {
+      "duration": "评估通过后30分钟内",
+      "action": ["生成报价", "联系客户"],
+      "output": ["报价单.json"]
+    },
+    "execution_phase": {
+      "duration": "根据任务复杂度",
+      "agents": ["执行Agent"],
+      "milestones": ["30%确认", "60%确认", "100%交付"],
+      "output": ["交付物"]
+    },
+    "delivery_phase": {
+      "duration": "完成后立即",
+      "action": ["发送交付物", "收集反馈", "收款确认"],
+      "output": ["交付记录.json"]
+    }
+  },
+
+  "monitoring": {
+    "metrics": [
+      "任务发现数量/天",
+      "任务转化率（发现→报价）",
+      "报价转化率（报价→成交）",
+      "平均客单价",
+      "任务完成时间",
+      "客户满意度"
+    ],
+    "report_frequency": "每日汇总，每周分析"
+  }
+}
