@@ -3,36 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="复利计算器 - 直观展示复利的惊人威力，见证时间+复利的魔法">
-    <title>复利计算器 - 我们的理易港</title>
-    <link rel="canonical" href="https://ourlyg.com/tools/compound-interest.html">
-    <meta property="og:title" content="复利计算器 - 我们的理易港">
-    <meta property="og:description" content="复利计算器 - 直观展示复利的惊人威力，见证时间+复利的魔法">
-    <meta property="og:url" content="https://ourlyg.com/tools/compound-interest.html">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://ourlyg.com/images/og-cover.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="复利计算器 - 我们的理易港">
-    <meta name="twitter:description" content="复利计算器 - 直观展示复利的惊人威力，见证时间+复利的魔法">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="description" content="复利计算器 - 在线计算复利收益，可视化展示财富增长过程。">
+    <meta name="keywords" content="复利计算器,财富增长,投资收益,理财工具">
+    <title>复利计算器 | 理财工具 - Ourlyg</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        .result-highlight { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 12px; padding: var(--spacing-8); text-align: center; }
-        .result-highlight .amount { font-size: 48px; font-weight: 700; }
-        .year-row:nth-child(even) { background: var(--color-bg-gray); }
-        .year-row td { padding: 10px 16px; border-bottom: 1px solid var(--color-border-light); font-size: 14px; }
-        .year-row:last-child td { border-bottom: none; }
-        .insight-box { background: var(--color-primary-light); border-radius: 8px; padding: var(--spacing-4) var(--spacing-6); border-left: 4px solid var(--color-primary); }
+        .result-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .growth-chart {
+            height: 300px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .bar-container {
+            display: flex;
+            align-items: flex-end;
+            height: 200px;
+            gap: 10px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #dee2e6;
+        }
+        .bar {
+            flex: 1;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            min-width: 20px;
+            transition: height 0.5s ease;
+        }
+        .bar:hover {
+            opacity: 0.8;
+        }
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 11px;
+            color: #6c757d;
+            white-space: nowrap;
+        }
+        .bar-value {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            color: #667eea;
+            font-weight: 600;
+        }
+        .formula-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .formula {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            text-align: center;
+            color: #856404;
+        }
+        .tips-box {
+            background: #d1ecf1;
+            border: 1px solid #17a2b8;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
     <!-- 导航栏 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="../index.html">
-                <span class="logo-icon">📊</span>理易港
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand fw-bold" href="../index.html">🌊 Ourlyg</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -42,172 +101,352 @@
                     <li class="nav-item"><a class="nav-link" href="../samples/index.html">样本报告</a></li>
                     <li class="nav-item"><a class="nav-link" href="../products/index.html">产品测评</a></li>
                     <li class="nav-item"><a class="nav-link active" href="../tools/index.html">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../news.html">财经新闻</a></li>
                     <li class="nav-item"><a class="nav-link" href="../knowledge/index.html">知识科普</a></li>
-                    <li class="nav-item ms-2">
-                        <a href="../service-request.html" class="btn btn-primary" style="border-radius:20px; padding:6px 18px; font-size:14px;">立即咨询</a>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary" href="#contact">立即咨询</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="hero-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <h1 class="hero-title">复利计算器</h1>
-                    <p class="hero-subtitle">爱因斯坦说过：复利是世界第八大奇迹。输入你的参数，亲眼见证时间的魔力。</p>
-                </div>
-            </div>
+    <!-- Hero -->
+    <section class="hero-section py-5">
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold mb-3">复利计算器</h1>
+            <p class="lead text-muted">见证复利的力量 | 可视化您的财富增长</p>
         </div>
     </section>
 
-    <section class="section">
+    <!-- 计算器主体 -->
+    <section class="py-5">
         <div class="container">
-            <div class="row g-5">
-                <!-- 输入面板 -->
-                <div class="col-md-5">
-                    <div class="card" style="position: sticky; top: 80px;">
-                        <div class="card-body" style="padding: var(--spacing-6);">
-                            <h3 style="font-weight:600; margin-bottom: var(--spacing-6);">📊 输入参数</h3>
-                            <div class="mb-4">
+            <div class="row">
+                <div class="col-lg-6">
+                    <!-- 输入区域 -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4">输入参数</h4>
+
+                            <div class="mb-3">
                                 <label class="form-label">初始本金（元）</label>
-                                <input type="number" class="form-control" id="principal" value="100000" min="0" step="10000">
+                                <input type="number" class="form-control" id="principal" value="100000" min="0" step="1000">
                             </div>
-                            <div class="mb-4">
-                                <label class="form-label">每月追加投入（元）<span style="color:var(--color-text-hint); font-size:13px;">（可填0）</span></label>
-                                <input type="number" class="form-control" id="monthly" value="2000" min="0" step="500">
-                            </div>
-                            <div class="mb-4">
+
+                            <div class="mb-3">
                                 <label class="form-label">年化收益率（%）</label>
                                 <input type="number" class="form-control" id="rate" value="8" min="0" max="100" step="0.5">
-                            </div>
-                            <div class="mb-5">
-                                <label class="form-label">投资年限（年）</label>
-                                <input type="range" class="form-range" id="years" value="20" min="1" max="50" oninput="document.getElementById('yearsVal').textContent=this.value; calculate()">
-                                <div class="d-flex justify-content-between" style="font-size:13px; color:var(--color-text-hint);">
-                                    <span>1年</span><span id="yearsVal" style="font-weight:600; color:var(--color-primary);">20年</span><span>50年</span>
+                                <div class="form-text">
+                                    <small>参考：银行存款约3%，债券约4-6%，股票基金约8-15%</small>
                                 </div>
                             </div>
-                            <button class="btn btn-primary w-100 btn-lg" onclick="calculate()">计算复利增长</button>
+
+                            <div class="mb-3">
+                                <label class="form-label">投资年限（年）</label>
+                                <input type="number" class="form-control" id="years" value="10" min="1" max="50">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">每年追加投资（元）</label>
+                                <input type="number" class="form-control" id="annualAddition" value="12000" min="0" step="1000">
+                                <div class="form-text">
+                                    <small>即每月定期投资1000元</small>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary btn-lg w-100" onclick="calculate()">
+                                📊 计算复利
+                            </button>
                         </div>
+                    </div>
+
+                    <!-- 公式说明 -->
+                    <div class="formula-box">
+                        <h6 class="mb-3">📐 复利公式</h6>
+                        <div class="formula">
+                            FV = P × (1 + r)^n + A × [((1 + r)^n - 1) / r]
+                        </div>
+                        <p class="mb-0 mt-2 small">
+                            其中：FV=终值，P=初始本金，r=年化收益率，n=年数，A=每年追加投资
+                        </p>
                     </div>
                 </div>
 
-                <!-- 结果面板 -->
-                <div class="col-md-7" id="resultPanel" style="display:none;">
-                    <div class="result-highlight mb-5">
-                        <p style="opacity:0.85; margin-bottom: 8px;">最终资产总额</p>
-                        <div class="amount" id="finalAmount">¥0</div>
-                        <p style="opacity:0.7; margin-top: 8px; font-size: 14px;" id="finalSub"></p>
-                    </div>
-                    <div class="row g-3 mb-5">
-                        <div class="col-6">
-                            <div class="card text-center" style="padding: var(--spacing-4);">
-                                <p style="font-size:13px; color:var(--color-text-hint); margin-bottom:4px;">累计投入本金</p>
-                                <p style="font-size:22px; font-weight:700; color:var(--color-text-primary); margin:0;" id="totalInvested">¥0</p>
+                <div class="col-lg-6">
+                    <!-- 结果区域 -->
+                    <div class="result-card" id="resultCard">
+                        <div class="text-center">
+                            <p class="mb-2">🎯 最终资产</p>
+                            <div class="result-value" id="finalAmount">¥ 256,322</div>
+                        </div>
+                        <hr class="my-3" style="background: rgba(255,255,255,0.3);">
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <div class="small">初始本金</div>
+                                <div class="fw-bold" id="initialAmount">¥ 100,000</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="small">追加投资</div>
+                                <div class="fw-bold" id="totalAddition">¥ 120,000</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="small">复利收益</div>
+                                <div class="fw-bold" id="interestEarned">¥ 36,322</div>
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="card text-center" style="padding: var(--spacing-4);">
-                                <p style="font-size:13px; color:var(--color-text-hint); margin-bottom:4px;">复利收益</p>
-                                <p style="font-size:22px; font-weight:700; color:var(--color-success); margin:0;" id="totalProfit">¥0</p>
-                            </div>
-                        </div>
                     </div>
-                    <div class="insight-box mb-5" id="insightBox"></div>
 
-                    <!-- 逐年明细 -->
-                    <h4 style="font-weight:600; margin-bottom: var(--spacing-4);">逐年增长明细</h4>
-                    <div class="card" style="overflow:hidden;">
-                        <table class="w-100">
-                            <thead>
-                                <tr style="background:var(--color-primary); color:white;">
-                                    <th style="padding:12px 16px; font-weight:600;">年份</th>
-                                    <th style="padding:12px 16px; font-weight:600;">年末资产</th>
-                                    <th style="padding:12px 16px; font-weight:600;">累计收益</th>
-                                    <th style="padding:12px 16px; font-weight:600;">收益占比</th>
-                                </tr>
-                            </thead>
-                            <tbody id="yearlyTable"></tbody>
-                        </table>
+                    <!-- 增长图表 -->
+                    <div class="growth-card bg-white rounded shadow-sm p-4">
+                        <h5 class="mb-3">📈 财富增长曲线</h5>
+                        <div class="growth-chart">
+                            <div class="bar-container" id="barContainer">
+                                <!-- 柱状图将通过JS生成 -->
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <small class="text-muted">每年末资产总额</small>
+                        </div>
+                    </div>
+
+                    <!-- 复利提示 -->
+                    <div class="tips-box mt-4">
+                        <h6 class="mb-2">💡 复利的力量</h6>
+                        <p class="mb-2 small">
+                            爱因斯坦曾说："复利是世界第八大奇迹。"
+                        </p>
+                        <p class="mb-0 small">
+                            本金 × (1 + 年化收益率)^年数 = 时间 + 复利效应 = 财富指数增长
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-        <!-- 统一页脚 -->
-    <footer class="footer">
+    <!-- 实战案例 -->
+    <section class="py-5 bg-light">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4" style="margin-bottom: 32px;">
-                    <div class="footer-brand">📊 理易港 ourlyg.com</div>
-                    <p class="footer-desc">AI驱动的金融分析服务平台。股票诊断、财经简报、持仓分析，让数据为你的投资决策服务。</p>
-                </div>
-                <div class="col-md-4" style="margin-bottom: 32px;">
-                    <h6 style="font-weight:700; margin-bottom: 16px; color:#1a1a1a;">服务项目</h6>
-                    <div style="display:flex; flex-direction:column; gap:8px;">
-                        <a href="../index.html#services" style="color:#666; font-size:14px; text-decoration:none;">股票诊断报告</a>
-                        <a href="../index.html#services" style="color:#666; font-size:14px; text-decoration:none;">财经简报定制</a>
-                        <a href="../index.html#services" style="color:#666; font-size:14px; text-decoration:none;">持仓诊断分析</a>
-                        <a href="../index.html#services" style="color:#666; font-size:14px; text-decoration:none;">个股深度研报</a>
+            <h2 class="text-center mb-4">经典案例</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">📚 定投指数基金</h5>
+                            <p class="small text-muted">每月定投1000元，年化收益率8%</p>
+                            <div class="mt-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>5年</span>
+                                    <span class="text-success fw-bold">¥ 73,476</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>10年</span>
+                                    <span class="text-success fw-bold">¥ 182,946</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>20年</span>
+                                    <span class="text-success fw-bold">¥ 589,020</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span>30年</span>
+                                    <span class="text-success fw-bold">¥ 1,493,570</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4" style="margin-bottom: 32px;">
-                    <h6 style="font-weight:700; margin-bottom: 16px; color:#1a1a1a;">免费资源</h6>
-                    <div style="display:flex; flex-direction:column; gap:8px;">
-                        <a href="../tools/calculator.html" style="color:#666; font-size:14px; text-decoration:none;">收益计算器</a>
-                        <a href="../tools/risk-assessment.html" style="color:#666; font-size:14px; text-decoration:none;">风险评估</a>
-                        <a href="../products/index.html" style="color:#666; font-size:14px; text-decoration:none;">产品测评</a>
-                        <a href="../knowledge/index.html" style="color:#666; font-size:14px; text-decoration:none;">理财知识</a>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-success">💼 职场新人理财</h5>
+                            <p class="small text-muted">初始本金5万，每年追加2万，年化收益率6%</p>
+                            <div class="mt-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>5年</span>
+                                    <span class="text-success fw-bold">¥ 186,018</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>10年</span>
+                                    <span class="text-success fw-bold">¥ 357,025</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>20年</span>
+                                    <span class="text-success fw-bold">¥ 878,461</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span>30年</span>
+                                    <span class="text-success fw-bold">¥ 1,853,839</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div style="border-top:1px solid #e8eaf6; margin-top: 40px; padding-top: 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
-                <p style="font-size:13px; color:#999; margin:0;">© 2026 理易港 ourlyg.com. All rights reserved.</p>
-                <p style="font-size:13px; color:#999; margin:0;">分析内容仅供参考，不构成投资建议，据此操作风险自负</p>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-warning">🎯 高风险高收益</h5>
+                            <p class="small text-muted">初始本金10万，年化收益率12%</p>
+                            <div class="mt-3">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>5年</span>
+                                    <span class="text-success fw-bold">¥ 176,234</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>10年</span>
+                                    <span class="text-success fw-bold">¥ 310,585</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>20年</span>
+                                    <span class="text-success fw-bold">¥ 964,629</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span>30年</span>
+                                    <span class="text-success fw-bold">¥ 2,995,992</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- 合规免责声明 -->
-        <div style="background:#0d0d1a; border-top:1px solid rgba(255,255,255,0.06); padding:24px 0; margin-top:0;">
-            <div class="container">
-                <p style="font-size:12px; color:rgba(255,255,255,0.35); line-height:1.8; margin:0; text-align:center;">
-                    ⚠️ <strong style="color:rgba(255,255,255,0.5);">重要免责声明：</strong>
-                    本网站所有内容（包括但不限于文章、报告、分析、数据）均基于公开信息整理，<strong style="color:rgba(255,255,255,0.5);">仅供参考，不构成任何投资建议或财经信息整理服务</strong>。
-                    市场有风险，投资须谨慎。历史表现不代表未来收益，任何分析均存在不确定性。
-                    投资者应根据自身财务状况、风险承受能力及投资目标，独立作出投资判断，并承担相应风险。
-                    如需专业投资建议，请咨询具有合法资质的持牌金融机构或金融顾问。
-                    本平台不对任何因参考本网站内容而产生的投资损失承担责任。
-                </p>
+    <!-- 投资建议 -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">投资建议</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="mb-3">🎯 如何利用复利实现财富增长</h5>
+                            <ul class="mb-4">
+                                <li><strong>尽早开始：</strong>时间是复利最好的朋友，越早开始投资，复利效应越明显</li>
+                                <li><strong>持续投入：</strong>定期追加投资，让本金不断增长</li>
+                                <li><strong>选择合适收益率：</strong>根据风险承受能力选择投资标的，不要盲目追求高收益</li>
+                                <li><strong>长期持有：</strong>复利需要时间积累，不要频繁买卖打断复利进程</li>
+                                <li><strong>分散投资：</strong>不要把所有鸡蛋放在一个篮子里，降低风险</li>
+                            </ul>
+                            <h5 class="mb-3">⚠️ 风险提示</h5>
+                            <ul class="mb-0">
+                                <li>历史收益不代表未来表现</li>
+                                <li>高收益往往伴随高风险</li>
+                                <li>市场波动会影响实际收益</li>
+                                <li>根据自身情况合理规划投资</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- 联系区域 -->
+    <section class="py-5 bg-dark text-white" id="contact">
+        <div class="container text-center">
+            <h2 class="mb-4">需要个性化理财建议？</h2>
+            <p class="text-muted mb-4">我可以根据您的实际情况，为您制定专属的投资理财方案。</p>
+            <a href="../service-request.html?service=financial-planning" class="btn btn-lg btn-warning px-5">
+                💼 获取个性化理财方案
+            </a>
+            <p style="font-size:14px; opacity:0.7; margin-top:15px;">
+                想了解更多理财工具？
+                <a href="../tools/index.html" style="color:white; text-decoration:underline; font-weight:600;">查看全部工具</a>
+                &nbsp;|&nbsp;
+                先看看 <a href="../samples/index.html" style="color:white; text-decoration:underline;">样本报告</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="py-4 bg-light">
+        <div class="container text-center text-muted small">
+            <p class="mb-1">© 2025 Ourlyg.com | 理财工具与AI分析服务</p>
+            <p class="mb-0">复利计算器仅供参考，实际投资收益可能存在差异，投资有风险，入市需谨慎</p>
         </div>
     </footer>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- 移动端底部Tab导航 -->
-    <nav class="mobile-bottom-nav">
-        <a href="../index.html">
-            <span class="tab-icon">🏠</span>
-            <span class="tab-label">首页</span>
-        </a>
-        <a href="../services/index.html">
-            <span class="tab-icon">🤖</span>
-            <span class="tab-label">AI服务</span>
-        </a>
-        <a href="../products/index.html">
-            <span class="tab-icon">📋</span>
-            <span class="tab-label">测评</span>
-        </a>
-        <a href="../tools/index.html">
-            <span class="tab-icon">🧮</span>
-            <span class="tab-label">工具</span>
-        </a>
-        <a href="../knowledge/index.html">
-            <span class="tab-icon">📚</span>
-            <span class="tab-label">知识</span>
-        </a>
-    </nav>
+    <script>
+        // 格式化金额
+        function formatMoney(num) {
+            return '¥ ' + num.toLocaleString('zh-CN', { maximumFractionDigits: 0 });
+        }
+
+        // 计算复利
+        function calculate() {
+            // 获取输入值
+            const principal = parseFloat(document.getElementById('principal').value) || 0;
+            const rate = parseFloat(document.getElementById('rate').value) / 100 || 0;
+            const years = parseInt(document.getElementById('years').value) || 1;
+            const annualAddition = parseFloat(document.getElementById('annualAddition').value) || 0;
+
+            // 计算每年末的资产
+            const yearlyValues = [];
+            let currentAmount = principal;
+
+            for (let i = 1; i <= years; i++) {
+                currentAmount = currentAmount * (1 + rate) + annualAddition;
+                yearlyValues.push(currentAmount);
+            }
+
+            const finalAmount = yearlyValues[yearlyValues.length - 1];
+            const totalAddition = annualAddition * years;
+            const interestEarned = finalAmount - principal - totalAddition;
+
+            // 更新结果显示
+            document.getElementById('finalAmount').textContent = formatMoney(finalAmount);
+            document.getElementById('initialAmount').textContent = formatMoney(principal);
+            document.getElementById('totalAddition').textContent = formatMoney(totalAddition);
+            document.getElementById('interestEarned').textContent = formatMoney(interestEarned);
+
+            // 更新柱状图
+            updateBarChart(yearlyValues);
+        }
+
+        // 更新柱状图
+        function updateBarChart(values) {
+            const container = document.getElementById('barContainer');
+            container.innerHTML = '';
+
+            const maxValue = Math.max(...values);
+            const displayStep = values.length > 10 ? Math.floor(values.length / 10) : 1;
+
+            values.forEach((value, index) => {
+                if (index % displayStep === 0 || index === values.length - 1) {
+                    const bar = document.createElement('div');
+                    bar.className = 'bar';
+                    bar.style.height = `${(value / maxValue) * 100}%`;
+
+                    // 添加数值标签
+                    const valueLabel = document.createElement('div');
+                    valueLabel.className = 'bar-value';
+                    valueLabel.textContent = formatCompact(value);
+                    bar.appendChild(valueLabel);
+
+                    // 添加年份标签
+                    const label = document.createElement('div');
+                    label.className = 'bar-label';
+                    label.textContent = `${index + 1}年`;
+                    bar.appendChild(label);
+
+                    container.appendChild(bar);
+                }
+            });
+        }
+
+        // 格式化紧凑金额
+        function formatCompact(num) {
+            if (num >= 1000000) {
+                return (num / 1000000).toFixed(1) + 'M';
+            } else if (num >= 1000) {
+                return (num / 1000).toFixed(0) + 'K';
+            }
+            return num.toFixed(0);
+        }
+
+        // 页面加载时计算一次
+        window.onload = calculate;
+    </script>
 </body>
 </html>
