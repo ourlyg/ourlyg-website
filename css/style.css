@@ -45,8 +45,8 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    height: 70px;
-    padding: 10px 0;
+    height: 60px;
+    padding: 0;
 }
 
 html {
@@ -54,11 +54,11 @@ html {
 }
 
 body {
-    padding-top: 70px;
+    padding-top: 60px;
 }
 
 .navbar-brand {
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 700;
     background: linear-gradient(135deg, #667eea, #764ba2);
     -webkit-background-clip: text;
@@ -66,7 +66,8 @@ body {
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
+    flex-shrink: 0;
 }
 
 .navbar-brand:hover {
@@ -75,19 +76,19 @@ body {
 }
 
 .logo-icon {
-    font-size: 26px;
+    font-size: 22px;
     -webkit-text-fill-color: unset;
 }
 
 .nav-link {
-    color: #666;
-    font-size: 14px;
+    color: #555;
+    font-size: 13px;
     font-weight: 500;
-    transition: all 0.3s ease;
-    position: relative;
-    padding: 6px 14px !important;
-    margin: 0 4px;
-    border-radius: 6px;
+    transition: all 0.2s ease;
+    padding: 5px 10px !important;
+    margin: 0 1px;
+    border-radius: 5px;
+    white-space: nowrap;
 }
 
 .nav-link:hover,
@@ -108,10 +109,12 @@ body {
     background: linear-gradient(135deg, #667eea, #764ba2);
     border: none;
     font-weight: 600;
-    font-size: 13px;
-    padding: 8px 20px !important;
+    font-size: 12px;
+    padding: 6px 14px !important;
     box-shadow: 0 2px 8px rgba(102,126,234,0.25);
     transition: all 0.3s;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .navbar .btn-primary:hover {
@@ -120,18 +123,20 @@ body {
     color: white;
 }
 
-/* ==================== 导航栏强制横排（防反复出现竖排Bug）==================== */
-/* 关键修复：在 lg 断点以上强制 navbar-collapse 以 flex 方式展开，不依赖 JS toggle */
-@media (min-width: 992px) {
+/* ==================== PC端导航强制横排（所有断点 ≥768px）==================== */
+@media (min-width: 768px) {
     .navbar-collapse {
         display: flex !important;
         flex-basis: auto;
         align-items: center;
-        gap: 8px;
+    }
+    .navbar-toggler {
+        display: none !important;
     }
     .navbar-nav {
         flex-direction: row !important;
         align-items: center;
+        flex-wrap: nowrap;
         gap: 0;
     }
     .navbar-nav .nav-item {
@@ -139,9 +144,72 @@ body {
         align-items: center;
     }
     .navbar-nav .nav-item:last-child {
-        margin-left: 12px;
-        padding-left: 12px;
+        margin-left: 8px;
+        padding-left: 8px;
         border-left: 1px solid #e8eaf6;
+    }
+    .navbar .container {
+        flex-wrap: nowrap;
+    }
+}
+
+/* ==================== 移动端底部Tab导航 ==================== */
+.mobile-bottom-nav {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    /* 顶部navbar在移动端只显示品牌logo */
+    .navbar {
+        height: 50px;
+    }
+    body {
+        padding-top: 50px;
+        padding-bottom: 60px; /* 为底部Tab留空间 */
+    }
+    .navbar-collapse,
+    .navbar-toggler {
+        display: none !important;
+    }
+
+    /* 底部Tab导航 */
+    .mobile-bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1001;
+        background: #fff;
+        border-top: 1px solid #e8eaf6;
+        box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+        height: 60px;
+    }
+    .mobile-bottom-nav a {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #999;
+        font-size: 10px;
+        font-weight: 500;
+        gap: 3px;
+        transition: color 0.2s;
+        padding: 6px 2px;
+    }
+    .mobile-bottom-nav a.active,
+    .mobile-bottom-nav a:active {
+        color: #667eea;
+    }
+    .mobile-bottom-nav a .tab-icon {
+        font-size: 20px;
+        line-height: 1;
+    }
+    .mobile-bottom-nav a .tab-label {
+        font-size: 10px;
+        line-height: 1;
     }
 }
 
@@ -495,13 +563,6 @@ footer p {
 
 /* ==================== 响应式 ==================== */
 @media (max-width: 768px) {
-    body {
-        padding-top: 56px;
-    }
-
-    .navbar {
-        height: 56px;
-    }
 
     .hero-section {
         padding: var(--spacing-6) 0 var(--spacing-4);
