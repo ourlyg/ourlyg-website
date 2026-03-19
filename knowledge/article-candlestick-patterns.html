@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K线实战：常见形态识别 - 我们的理易港</title>
+    <meta name="description" content="K线实战：常见形态识别，图解+案例。掌握头肩顶、双底、M头、W底等经典形态，学会识别买卖信号">
+    <meta name="keywords" content="K线,形态识别,头肩顶,双底,M头,W底,技术分析">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .article-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 40px 20px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin: 40px 0 20px 0;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+        .subsection-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #555;
+            margin: 30px 0 15px 0;
+        }
+        .pattern-card {
+            border: 1px solid #e8eaf6;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+        .pattern-card:hover {
+            box-shadow: 0 5px 20px rgba(102,126,234,0.15);
+            transform: translateY(-2px);
+        }
+        .pattern-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .pattern-bullish { background: #d4edda; color: #155724; }
+        .pattern-bearish { background: #f8d7da; color: #721c24; }
+        .pattern-neutral { background: #fff3cd; color: #856404; }
+        .pattern-illustration {
+            background: #f8f9ff;
+            border: 2px dashed #667eea;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .pattern-illustration pre {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+            font-family: 'Courier New', monospace;
+        }
+        .signal-box {
+            background: #fff;
+            border-left: 4px solid;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .signal-buy { border-left-color: #28a745; background: #f0fff4; }
+        .signal-sell { border-left-color: #dc3545; background: #fff5f5; }
+        .case-study {
+            background: #fafbff;
+            border: 1px solid #e0e7ff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .highlight-tip {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <span class="logo-icon">📊</span>理易港
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../services/index.html">AI分析服务</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../samples/index.html">样本报告</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../products/index.html">产品测评</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../tools/index.html">理财工具</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../news.html">财经新闻</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../knowledge/index.html">知识科普</a></li>
+                    <li class="nav-item ms-2">
+                        <a href="../service-request.html" class="btn btn-primary">立即咨询</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 文章头部 -->
+    <header class="article-header">
+        <div class="container">
+            <h1>K线实战：常见形态识别</h1>
+            <p class="lead mt-3">图解+案例，学会识别买卖信号</p>
+            <p class="small mt-3">发布时间: 2026-03-19 | 阅读时长: 约10分钟</p>
+        </div>
+    </header>
+
+    <article class="article-content">
+        <div class="highlight-tip">
+            <strong>💡 重要提示：</strong>K线形态是技术分析的重要工具，但不是万能的。形态识别需要结合成交量、趋势线、MACD等指标综合判断，切勿单凭形态操作。
+        </div>
+
+        <h2 class="section-title">一、头肩顶（看跌形态）</h2>
+        <div class="pattern-card">
+            <span class="pattern-badge pattern-bearish">看跌形态</span>
+            <h4 class="subsection-title">形态特征</h4>
+            <ul>
+                <li><strong>左肩：</strong>股价上涨后回调，形成第一个高点</li>
+                <li><strong>头部：</strong>股价再次上涨突破左肩，达到最高点后回落</li>
+                <li><strong>右肩：</strong>股价第三次上涨，但未能突破头部高度，形成右肩</li>
+                <li><strong>颈线：</strong>连接左肩和右肩回调低点的支撑线</li>
+            </ul>
+
+            <div class="pattern-illustration">
+                <strong>形态示意图：</strong>
+                <pre>
+         头部（最高点）
+           /   \
+          /     \
+         /       \
+        /         \
+       /           \
+      /             \
+     /               \
+    /                 \
+   左肩    颈线    右肩
+  /   \___________/   \
+ /                   \
+/                     \
+                </pre>
+            </div>
+
+            <div class="signal-box signal-sell">
+                <strong>卖出信号：</strong>股价跌破颈线，且成交量放大
+            </div>
+
+            <div class="case-study">
+                <h5>实战案例</h5>
+                <p>2024年3月，某股票在高位形成头肩顶形态：</p>
+                <ul>
+                    <li><strong>左肩：</strong>股价涨到35元后回落到30元</li>
+                    <li><strong>头部：</strong>股价涨到40元（新高）后回落到32元</li>
+                    <li><strong>右肩：</strong>股价涨到36元后回落</li>
+                    <li><strong>跌破颈线：</strong>股价跌破30元颈线，成交量放大，确认看跌信号</li>
+                </ul>
+                <p class="mb-0"><strong>结果：</strong>股价在随后一个月跌到22元，跌幅27%</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">二、头肩底（看涨形态）</h2>
+        <div class="pattern-card">
+            <span class="pattern-badge pattern-bullish">看涨形态</span>
+            <h4 class="subsection-title">形态特征</h4>
+            <ul>
+                <li><strong>左肩：</strong>股价下跌后反弹，形成第一个低点</li>
+                <li><strong>头部：</strong>股价再次下跌跌破左肩，达到最低点后反弹</li>
+                <li><strong>右肩：</strong>股价第三次下跌，但未能跌破头部低点，形成右肩</li>
+                <li><strong>颈线：</strong>连接左肩和右肩反弹高点的压力线</li>
+            </ul>
+
+            <div class="pattern-illustration">
+                <strong>形态示意图：</strong>
+                <pre>
+                /           \
+               /             \
+              /               \
+             /                 \
+            /                   \
+           /                     \
+          /        颈线          \
+         /      ___________        \
+        /      /           \       \
+       /      /             \       \
+      /      /               \       \
+     /      /                 \       \
+    /      /                   \       \
+   左肩    头部（最低点）    右肩
+                </pre>
+            </div>
+
+            <div class="signal-box signal-buy">
+                <strong>买入信号：</strong>股价突破颈线，且成交量放大
+            </div>
+
+            <div class="case-study">
+                <h5>实战案例</h5>
+                <p>2023年11月，某股票在低位形成头肩底形态：</p>
+                <ul>
+                    <li><strong>左肩：</strong>股价跌到25元后反弹到28元</li>
+                    <li><strong>头部：</strong>股价跌到22元（新低）后反弹到27元</li>
+                    <li><strong>右肩：</strong>股价跌到24元后反弹</li>
+                    <li><strong>突破颈线：</strong>股价突破28元颈线，成交量放大，确认看涨信号</li>
+                </ul>
+                <p class="mb-0"><strong>结果：</strong>股价在随后两个月涨到38元，涨幅36%</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">三、M头（双重顶）</h2>
+        <div class="pattern-card">
+            <span class="pattern-badge pattern-bearish">看跌形态</span>
+            <h4 class="subsection-title">形态特征</h4>
+            <ul>
+                <li><strong>第一顶：</strong>股价上涨后回落</li>
+                <li><strong>第二顶：</strong>股价再次上涨到相近高度后回落</li>
+                <li><strong>颈线：</strong>连接两个顶点之间回调低点的支撑线</li>
+                <li><strong>成交量：</strong>第二顶成交量通常低于第一顶</li>
+            </ul>
+
+            <div class="pattern-illustration">
+                <strong>形态示意图：</strong>
+                <pre>
+        第二顶
+          /   \
+         /     \
+        /       \
+       /         \
+      /           \
+     /             \
+    /               \
+   /                 \
+  /   ________颈线______\
+ /   /                   \
+/   /                     \
+第一顶
+                </pre>
+            </div>
+
+            <div class="signal-box signal-sell">
+                <strong>卖出信号：</strong>股价跌破颈线，且成交量放大
+            </div>
+
+            <div class="case-study">
+                <h5>实战案例</h5>
+                <p>2024年5月，某股票形成M头：</p>
+                <ul>
+                    <li><strong>第一顶：</strong>股价涨到45元后回落到40元</li>
+                    <li><strong>第二顶：</strong>股价涨到44.5元后回落（成交量小于第一顶）</li>
+                    <li><strong>跌破颈线：</strong>股价跌破40元颈线，确认看跌</li>
+                </ul>
+                <p class="mb-0"><strong>结果：</strong>股价在后续三周跌到32元，跌幅20%</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">四、W底（双重底）</h2>
+        <div class="pattern-card">
+            <span class="pattern-badge pattern-bullish">看涨形态</span>
+            <h4 class="subsection-title">形态特征</h4>
+            <ul>
+                <li><strong>第一底：</strong>股价下跌后反弹</li>
+                <li><strong>第二底：</strong>股价再次下跌到相近高度后反弹</li>
+                <li><strong>颈线：</strong>连接两个底点之间反弹高点的压力线</li>
+                <li><strong>成交量：</strong>第二底成交量通常小于第一底</li>
+            </ul>
+
+            <div class="pattern-illustration">
+                <strong>形态示意图：</strong>
+                <pre>
+              /   \
+             /     \
+            /       \
+           /         \
+          /           \
+         /             \
+        /               \
+       /    颈线_________\
+      /    /              \
+     /    /                \
+    /    /                  \
+   /    /                    \
+  /    /                      \
+ /    /                        \
+第一底                          第二底
+                </pre>
+            </div>
+
+            <div class="signal-box signal-buy">
+                <strong>买入信号：</strong>股价突破颈线，且成交量放大
+            </div>
+
+            <div class="case-study">
+                <h5>实战案例</h5>
+                <p>2023年9月，某股票形成W底：</p>
+                <ul>
+                    <li><strong>第一底：</strong>股价跌到18元后反弹到20元</li>
+                    <li><strong>第二底：</strong>股价跌到18.2元后反弹（成交量小于第一底）</li>
+                    <li><strong>突破颈线：</strong>股价突破20元颈线，确认看涨</li>
+                </ul>
+                <p class="mb-0"><strong>结果：</strong>股价在后续一个月涨到26元，涨幅30%</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">五、三角形整理</h2>
+        <div class="pattern-card">
+            <span class="pattern-badge pattern-neutral">中继形态</span>
+            <h4 class="subsection-title">上升三角形</h4>
+            <p><strong>特征：</strong>高点不断降低，低点不断抬高</p>
+            <p><strong>操作：</strong>向上突破上边买入，跌破下边止损</p>
+
+            <h4 class="subsection-title">下降三角形</h4>
+            <p><strong>特征：</strong>高点不断降低，低点也不断降低</p>
+            <p><strong>操作：</strong>向下突破下边卖出，突破上边止损</p>
+
+            <h4 class="subsection-title">对称三角形</h4>
+            <p><strong>特征：</strong>高点不断降低，低点不断抬高，形成收缩形态</p>
+            <p><strong>操作：</strong>等待方向突破后再操作，不要提前猜测方向</p>
+
+            <div class="case-study">
+                <h5>实战案例</h5>
+                <p>2024年1月，某股票形成上升三角形：</p>
+                <ul>
+                    <li><strong>整理期：</strong>股价在25-30元之间波动，历时6周</li>
+                    <li><strong>突破：</strong>股价放量突破30元上边</li>
+                </ul>
+                <p class="mb-0"><strong>结果：</strong>股价在后续两周涨到36元，涨幅20%</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">形态识别实战建议</h2>
+
+        <h4 class="subsection-title">1. 确认形态完整</h4>
+        <ul>
+            <li><strong>时间周期：</strong>日线图至少需要1-2周形成完整形态</li>
+            <li><strong>成交量配合：</strong>突破时必须有成交量放大确认</li>
+            <li><strong>回抽确认：</strong>突破后回抽不破颈线，形态更可靠</li>
+        </ul>
+
+        <h4 class="subsection-title">2. 设置止损止盈</h4>
+        <ul>
+            <li><strong>止损：</strong>跌破颈线或突破失败时立即止损</li>
+            <li><strong>止盈：</strong>设置形态高度的1-2倍为目标收益</li>
+            <li><strong>分批操作：</strong>突破确认后可分批建仓，降低风险</li>
+        </ul>
+
+        <h4 class="subsection-title">3. 避免常见误区</h4>
+        <div class="highlight-tip">
+            <ul>
+                <li><strong>⚠️ 过度拟合：</strong>不是每次波动都是形态，要学会过滤假信号</li>
+                <li><strong>⚠️ 忽视趋势：</strong>下跌趋势中的看涨形态可靠性低，上涨趋势中的看跌形态同样</li>
+                <li><strong>⚠️ 单一依赖：</strong>形态需要结合MACD、RSI、成交量等指标综合判断</li>
+                <li><strong>⚠️ 频繁操作：</strong>形态识别后不要频繁进出，要有耐心持有</li>
+            </ul>
+        </div>
+
+        <h2 class="section-title">总结</h2>
+        <p>K线形态是技术分析的重要工具，但不是魔法。掌握以下要点：</p>
+        <ul>
+            <li><strong>形态识别：</strong>学会看头肩顶、M头、W底等经典形态</li>
+            <li><strong>确认信号：</strong>突破颈线+成交量放大=确认信号</li>
+            <li><strong>趋势为王：</strong>顺势而为，逆势形态可靠性低</li>
+            <li><strong>风险控制：</strong>设置止损止盈，不贪不惧</li>
+        </ul>
+        <p><strong>记住：</strong>技术分析是概率游戏，没有100%准确的形态。学会形态识别可以提高胜率，但不能保证每次都赢。</p>
+    </article>
+
+    <!-- 相关文章 -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">相关文章</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">K线基础入门</h5>
+                            <p class="card-text">什么是K线？如何看阳线、阴线？</p>
+                            <a href="../knowledge/article-candlestick-basics.html" class="btn btn-primary btn-sm">阅读</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">MACD指标实战</h5>
+                            <p class="card-text">MACD金叉死叉、背离、柱状图应用</p>
+                            <a href="../knowledge/article-macd-guide.html" class="btn btn-primary btn-sm">阅读</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">均线战法</h5>
+                            <p class="card-text">5日、10日、20日均线实战应用</p>
+                            <a href="../knowledge/article-moving-average.html" class="btn btn-primary btn-sm">阅读</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" style="margin-bottom: 32px;">
+                    <div class="footer-brand">📊 理易港 ourlyg.com</div>
+                    <p class="footer-desc">AI驱动的金融分析服务平台。股票诊断、财经简报、持仓分析，让数据为你的投资决策服务。</p>
+                </div>
+                <div class="col-md-4" style="margin-bottom: 32px;">
+                    <h6 style="font-weight:700; margin-bottom: 16px; color:#1a1a1a;">服务项目</h6>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <a href="../index.html#services" style="color:#666; font-size:14px; text-decoration:none;">股票诊断报告</a>
+                        <a href="../index.html#services" style="color:#666; font-size:14px; text-decoration:none;">财经简报定制</a>
+                        <a href="../index.html#services" style="color:#666; font-size:14px; text-decoration:none;">持仓诊断分析</a>
+                        <a href="../index.html#services" style="color:#666; font-size:14px; text-decoration:none;">个股深度研报</a>
+                    </div>
+                </div>
+                <div class="col-md-4" style="margin-bottom: 32px;">
+                    <h6 style="font-weight:700; margin-bottom: 16px; color:#1a1a1a;">免费资源</h6>
+                    <div style="display:flex; flex-direction:column; gap:8px;">
+                        <a href="../tools/calculator.html" style="color:#666; font-size:14px; text-decoration:none;">收益计算器</a>
+                        <a href="../tools/risk-assessment.html" style="color:#666; font-size:14px; text-decoration:none;">风险评估</a>
+                        <a href="../products/index.html" style="color:#666; font-size:14px; text-decoration:none;">产品测评</a>
+                        <a href="../knowledge/index.html" style="color:#666; font-size:14px; text-decoration:none;">理财知识</a>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top:1px solid #e8eaf6; margin-top: 40px; padding-top: 24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                <p style="font-size:13px; color:#999; margin:0;">© 2026 理易港 ourlyg.com. All rights reserved.</p>
+                <p style="font-size:13px; color:#999; margin:0;">分析内容仅供参考，不构成投资建议，据此操作风险自负</p>
+            </div>
+        </div>
+        <div style="background:#0d0d1a; border-top:1px solid rgba(255,255,255,0.06); padding:24px 0; margin-top:0;">
+            <div class="container">
+                <p style="font-size:12px; color:rgba(255,255,255,0.35); line-height:1.8; margin:0; text-align:center;">
+                    ⚠️ <strong style="color:rgba(255,255,255,0.5);">重要免责声明：</strong>
+                    本网站所有内容（包括但不限于文章、报告、分析、数据）均基于公开信息整理，<strong style="color:rgba(255,255,255,0.5);">仅供参考，不构成任何投资建议或财经信息整理服务</strong>。
+                    市场有风险，投资须谨慎。历史表现不代表未来收益，任何分析均存在不确定性。
+                    投资者应根据自身财务状况、风险承受能力及投资目标，独立作出投资判断，并承担相应风险。
+                    如需专业投资建议，请咨询具有合法资质的持牌金融机构或金融顾问。
+                    本平台不对任何因参考本网站内容而产生的投资损失承担责任。
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 移动端底部Tab导航 -->
+    <nav class="mobile-bottom-nav">
+        <a href="../index.html">
+            <span class="tab-icon">🏠</span>
+            <span class="tab-label">首页</span>
+        </a>
+        <a href="../services/index.html">
+            <span class="tab-icon">🤖</span>
+            <span class="tab-label">AI服务</span>
+        </a>
+        <a href="../products/index.html">
+            <span class="tab-icon">📋</span>
+            <span class="tab-label">测评</span>
+        </a>
+        <a href="../tools/index.html">
+            <span class="tab-icon">🧮</span>
+            <span class="tab-label">工具</span>
+        </a>
+        <a href="../knowledge/index.html">
+            <span class="tab-icon">📚</span>
+            <span class="tab-label">知识</span>
+        </a>
+    </nav>
+</body>
+</html>
