@@ -1,0 +1,322 @@
+{
+  "system_name": "狗子主动销售系统 (Doggy Active Sales System)",
+  "version": "2.0",
+  "description": "主动发现需求、直接联系客户、快速成交的销售系统",
+  "core_philosophy": "主动出击，不是被动等待",
+
+  "sales_workflow": {
+    "phase_1_discovery": {
+      "name": "需求发现",
+      "duration": "每日执行",
+      "agents": ["GitHub猎手", "知乎猎手", "V2EX猎手", "CSDN猎手", "Boss直聘猎手"],
+      "actions": [
+        "扫描平台关键词",
+        "识别潜在需求",
+        "评估需求价值",
+        "记录到需求池"
+      ],
+      "output": ["需求列表.json"]
+    },
+    "phase_2_matching": {
+      "name": "需求匹配与评估",
+      "duration": "发现后30分钟内",
+      "actions": [
+        "分析需求类型和复杂度",
+        "匹配能力矩阵",
+        "评估工时和报价",
+        "准备初步方案"
+      ],
+      "output": ["需求评估.json"]
+    },
+    "phase_3_contact": {
+      "name": "主动联系",
+      "duration": "评估后立即",
+      "actions": [
+        "根据平台选择联系方式",
+        "发送专业联系消息",
+        "提供初步方案",
+        "展示相关案例"
+      ],
+      "contact_methods": {
+        "知乎": "私信 + 评论",
+        "V2EX": "私信 + 回复",
+        "CSDN": "私信 + 评论",
+        "GitHub": "Issue评论",
+        "Boss直聘": "立即沟通"
+      },
+      "output": ["联系记录.json"]
+    },
+    "phase_4_communication": {
+      "name": "深度沟通与报价",
+      "duration": "收到回复后24小时内",
+      "actions": [
+        "确认详细需求",
+        "提供具体报价",
+        "说明工作流程",
+        "展示过往案例"
+      ],
+      "milestones": [
+        "初步需求确认",
+        "详细需求确认",
+        "报价确认",
+        "合同/需求确认"
+      ],
+      "output": ["沟通记录.json", "报价单.json"]
+    },
+    "phase_5_execution": {
+      "name": "执行与交付",
+      "duration": "根据项目复杂度",
+      "actions": [
+        "项目规划与排期",
+        "按里程碑执行",
+        "进度汇报",
+        "质量检查",
+        "交付最终成果"
+      ],
+      "milestones": [
+        "30% - 需求确认与大纲",
+        "60% - 核心功能完成",
+        "90% - 细节优化",
+        "100% - 最终交付"
+      ],
+      "output": ["项目文档", "交付物"]
+    },
+    "phase_6_followup": {
+      "name": "跟进与复购",
+      "duration": "交付后持续",
+      "actions": [
+        "收集反馈",
+        "免费修改",
+        "维护关系",
+        "推荐新机会",
+        "争取复购"
+      ],
+      "output": ["客户记录.json", "复购记录.json"]
+    }
+  },
+
+  "capability_matching": {
+    "keyword_to_service": {
+      "数据分析": {
+        "keywords": ["数据", "分析", "统计", "图表", "可视化", "报告", "dashboard", "仪表板"],
+        "service_type": "data_analysis",
+        "price_range": [500, 5000],
+        "complexity_factors": {
+          "清洗": 0.3,
+          "分析": 0.4,
+          "可视化": 0.3
+        }
+      },
+      "PPT": {
+        "keywords": ["PPT", "演示", "幻灯片", "presentation", "slide"],
+        "service_type": "ppt_production",
+        "price_range": [200, 3000],
+        "complexity_factors": {
+          "页数": 0.4,
+          "数据可视化": 0.3,
+          "设计要求": 0.3
+        }
+      },
+      "Excel": {
+        "keywords": ["Excel", "表格", "公式", "透视表", "函数"],
+        "service_type": "excel_development",
+        "price_range": [300, 2000],
+        "complexity_factors": {
+          "公式复杂度": 0.4,
+          "数据量": 0.3,
+          "自动化": 0.3
+        }
+      },
+      "PDF": {
+        "keywords": ["PDF", "文档转换", "提取", "合并"],
+        "service_type": "pdf_processing",
+        "price_range": [100, 2000],
+        "complexity_factors": {
+          "处理方式": 0.4,
+          "批量程度": 0.3,
+          "复杂度": 0.3
+        }
+      },
+      "网站": {
+        "keywords": ["网站", "web", "网页", "开发", "前端", "H5"],
+        "service_type": "web_development",
+        "price_range": [1000, 20000],
+        "complexity_factors": {
+          "页面数量": 0.3,
+          "功能复杂度": 0.4,
+          "交互要求": 0.3
+        }
+      },
+      "脚本": {
+        "keywords": ["脚本", "自动化", "爬虫", "python", "程序"],
+        "service_type": "script_development",
+        "price_range": [500, 3000],
+        "complexity_factors": {
+          "功能复杂度": 0.5,
+          "技术难度": 0.3,
+          "数据量": 0.2
+        }
+      },
+      "财务": {
+        "keywords": ["财务", "报表", "对账", "凭证", "审计"],
+        "service_type": "financial_services",
+        "price_range": [500, 5000],
+        "complexity_factors": {
+          "报表类型": 0.3,
+          "数据量": 0.3,
+          "分析深度": 0.4
+        }
+      }
+    },
+
+    "price_calculation": {
+      "formula": "base_price * complexity_factor * urgency_factor * volume_factor",
+      "factors": {
+        "urgency": {
+          "紧急": 1.5,
+          "一般": 1.0,
+          "不急": 0.9
+        },
+        "volume": {
+          "单次": 1.0,
+          "批量": 0.8,
+          "长期": 0.7
+        }
+      }
+    }
+  },
+
+  "contact_templates": {
+    "zhihu": {
+      "private_message": "你好！我看到了你的问题，关于【{topic}】，我可以提供专业帮助。\n\n我提供的服务：\n{service_list}\n\n关于你的需求，初步分析：\n- 需求类型：{service_type}\n- 预估工作量：{estimated_hours}\n- 参考报价：¥{price_range}\n\n我可以先帮你免费评估需求，提供更详细的方案。如果有兴趣，请回复，我们进一步沟通。\n\n我的服务案例：https://ourlyg.com\n联系方式：contact@ourlyg.com",
+
+      "comment": "关于【{topic}】，我有一些经验可以分享。如果你时间紧张或需要专业帮助，我可以提供完整服务。私信我，我可以免费评估需求，提供详细方案。",
+      "contact_priority": ["private_message", "comment"]
+    },
+
+    "v2ex": {
+      "private_message": "你好！看到你发的需求，关于【{topic}】，我可以提供专业帮助。\n\n我提供的服务：\n{service_list}\n\n针对你的需求：\n- 方案：{solution}\n- 预估工时：{estimated_hours}\n- 报价：¥{price_range}\n\n可以先免费评估，提供详细方案。如有兴趣请回复。\n\n我的案例：https://ourlyg.com",
+      "reply": "关于【{topic}】，我可以提供专业帮助。我已经完成过类似项目，经验丰富。私信我，我可以免费评估需求，提供详细方案和报价。",
+      "contact_priority": ["private_message", "reply"]
+    },
+
+    "csdn": {
+      "private_message": "你好！看到你的求助，关于【{topic}】，我可以提供专业帮助。\n\n我提供的服务：\n{service_list}\n\n初步分析：\n- 需求类型：{service_type}\n- 解决方案：{solution}\n- 预估工时：{estimated_hours}\n- 报价：¥{price_range}\n\n私信我，我可以免费评估需求，提供详细方案。",
+      "comment": "关于【{topic}】，我可以提供专业帮助。我已经完成过类似项目。私信我，我可以免费评估需求。",
+      "contact_priority": ["private_message", "comment"]
+    },
+
+    "github": {
+      "issue_comment": "你好！看到这个issue，关于【{topic}】，我可以提供专业帮助。\n\n我可以提供的帮助：\n- 完整的解决方案\n- 代码实现\n- 测试和优化\n\n如果需要付费服务，可以联系我：contact@ourlyg.com\n\n或者如果这个问题很重要，我也可以贡献开源代码。",
+      "contact_priority": ["issue_comment"]
+    },
+
+    "boss_zhipin": {
+      "greeting": "你好！我对【{job_title}】很感兴趣，我想应聘/合作。\n\n我的能力：\n{capability_list}\n\n我的经验：\n- {experience_1}\n- {experience_2}\n- {experience_3}\n\n我可以：\n- 远程工作\n- 按项目合作\n- 长期合作\n\n期待你的回复！",
+      "contact_priority": ["greeting"]
+    }
+  },
+
+  "crm_system": {
+    "customer_stages": [
+      "new_lead",
+      "contacted",
+      "in_communication",
+      "quoted",
+      "negotiating",
+      "closed",
+      "in_progress",
+      "completed",
+      "lost",
+      "inactive"
+    ],
+
+    "customer_data": {
+      "lead_id": "唯一标识",
+      "source": "需求来源（知乎/V2EX/GitHub等）",
+      "source_link": "原始需求链接",
+      "contact_method": "联系方式",
+      "contact_info": "联系信息",
+      "service_type": "需求类型",
+      "description": "需求描述",
+      "stage": "当前阶段",
+      "estimated_value": "预估价值",
+      "actual_value": "实际成交价",
+      "created_at": "创建时间",
+      "updated_at": "更新时间",
+      "next_followup": "下次跟进时间",
+      "notes": "备注"
+    },
+
+    "followup_rules": {
+      "new_lead": "24小时内",
+      "contacted": "48小时内",
+      "in_communication": "保持每日沟通",
+      "quoted": "48小时内确认",
+      "negotiating": "24小时内响应",
+      "completed": "7天后跟进满意度",
+      "lost": "30天后重新激活"
+    },
+
+    "conversion_tracking": {
+      "metrics": [
+        "需求发现数量",
+        "联系成功数量",
+        "报价数量",
+        "成交数量",
+        "转化率（联系→报价）",
+        "转化率（报价→成交）",
+        "平均成交周期",
+        "平均客单价"
+      ]
+    }
+  },
+
+  "sales_kpi": {
+    "daily_targets": {
+      "需求发现": "≥10个",
+      "主动联系": "≥5个",
+      "报价发送": "≥2个",
+      "新客户": "≥1个"
+    },
+
+    "weekly_targets": {
+      "需求发现": "≥50个",
+      "主动联系": "≥25个",
+      "报价发送": "≥10个",
+      "成交订单": "≥3个",
+      "总收入": "≥¥5000"
+    },
+
+    "monthly_targets": {
+      "需求发现": "≥200个",
+      "主动联系": "≥100个",
+      "报价发送": "≥40个",
+      "成交订单": "≥15个",
+      "总收入": "≥¥25000"
+    }
+  },
+
+  "automation_opportunities": {
+    "phase_1": {
+      "task": "自动化需求发现",
+      "description": "6个猎手Agent自动扫描各平台",
+      "status": "ready_to_implement"
+    },
+    "phase_2": {
+      "task": "自动化需求匹配",
+      "description": "自动分析需求、匹配能力、生成报价",
+      "status": "ready_to_implement"
+    },
+    "phase_3": {
+      "task": "自动化联系",
+      "description": "自动发送联系消息（需平台API支持）",
+      "status": "needs_research"
+    },
+    "phase_4": {
+      "task": "自动化跟进",
+      "description": "根据CRM自动提醒跟进时间",
+      "status": "ready_to_implement"
+    }
+  }
+}
