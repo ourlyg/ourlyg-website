@@ -204,6 +204,63 @@
     </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            function calculateInterest() {
+                // 获取输入值
+                const principal = parseFloat(document.getElementById('principal').value);
+                const rate = parseFloat(document.getElementById('rate').value) / 100;
+                const years = parseInt(document.getElementById('years').value);
+
+                // 获取计算方式
+                const calcType = document.querySelector('input[name="calcType"]:checked').value;
+
+                let interest = 0;
+                let total = 0;
+                let details = [];
+
+                if (calcType === 'simple') {
+                    // 单利计算：利息 = 本金 × 利率 × 时间
+                    interest = principal * rate * years;
+                    total = principal + interest;
+                    details = [
+                        `本金：¥${principal.toLocaleString('zh-CN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`,
+                        `年化收益率：${(rate * 100).toFixed(2)}%`,
+                        `投资期限：${years}年`,
+                        `到期利息：¥${interest.toLocaleString('zh-CN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`,
+                        `本息合计：¥${total.toLocaleString('zh-CN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
+                    ];
+                } else {
+                    // 复利计算：总额 = 本金 × (1 + 利率)^时间
+                    total = principal * Math.pow(1 + rate, years);
+                    interest = total - principal;
+                    details = [
+                        `本金：¥${principal.toLocaleString('zh-CN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`,
+                        `年化收益率：${(rate * 100).toFixed(2)}%`,
+                        `投资期限：${years}年`,
+                        `复利计算：利息再投资`,
+                        `到期利息：¥${interest.toLocaleString('zh-CN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`,
+                        `本息合计：¥${total.toLocaleString('zh-CN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
+                    ];
+                }
+
+                // 更新结果
+                document.getElementById('interestResult').textContent = `¥${interest.toLocaleString('zh-CN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+                document.getElementById('totalResult').textContent = `¥${total.toLocaleString('zh-CN', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+
+                // 更新详细说明
+                const detailsList = document.getElementById('calculationDetails');
+                detailsList.innerHTML = '';
+                details.forEach(detail => {
+                    const li = document.createElement('li');
+                    li.textContent = detail;
+                    detailsList.appendChild(li);
+                });
+
+                // 显示结果区域
+                document.getElementById('resultSection').style.display = 'block';
+                document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth' });
+            }
+        </script>
     <!-- 移动端底部Tab导航 -->
     <nav class="mobile-bottom-nav">
         <a href="../index.html">
