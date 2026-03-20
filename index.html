@@ -1,12 +1,19 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <!-- Viewport - 移动端适配核心 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    
     <!-- 安全头部 -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta name="referrer" content="no-referrer-when-downgrade">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+
+    <!-- 预连接外部资源 -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://hm.baidu.com">
 
     <!-- 百度统计 -->
     <script>
@@ -32,6 +39,18 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="理易港 - AI金融分析服务">
     <meta name="twitter:description" content="AI驱动的财经信息整理：技术指标展示¥9.9起，财经简报订阅，持仓信息整理。">
+
+    <!-- 关键CSS内联 - 优化首屏渲染 -->
+    <style>
+        /* 关键渲染路径优化 */
+        body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .navbar { background: #0d0d1a; padding: 16px 0; }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .btn { display: inline-block; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        @media (max-width: 768px) { .nav-links { flex-direction: column; gap: 12px; } }
+    </style>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
