@@ -1,0 +1,75 @@
+/* 性能优化CSS - 关键渲染路径优化 */
+
+/* 1. 减少重排和重绘 */
+* {
+  box-sizing: border-box;
+}
+
+/* 2. 防止内容布局偏移（CLS优化） */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 图片占位符样式 */
+img[loading="lazy"] {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* 3. 字体显示优化 - 避免FOIT（不可见文字闪烁） */
+@font-face {
+  font-display: swap;
+}
+
+/* 4. 平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 5. 移动端触摸优化 */
+@media (hover: none) and (pointer: coarse) {
+  /* 触控目标最小44x44px */
+  button, a, .btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 16px;
+  }
+  
+  /* 移除点击延迟 */
+  * {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+}
+
+/* 6. 减少动画对性能的影响 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 7. GPU加速 - 平滑滚动 */
+body {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* 8. 优化CSS加载 */
+.critical-css {
+  display: block;
+}
+
+.deferred-css {
+  display: none;
+}
