@@ -403,6 +403,38 @@
     <priority>0.95</priority>
   </url>
 
+  <!-- 关于我们 -->
+  <url>
+    <loc>https://ourlyg.com/about.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 联系我们 -->
+  <url>
+    <loc>https://ourlyg.com/contact.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 隐私政策 -->
+  <url>
+    <loc>https://ourlyg.com/privacy.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- 用户协议 -->
+  <url>
+    <loc>https://ourlyg.com/terms.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- 知识文章：指数基金定投 -->
   <url>
     <loc>https://ourlyg.com/knowledge/article-index-dip.html</loc>
