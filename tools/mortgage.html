@@ -194,6 +194,89 @@
     </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            // 房贷计算器
+            function calculateMortgage() {
+                // 获取输入值
+                const principal = parseFloat(document.getElementById('principal').value);
+                const years = parseInt(document.getElementById('years').value);
+                const rate = parseFloat(document.getElementById('rate').value) / 100 / 12; // 月利率
+
+                // 计算等额本息（等额本息还款）
+                const months = years * 12;
+                const epMonthly = principal * rate * Math.pow(1 + rate, months) / (Math.pow(1 + rate, months) - 1);
+                const epTotal = epMonthly * months;
+                const epInterest = epTotal - principal;
+
+                // 计算等额本金（每月还相同本金）
+                const pcMonthlyPrincipal = principal / months;
+                const pcInterest = principal * (months + 1) * rate / 2;
+                const pcTotal = principal + pcInterest;
+                const pcFirstMonth = pcMonthlyPrincipal + principal * rate;
+
+                // 显示结果
+                document.getElementById('epMonthly').textContent = epMonthly.toFixed(2);
+                document.getElementById('epTotal').textContent = epTotal.toFixed(2);
+                document.getElementById('epInterest').textContent = epInterest.toFixed(2);
+
+                document.getElementById('pcFirst').textContent = pcFirstMonth.toFixed(2);
+                document.getElementById('pcTotal').textContent = pcTotal.toFixed(2);
+                document.getElementById('pcInterest').textContent = pcInterest.toFixed(2);
+
+                // 显示结果区域
+                document.getElementById('epResult').style.display = 'block';
+                document.getElementById('pcResult').style.display = 'block';
+
+                // 生成还款计划表（简化版）
+                generateRepaymentSchedule(principal, rate, months, epMonthly, pcMonthlyPrincipal);
+            }
+
+            function generateRepaymentSchedule(principal, rate, months, epMonthly, pcMonthlyPrincipal) {
+                let epTable = '<table style="width:100%; border-collapse:collapse;">';
+                epTable += '<tr style="background:#f0f0f0;"><th>期数</th><th>月供</th><th>本金</th><th>利息</th></tr>';
+
+                let remainingPrincipal = principal;
+
+                for (let i = 1; i <= Math.min(12, months); i++) { // 只显示前12期
+                    // 等额本息
+                    const epInterest = remainingPrincipal * rate;
+                    const epPrincipal = epMonthly - epInterest;
+                    remainingPrincipal -= epPrincipal;
+
+                    epTable += `<tr><td>${i}</td><td>${epMonthly.toFixed(2)}</td><td>${epPrincipal.toFixed(2)}</td><td>${epInterest.toFixed(2)}</td></tr>`;
+                }
+
+                epTable += '</table>';
+
+                document.getElementById('epTableWrap').innerHTML = epTable;
+                document.getElementById('pcTableWrap').innerHTML = epTable; // 简化版共用
+            }
+
+            function switchTab(type) {
+                if (type === 'ep') {
+                    document.getElementById('tabEP').classList.add('active');
+                    document.getElementById('tabPC').classList.remove('active');
+                    document.getElementById('epResult').style.display = 'block';
+                    document.getElementById('pcResult').style.display = 'none';
+                } else {
+                    document.getElementById('tabPC').classList.add('active');
+                    document.getElementById('tabEP').classList.remove('active');
+                    document.getElementById('epResult').style.display = 'none';
+                    document.getElementById('pcResult').style.display = 'block';
+                }
+            }
+
+            // 页面加载后初始化
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    const calculateBtn = document.querySelector('button[onclick="calculateMortgage()"]');
+                    if (calculateBtn) {
+                        calculateBtn.addEventListener('click', calculateMortgage);
+                    }
+                });
+            }
+        </script>
     <!-- 移动端底部Tab导航 -->
     <nav class="mobile-bottom-nav">
         <a href="../index.html">
