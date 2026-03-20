@@ -4,9 +4,25 @@
   <!-- 首页 -->
   <url>
     <loc>https://ourlyg.com/</loc>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- VIP订阅页面 -->
+  <url>
+    <loc>https://ourlyg.com/vip-subscription.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- 客户定位系统 -->
+  <url>
+    <loc>https://ourlyg.com/customer_locator.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
   </url>
 
   <!-- 样本报告 -->
