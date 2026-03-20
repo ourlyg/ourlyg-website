@@ -165,5 +165,291 @@
             <span class="tab-label">知识</span>
         </a>
     </nav>
+
+    <script>
+        // 风险评估题库
+        const questions = [
+            {
+                question: "1. 您的年龄范围是？",
+                options: [
+                    { text: "18-30岁", score: 4 },
+                    { text: "31-40岁", score: 3 },
+                    { text: "41-50岁", score: 2 },
+                    { text: "51岁以上", score: 1 }
+                ]
+            },
+            {
+                question: "2. 您的投资经验是？",
+                options: [
+                    { text: "从未投资过", score: 1 },
+                    { text: "投资少于1年", score: 2 },
+                    { text: "投资1-3年", score: 3 },
+                    { text: "投资3年以上", score: 4 }
+                ]
+            },
+            {
+                question: "3. 您的投资目标是？",
+                options: [
+                    { text: "资产保值，稳定收益", score: 1 },
+                    { text: "保值为主，适度增值", score: 2 },
+                    { text: "增值为主，能承受一定风险", score: 3 },
+                    { text: "追求高收益，能承受较大风险", score: 4 }
+                ]
+            },
+            {
+                question: "4. 您的收入稳定性如何？",
+                options: [
+                    { text: "非常稳定，有固定职业", score: 4 },
+                    { text: "比较稳定，偶有波动", score: 3 },
+                    { text: "不太稳定，收入不固定", score: 2 },
+                    { text: "非常不稳定", score: 1 }
+                ]
+            },
+            {
+                question: "5. 如果投资本金亏损20%，您会？",
+                options: [
+                    { text: "立即全部卖出止损", score: 1 },
+                    { text: "卖出部分止损", score: 2 },
+                    { text: "观察一段时间再决定", score: 3 },
+                    { text: "视情况加仓", score: 4 }
+                ]
+            },
+            {
+                question: "6. 您能接受的最大亏损比例是？",
+                options: [
+                    { text: "0-5%", score: 1 },
+                    { text: "5-10%", score: 2 },
+                    { text: "10-20%", score: 3 },
+                    { text: "20%以上", score: 4 }
+                ]
+            },
+            {
+                question: "7. 您的投资周期是？",
+                options: [
+                    { text: "1年以内", score: 1 },
+                    { text: "1-3年", score: 2 },
+                    { text: "3-5年", score: 3 },
+                    { text: "5年以上", score: 4 }
+                ]
+            },
+            {
+                question: "8. 您家庭月收入中可用于投资的比例是？",
+                options: [
+                    { text: "10%以内", score: 1 },
+                    { text: "10%-30%", score: 2 },
+                    { text: "30%-50%", score: 3 },
+                    { text: "50%以上", score: 4 }
+                ]
+            },
+            {
+                question: "9. 您对金融知识的了解程度？",
+                options: [
+                    { text: "完全不了解", score: 1 },
+                    { text: "了解一些基础概念", score: 2 },
+                    { text: "有一定投资经验", score: 3 },
+                    { text: "较为专业", score: 4 }
+                ]
+            },
+            {
+                question: "10. 您希望的投资收益年化是多少？",
+                options: [
+                    { text: "3%-5%（保守）", score: 1 },
+                    { text: "5%-8%（稳健）", score: 2 },
+                    { text: "8%-12%（进取）", score: 3 },
+                    { text: "12%以上（激进）", score: 4 }
+                ]
+            }
+        ];
+
+        // 当前题目索引
+        let currentQuestion = 0;
+        // 用户得分
+        let userScore = 0;
+        // 用户答案
+        let userAnswers = [];
+
+        // 初始化
+        function init() {
+            showQuestion(0);
+        }
+
+        // 显示题目
+        function showQuestion(index) {
+            const q = questions[index];
+            const box = document.getElementById('questionBox');
+            
+            let html = `<div class="question-card">
+                <h3 style="margin-bottom: var(--spacing-4); font-size: 18px; font-weight: 600;">${q.question}</h3>
+                <div style="display: flex; flex-direction: column; gap: 8px;">`;
+            
+            q.options.forEach((opt, i) => {
+                const isSelected = userAnswers[index] === i ? 'selected' : '';
+                html += `<button class="option-btn ${isSelected}" onclick="selectOption(${index}, ${i})">${opt.text}</button>`;
+            });
+            
+            html += `</div></div>`;
+            box.innerHTML = html;
+            
+            // 更新进度
+            updateProgress();
+        }
+
+        // 选择选项
+        function selectOption(qIndex, optIndex) {
+            userAnswers[qIndex] = optIndex;
+            userScore = questions[qIndex].options[optIndex].score;
+            
+            // 更新UI
+            const buttons = document.querySelectorAll('.option-btn');
+            buttons.forEach((btn, i) => {
+                btn.classList.remove('selected');
+                if (i === optIndex) {
+                    btn.classList.add('selected');
+                }
+            });
+            
+            // 启用下一题按钮
+            document.getElementById('nextBtn').disabled = false;
+        }
+
+        // 下一题
+        function next() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+                
+                // 更新按钮显示
+                document.getElementById('prevBtn').style.display = 'block';
+                
+                // 最后一题时
+                if (currentQuestion === questions.length - 1) {
+                    document.getElementById('nextBtn').textContent = '查看结果';
+                }
+            } else {
+                // 显示结果
+                showResult();
+            }
+        }
+
+        // 上一题
+        function prev() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+                
+                document.getElementById('prevBtn').style.display = currentQuestion === 0 ? 'none' : 'block';
+                document.getElementById('nextBtn').textContent = '下一题 →';
+                document.getElementById('nextBtn').disabled = userAnswers[currentQuestion] === undefined;
+            }
+        }
+
+        // 更新进度
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            document.getElementById('progressText').textContent = `第 ${currentQuestion + 1} 题 / 共 ${questions.length} 题`;
+            document.getElementById('progressPct').textContent = Math.round(progress) + '%';
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        // 计算总分
+        function calculateTotalScore() {
+            let total = 0;
+            userAnswers.forEach((optIndex, qIndex) => {
+                total += questions[qIndex].options[optIndex].score;
+            });
+            return total;
+        }
+
+        // 显示结果
+        function showResult() {
+            const totalScore = calculateTotalScore();
+            const maxScore = questions.length * 4; // 每题最高4分
+            const scorePercent = (totalScore / maxScore) * 100;
+            
+            let type, color, desc, products;
+            
+            if (scorePercent <= 25) {
+                type = '保守型';
+                color = '#4CAF50';
+                desc = '您属于保守型投资者，风险承受能力较低。适合选择低风险、收益稳定的产品，如货币基金、定期存款、国债等。';
+                products = [
+                    { name: '货币基金', icon: '💰', risk: '低', return: '3%-5%' },
+                    { name: '定期存款', icon: '🏦', risk: '低', return: '2%-4%' },
+                    { name: '国债', icon: '📜', risk: '低', return: '3%-5%' }
+                ];
+            } else if (scorePercent <= 50) {
+                type = '稳健型';
+                color = '#2196F3';
+                desc = '您属于稳健型投资者，能承受一定风险，追求稳健增值。适合选择中低风险产品，如债券基金、混合基金、银行理财等。';
+                products = [
+                    { name: '债券基金', icon: '📊', risk: '中低', return: '5%-8%' },
+                    { name: '混合基金', icon: '📈', risk: '中', return: '8%-12%' },
+                    { name: '银行理财', icon: '🏦', risk: '中低', return: '4%-7%' }
+                ];
+            } else if (scorePercent <= 75) {
+                type = '进取型';
+                color = '#FF9800';
+                desc = '您属于进取型投资者，风险承受能力较强，追求较高收益。适合选择中高风险产品，如股票基金、指数基金等。';
+                products = [
+                    { name: '股票基金', icon: '📈', risk: '中高', return: '10%-20%' },
+                    { name: '指数基金', icon: '📊', risk: '中', return: '8%-15%' },
+                    { name: '偏股混合基金', icon: '💼', risk: '中高', return: '12%-18%' }
+                ];
+            } else {
+                type = '激进型';
+                color = '#F44336';
+                desc = '您属于激进型投资者，风险承受能力强，追求高收益。适合选择高风险高回报产品，如股票、期货等。';
+                products = [
+                    { name: '股票投资', icon: '📈', risk: '高', return: '不确定' },
+                    { name: '指数增强基金', icon: '📊', risk: '高', return: '15%-30%' },
+                    { name: '主题基金', icon: '🎯', risk: '高', return: '15%-25%' }
+                ];
+            }
+            
+            // 生成结果HTML
+            let productsHtml = '';
+            products.forEach(p => {
+                productsHtml += `<div class="product-rec">
+                    <div style="font-size: 32px;">${p.icon}</div>
+                    <div>
+                        <div style="font-weight: 600; margin-bottom: 4px;">${p.name}</div>
+                        <div style="font-size: 13px; color: #666;">
+                            风险等级：<span style="color: ${color};">${p.risk}</span> |
+                            预期收益：${p.return}
+                        </div>
+                    </div>
+                </div>`;
+            });
+            
+            const resultHtml = `
+                <div class="result-box" style="background: ${color}10; border: 2px solid ${color};">
+                    <div class="type-badge" style="background: ${color}; color: white;">${type}</div>
+                    <h2 style="margin-bottom: var(--spacing-4);">您的风险承受等级</h2>
+                    <p style="font-size: 16px; color: #666; line-height: 1.8; margin-bottom: var(--spacing-6);">${desc}</p>
+                    
+                    <h3 style="margin-bottom: var(--spacing-4); font-size: 18px;">📋 推荐产品</h3>
+                    <div style="margin-bottom: var(--spacing-6);">
+                        ${productsHtml}
+                    </div>
+                    
+                    <div style="display: flex; gap: var(--spacing-3); justify-content: center; flex-wrap: wrap;">
+                        <button class="btn btn-primary" onclick="location.reload()">重新测试</button>
+                        <a href="../service-request.html" class="btn btn-outline">获取专业建议</a>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('questionArea').style.display = 'none';
+            document.getElementById('resultArea').innerHTML = resultHtml;
+            document.getElementById('resultArea').style.display = 'block';
+        }
+
+        // 页面加载后初始化
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    </script>
 </body>
 </html>
