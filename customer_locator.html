@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ourlyg 客户定位 & 主动获客系统</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0f0f1a; color: #e0e0f0; min-height: 100vh; }
+  
+  .header { background: linear-gradient(135deg, #1a1a2e, #16213e); padding: 20px 32px; border-bottom: 1px solid #2a2a4a; display: flex; align-items: center; justify-content: space-between; }
+  .header h1 { font-size: 22px; font-weight: 700; background: linear-gradient(90deg, #7c5cfc, #5caafc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .header .stats { display: flex; gap: 24px; }
+  .stat { text-align: center; }
+  .stat-num { font-size: 24px; font-weight: 700; color: #7c5cfc; }
+  .stat-label { font-size: 11px; color: #888; margin-top: 2px; }
+  
+  .main { display: grid; grid-template-columns: 1fr 1fr; gap: 0; height: calc(100vh - 70px); }
+  
+  .panel { padding: 20px; overflow-y: auto; border-right: 1px solid #1a1a2e; }
+  .panel:last-child { border-right: none; }
+  
+  .panel-title { font-size: 14px; font-weight: 600; color: #aaa; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .panel-title::before { content: ''; display: inline-block; width: 3px; height: 14px; background: #7c5cfc; border-radius: 2px; }
+  
+  /* Step1: 搜索面板 */
+  .search-panel { background: #12121f; }
+  .platform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+  .platform-btn { background: #1a1a2e; border: 1px solid #2a2a4a; border-radius: 10px; padding: 12px; cursor: pointer; text-align: center; transition: all 0.2s; text-decoration: none; color: inherit; display: block; }
+  .platform-btn:hover { border-color: #7c5cfc; background: #1e1e35; transform: translateY(-1px); }
+  .platform-btn .icon { font-size: 22px; margin-bottom: 4px; }
+  .platform-btn .name { font-size: 12px; font-weight: 600; }
+  .platform-btn .hint { font-size: 10px; color: #666; margin-top: 2px; }
+  
+  .search-input-group { display: flex; gap: 8px; margin-bottom: 12px; }
+  .search-input { flex: 1; background: #1a1a2e; border: 1px solid #2a2a4a; border-radius: 8px; padding: 10px 14px; color: #e0e0f0; font-size: 13px; outline: none; }
+  .search-input:focus { border-color: #7c5cfc; }
+  .btn { background: #7c5cfc; border: none; border-radius: 8px; padding: 10px 18px; color: white; font-size: 13px; cursor: pointer; font-weight: 600; transition: all 0.2s; }
+  .btn:hover { background: #9174ff; }
+  .btn-sm { padding: 6px 12px; font-size: 12px; border-radius: 6px; }
+  .btn-success { background: #22c55e; }
+  .btn-success:hover { background: #16a34a; }
+  .btn-warn { background: #f59e0b; }
+  .btn-outline { background: transparent; border: 1px solid #7c5cfc; color: #7c5cfc; }
+  .btn-outline:hover { background: #7c5cfc; color: white; }
+  
+  .keywords-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tag { background: #1a1a35; border: 1px solid #3a3a60; border-radius: 20px; padding: 4px 12px; font-size: 11px; cursor: pointer; transition: all 0.15s; color: #aaa; }
+  .tag:hover, .tag.active { background: #7c5cfc22; border-color: #7c5cfc; color: #a88dff; }
+  
+  /* 需求列表 */
+  .demand-list { space-y: 10px; }
+  .demand-item { background: #1a1a2e; border: 1px solid #2a2a4a; border-radius: 10px; padding: 14px; margin-bottom: 10px; cursor: pointer; transition: all 0.2s; }
+  .demand-item:hover { border-color: #7c5cfc55; background: #1e1e38; }
+  .demand-item.selected { border-color: #7c5cfc; background: #1e1e40; }
+  .demand-title { font-size: 13px; font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
+  .demand-meta { display: flex; gap: 10px; flex-wrap: wrap; }
+  .badge { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+  .badge-source { background: #1e3a5f; color: #60a5fa; }
+  .badge-budget { background: #1a3a1a; color: #4ade80; }
+  .badge-urgent { background: #3a1a1a; color: #f87171; }
+  .badge-high { background: #3a2a1a; color: #fbbf24; }
+  .badge-medium { background: #1a2a3a; color: #94a3b8; }
+  
+  /* 右侧：客户定位 & 联系 */
+  .locate-panel { background: #0f0f1a; }
+  
+  .locate-form { background: #1a1a2e; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+  .form-row { margin-bottom: 12px; }
+  .form-label { font-size: 11px; color: #888; margin-bottom: 6px; font-weight: 600; text-transform: uppercase; }
+  .form-input { width: 100%; background: #12121f; border: 1px solid #2a2a4a; border-radius: 8px; padding: 9px 12px; color: #e0e0f0; font-size: 13px; outline: none; }
+  .form-input:focus { border-color: #7c5cfc; }
+  textarea.form-input { resize: vertical; min-height: 80px; font-family: inherit; }
+  
+  .contact-preview { background: #12121f; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+  .contact-section { margin-bottom: 14px; }
+  .contact-section-title { font-size: 11px; color: #888; margin-bottom: 8px; font-weight: 600; }
+  .contact-channel { display: flex; align-items: center; gap: 8px; background: #1a1a2e; border-radius: 8px; padding: 8px 12px; margin-bottom: 6px; }
+  .contact-channel .channel-icon { font-size: 16px; width: 24px; }
+  .contact-channel .channel-info { flex: 1; }
+  .contact-channel .channel-name { font-size: 12px; font-weight: 600; }
+  .contact-channel .channel-value { font-size: 11px; color: #888; font-family: monospace; }
+  .contact-channel .channel-status { font-size: 10px; padding: 2px 6px; border-radius: 10px; }
+  .status-found { background: #1a3a1a; color: #4ade80; }
+  .status-search { background: #3a2a1a; color: #fbbf24; }
+  
+  .message-box { background: #12121f; border: 1px solid #2a2a4a; border-radius: 8px; padding: 12px; font-size: 12px; line-height: 1.7; color: #c0c0d0; white-space: pre-wrap; font-family: inherit; max-height: 200px; overflow-y: auto; }
+  
+  .action-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+  
+  /* 已添加客户列表 */
+  .customer-list { margin-top: 16px; }
+  .customer-item { background: #1a1a2e; border: 1px solid #2a2a4a; border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+  .customer-avatar { width: 32px; height: 32px; background: linear-gradient(135deg, #7c5cfc, #5caafc); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+  .customer-info { flex: 1; min-width: 0; }
+  .customer-name { font-size: 12px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .customer-source { font-size: 10px; color: #666; }
+  .customer-status { font-size: 10px; padding: 2px 8px; border-radius: 10px; flex-shrink: 0; }
+  .s-pending { background: #3a2a1a; color: #fbbf24; }
+  .s-contacted { background: #1a2a4a; color: #60a5fa; }
+  .s-replied { background: #1a3a1a; color: #4ade80; }
+  .s-converted { background: #2a1a4a; color: #a78bfa; }
+  
+  .empty-hint { text-align: center; color: #444; font-size: 13px; padding: 32px 0; }
+  .empty-hint div { margin-bottom: 8px; font-size: 28px; }
+  
+  .divider { border: none; border-top: 1px solid #1a1a2e; margin: 16px 0; }
+  
+  /* 通知 */
+  .toast { position: fixed; top: 20px; right: 20px; background: #1a3a1a; border: 1px solid #22c55e; border-radius: 10px; padding: 12px 20px; font-size: 13px; color: #4ade80; z-index: 9999; animation: slideIn 0.3s ease; }
+  @keyframes slideIn { from { transform: translateX(100px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+  
+  .search-results-area { max-height: calc(100vh - 400px); overflow-y: auto; }
+  
+  /* 快捷搜索词 */
+  .quick-search { margin-bottom: 16px; }
+  .quick-search-title { font-size: 11px; color: #666; margin-bottom: 8px; }
+  
+  .progress-bar { background: #1a1a2e; border-radius: 4px; height: 4px; margin: 8px 0; overflow: hidden; }
+  .progress-fill { background: linear-gradient(90deg, #7c5cfc, #5caafc); height: 100%; border-radius: 4px; transition: width 0.5s; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Ourlyg 客户定位系统</h1>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num" id="stat-total">0</div>
+      <div class="stat-label">总客户</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="stat-pending" style="color:#fbbf24">0</div>
+      <div class="stat-label">待联系</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="stat-contacted" style="color:#60a5fa">0</div>
+      <div class="stat-label">已联系</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" id="stat-converted" style="color:#4ade80">0</div>
+      <div class="stat-label">已成交</div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <!-- 左侧：需求搜索 -->
+  <div class="panel search-panel">
+    <div class="panel-title">需求搜索平台</div>
+    
+    <div class="platform-grid">
+      <a href="https://www.zbj.com/xq/sysjfx/" target="_blank" class="platform-btn">
+        <div class="icon">🐷</div>
+        <div class="name">猪八戒</div>
+        <div class="hint">数据分析需求大厅</div>
+      </a>
+      <a href="https://www.zbj.com/xq/sheji/ppt/" target="_blank" class="platform-btn">
+        <div class="icon">📊</div>
+        <div class="name">猪八戒PPT</div>
+        <div class="hint">PPT设计需求</div>
+      </a>
+      <a href="https://www.v2ex.com/go/jobs" target="_blank" class="platform-btn">
+        <div class="icon">💻</div>
+        <div class="name">V2EX外包</div>
+        <div class="hint">程序员外包项目</div>
+      </a>
+      <a href="https://www.zhihu.com/search?type=content&q=%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90+%E6%B1%82%E5%8A%A9" target="_blank" class="platform-btn">
+        <div class="icon">💡</div>
+        <div class="name">知乎求助</div>
+        <div class="hint">数据分析求助帖</div>
+      </a>
+      <a href="https://www.lagou.com/wn/jobs?kd=%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90&needAddtionalResult=false&isSchoolJob=0" target="_blank" class="platform-btn">
+        <div class="icon">🎯</div>
+        <div class="name">拉勾网</div>
+        <div class="hint">数据分析兼职</div>
+      </a>
+      <a href="https://www.freelancer.cn/jobs/python/" target="_blank" class="platform-btn">
+        <div class="icon">🌐</div>
+        <div class="name">Freelancer</div>
+        <div class="hint">Python项目外包</div>
+      </a>
+      <a href="https://www.upwork.com/search/jobs/?q=data+analysis+python&sort=recency" target="_blank" class="platform-btn">
+        <div class="icon">🔥</div>
+        <div class="name">Upwork</div>
+        <div class="hint">国际数据分析</div>
+      </a>
+      <a href="https://bbs.csdn.net/forums/job?typeId=1" target="_blank" class="platform-btn">
+        <div class="icon">👨‍💻</div>
+        <div class="name">CSDN外包</div>
+        <div class="hint">开发外包版块</div>
+      </a>
+    </div>
+    
+    <hr class="divider">
+    
+    <div class="panel-title">快速录入需求</div>
+    <div class="quick-search">
+      <div class="quick-search-title">快速搜索关键词（点击填入）</div>
+      <div class="keywords-tags">
+        <span class="tag" onclick="fillKeyword('数据分析 Python')">数据分析</span>
+        <span class="tag" onclick="fillKeyword('Excel自动化报表')">Excel自动化</span>
+        <span class="tag" onclick="fillKeyword('PPT制作设计')">PPT设计</span>
+        <span class="tag" onclick="fillKeyword('爬虫数据采集')">爬虫</span>
+        <span class="tag" onclick="fillKeyword('数据可视化大屏')">数据可视化</span>
+        <span class="tag" onclick="fillKeyword('网站开发前端')">网站开发</span>
+        <span class="tag" onclick="fillKeyword('SPSS数据分析论文')">SPSS论文</span>
+        <span class="tag" onclick="fillKeyword('小程序开发')">小程序</span>
+      </div>
+    </div>
+    
+    <!-- 手动录入需求 -->
+    <div class="form-row">
+      <div class="form-label">需求标题</div>
+      <input class="form-input" id="inp-title" placeholder="从平台复制需求标题...">
+    </div>
+    <div class="form-row">
+      <div class="form-label">来源平台</div>
+      <select class="form-input" id="inp-source">
+        <option>猪八戒网</option>
+        <option>知乎</option>
+        <option>V2EX</option>
+        <option>CSDN</option>
+        <option>拉勾网</option>
+        <option>Upwork</option>
+        <option>其他</option>
+      </select>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px" class="form-row">
+      <div>
+        <div class="form-label">预算</div>
+        <input class="form-input" id="inp-budget" placeholder="¥500-2000">
+      </div>
+      <div>
+        <div class="form-label">需求链接</div>
+        <input class="form-input" id="inp-url" placeholder="https://...">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">需求描述（可选）</div>
+      <textarea class="form-input" id="inp-desc" style="min-height:60px" placeholder="粘贴需求详情，系统会自动提取联系方式..."></textarea>
+    </div>
+    <button class="btn" onclick="addDemand()" style="width:100%">+ 添加需求 / 定位客户</button>
+    
+    <!-- 需求列表 -->
+    <div id="demand-list" class="demand-list" style="margin-top:16px">
+      <div class="empty-hint"><div>📋</div>点击右上角平台 → 复制需求 → 填入上方表单</div>
+    </div>
+  </div>
+  
+  <!-- 右侧：客户定位 & 联系 -->
+  <div class="panel locate-panel">
+    <div class="panel-title">客户定位 & 联系</div>
+    
+    <!-- 全网定位搜索 -->
+    <div class="locate-form">
+      <div class="form-label" style="margin-bottom:10px;font-size:12px;color:#aaa">全网定位客户（从需求提取客户ID，搜索全网联系方式）</div>
+      <div class="search-input-group">
+        <input class="search-input" id="locate-input" placeholder="输入客户昵称/公司名...">
+        <button class="btn" onclick="locateCustomer()">定位</button>
+      </div>
+      <div id="locate-results" style="display:none">
+        <div style="font-size:11px;color:#666;margin-bottom:8px">搜索以下链接找到客户联系方式：</div>
+        <div id="locate-links" style="display:flex;flex-direction:column;gap:6px"></div>
+      </div>
+    </div>
+    
+    <!-- 联系消息生成器 -->
+    <div class="contact-preview" id="message-generator" style="display:none">
+      <div class="contact-section">
+        <div class="contact-section-title">联系渠道（找到的联系方式）</div>
+        <div id="contact-channels"></div>
+      </div>
+      <div class="contact-section">
+        <div class="contact-section-title">自动生成联系消息</div>
+        <div class="message-box" id="contact-message"></div>
+      </div>
+      <div class="action-buttons" style="margin-top:12px">
+        <button class="btn btn-sm" onclick="copyMessage()">复制消息</button>
+        <button class="btn btn-sm btn-success" onclick="markContacted()">标记已联系</button>
+        <button class="btn btn-sm btn-warn" onclick="markReplied()">已收到回复</button>
+        <button class="btn btn-sm" style="background:#7c3aed" onclick="markConverted()">成交！</button>
+      </div>
+    </div>
+    
+    <hr class="divider">
+    
+    <!-- 客户列表 -->
+    <div class="panel-title">客户数据库</div>
+    <div id="customer-list">
+      <div class="empty-hint"><div>👥</div>添加需求后，客户自动录入这里</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// 数据存储
+let customers = JSON.parse(localStorage.getItem('ourlyg_customers') || '[]');
+let selectedCustomerId = null;
+
+// 联系消息模板
+const MESSAGE_TEMPLATES = {
+  '数据分析': (info) => `您好！
+
+看到您在${info.source}发布的【${info.title}】需求。
+
+我是Ourlyg AI服务，专注Python/Excel数据分析，已完成50+项目。
+
+初步评估：
+- 工作量：2-3工作日
+- 报价：${info.budget || '¥500-3000，视具体需求'}
+- 交付：分析报告+可视化+源码
+- 修改：免费1次
+
+联系我：
+📧 contact@ourlyg.com
+💬 微信：ourlyg_ai
+🌐 ourlyg.com
+
+期待合作！`,
+  
+  'PPT': (info) => `您好！
+
+看到您在${info.source}发布的【${info.title}】需求。
+
+我是Ourlyg AI设计服务，专注PPT/报告设计。
+
+报价：${info.budget || '¥300-800'}
+交付：1-2工作日，源文件
+
+📧 contact@ourlyg.com
+💬 微信：ourlyg_ai`,
+
+  '爬虫': (info) => `您好！
+
+看到您在${info.source}发布的【${info.title}】需求。
+
+我是Ourlyg AI服务，擅长Python爬虫/数据采集。
+
+报价：${info.budget || '¥500-5000，按项目复杂度'}
+交付：2-5工作日
+
+📧 contact@ourlyg.com
+💬 微信：ourlyg_ai`,
+
+  'default': (info) => `您好！
+
+看到您在${info.source}发布的【${info.title}】需求。
+
+我是Ourlyg AI服务，可以帮您高效解决这个需求。
+
+报价：${info.budget || '面议，视复杂度'}
+交付：2-3工作日
+
+📧 contact@ourlyg.com
+💬 微信：ourlyg_ai
+🌐 ourlyg.com
+
+期待合作！`
+};
+
+function generateMessage(info) {
+  const title = (info.title || '').toLowerCase();
+  if (title.includes('ppt') || title.includes('演示')) return MESSAGE_TEMPLATES['PPT'](info);
+  if (title.includes('爬虫') || title.includes('采集')) return MESSAGE_TEMPLATES['爬虫'](info);
+  if (title.includes('数据') || title.includes('excel') || title.includes('python')) return MESSAGE_TEMPLATES['数据分析'](info);
+  return MESSAGE_TEMPLATES['default'](info);
+}
+
+function generateId() {
+  return Math.random().toString(36).substr(2, 9);
+}
+
+function extractContacts(text) {
+  const contacts = {};
+  const emailRe = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+  const emails = text.match(emailRe);
+  if (emails) contacts.emails = [...new Set(emails)];
+  
+  const wechatRe = /(?:微信|wx|wechat)[：:\s]+([a-zA-Z0-9_\-]{5,20})/gi;
+  let m, wechats = [];
+  while ((m = wechatRe.exec(text)) !== null) wechats.push(m[1]);
+  if (wechats.length) contacts.wechat = [...new Set(wechats)];
+  
+  const phoneRe = /1[3-9]\d{9}/g;
+  const phones = text.match(phoneRe);
+  if (phones) contacts.phones = [...new Set(phones)];
+  
+  return contacts;
+}
+
+function addDemand() {
+  const title = document.getElementById('inp-title').value.trim();
+  if (!title) { showToast('请填写需求标题', 'warn'); return; }
+  
+  const desc = document.getElementById('inp-desc').value;
+  const contacts = extractContacts(desc);
+  
+  const customer = {
+    id: generateId(),
+    title: title,
+    source: document.getElementById('inp-source').value,
+    budget: document.getElementById('inp-budget').value || '未知',
+    url: document.getElementById('inp-url').value,
+    description: desc,
+    contacts: contacts,
+    message: generateMessage({
+      title: title,
+      source: document.getElementById('inp-source').value,
+      budget: document.getElementById('inp-budget').value,
+    }),
+    status: '待联系',
+    createdAt: new Date().toLocaleString('zh-CN'),
+    priority: getPriority(title),
+  };
+  
+  customers.unshift(customer);
+  saveCustomers();
+  renderCustomers();
+  renderStats();
+  
+  // 清空表单
+  ['inp-title','inp-budget','inp-url','inp-desc'].forEach(id => document.getElementById(id).value = '');
+  
+  // 自动选中新客户
+  selectCustomer(customer.id);
+  
+  showToast('需求已添加，客户档案已创建！');
+}
+
+function getPriority(title) {
+  title = title.toLowerCase();
+  if (title.includes('急') || title.includes('今天') || title.includes('urgent')) return 'URGENT';
+  if (title.includes('企业') || title.includes('公司') || title.includes('长期')) return 'HIGH';
+  return 'MEDIUM';
+}
+
+function selectCustomer(id) {
+  selectedCustomerId = id;
+  const c = customers.find(x => x.id === id);
+  if (!c) return;
+  
+  // 显示联系消息区
+  document.getElementById('message-generator').style.display = 'block';
+  document.getElementById('contact-message').textContent = c.message;
+  
+  // 渲染联系渠道
+  const channelsEl = document.getElementById('contact-channels');
+  channelsEl.innerHTML = '';
+  
+  const channels = [
+    { icon: '📧', name: '邮件', value: (c.contacts.emails || []).join(', ') || '未找到', status: (c.contacts.emails || []).length > 0 ? 'found' : 'search' },
+    { icon: '💬', name: '微信', value: (c.contacts.wechat || []).join(', ') || '未找到', status: (c.contacts.wechat || []).length > 0 ? 'found' : 'search' },
+    { icon: '📱', name: '电话', value: (c.contacts.phones || []).join(', ') || '未找到', status: (c.contacts.phones || []).length > 0 ? 'found' : 'search' },
+  ];
+  
+  channels.forEach(ch => {
+    channelsEl.innerHTML += `
+      <div class="contact-channel">
+        <div class="channel-icon">${ch.icon}</div>
+        <div class="channel-info">
+          <div class="channel-name">${ch.name}</div>
+          <div class="channel-value">${ch.value}</div>
+        </div>
+        <div class="channel-status status-${ch.status}">
+          ${ch.status === 'found' ? '已找到' : '需搜索'}
+        </div>
+      </div>
+    `;
+  });
+  
+  // 高亮选中项
+  document.querySelectorAll('.customer-item').forEach(el => el.classList.remove('selected'));
+  const el = document.querySelector(`[data-id="${id}"]`);
+  if (el) el.classList.add('selected');
+}
+
+function locateCustomer() {
+  const name = document.getElementById('locate-input').value.trim();
+  if (!name) return;
+  
+  const enc = encodeURIComponent(name);
+  const links = [
+    { name: '搜索邮箱', url: `https://www.baidu.com/s?wd=${enc}+邮箱+email`, icon: '📧' },
+    { name: '搜索微信', url: `https://www.baidu.com/s?wd=${enc}+微信号`, icon: '💬' },
+    { name: '搜索博客', url: `https://www.baidu.com/s?wd=${enc}+博客+个人网站`, icon: '🌐' },
+    { name: 'GitHub搜索', url: `https://github.com/search?q=${enc}&type=users`, icon: '🐱' },
+    { name: '知乎主页', url: `https://www.zhihu.com/search?type=people&q=${enc}`, icon: '💡' },
+    { name: '领英搜索', url: `https://www.linkedin.com/search/results/people/?keywords=${enc}`, icon: '💼' },
+    { name: '企查查', url: `https://www.qcc.com/search#!keyword=${enc}`, icon: '🏢' },
+  ];
+  
+  const resultsEl = document.getElementById('locate-results');
+  const linksEl = document.getElementById('locate-links');
+  resultsEl.style.display = 'block';
+  linksEl.innerHTML = links.map(l => `
+    <a href="${l.url}" target="_blank" style="display:flex;align-items:center;gap:8px;background:#1a1a2e;border:1px solid #2a2a4a;border-radius:8px;padding:8px 12px;text-decoration:none;color:#e0e0f0;font-size:12px;transition:all 0.2s;cursor:pointer" onmouseover="this.style.borderColor='#7c5cfc'" onmouseout="this.style.borderColor='#2a2a4a'">
+      <span>${l.icon}</span>
+      <span style="font-weight:600">${l.name}</span>
+      <span style="color:#666;font-size:10px;margin-left:auto">→ 打开搜索</span>
+    </a>
+  `).join('');
+}
+
+function copyMessage() {
+  const msg = document.getElementById('contact-message').textContent;
+  navigator.clipboard.writeText(msg).then(() => showToast('消息已复制到剪贴板！'));
+}
+
+function updateStatus(status) {
+  if (!selectedCustomerId) return;
+  customers = customers.map(c => c.id === selectedCustomerId ? {...c, status} : c);
+  saveCustomers();
+  renderCustomers();
+  renderStats();
+  showToast('状态已更新');
+}
+
+function markContacted() { updateStatus('已联系'); }
+function markReplied() { updateStatus('已回复'); }
+function markConverted() { updateStatus('已成交'); showToast('恭喜成交！汪！汪！', 'success'); }
+
+function fillKeyword(kw) {
+  document.getElementById('inp-title').value = kw;
+}
+
+function renderCustomers() {
+  const el = document.getElementById('customer-list');
+  if (customers.length === 0) {
+    el.innerHTML = '<div class="empty-hint"><div>👥</div>添加需求后，客户自动录入这里</div>';
+    return;
+  }
+  
+  const statusMap = { '待联系': 's-pending', '已联系': 's-contacted', '已回复': 's-replied', '已成交': 's-converted' };
+  const priorityMap = { 'URGENT': 'badge-urgent', 'HIGH': 'badge-high', 'MEDIUM': 'badge-medium' };
+  
+  el.innerHTML = customers.map(c => `
+    <div class="customer-item" data-id="${c.id}" onclick="selectCustomer('${c.id}')" style="${c.id === selectedCustomerId ? 'border-color:#7c5cfc;background:#1e1e40' : ''}">
+      <div class="customer-avatar">${c.source[0] || '?'}</div>
+      <div class="customer-info">
+        <div class="customer-name">${c.title}</div>
+        <div class="customer-source" style="display:flex;gap:6px;margin-top:3px;align-items:center">
+          <span class="badge badge-source">${c.source}</span>
+          <span class="badge ${priorityMap[c.priority] || 'badge-medium'}">${c.priority}</span>
+          <span style="color:#555;font-size:9px">${c.budget}</span>
+        </div>
+      </div>
+      <div class="customer-status ${statusMap[c.status] || 's-pending'}">${c.status}</div>
+    </div>
+  `).join('');
+}
+
+function renderStats() {
+  document.getElementById('stat-total').textContent = customers.length;
+  document.getElementById('stat-pending').textContent = customers.filter(c => c.status === '待联系').length;
+  document.getElementById('stat-contacted').textContent = customers.filter(c => c.status === '已联系' || c.status === '已回复').length;
+  document.getElementById('stat-converted').textContent = customers.filter(c => c.status === '已成交').length;
+}
+
+function saveCustomers() {
+  localStorage.setItem('ourlyg_customers', JSON.stringify(customers));
+}
+
+function showToast(msg, type) {
+  const existing = document.querySelector('.toast');
+  if (existing) existing.remove();
+  
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = (type === 'success' ? '🎉 ' : type === 'warn' ? '⚠️ ' : '✅ ') + msg;
+  if (type === 'warn') { toast.style.background = '#3a2a1a'; toast.style.borderColor = '#f59e0b'; toast.style.color = '#fbbf24'; }
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 3000);
+}
+
+// 初始化
+renderCustomers();
+renderStats();
+</script>
+</body>
+</html>
