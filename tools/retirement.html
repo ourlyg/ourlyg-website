@@ -313,6 +313,71 @@
     </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            // 养老金计算器
+            function calculateRetirement() {
+                // 获取输入值
+                const currentAge = parseInt(document.getElementById('currentAge').value);
+                const retireAge = parseInt(document.getElementById('retireAge').value);
+                const lifeAge = parseInt(document.getElementById('lifeAge').value);
+                const monthlyIncome = parseFloat(document.getElementById('monthlyIncome').value);
+                const monthlyExpense = parseFloat(document.getElementById('monthlyExpense').value);
+                const currentSavings = parseFloat(document.getElementById('currentSavings').value) || 0;
+                const expectedReturn = parseFloat(document.getElementById('expectedReturn').value) / 100 / 12; // 月收益率
+                const inflationRate = parseFloat(document.getElementById('inflationRate').value) / 100 / 12; // 月通胀率
+
+                // 计算年数
+                const yearsToRetire = Math.max(0, retireAge - currentAge);
+                const yearsAfterRetire = Math.max(0, lifeAge - retireAge);
+
+                // 计算退休时需要的总资产
+                const annualExpense = monthlyExpense * 12;
+                const futureExpense = annualExpense * Math.pow(1 + inflationRate * 12, yearsAfterRetire);
+                const neededAtRetire = futureExpense * yearsAfterRetire;
+
+                // 计算未来储蓄（复利）
+                const monthsToRetire = yearsToRetire * 12;
+                const monthlySave = monthlyIncome - monthlyExpense;
+
+                if (monthlySave <= 0) {
+                    // 无法储蓄
+                    document.getElementById('accumulatedSavings').textContent = '需要增加储蓄';
+                    document.getElementById('shortfall').textContent = '–';
+                    document.getElementById('yearsToRetire').textContent = yearsToRetire;
+                    document.getElementById('retireYears').textContent = yearsAfterRetire;
+
+                    document.getElementById('resultSection').style.display = 'block';
+                    return;
+                }
+
+                // 计算退休时的总资产
+                const accumulatedSavings = currentSavings * Math.pow(1 + expectedReturn, monthsToRetire) +
+                    monthlySave * ((Math.pow(1 + expectedReturn, monthsToRetire) - 1) / expectedReturn);
+
+                // 计算缺口
+                const shortfall = Math.max(0, neededAtRetire - accumulatedSavings);
+
+                // 显示结果
+                document.getElementById('accumulatedSavings').textContent = accumulatedSavings.toFixed(0);
+                document.getElementById('shortfall').textContent = shortfall > 0 ? shortfall.toFixed(0) : '无';
+                document.getElementById('yearsToRetire').textContent = yearsToRetire;
+                document.getElementById('retireYears').textContent = yearsAfterRetire;
+
+                // 显示结果区域
+                document.getElementById('resultSection').style.display = 'block';
+            }
+
+            // 页面加载后初始化
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', function() {
+                    const calculateBtn = document.querySelector('button[onclick="calculateRetirement()"]');
+                    if (calculateBtn) {
+                        calculateBtn.addEventListener('click', calculateRetirement);
+                    }
+                });
+            }
+        </script>
     <!-- 移动端底部Tab导航 -->
     <nav class="mobile-bottom-nav">
         <a href="../index.html">
