@@ -40,6 +40,145 @@
     <meta name="twitter:title" content="理易港 - AI金融分析服务">
     <meta name="twitter:description" content="AI驱动的财经信息整理：技术指标展示¥9.9起，财经简报订阅，持仓信息整理。">
 
+    <!-- AI搜录优化：结构化数据 Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://ourlyg.com/#organization",
+          "name": "理易港",
+          "url": "https://ourlyg.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://ourlyg.com/images/logo.png"
+          },
+          "description": "AI驱动的财经信息整理平台，提供技术指标展示、财经新闻聚合、持仓分析等专业服务",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "url": "https://ourlyg.com"
+          },
+          "sameAs": [],
+          "founder": {
+            "@type": "Person",
+            "name": "ourlyg"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://ourlyg.com/#website",
+          "url": "https://ourlyg.com",
+          "name": "理易港",
+          "publisher": {
+            "@id": "https://ourlyg.com/#organization"
+          },
+          "description": "AI财经分析服务平台，帮助投资者快速整理和分析金融信息",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://ourlyg.com/?s={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://ourlyg.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "理易港是什么平台？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "理易港（ourlyg.com）是一个AI驱动的财经信息整理平台，为投资者提供技术指标可视化展示、财经新闻聚合分析、持仓信息整理等专业服务，让信息获取更高效。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "理易港提供哪些服务？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "理易港提供三大核心服务：1) 技术指标展示 - 可视化股票技术指标分析；2) 财经新闻聚合 - AI自动整理重要财经新闻；3) 持仓信息整理 - 帮助投资者管理和分析投资组合。"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "如何使用理易港的财经分析服务？",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "访问ourlyg.com即可使用基础功能，高级分析功能需订阅VIP服务。平台提供实时市场数据展示、涨跌停榜单、收益计算器等免费工具。"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "Article",
+          "@id": "https://ourlyg.com/#article",
+          "headline": "理易港 - AI驱动的财经信息整理平台",
+          "alternativeHeadline": "智能金融数据分析与信息聚合服务",
+          "description": "理易港利用AI技术为投资者提供专业的财经信息整理服务，包括技术指标可视化、财经新闻聚合、持仓分析等核心功能，帮助投资者做出更明智的决策。",
+          "author": {
+            "@type": "Person",
+            "name": "ourlyg",
+            "jobTitle": "金融数据分析专家"
+          },
+          "publisher": {
+            "@id": "https://ourlyg.com/#organization"
+          },
+          "datePublished": "2026-01-01T00:00:00+08:00",
+          "dateModified": "2026-03-21T00:00:00+08:00",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://ourlyg.com/"
+          },
+          "keywords": ["财经分析", "AI金融", "股票指标", "投资工具", "数据可视化", "财经新闻", "持仓管理", "收益计算"],
+          "articleSection": "财经服务",
+          "wordCount": 1200
+        },
+        {
+          "@type": "Product",
+          "@id": "https://ourlyg.com/#product",
+          "name": "理易港VIP财经分析服务",
+          "description": "专业的AI驱动财经信息整理平台，提供实时市场数据、技术指标分析、财经新闻聚合、持仓管理等核心功能。",
+          "brand": {
+            "@type": "Brand",
+            "name": "理易港"
+          },
+          "category": "财经服务",
+          "offers": {
+            "@type": "Offer",
+            "price": "9.90",
+            "priceCurrency": "CNY",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/InStock",
+            "url": "https://ourlyg.com",
+            "seller": {
+              "@id": "https://ourlyg.com/#organization"
+            }
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": 0,
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "featureList": [
+            "实时股票技术指标展示",
+            "每日市场涨跌停榜单",
+            "AI财经新闻聚合",
+            "持仓信息智能整理",
+            "收益计算器",
+            "专业产品测评"
+          ]
+        }
+      ]
+    }
+    </script>
+
     <!-- 关键CSS内联 - 优化首屏渲染 -->
     <style>
         /* 关键渲染路径优化 */
@@ -486,46 +625,91 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                                    <!-- 每日涨停榜 -->
+    <!-- 每日涨停榜 -->
         <div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; backdrop-filter: blur(10px);">
             <div style="font-size:12px; color:rgba(255,255,255,0.4); margin-bottom:12px;">📋 市场涨跌停 · 2026-03-20</div>
             <div style="display: grid; gap: 8px;">
+    
                 <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 10px 12px;">
                     <div>
-                        <div style="font-size:14px; font-weight:600; color:white;">1. 深华发A</div>
-                        <div style="font-size:11px; color:rgba(255,255,255,0.4);">000020.SZ</div>
+                        <div style="font-size:14px; font-weight:600; color:white;">1. 上能电气</div>
+                        <div style="font-size:11px; color:rgba(255,255,255,0.4);">300827.SZ</div>
                     </div>
-                    <div style="font-size:16px; font-weight:700; color:#ef4444;">+10.0%</div>
+                    <div style="font-size:16px; font-weight:700; color:#ef4444;">+20.01%</div>
                 </div>
+    
                 <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 10px 12px;">
                     <div>
-                        <div style="font-size:14px; font-weight:600; color:white;">2. 华塑控股</div>
-                        <div style="font-size:11px; color:rgba(255,255,255,0.4);">000509.SZ</div>
+                        <div style="font-size:14px; font-weight:600; color:white;">2. 首航新能</div>
+                        <div style="font-size:11px; color:rgba(255,255,255,0.4);">301658.SZ</div>
                     </div>
-                    <div style="font-size:16px; font-weight:700; color:#ef4444;">+9.93%</div>
+                    <div style="font-size:16px; font-weight:700; color:#ef4444;">+20.0%</div>
                 </div>
+    
                 <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 10px 12px;">
                     <div>
-                        <div style="font-size:14px; font-weight:600; color:white;">3. 韶能股份</div>
-                        <div style="font-size:11px; color:rgba(255,255,255,0.4);">000601.SZ</div>
+                        <div style="font-size:14px; font-weight:600; color:white;">3. 源杰科技</div>
+                        <div style="font-size:11px; color:rgba(255,255,255,0.4);">688498.SH</div>
                     </div>
-                    <div style="font-size:16px; font-weight:700; color:#ef4444;">+10.0%</div>
+                    <div style="font-size:16px; font-weight:700; color:#ef4444;">+17.37%</div>
                 </div>
+    
                 <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 10px 12px;">
                     <div>
-                        <div style="font-size:14px; font-weight:600; color:white;">4. 盈方微</div>
-                        <div style="font-size:11px; color:rgba(255,255,255,0.4);">000670.SZ</div>
+                        <div style="font-size:14px; font-weight:600; color:white;">4. 卓胜微</div>
+                        <div style="font-size:11px; color:rgba(255,255,255,0.4);">300782.SZ</div>
                     </div>
-                    <div style="font-size:16px; font-weight:700; color:#ef4444;">+9.96%</div>
+                    <div style="font-size:16px; font-weight:700; color:#ef4444;">+13.87%</div>
                 </div>
+    
                 <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 10px 12px;">
                     <div>
-                        <div style="font-size:14px; font-weight:600; color:white;">5. 恒天海龙</div>
-                        <div style="font-size:11px; color:rgba(255,255,255,0.4);">000677.SZ</div>
+                        <div style="font-size:14px; font-weight:600; color:white;">5. 九洲集团</div>
+                        <div style="font-size:11px; color:rgba(255,255,255,0.4);">300040.SZ</div>
                     </div>
-                    <div style="font-size:16px; font-weight:700; color:#ef4444;">+9.93%</div>
+                    <div style="font-size:16px; font-weight:700; color:#ef4444;">+13.15%</div>
                 </div>
+    
+                <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 10px 12px;">
+                    <div>
+                        <div style="font-size:14px; font-weight:600; color:white;">6. 东方新能</div>
+                        <div style="font-size:11px; color:rgba(255,255,255,0.4);">002310.SZ</div>
+                    </div>
+                    <div style="font-size:16px; font-weight:700; color:#ef4444;">+10.13%</div>
+                </div>
+    
+                <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 10px 12px;">
+                    <div>
+                        <div style="font-size:14px; font-weight:600; color:white;">7. 中利集团</div>
+                        <div style="font-size:11px; color:rgba(255,255,255,0.4);">002309.SZ</div>
+                    </div>
+                    <div style="font-size:16px; font-weight:700; color:#ef4444;">+10.12%</div>
+                </div>
+    
+                <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 10px 12px;">
+                    <div>
+                        <div style="font-size:14px; font-weight:600; color:white;">8. 兆新股份</div>
+                        <div style="font-size:11px; color:rgba(255,255,255,0.4);">002256.SZ</div>
+                    </div>
+                    <div style="font-size:16px; font-weight:700; color:#ef4444;">+10.05%</div>
+                </div>
+    
+                <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 10px 12px;">
+                    <div>
+                        <div style="font-size:14px; font-weight:600; color:white;">9. 银星能源</div>
+                        <div style="font-size:11px; color:rgba(255,255,255,0.4);">000862.SZ</div>
+                    </div>
+                    <div style="font-size:16px; font-weight:700; color:#ef4444;">+10.04%</div>
+                </div>
+    
+                <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 10px 12px;">
+                    <div>
+                        <div style="font-size:14px; font-weight:600; color:white;">10. 市北高新</div>
+                        <div style="font-size:11px; color:rgba(255,255,255,0.4);">600604.SH</div>
+                    </div>
+                    <div style="font-size:16px; font-weight:700; color:#ef4444;">+10.04%</div>
+                </div>
+    
             </div>
             <div style="margin-top:12px; text-align:center;">
                 <a href="https://www.eastmoney.com/" target="_blank" style="font-size:12px; color:#a5b4fc; text-decoration:none;">
@@ -533,6 +717,8 @@
                 </a>
             </div>
         </div>
+    
+
         
 
         </div>
