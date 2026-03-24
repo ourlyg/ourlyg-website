@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP会员 - 理易港</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .vip-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 100px 0 80px;
+            color: white;
+            text-align: center;
+        }
+        .vip-hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 20px; }
+        .vip-hero h1 span {
+            background: linear-gradient(90deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pricing-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px 32px;
+            text-align: center;
+            border: 2px solid #e8eaf6;
+            height: 100%;
+        }
+        .pricing-card.featured {
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+        .plan-price { font-size: 56px; font-weight: 900; color: #1a1a2a; }
+        .btn-vip {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">理易港</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../services/index.html">AI分析服务</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../samples/index.html">样本报告</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">VIP会员</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="vip-hero">
+        <div class="container">
+            <h1>成为<span>VIP会员</span><br>让AI成为你的专属金融顾问</h1>
+            <p class="lead">每日早盘研判 · 持仓实时监控 · 个股深度分析 · 投资决策辅助</p>
+        </div>
+    </section>
+
+    <section class="py-5" style="background:#fafafe;">
+        <div class="container">
+            <div class="row justify-content-center g-4">
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <div class="text-primary fw-bold">月度会员</div>
+                        <div class="plan-price">¥19.9<span class="fs-5 text-muted">/月</span></div>
+                        <ul class="list-unstyled text-start my-4">
+                            <li>每日早盘综合研判报告</li>
+                            <li>持仓实时监控与提醒</li>
+                            <li>每月3次个股深度分析</li>
+                            <li>VIP专属微信群</li>
+                        </ul>
+                        <button class="btn btn-outline-primary w-100">选择月度</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-card featured">
+                        <div class="badge bg-warning text-dark mb-2">推荐</div>
+                        <div class="text-primary fw-bold">季度会员</div>
+                        <div class="plan-price">¥49.9<span class="fs-5 text-muted">/季</span></div>
+                        <div class="text-muted"><del>¥59.7</del> 省¥9.8</div>
+                        <ul class="list-unstyled text-start my-4">
+                            <li>每日早盘综合研判报告</li>
+                            <li>持仓实时监控与提醒</li>
+                            <li>每月5次个股深度分析</li>
+                            <li>VIP专属微信群</li>
+                            <li>季度投资策略会</li>
+                        </ul>
+                        <button class="btn-vip w-100">选择季度</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-card">
+                        <div class="text-primary fw-bold">年度会员</div>
+                        <div class="plan-price">¥169<span class="fs-5 text-muted">/年</span></div>
+                        <div class="text-muted"><del>¥238.8</del> 省¥69.8</div>
+                        <ul class="list-unstyled text-start my-4">
+                            <li>所有季度会员权益</li>
+                            <li>每月10次个股深度分析</li>
+                            <li>一对一投资咨询</li>
+                            <li>年度投资组合诊断</li>
+                        </ul>
+                        <button class="btn btn-outline-primary w-100">选择年度</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4 text-center">
+        <div class="container">
+            <p class="mb-0">理易港 ourlyg.com - 让理财更简单</p>
+        </div>
+    </footer>
+</body>
+</html>
