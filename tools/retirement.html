@@ -107,29 +107,29 @@
 
                             <div class="mb-4">
                                 <label class="form-label">退休后每月生活费用（元）</label>
-                                <input type="number" class="form-control" id="monthlyExpense" value="10000" min="1000" step="1000" oninput="calculate()">
+                                <input type="number" class="form-control" id="monthlyExpense" value="10000" min="1000" step="1000" oninput="calculateRetirement()">
                             </div>
                             <div class="mb-4">
                                 <label class="form-label">当前已有储蓄（元）</label>
-                                <input type="number" class="form-control" id="currentSaving" value="100000" min="0" step="10000" oninput="calculate()">
+                                <input type="number" class="form-control" id="currentSaving" value="100000" min="0" step="10000" oninput="calculateRetirement()">
                             </div>
                             <div class="mb-4">
                                 <label class="form-label">预计每月能储蓄（元）</label>
-                                <input type="number" class="form-control" id="monthlySaving" value="3000" min="0" step="500" oninput="calculate()">
+                                <input type="number" class="form-control" id="monthlySaving" value="3000" min="0" step="500" oninput="calculateRetirement()">
                             </div>
                             <div class="mb-4">
                                 <label class="form-label">预期年化投资收益率（%）</label>
-                                <input type="range" id="returnRate" min="1" max="12" value="5" step="0.5" oninput="syncRange('returnRate','returnRateVal'); calculate()">
+                                <input type="range" id="returnRate" min="1" max="12" value="5" step="0.5" oninput="syncRange('returnRate','returnRateVal'); calculateRetirement()">
                                 <div class="range-label"><span>1%</span><span id="returnRateVal" style="font-weight:600; color:var(--color-primary);">5%</span><span>12%</span></div>
                             </div>
                             <div class="mb-4">
                                 <label class="form-label">预期通货膨胀率（%）</label>
-                                <input type="range" id="inflationRate" min="1" max="6" value="3" step="0.5" oninput="syncRange('inflationRate','inflationRateVal'); calculate()">
+                                <input type="range" id="inflationRate" min="1" max="6" value="3" step="0.5" oninput="syncRange('inflationRate','inflationRateVal'); calculateRetirement()">
                                 <div class="range-label"><span>1%</span><span id="inflationRateVal" style="font-weight:600; color:var(--color-primary);">3%</span><span>6%</span></div>
                             </div>
                             <div class="mb-4">
                                 <label class="form-label">预计每月养老金收入（元）<span style="color:var(--color-text-hint); font-size:13px;">（可填0）</span></label>
-                                <input type="number" class="form-control" id="monthlyPension" value="2000" min="0" step="500" oninput="calculate()">
+                                <input type="number" class="form-control" id="monthlyPension" value="2000" min="0" step="500" oninput="calculateRetirement()">
                             </div>
                         </div>
                     </div>
@@ -315,67 +315,144 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
         <script>
-            // 养老金计算器
+            // 滑块同步函数
+            function syncRange(rangeId, displayId) {
+                const range = document.getElementById(rangeId);
+                const display = document.getElementById(displayId);
+                if (rangeId === 'returnRate' || rangeId === 'inflationRate') {
+                    display.textContent = range.value + '%';
+                } else {
+                    display.textContent = range.value + '岁';
+                }
+            }
+
+            // 退休计算器
             function calculateRetirement() {
                 // 获取输入值
                 const currentAge = parseInt(document.getElementById('currentAge').value);
                 const retireAge = parseInt(document.getElementById('retireAge').value);
                 const lifeAge = parseInt(document.getElementById('lifeAge').value);
-                const monthlyIncome = parseFloat(document.getElementById('monthlyIncome').value);
-                const monthlyExpense = parseFloat(document.getElementById('monthlyExpense').value);
-                const currentSavings = parseFloat(document.getElementById('currentSavings').value) || 0;
-                const expectedReturn = parseFloat(document.getElementById('expectedReturn').value) / 100 / 12; // 月收益率
+                const monthlyExpense = parseFloat(document.getElementById('monthlyExpense').value) || 0;
+                const currentSaving = parseFloat(document.getElementById('currentSaving').value) || 0;
+                const monthlySaving = parseFloat(document.getElementById('monthlySaving').value) || 0;
+                const returnRate = parseFloat(document.getElementById('returnRate').value) / 100 / 12; // 月收益率
                 const inflationRate = parseFloat(document.getElementById('inflationRate').value) / 100 / 12; // 月通胀率
+                const monthlyPension = parseFloat(document.getElementById('monthlyPension').value) || 0;
 
                 // 计算年数
                 const yearsToRetire = Math.max(0, retireAge - currentAge);
                 const yearsAfterRetire = Math.max(0, lifeAge - retireAge);
-
-                // 计算退休时需要的总资产
-                const annualExpense = monthlyExpense * 12;
-                const futureExpense = annualExpense * Math.pow(1 + inflationRate * 12, yearsAfterRetire);
-                const neededAtRetire = futureExpense * yearsAfterRetire;
-
-                // 计算未来储蓄（复利）
                 const monthsToRetire = yearsToRetire * 12;
-                const monthlySave = monthlyIncome - monthlyExpense;
 
-                if (monthlySave <= 0) {
-                    // 无法储蓄
-                    document.getElementById('accumulatedSavings').textContent = '需要增加储蓄';
-                    document.getElementById('shortfall').textContent = '–';
-                    document.getElementById('yearsToRetire').textContent = yearsToRetire;
-                    document.getElementById('retireYears').textContent = yearsAfterRetire;
+                // 计算退休时需要的资金目标（考虑通胀）
+                const annualExpenseToday = monthlyExpense * 12;
+                const monthlyExpenseAtRetire = monthlyExpense * Math.pow(1 + inflationRate * 12, yearsToRetire);
+                const annualExpenseAtRetire = monthlyExpenseAtRetire * 12;
 
-                    document.getElementById('resultSection').style.display = 'block';
-                    return;
-                }
+                // 考虑养老金收入后的净支出
+                const netMonthlyExpense = Math.max(0, monthlyExpenseAtRetire - monthlyPension);
+                const netAnnualExpense = netMonthlyExpense * 12;
 
-                // 计算退休时的总资产
-                const accumulatedSavings = currentSavings * Math.pow(1 + expectedReturn, monthsToRetire) +
-                    monthlySave * ((Math.pow(1 + expectedReturn, monthsToRetire) - 1) / expectedReturn);
+                // 退休时需要的总资金（按退休后收益率4%保守估计）
+                const retireReturnRate = 0.04;
+                const neededAtRetire = netAnnualExpense * yearsAfterRetire;
+
+                // 转换为今日购买力
+                const targetAmountToday = neededAtRetire / Math.pow(1 + inflationRate * 12, yearsToRetire);
+
+                // 计算未来积累资金
+                const accumulatedAtRetire = currentSaving * Math.pow(1 + returnRate, monthsToRetire) +
+                    monthlySaving * ((Math.pow(1 + returnRate, monthsToRetire) - 1) / returnRate) || 0;
+
+                // 转换为今日购买力
+                const accumulatedToday = accumulatedAtRetire / Math.pow(1 + inflationRate * 12, yearsToRetire);
 
                 // 计算缺口
-                const shortfall = Math.max(0, neededAtRetire - accumulatedSavings);
+                const gap = Math.max(0, targetAmountToday - accumulatedToday);
+
+                // 计算不同风险水平需要的月储蓄
+                const calculateNeededSaving = (rate) => {
+                    const r = rate / 100 / 12;
+                    if (r <= 0) return (targetAmountToday - currentSaving) / monthsToRetire;
+                    const fv = targetAmountToday * Math.pow(1 + inflationRate * 12, yearsToRetire);
+                    const currentFV = currentSaving * Math.pow(1 + r, monthsToRetire);
+                    return (fv - currentFV) * r / (Math.pow(1 + r, monthsToRetire) - 1);
+                };
+
+                const savingConservative = calculateNeededSaving(4);
+                const savingModerate = calculateNeededSaving(6);
+                const savingAggressive = calculateNeededSaving(8);
 
                 // 显示结果
-                document.getElementById('accumulatedSavings').textContent = accumulatedSavings.toFixed(0);
-                document.getElementById('shortfall').textContent = shortfall > 0 ? shortfall.toFixed(0) : '无';
-                document.getElementById('yearsToRetire').textContent = yearsToRetire;
-                document.getElementById('retireYears').textContent = yearsAfterRetire;
+                document.getElementById('targetAmount').textContent = formatMoney(targetAmountToday);
+                document.getElementById('targetNote').textContent = `相当于退休时 ${formatMoney(neededAtRetire, false)} 购买力`;
+                document.getElementById('yearsToRetire').textContent = yearsToRetire + ' 年';
+                document.getElementById('retireYears').textContent = yearsAfterRetire + ' 年';
+                document.getElementById('projectedAmount').textContent = formatMoney(accumulatedToday);
+                document.getElementById('gap').textContent = formatMoney(gap);
+                document.getElementById('gapLabel').textContent = gap > 0 ? '资金缺口' : '超额';
+                document.getElementById('gap').parentElement.querySelector('.value').style.color = gap > 0 ? '#FF5252' : '#00C853';
+                document.getElementById('savingConservative').textContent = formatMoney(savingConservative) + '/月';
+                document.getElementById('savingModerate').textContent = formatMoney(savingModerate) + '/月';
+                document.getElementById('savingAggressive').textContent = formatMoney(savingAggressive) + '/月';
 
-                // 显示结果区域
-                document.getElementById('resultSection').style.display = 'block';
+                // 生成资产积累进度预测
+                generatePhaseList(currentSaving, monthlySaving, returnRate, inflationRate, yearsToRetire, targetAmountToday);
+            }
+
+            // 格式化金额
+            function formatMoney(amount, isCompact = true) {
+                if (isNaN(amount) || amount < 0) return '0';
+                if (amount >= 100000000) return (amount / 100000000).toFixed(2) + ' 亿';
+                if (amount >= 10000) return (amount / 10000).toFixed(1) + ' 万';
+                return Math.floor(amount).toLocaleString('zh-CN');
+            }
+
+            // 生成资产积累进度预测
+            function generatePhaseList(currentSaving, monthlySaving, returnRate, inflationRate, yearsToRetire, targetAmountToday) {
+                const phaseList = document.getElementById('phaseList');
+                const phases = [
+                    { year: 0, label: '现在' },
+                    { year: yearsToRetire * 0.25, label: '25%' },
+                    { year: yearsToRetire * 0.5, label: '50%' },
+                    { year: yearsToRetire * 0.75, label: '75%' },
+                    { year: yearsToRetire, label: '退休' }
+                ];
+
+                let html = '';
+                phases.forEach(phase => {
+                    const months = phase.year * 12;
+                    const accumulated = currentSaving * Math.pow(1 + returnRate, months) +
+                        monthlySaving * ((Math.pow(1 + returnRate, months) - 1) / returnRate) || 0;
+                    const accumulatedToday = accumulated / Math.pow(1 + inflationRate * 12, phase.year);
+                    const percentage = Math.min(100, (accumulatedToday / targetAmountToday) * 100);
+
+                    html += `
+                        <div class="phase-row">
+                            <div class="phase-dot" style="background: ${phase.year === yearsToRetire ? '#667eea' : '#e0e0e0'}"></div>
+                            <div class="phase-bar-wrap">
+                                <div class="phase-bar" style="width: ${percentage}%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                            </div>
+                            <div style="min-width: 50px; text-align: right; font-size: 13px; color: var(--color-text-secondary);">
+                                ${phase.label}
+                            </div>
+                            <div style="min-width: 70px; text-align: right; font-weight: 600; font-size: 14px;">
+                                ${formatMoney(accumulatedToday)}
+                            </div>
+                        </div>
+                    `;
+                });
+
+                phaseList.innerHTML = html;
             }
 
             // 页面加载后初始化
             if (document.readyState === 'loading') {
                 document.addEventListener('DOMContentLoaded', function() {
-                    const calculateBtn = document.querySelector('button[onclick="calculateRetirement()"]');
-                    if (calculateBtn) {
-                        calculateBtn.addEventListener('click', calculateRetirement);
-                    }
+                    calculateRetirement();
                 });
+            } else {
+                calculateRetirement();
             }
         </script>
     <!-- 移动端底部Tab导航 -->
