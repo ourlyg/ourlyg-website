@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 百度统计 -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?67b56cbdd91b37f49d6c38510eabafa5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2026年第12周（3月24日-3月27日）A股市场周度复盘 - 全周大盘回顾、持仓表现分析、下周策略展望">
+    <title>周度市场复盘 | 2026年第12周（3.24-3.27）| 理易港</title>
+    <link rel="canonical" href="https://ourlyg.com/daily/report-20260328-weekly.html">
+    <meta property="og:title" content="周度市场复盘 - 2026年第12周（3月24日-3月27日）">
+    <meta property="og:description" content="全周大盘回顾、持仓表现分析、关税靴子落地前的下周策略展望">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .report-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+            padding: 80px 0 50px;
+            color: white;
+        }
+        .report-date { color: #94a3b8; font-size: 14px; }
+        .weekly-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #7c3aed, #4f46e5);
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e293b;
+            border-left: 4px solid #4f46e5;
+            padding-left: 12px;
+            margin-bottom: 20px;
+        }
+        .index-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        .index-card .idx-name { font-size: 13px; color: #64748b; margin-bottom: 4px; }
+        .index-card .idx-val { font-size: 22px; font-weight: 700; color: #1e293b; }
+        .index-card .idx-chg { font-size: 14px; font-weight: 600; margin-top: 4px; }
+        .idx-up { color: #ef4444; }
+        .idx-dn { color: #22c55e; }
+        .day-row { border-left: 3px solid #e2e8f0; padding: 14px 20px; margin-bottom: 12px; background: #f8fafc; border-radius: 0 8px 8px 0; }
+        .day-row.up-day { border-left-color: #ef4444; }
+        .day-row.dn-day { border-left-color: #22c55e; }
+        .day-row .day-title { font-weight: 700; color: #1e293b; font-size: 15px; }
+        .day-row .day-sub { font-size: 13px; color: #64748b; margin-top: 4px; }
+        .holding-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+        }
+        .holding-card .h-name { font-weight: 700; color: #1e293b; font-size: 15px; }
+        .holding-card .h-code { font-size: 12px; color: #94a3b8; }
+        .holding-card .h-pct { font-size: 18px; font-weight: 700; }
+        .strategy-box {
+            background: linear-gradient(135deg, #eff6ff, #f0fdf4);
+            border: 1px solid #bfdbfe;
+            border-radius: 12px;
+            padding: 20px 24px;
+        }
+        .strategy-box h5 { color: #1d4ed8; font-weight: 700; }
+        .warn-box {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-top: 16px;
+        }
+        .warn-box .warn-title { color: #c2410c; font-weight: 700; font-size: 15px; }
+        .tag { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 500; margin: 2px; }
+        .tag-up { background: #fee2e2; color: #991b1b; }
+        .tag-dn { background: #dcfce7; color: #166534; }
+        .tag-neutral { background: #f1f5f9; color: #475569; }
+        .tag-warn { background: #fff7ed; color: #c2410c; }
+        .week-summary-table th { background: #f1f5f9; font-weight: 600; }
+        .week-summary-table td, .week-summary-table th { padding: 10px 14px; border: 1px solid #e2e8f0; font-size: 14px; }
+        .back-nav {
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 8px 16px;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+        .back-nav:hover { color: white; }
+        .highlight-stat {
+            background: white;
+            border-radius: 12px;
+            padding: 14px 18px;
+            text-align: center;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
+        .highlight-stat .s-val { font-size: 24px; font-weight: 800; }
+        .highlight-stat .s-label { font-size: 12px; color: #64748b; margin-top: 2px; }
+        .next-week-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .next-week-item:last-child { border-bottom: none; }
+        .next-week-item .icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+        .next-week-item .text strong { color: #1e293b; display: block; margin-bottom: 4px; }
+        .next-week-item .text span { color: #64748b; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <!-- 导航 -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: #0f172a; padding: 12px 0;">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <span style="color: #4f46e5;">理易港</span>
+                <span style="color: #94a3b8; font-size: 14px; margin-left: 8px;">ourlyg.com</span>
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="../index.html">首页</a>
+                <a class="nav-link active" href="index.html">每日研判</a>
+                <a class="nav-link" href="../products/index.html">产品测评</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 报告头部 -->
+    <section class="report-header">
+        <div class="container">
+            <a href="index.html" class="back-nav">← 返回报告列表</a>
+            <div class="weekly-badge">📅 周度复盘</div>
+            <h1 class="display-5 fw-bold mb-3">2026年第12周 · 周度市场复盘</h1>
+            <p class="report-date mb-2">覆盖时间：2026年3月24日（周二）— 3月27日（周五）</p>
+            <p style="color: #cbd5e1; font-size: 15px; max-width: 680px;">
+                本周大盘先扬后抑，整体偏弱，科技板块持续承压。关税靴子尚未落地，市场风险偏好受压，北向资金虽连续净流入但力度不强。持仓组合中，药明康德独领风骚，红利资产防御成色凸显。
+            </p>
+            <div class="row g-3 mt-4" style="max-width: 680px;">
+                <div class="col-6 col-md-3">
+                    <div class="highlight-stat">
+                        <div class="s-val idx-dn">-1.09%</div>
+                        <div class="s-label">本周上证涨幅</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="highlight-stat">
+                        <div class="s-val idx-up">+2.40%</div>
+                        <div class="s-label">药明康德本周</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="highlight-stat">
+                        <div class="s-val" style="color:#4f46e5;">+81亿</div>
+                        <div class="s-label">北向本周净流入</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="highlight-stat">
+                        <div class="s-val idx-dn">-3.2%</div>
+                        <div class="s-label">恒生科技本周</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主体内容 -->
+    <section style="padding: 50px 0 80px;">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- 左侧主内容 -->
+                <div class="col-lg-8">
+
+                    <!-- 一、大盘复盘 -->
+                    <div class="mb-5">
+                        <div class="section-title">一、本周大盘行情回顾</div>
+
+                        <!-- 指数汇总 -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-6 col-md-3">
+                                <div class="index-card">
+                                    <div class="idx-name">上证指数</div>
+                                    <div class="idx-val">3889</div>
+                                    <div class="idx-chg idx-dn">本周 -1.09%</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="index-card">
+                                    <div class="idx-name">深证成指</div>
+                                    <div class="idx-val">13606</div>
+                                    <div class="idx-chg idx-dn">本周 -1.41%</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="index-card">
+                                    <div class="idx-name">创业板指</div>
+                                    <div class="idx-val">3272</div>
+                                    <div class="idx-chg idx-dn">本周 -1.34%</div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="index-card">
+                                    <div class="idx-name">北向资金</div>
+                                    <div class="idx-val" style="font-size:18px;">+81亿</div>
+                                    <div class="idx-chg idx-up">本周净流入</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 每日复盘 -->
+                        <h6 class="fw-bold mb-3" style="color:#475569;">📆 逐日复盘</h6>
+
+                        <div class="day-row dn-day">
+                            <div class="day-title">周二（3月24日）· 小幅收涨，蜂鸣器行情</div>
+                            <div class="day-sub">
+                                上证微涨+0.3%，量能温和，盘中AI、机器人题材活跃。北向净流入+18亿。
+                                市场整体呈现"指数小涨、个股分化"格局，涨停股以题材股为主。
+                                <br><span class="tag tag-up">AI题材活跃</span><span class="tag tag-neutral">量能温和</span>
+                            </div>
+                        </div>
+
+                        <div class="day-row up-day">
+                            <div class="day-title">周三（3月25日）· 高位震荡，科技熄火</div>
+                            <div class="day-sub">
+                                上证平盘附近，创业板小跌。此前强势的科技股开始分化，获利回吐明显。
+                                北向净流入+22亿，但资金以防御性板块（消费、医药）为主。
+                                <br><span class="tag tag-neutral">高位震荡</span><span class="tag tag-dn">科技退潮</span><span class="tag tag-up">医药偏强</span>
+                            </div>
+                        </div>
+
+                        <div class="day-row dn-day">
+                            <div class="day-title">周四（3月26日）· 普跌，跌多涨少1:5</div>
+                            <div class="day-sub">
+                                上证-1.09%，深成-1.41%，全市场仅916涨4493跌，下跌面极广。
+                                北向+24.96亿但难挡卖压，涨停39只跌停8只，连板股维持3板。
+                                权重蓝筹领跌，资金向红利防御方向切换。
+                                <br><span class="tag tag-dn">宽幅普跌</span><span class="tag tag-warn">跌多涨少1:5</span><span class="tag tag-up">红利防御</span>
+                            </div>
+                        </div>
+
+                        <div class="day-row up-day">
+                            <div class="day-title">周五（3月27日）· 小幅反弹，结构分化</div>
+                            <div class="day-sub">
+                                普昂医疗(+136%)带动北交所活跃，创业板涨停股增多（+20%涨停4只）。
+                                天华新能(+12.99%)、鼎龙股份(+17.33%)等新能源材料活跃。
+                                月末周五资金倾向轻仓，市场整体缩量。
+                                <br><span class="tag tag-up">新能源材料</span><span class="tag tag-up">北交所</span><span class="tag tag-neutral">缩量</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 二、持仓周表现 -->
+                    <div class="mb-5">
+                        <div class="section-title">二、持仓标的本周表现</div>
+
+                        <div class="table-responsive mb-3">
+                            <table class="table week-summary-table">
+                                <thead>
+                                    <tr>
+                                        <th>标的</th>
+                                        <th>周初价</th>
+                                        <th>周末价</th>
+                                        <th>本周涨幅</th>
+                                        <th>评价</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>药明康德</strong><br><span style="color:#94a3b8;font-size:12px;">603259.SH</span></td>
+                                        <td>92.50</td>
+                                        <td>97.00</td>
+                                        <td style="color:#ef4444;font-weight:700;">+4.86%</td>
+                                        <td><span class="tag tag-up">本周最强</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>中证红利ETF</strong><br><span style="color:#94a3b8;font-size:12px;">515080.SH</span></td>
+                                        <td>1.595</td>
+                                        <td>1.603</td>
+                                        <td style="color:#ef4444;font-weight:700;">+0.50%</td>
+                                        <td><span class="tag tag-up">防御超强</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>汇川技术</strong><br><span style="color:#94a3b8;font-size:12px;">300124.SZ</span></td>
+                                        <td>68.20</td>
+                                        <td>68.54</td>
+                                        <td style="color:#ef4444;font-weight:700;">+0.50%</td>
+                                        <td><span class="tag tag-neutral">基本持平</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>中证A500ETF</strong><br><span style="color:#94a3b8;font-size:12px;">159338.SZ</span></td>
+                                        <td>1.192</td>
+                                        <td>1.185</td>
+                                        <td style="color:#22c55e;font-weight:700;">-0.59%</td>
+                                        <td><span class="tag tag-neutral">小幅回调</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>恒生科技ETF</strong><br><span style="color:#94a3b8;font-size:12px;">513180.SH</span></td>
+                                        <td>0.641</td>
+                                        <td>0.622</td>
+                                        <td style="color:#22c55e;font-weight:700;">-2.96%</td>
+                                        <td><span class="tag tag-warn">本周最弱</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="holding-card">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <div class="h-name">🏆 药明康德（603259）</div>
+                                    <div class="h-code">本周强势原因：年报超预期 + 医药政策催化</div>
+                                </div>
+                                <div class="h-pct idx-up">+4.86%</div>
+                            </div>
+                            <p class="text-muted small mt-2 mb-0">
+                                药明康德本周发布2025年年报，营收和利润均超市场预期，叠加医药板块整体回暖，股价连续走强。97元已接近前期压力区，需关注量能能否持续放大突破100元关口。
+                            </p>
+                        </div>
+
+                        <div class="holding-card">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <div class="h-name">🛡️ 中证红利ETF（515080）</div>
+                                    <div class="h-code">本周防御价值凸显</div>
+                                </div>
+                                <div class="h-pct idx-up">+0.50%</div>
+                            </div>
+                            <p class="text-muted small mt-2 mb-0">
+                                大盘下行时红利ETF逆势微涨，充分体现高股息资产的防御属性。当前不确定性环境下，红利资产是组合的"压舱石"，建议维持或适当加仓。
+                            </p>
+                        </div>
+
+                        <div class="holding-card" style="border-color:#fca5a5;">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <div class="h-name">⚠️ 恒生科技ETF（513180）</div>
+                                    <div class="h-code">本周最弱，需持续关注</div>
+                                </div>
+                                <div class="h-pct idx-dn">-2.96%</div>
+                            </div>
+                            <p class="text-muted small mt-2 mb-0">
+                                美联储政策预期反复 + 港股市场情绪偏弱，恒生科技本周持续承压。0.62-0.63区间为关键支撑，若下周继续跌破0.62，建议减仓降低风险暴露。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 三、市场主题与热点 -->
+                    <div class="mb-5">
+                        <div class="section-title">三、本周市场热点主题</div>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0" style="background:#f8fafc;">
+                                    <div class="card-body p-3">
+                                        <div class="fw-bold text-danger mb-2">🔥 本周活跃主题</div>
+                                        <ul class="small text-secondary mb-0" style="padding-left:16px;">
+                                            <li class="mb-1"><strong>AI算力/机器人</strong> — 周初活跃，周中高位分化</li>
+                                            <li class="mb-1"><strong>医药/CXO</strong> — 年报催化持续强势</li>
+                                            <li class="mb-1"><strong>新能源材料</strong> — 周五天华新能等爆发</li>
+                                            <li class="mb-1"><strong>北交所题材</strong> — 普昂医疗首日暴涨</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0" style="background:#fef2f2;">
+                                    <div class="card-body p-3">
+                                        <div class="fw-bold text-warning mb-2">❄️ 本周持续低迷</div>
+                                        <ul class="small text-secondary mb-0" style="padding-left:16px;">
+                                            <li class="mb-1"><strong>港股科技</strong> — 恒生科技连续下行</li>
+                                            <li class="mb-1"><strong>消费电子</strong> — 苹果产业链持续承压</li>
+                                            <li class="mb-1"><strong>房地产</strong> — 政策预期落空，资金撤离</li>
+                                            <li class="mb-1"><strong>传统金融</strong> — 量能萎缩，交投清淡</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 四、下周策略 -->
+                    <div class="mb-4">
+                        <div class="section-title">四、下周（3月30日-4月3日）策略展望</div>
+
+                        <div class="warn-box mb-4">
+                            <div class="warn-title">⚠️ 最大风险：4月2日关税正式落地</div>
+                            <p class="text-secondary small mt-2 mb-0">
+                                美国对中国加征关税将于4月2日正式落地，这是下周市场最大的不确定性因素。
+                                历史上关税落地前后通常伴随市场波动加剧，建议提前降低仓位，等待市场消化消息后再做决策。
+                            </p>
+                        </div>
+
+                        <div class="strategy-box">
+                            <h5 class="mb-3">📋 下周操作策略</h5>
+                            <div class="next-week-item">
+                                <div class="icon">🔴</div>
+                                <div class="text">
+                                    <strong>恒生科技ETF（513180）— 建议择机减仓</strong>
+                                    <span>0.62关键支撑若失守，下看0.58-0.60区间。关税风险对港股科技负面影响更直接，建议将仓位降至低配。</span>
+                                </div>
+                            </div>
+                            <div class="next-week-item">
+                                <div class="icon">🟢</div>
+                                <div class="text">
+                                    <strong>中证红利ETF（515080）— 维持标配，可逢跌加仓</strong>
+                                    <span>不确定性环境中红利防御性资产表现最优。关税落地后市场下行，可在1.58-1.60区间逢低补仓。</span>
+                                </div>
+                            </div>
+                            <div class="next-week-item">
+                                <div class="icon">🟡</div>
+                                <div class="text">
+                                    <strong>药明康德（603259）— 持有，关注97元阻力</strong>
+                                    <span>97-100元是强压力区，若量能不放大则建议减仓部分锁定利润。关税若影响到海外业务预期，则短期承压。</span>
+                                </div>
+                            </div>
+                            <div class="next-week-item">
+                                <div class="icon">🟡</div>
+                                <div class="text">
+                                    <strong>中证A500ETF（159338）/ 汇川技术（300124）— 持有观望</strong>
+                                    <span>A股宽基指数在3800-3900区间震荡，暂不加减仓。汇川技术关注新能源汽车订单数据。</span>
+                                </div>
+                            </div>
+                            <div class="next-week-item" style="border-bottom:none;">
+                                <div class="icon">📅</div>
+                                <div class="text">
+                                    <strong>关键节点：4月2日关税落地</strong>
+                                    <span>当天市场可能出现大幅波动。若跌幅超过2%，反而可能是超跌买入机会（利空出尽）；若市场提前消化，则关税落地后可能小幅反弹。</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 风险提示 -->
+                    <div style="background:#fff7ed; border: 1px solid #fed7aa; border-radius: 12px; padding: 16px 20px; margin-top: 24px;">
+                        <div style="font-weight:700; color:#c2410c; margin-bottom: 8px;">⚠️ 风险提示</div>
+                        <p class="small text-secondary mb-0">
+                            本报告仅供参考，不构成投资建议。股市有风险，投资需谨慎。本报告中所涉及的个股分析均基于公开信息，不代表对具体证券的推荐或评级。投资者应根据自身风险承受能力和投资目标做出独立判断。过往表现不代表未来收益。
+                        </p>
+                    </div>
+
+                </div><!-- /col-lg-8 -->
+
+                <!-- 右侧侧边栏 -->
+                <div class="col-lg-4">
+                    <div style="position: sticky; top: 20px;">
+
+                        <!-- 本周数据汇总 -->
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body">
+                                <h6 class="fw-bold mb-3" style="color:#4f46e5;">📊 本周关键数据</h6>
+                                <div class="small">
+                                    <div class="d-flex justify-content-between py-2 border-bottom">
+                                        <span class="text-muted">上证周涨跌</span>
+                                        <span class="fw-bold" style="color:#22c55e;">-1.09%</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between py-2 border-bottom">
+                                        <span class="text-muted">创业板周涨跌</span>
+                                        <span class="fw-bold" style="color:#22c55e;">-1.34%</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between py-2 border-bottom">
+                                        <span class="text-muted">北向本周净流入</span>
+                                        <span class="fw-bold" style="color:#ef4444;">+81亿</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between py-2 border-bottom">
+                                        <span class="text-muted">最差持仓</span>
+                                        <span class="fw-bold" style="color:#22c55e;">恒生科技-2.96%</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between py-2">
+                                        <span class="text-muted">最强持仓</span>
+                                        <span class="fw-bold" style="color:#ef4444;">药明康德+4.86%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 下周日历 -->
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body">
+                                <h6 class="fw-bold mb-3" style="color:#4f46e5;">📅 下周重要事件</h6>
+                                <div class="small">
+                                    <div class="d-flex gap-2 py-2 border-bottom">
+                                        <span style="background:#f1f5f9;padding:2px 8px;border-radius:4px;font-weight:600;white-space:nowrap;">3月31日</span>
+                                        <span class="text-muted">A股季末效应，月末资金面偏紧</span>
+                                    </div>
+                                    <div class="d-flex gap-2 py-2 border-bottom">
+                                        <span style="background:#fef3c7;padding:2px 8px;border-radius:4px;font-weight:600;white-space:nowrap;color:#92400e;">4月1日</span>
+                                        <span class="text-muted">3月PMI数据公布，影响市场预期</span>
+                                    </div>
+                                    <div class="d-flex gap-2 py-2">
+                                        <span style="background:#fee2e2;padding:2px 8px;border-radius:4px;font-weight:600;white-space:nowrap;color:#991b1b;">4月2日</span>
+                                        <span class="text-muted"><strong>关税正式落地</strong>，最大风险日</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 历史报告 -->
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body">
+                                <h6 class="fw-bold mb-3" style="color:#4f46e5;">📋 本周日报回顾</h6>
+                                <div class="small d-flex flex-column gap-2">
+                                    <a href="report-20260327.html" style="color:#1e293b;text-decoration:none;padding:8px;background:#f8fafc;border-radius:6px;display:block;">
+                                        <strong>3月27日（周五）</strong> - 谨慎偏弱，药明独秀
+                                    </a>
+                                    <a href="report-20260326.html" style="color:#1e293b;text-decoration:none;padding:8px;background:#f8fafc;border-radius:6px;display:block;">
+                                        <strong>3月26日（周四）</strong> - 普跌，红利防御
+                                    </a>
+                                    <a href="report-20260325.html" style="color:#1e293b;text-decoration:none;padding:8px;background:#f8fafc;border-radius:6px;display:block;">
+                                        <strong>3月25日（周三）</strong> - 高位震荡
+                                    </a>
+                                    <a href="report-20260324.html" style="color:#1e293b;text-decoration:none;padding:8px;background:#f8fafc;border-radius:6px;display:block;">
+                                        <strong>3月24日（周二）</strong> - 小幅收涨
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA -->
+                        <div class="card border-0" style="background: linear-gradient(135deg,#4f46e5,#7c3aed);color:white;">
+                            <div class="card-body text-center p-4">
+                                <div class="fw-bold fs-6 mb-2">每日持仓研判</div>
+                                <p class="small mb-3" style="opacity:0.85;">
+                                    每个交易日早盘前发布<br>持仓分析+操作建议
+                                </p>
+                                <a href="index.html" class="btn btn-light btn-sm fw-semibold w-100">
+                                    查看全部报告 →
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!-- /col-lg-4 -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer style="background: #0f172a; padding: 40px 0 20px;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="fw-bold fs-5 mb-2" style="color:white;">理易港</div>
+                    <p class="small mb-0" style="color:#cbd5e1;">专注A股投资研究，提供客观专业的每日市场研判与产品测评服务。</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="fw-bold mb-2" style="color:white;">快速导航</div>
+                    <div class="d-flex flex-column gap-1">
+                        <a href="../index.html" style="color:#93c5fd;text-decoration:none;font-size:14px;">首页</a>
+                        <a href="index.html" style="color:#93c5fd;text-decoration:none;font-size:14px;">每日研判</a>
+                        <a href="../products/index.html" style="color:#93c5fd;text-decoration:none;font-size:14px;">产品测评</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="fw-bold mb-2" style="color:white;">免责声明</div>
+                    <p class="small mb-0" style="color:#cbd5e1;">本报告仅供参考，不构成投资建议。股市有风险，投资需谨慎。</p>
+                </div>
+            </div>
+            <hr style="border-color:rgba(255,255,255,0.1);margin:24px 0 16px;">
+            <p class="text-center small mb-0" style="color:#94a3b8;">© 2026 理易港 ourlyg.com · 保留所有权利</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
