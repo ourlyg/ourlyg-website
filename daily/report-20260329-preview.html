@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 百度统计 -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?67b56cbdd91b37f49d6c38510eabafa5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2026年3月30日-4月4日 A股市场前瞻 - 4月2日美国关税大限风险评估、下周操作策略、持仓建议">
+    <title>下周前瞻 | 4月2日关税大限，A股怎么走？| 理易港</title>
+    <link rel="canonical" href="https://ourlyg.com/daily/report-20260329-preview.html">
+    <meta property="og:title" content="下周前瞻 - 4月2日关税大限，A股怎么走？">
+    <meta property="og:description" content="特朗普4月2日关税政策正式落地，A股将如何应对？本期前瞻深度拆解风险与机会。">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .report-header {
+            background: linear-gradient(135deg, #0f172a 0%, #7f1d1d 50%, #991b1b 100%);
+            padding: 80px 0 50px;
+            color: white;
+        }
+        .report-date { color: #fca5a5; font-size: 14px; }
+        .preview-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1e293b;
+            border-left: 4px solid #dc2626;
+            padding-left: 12px;
+            margin-bottom: 20px;
+        }
+        .risk-card {
+            background: #fff5f5;
+            border: 1px solid #fecaca;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+        }
+        .risk-card .risk-level {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .risk-high { background: #fee2e2; color: #dc2626; }
+        .risk-mid { background: #fef3c7; color: #d97706; }
+        .risk-low { background: #dcfce7; color: #16a34a; }
+        .scenario-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-bottom: 12px;
+        }
+        .scenario-card .s-title { font-weight: 700; font-size: 15px; margin-bottom: 8px; }
+        .scenario-a { border-left: 4px solid #ef4444; }
+        .scenario-b { border-left: 4px solid #f59e0b; }
+        .scenario-c { border-left: 4px solid #22c55e; }
+        .holding-prev {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            background: #f8fafc;
+        }
+        .holding-prev .h-name { font-weight: 700; color: #1e293b; font-size: 15px; }
+        .holding-prev .h-code { font-size: 12px; color: #94a3b8; }
+        .holding-prev .h-advice { font-size: 13px; color: #475569; margin-top: 8px; }
+        .strategy-box {
+            background: linear-gradient(135deg, #fff7ed, #fef2f2);
+            border: 1px solid #fed7aa;
+            border-radius: 12px;
+            padding: 20px 24px;
+        }
+        .news-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-date { font-size: 12px; color: #94a3b8; }
+        .news-title { font-size: 14px; color: #1e293b; font-weight: 500; line-height: 1.5; }
+        .news-src { font-size: 11px; color: #64748b; background: #f1f5f9; padding: 1px 6px; border-radius: 8px; }
+        .warn-box {
+            background: linear-gradient(135deg, #fff1f2, #fef9c3);
+            border: 2px solid #fca5a5;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+        }
+        .calendar-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .calendar-row:last-child { border-bottom: none; }
+        .cal-date {
+            min-width: 72px;
+            text-align: center;
+            background: #f1f5f9;
+            border-radius: 8px;
+            padding: 6px 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #334155;
+        }
+        .cal-date.key-date {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+        .cal-content { flex: 1; }
+        .cal-event { font-size: 14px; color: #1e293b; font-weight: 500; }
+        .cal-sub { font-size: 12px; color: #64748b; margin-top: 3px; }
+        .market-last {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 16px 20px;
+            text-align: center;
+        }
+        .market-last .idx-name { font-size: 12px; color: #64748b; margin-bottom: 4px; }
+        .market-last .idx-val { font-size: 20px; font-weight: 700; color: #1e293b; }
+        .market-last .idx-chg { font-size: 14px; font-weight: 600; margin-top: 4px; }
+        .idx-up { color: #ef4444; }
+        .idx-dn { color: #22c55e; }
+        .sentiment-meter {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+        }
+        .sentiment-bar-wrap { background: #e2e8f0; border-radius: 6px; height: 8px; overflow: hidden; }
+        .sentiment-bar { height: 100%; border-radius: 6px; }
+    </style>
+</head>
+<body>
+
+<!-- 报告头部 -->
+<div class="report-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <div class="preview-badge">⚠️ 下周前瞻</div>
+                <h1 class="fw-bold mb-3" style="font-size:2rem; line-height:1.3;">4月2日关税大限<br><span style="color:#fca5a5;">A股将如何应对？</span></h1>
+                <p class="mb-3" style="color:#fecdd3; font-size:15px;">
+                    特朗普宣布4月2日为"解放日"，对等关税政策正式落地。
+                    全球市场进入高度警惕模式，A股如何在波动中寻找机会？
+                </p>
+                <div class="report-date">📅 发布时间：2026年3月29日（周日）| 覆盖周期：3月30日 - 4月4日</div>
+            </div>
+            <div class="col-lg-4 text-center mt-4 mt-lg-0">
+                <div style="background:rgba(255,255,255,0.1); border-radius:16px; padding:20px 16px;">
+                    <div style="color:#fca5a5; font-size:13px; margin-bottom:4px;">上周五（3月27日）收盘</div>
+                    <div style="font-size:28px; font-weight:800;">3913.72</div>
+                    <div style="color:#ef4444; font-size:16px; font-weight:700;">↑ +0.63%</div>
+                    <div style="color:#fca5a5; font-size:12px; margin-top:4px;">上证综指</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 核心警示 -->
+<div class="container mt-4">
+    <div class="warn-box">
+        <div style="font-size:18px; font-weight:800; color:#dc2626; margin-bottom:10px;">🚨 核心风险提示</div>
+        <p style="margin:0; font-size:14px; color:#374151; line-height:1.8;">
+            <strong>4月2日（周三）</strong>是美国"对等关税"正式生效日，被特朗普称为"解放日（Liberation Day）"。
+            全球多个主要经济体的关税税率将被重置，市场对此已有一定预期，但<strong>实际落地细节</strong>（豁免国家、税率幅度）仍存在重大不确定性。
+            历史经验表明，"靴子落地"前市场往往提前抢跑，落地后反而可能出现"利空出尽"行情，但<strong>也存在超预期冲击的尾部风险</strong>。
+            本周请务必控制仓位，避免盲目加仓。
+        </p>
+    </div>
+</div>
+
+<div class="container pb-5">
+    <div class="row g-4">
+        <!-- 主内容 -->
+        <div class="col-lg-8">
+
+            <!-- 一、上周行情回顾 -->
+            <div class="card border-0 shadow-sm rounded-3 p-4 mb-4">
+                <div class="section-title">一、上周行情回顾（3月27日收盘）</div>
+                <div class="row g-3 mb-4">
+                    <div class="col-6 col-md-3">
+                        <div class="market-last">
+                            <div class="idx-name">上证综指</div>
+                            <div class="idx-val">3913.72</div>
+                            <div class="idx-chg idx-up">+0.63%</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="market-last">
+                            <div class="idx-name">深证成指</div>
+                            <div class="idx-val">13760.37</div>
+                            <div class="idx-chg idx-up">+1.13%</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="market-last">
+                            <div class="idx-name">汇川技术</div>
+                            <div class="idx-val">68.54</div>
+                            <div class="idx-chg idx-up">+1.51%</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="market-last">
+                            <div class="idx-name">药明康德</div>
+                            <div class="idx-val">97.00</div>
+                            <div class="idx-chg idx-up">+2.40%</div>
+                        </div>
+                    </div>
+                </div>
+                <p style="font-size:14px; color:#475569; line-height:1.8; margin:0;">
+                    上周五A股全线上扬，上证站稳3900点关口。深成指涨幅明显，成长股表现强于价值股。
+                    持仓标的中，药明康德涨幅最强（+2.40%），受益于CXO板块情绪修复；
+                    汇川技术稳健上涨（+1.51%），工业自动化逻辑持续兑现。
+                    ETF（中证A500、中证红利、恒生科技）行情数据接口暂时缺失，以实盘价格为准。
+                </p>
+            </div>
+
+            <!-- 二、关键日历 -->
+            <div class="card border-0 shadow-sm rounded-3 p-4 mb-4">
+                <div class="section-title">二、下周关键日历（3月30日 - 4月4日）</div>
+                <div class="calendar-row">
+                    <div class="cal-date">周一<br>3/30</div>
+                    <div class="cal-content">
+                        <div class="cal-event">中国制造业/非制造业PMI（3月）</div>
+                        <div class="cal-sub">预期制造业PMI 50.2，如超预期将提振内需信心，利好工业股</div>
+                    </div>
+                </div>
+                <div class="calendar-row">
+                    <div class="cal-date">周一<br>3/30</div>
+                    <div class="cal-content">
+                        <div class="cal-event">A股季末效应收尾 + 季报窗口开启</div>
+                        <div class="cal-sub">2025年年报收官，部分公司利润预告陆续披露，关注业绩超预期个股</div>
+                    </div>
+                </div>
+                <div class="calendar-row">
+                    <div class="cal-date key-date">⚠️ 周三<br>4/2</div>
+                    <div class="cal-content">
+                        <div class="cal-event" style="color:#dc2626; font-weight:700;">美国对等关税正式生效（"解放日"）</div>
+                        <div class="cal-sub">特朗普宣布对所有贸易伙伴实施对等关税，具体税率和豁免清单将当日公布。这是本周最大风险事件。</div>
+                    </div>
+                </div>
+                <div class="calendar-row">
+                    <div class="cal-date">周四<br>4/3</div>
+                    <div class="cal-content">
+                        <div class="cal-event">美国非农就业数据（4月3日）</div>
+                        <div class="cal-sub">关税冲击背景下，非农数据将影响美联储降息预期，间接影响A股北向资金流向</div>
+                    </div>
+                </div>
+                <div class="calendar-row">
+                    <div class="cal-date">周五<br>4/4</div>
+                    <div class="cal-content">
+                        <div class="cal-event">清明节（4月4日）—— A股休市</div>
+                        <div class="cal-sub">周四（4月3日）收盘后A股进入小长假，持仓者需关注假期期间美股反应</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 三、关税风险拆解 -->
+            <div class="card border-0 shadow-sm rounded-3 p-4 mb-4">
+                <div class="section-title">三、4月2日关税风险深度拆解</div>
+
+                <p style="font-size:14px; color:#475569; line-height:1.8; margin-bottom:20px;">
+                    根据本周末新闻汇总，特朗普关税政策的实际范围和力度仍存在较大分歧。以下为三种情景及对A股的影响判断：
+                </p>
+
+                <div class="scenario-card scenario-a">
+                    <div class="s-title" style="color:#dc2626;">情景A：超预期打击（概率25%）</div>
+                    <p style="font-size:13px; color:#475569; margin:0;">
+                        对中国额外加征关税税率超过50%，且无豁免清单。全球供应链恐慌情绪蔓延。<br>
+                        <strong>A股影响：</strong>出口链、科技股大幅承压，预计上证回调100-200点。CXO（药明）、工业自动化（汇川）短期避险抛售。
+                        <strong>操作建议：减仓至5成以下，等待明确信号再介入。</strong>
+                    </p>
+                </div>
+                <div class="scenario-card scenario-b">
+                    <div class="s-title" style="color:#d97706;">情景B：符合预期（概率55%，基准情景）</div>
+                    <p style="font-size:13px; color:#475569; margin:0;">
+                        税率在25-35%区间，中国通过报复性关税对等回应。市场提前消化了主要预期。<br>
+                        <strong>A股影响：</strong>短期波动后企稳，"靴子落地"效应显现。内需+自主可控（军工、半导体）相对占优。
+                        <strong>操作建议：维持现有仓位，重点关注内需方向补仓机会。</strong>
+                    </p>
+                </div>
+                <div class="scenario-card scenario-c">
+                    <div class="s-title" style="color:#16a34a;">情景C：低于预期（概率20%）</div>
+                    <p style="font-size:13px; color:#475569; margin:0;">
+                        关税豁免范围超预期广泛，或谈判传出积极信号。全球风险偏好大幅回升。<br>
+                        <strong>A股影响：</strong>港股+外贸链强力反弹，恒生科技ETF（513180）有望领涨。
+                        <strong>操作建议：关注港股ETF补仓时机，中证红利防御价值弱化。</strong>
+                    </p>
+                </div>
+
+                <div class="alert alert-warning mt-3 mb-0" style="font-size:13px;">
+                    <strong>核心判断：</strong>情景B（符合预期）为基准情景，上证指数在3800-4000区间震荡消化。
+                    但4月4日清明节前的仓位暴露需格外谨慎，<strong>不建议在关税落地前重仓追涨</strong>。
+                </div>
+            </div>
+
+            <!-- 四、重要新闻 -->
+            <div class="card border-0 shadow-sm rounded-3 p-4 mb-4">
+                <div class="section-title">四、周末重要新闻</div>
+                <div class="news-item">
+                    <div class="d-flex justify-content-between align-items-start gap-2">
+                        <div class="news-title">比亚迪公布2025年财报，营收8040亿元！超越预期</div>
+                        <span class="news-src flex-shrink-0">新浪财经</span>
+                    </div>
+                    <div class="news-date">2026-03-28</div>
+                </div>
+                <div class="news-item">
+                    <div class="d-flex justify-content-between align-items-start gap-2">
+                        <div class="news-title">宁德时代新项目即将交付，新能源产业链景气延续</div>
+                        <span class="news-src flex-shrink-0">新浪财经</span>
+                    </div>
+                    <div class="news-date">2026-03-29</div>
+                </div>
+                <div class="news-item">
+                    <div class="d-flex justify-content-between align-items-start gap-2">
+                        <div class="news-title">新债王：进入"保全资本"模式，风险仓位已砍到历史最低，"美联储加息、美国衰退、美债软违约"都有可能</div>
+                        <span class="news-src flex-shrink-0">华尔街见闻</span>
+                    </div>
+                    <div class="news-date">2026-03-28</div>
+                </div>
+                <div class="news-item">
+                    <div class="d-flex justify-content-between align-items-start gap-2">
+                        <div class="news-title">全线跳水，超12.8万人爆仓，特朗普最新发声</div>
+                        <span class="news-src flex-shrink-0">凤凰财经</span>
+                    </div>
+                    <div class="news-date">2026-03-28</div>
+                </div>
+                <div class="news-item">
+                    <div class="d-flex justify-content-between align-items-start gap-2">
+                        <div class="news-title">中国电动车在美国越来越受欢迎，不只便宜还高档</div>
+                        <span class="news-src flex-shrink-0">华尔街见闻</span>
+                    </div>
+                    <div class="news-date">2026-03-28</div>
+                </div>
+                <div class="news-item">
+                    <div class="d-flex justify-content-between align-items-start gap-2">
+                        <div class="news-title">小鹏汽车更名为小鹏集团！长安汽车巴西工厂正式投产</div>
+                        <span class="news-src flex-shrink-0">新浪财经</span>
+                    </div>
+                    <div class="news-date">2026-03-28</div>
+                </div>
+                <div class="news-item">
+                    <div class="d-flex justify-content-between align-items-start gap-2">
+                        <div class="news-title">马斯克xAI"初创十一人"现已全部离职，AI明星公司内部震荡</div>
+                        <span class="news-src flex-shrink-0">同花顺</span>
+                    </div>
+                    <div class="news-date">2026-03-28</div>
+                </div>
+                <div class="news-item">
+                    <div class="d-flex justify-content-between align-items-start gap-2">
+                        <div class="news-title">机器人专属"身份证"落地，海关税政"微调"撬动产业大棋局</div>
+                        <span class="news-src flex-shrink-0">新浪财经</span>
+                    </div>
+                    <div class="news-date">2026-03-28</div>
+                </div>
+            </div>
+
+            <!-- 五、持仓前瞻 -->
+            <div class="card border-0 shadow-sm rounded-3 p-4 mb-4">
+                <div class="section-title">五、持仓标的下周前瞻</div>
+
+                <div class="holding-prev">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="h-name">汇川技术</span>
+                            <span class="h-code ms-2">300124.SZ</span>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="font-size:16px; font-weight:700; color:#1e293b;">¥68.54</div>
+                            <div style="font-size:13px; color:#ef4444;">上周五 +1.51%</div>
+                        </div>
+                    </div>
+                    <div class="h-advice">
+                        📊 <strong>前瞻：</strong>工业自动化受益于国内制造业升级，受关税直接影响小。
+                        关注周一PMI数据，若PMI超预期有望进一步走强。
+                        <strong>持仓建议：持有，等待PMI数据确认后可适量加仓。</strong>
+                    </div>
+                </div>
+
+                <div class="holding-prev">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="h-name">药明康德</span>
+                            <span class="h-code ms-2">603259.SH</span>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="font-size:16px; font-weight:700; color:#1e293b;">¥97.00</div>
+                            <div style="font-size:13px; color:#ef4444;">上周五 +2.40%</div>
+                        </div>
+                    </div>
+                    <div class="h-advice">
+                        📊 <strong>前瞻：</strong>CXO板块对美国政策敏感度高，若4月2日关税超预期严苛且涉及医药行业，将面临较大抛压。
+                        当前接近100元关键整数关口，有一定阻力。
+                        <strong>持仓建议：短期观察为主，仓位不超过10%，100元以上减仓锁利。</strong>
+                    </div>
+                </div>
+
+                <div class="holding-prev" style="background:#f0f9ff; border-color:#bae6fd;">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="h-name">中证A500 ETF</span>
+                            <span class="h-code ms-2">159338.SZ</span>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="font-size:13px; color:#64748b;">行情数据获取中</div>
+                        </div>
+                    </div>
+                    <div class="h-advice">
+                        📊 <strong>前瞻：</strong>宽基指数，跟随整体市场波动。关税落地前适合保持防御性仓位。
+                        <strong>持仓建议：底仓持有，不加不减，等待关税落地后格局明朗再调整。</strong>
+                    </div>
+                </div>
+
+                <div class="holding-prev" style="background:#f0fdf4; border-color:#bbf7d0;">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="h-name">中证红利 ETF</span>
+                            <span class="h-code ms-2">515080.SH</span>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="font-size:13px; color:#64748b;">行情数据获取中</div>
+                        </div>
+                    </div>
+                    <div class="h-advice">
+                        📊 <strong>前瞻：</strong>高股息防御资产，在市场不确定性高时表现相对抗跌。
+                        关税风险发酵期间是相对安全的底仓品种。
+                        <strong>持仓建议：加大配置比例，关税落地前的避险首选。</strong>
+                    </div>
+                </div>
+
+                <div class="holding-prev" style="background:#fdf4ff; border-color:#e9d5ff;">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="h-name">恒生科技 ETF</span>
+                            <span class="h-code ms-2">513180.SH</span>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="font-size:13px; color:#64748b;">行情数据获取中</div>
+                        </div>
+                    </div>
+                    <div class="h-advice">
+                        📊 <strong>前瞻：</strong>港股科技对关税靴子落地反应最灵敏。若情景B/C兑现（低于预期），港股反弹空间最大。
+                        <strong>持仓建议：关税落地前维持轻仓，落地后视情景快速决策。</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 六、下周策略 -->
+            <div class="card border-0 shadow-sm rounded-3 p-4 mb-4">
+                <div class="section-title">六、下周操作策略</div>
+                <div class="strategy-box">
+                    <div style="font-weight:700; font-size:16px; color:#1e293b; margin-bottom:16px;">🎯 核心策略：轻仓等待，落地再动</div>
+                    <ol style="font-size:14px; color:#374151; line-height:1.9; margin:0; padding-left:20px;">
+                        <li><strong>周一（3/30）：</strong>PMI数据是第一个观察窗口。若制造业PMI>50.2，可适量增持汇川技术和中证A500 ETF。</li>
+                        <li><strong>周二（4/1）：</strong>关税前夜，市场情绪最紧张。避免追涨，防范尾盘大幅震荡。可适当调低整体仓位至6成。</li>
+                        <li><strong>周三（4/2）：</strong>关键节点。盯盘美股开盘反应，A股尾盘前根据情景快速调仓。情景A减仓，情景C补仓。</li>
+                        <li><strong>周四（4/3）：</strong>清明假期前最后一个交易日。确认关税实际影响后，决定是否持仓过节。若市场情绪稳定，可适量持仓。</li>
+                        <li><strong>假期关注：</strong>关税落地后美股、港股的连续反应，将决定4月7日（周一）A股开盘走势。</li>
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 侧边栏 -->
+        <div class="col-lg-4">
+
+            <!-- 情绪指标 -->
+            <div class="card border-0 shadow-sm rounded-3 p-4 mb-3">
+                <div style="font-weight:700; font-size:15px; color:#1e293b; margin-bottom:16px;">市场情绪仪表盘</div>
+
+                <div class="sentiment-meter">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span style="font-size:13px; color:#475569;">关税不确定性</span>
+                        <span style="font-size:13px; font-weight:700; color:#dc2626;">极高</span>
+                    </div>
+                    <div class="sentiment-bar-wrap">
+                        <div class="sentiment-bar" style="width:88%; background: linear-gradient(90deg,#dc2626,#ef4444);"></div>
+                    </div>
+                </div>
+
+                <div class="sentiment-meter">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span style="font-size:13px; color:#475569;">A股内需信心</span>
+                        <span style="font-size:13px; font-weight:700; color:#d97706;">中等</span>
+                    </div>
+                    <div class="sentiment-bar-wrap">
+                        <div class="sentiment-bar" style="width:55%; background: linear-gradient(90deg,#d97706,#f59e0b);"></div>
+                    </div>
+                </div>
+
+                <div class="sentiment-meter">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span style="font-size:13px; color:#475569;">港股科技弹性</span>
+                        <span style="font-size:13px; font-weight:700; color:#7c3aed;">高</span>
+                    </div>
+                    <div class="sentiment-bar-wrap">
+                        <div class="sentiment-bar" style="width:72%; background: linear-gradient(90deg,#7c3aed,#8b5cf6);"></div>
+                    </div>
+                </div>
+
+                <div class="sentiment-meter">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span style="font-size:13px; color:#475569;">红利资产防御</span>
+                        <span style="font-size:13px; font-weight:700; color:#16a34a;">强</span>
+                    </div>
+                    <div class="sentiment-bar-wrap">
+                        <div class="sentiment-bar" style="width:80%; background: linear-gradient(90deg,#16a34a,#22c55e);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 关税时间线 -->
+            <div class="card border-0 shadow-sm rounded-3 p-4 mb-3">
+                <div style="font-weight:700; font-size:15px; color:#1e293b; margin-bottom:16px;">⏰ 关税倒计时</div>
+                <div style="text-align:center; padding:16px 0;">
+                    <div style="font-size:48px; font-weight:900; color:#dc2626; line-height:1;">4月2日</div>
+                    <div style="font-size:13px; color:#64748b; margin-top:4px;">距今约 4 天</div>
+                    <div style="font-size:14px; color:#dc2626; font-weight:700; margin-top:8px;">美国"解放日"关税正式生效</div>
+                </div>
+                <hr>
+                <div style="font-size:12px; color:#64748b; line-height:1.7;">
+                    <div>• 全球对等关税税率公布</div>
+                    <div>• 豁免清单正式披露</div>
+                    <div>• 中国反制措施跟进</div>
+                    <div>• 全球供应链重估开始</div>
+                </div>
+            </div>
+
+            <!-- 重点关注板块 -->
+            <div class="card border-0 shadow-sm rounded-3 p-4 mb-3">
+                <div style="font-weight:700; font-size:15px; color:#1e293b; margin-bottom:16px;">📌 下周重点关注板块</div>
+                <div class="mb-2 p-2 rounded" style="background:#dcfce7;">
+                    <span style="font-size:13px; font-weight:700; color:#16a34a;">✅ 相对占优</span>
+                    <div style="font-size:12px; color:#374151; margin-top:4px;">高股息/红利、国防军工、自主可控（CPU/芯片）、内需消费</div>
+                </div>
+                <div class="mb-2 p-2 rounded" style="background:#fef3c7;">
+                    <span style="font-size:13px; font-weight:700; color:#d97706;">⚠️ 震荡观察</span>
+                    <div style="font-size:12px; color:#374151; margin-top:4px;">工业自动化（汇川）、新能源车链、机器人概念</div>
+                </div>
+                <div class="p-2 rounded" style="background:#fee2e2;">
+                    <span style="font-size:13px; font-weight:700; color:#dc2626;">⛔ 规避风险</span>
+                    <div style="font-size:12px; color:#374151; margin-top:4px;">出口依赖度高的外贸链、CXO医药（美国客户占比高）、跨境电商</div>
+                </div>
+            </div>
+
+            <!-- 导航 -->
+            <div class="card border-0 shadow-sm rounded-3 p-4 mb-3">
+                <div style="font-weight:700; font-size:15px; color:#1e293b; margin-bottom:12px;">📂 历史报告</div>
+                <div style="display:flex; flex-direction:column; gap:8px;">
+                    <a href="report-20260328-weekly.html" style="color:#4f46e5; text-decoration:none; font-size:13px;">← 第12周周报（3月24-27日）</a>
+                    <a href="report-20260327.html" style="color:#64748b; text-decoration:none; font-size:13px;">← 3月27日收盘研判</a>
+                    <a href="report-20260326.html" style="color:#64748b; text-decoration:none; font-size:13px;">← 3月26日收盘研判</a>
+                    <a href="index.html" style="color:#64748b; text-decoration:none; font-size:13px;">← 返回研判列表</a>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="card border-0 rounded-3 p-4" style="background: linear-gradient(135deg,#1e293b,#312e81); color:white;">
+                <div style="font-weight:700; font-size:15px; margin-bottom:8px;">🔔 不错过关税落地研判</div>
+                <p style="font-size:13px; color:#cbd5e1; margin-bottom:12px;">
+                    4月2日关税落地当日，我们将第一时间发布特别研判报告，分析A股走势和持仓调整建议。
+                </p>
+                <a href="../vip/index.html" class="btn btn-warning btn-sm fw-bold w-100">查看VIP权益 →</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- 风险提示 -->
+<div style="background:#f8fafc; border-top:1px solid #e2e8f0; padding:24px 0;">
+    <div class="container">
+        <p style="font-size:12px; color:#94a3b8; margin:0; line-height:1.7;">
+            ⚠️ <strong>风险提示：</strong>本报告仅供参考，不构成投资建议。股市有风险，入市需谨慎。
+            本报告中的市场情景分析基于公开信息及历史数据，未来市场走势可能与预测存在重大差异。
+            投资者应根据自身风险承受能力独立作出投资决策。理易港不对因参考本报告而产生的任何投资损失承担责任。
+        </p>
+    </div>
+</div>
+
+<!-- 页脚 -->
+<footer style="background:#0f172a; color:#cbd5e1; padding:40px 0 24px;">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div style="font-size:18px; font-weight:800; color:white; margin-bottom:8px;">理易港</div>
+                <div style="font-size:13px; color:#94a3b8; line-height:1.7;">
+                    专业理财工具测评平台<br>
+                    每日市场研判 · 持仓追踪 · 策略前瞻
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div style="font-weight:700; color:white; margin-bottom:10px; font-size:14px;">快速导航</div>
+                <div style="display:flex; flex-direction:column; gap:6px;">
+                    <a href="../index.html" style="color:#93c5fd; text-decoration:none; font-size:13px;">首页</a>
+                    <a href="index.html" style="color:#93c5fd; text-decoration:none; font-size:13px;">每日研判</a>
+                    <a href="../products/index.html" style="color:#93c5fd; text-decoration:none; font-size:13px;">产品测评</a>
+                    <a href="../vip/index.html" style="color:#93c5fd; text-decoration:none; font-size:13px;">VIP服务</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div style="font-weight:700; color:white; margin-bottom:10px; font-size:14px;">免责声明</div>
+                <div style="font-size:12px; color:#94a3b8; line-height:1.6;">
+                    本站内容仅供参考，不构成投资建议。
+                    市场有风险，投资需谨慎。
+                </div>
+            </div>
+        </div>
+        <hr style="border-color:#1e293b; margin:24px 0 16px;">
+        <div style="font-size:12px; color:#475569; text-align:center;">
+            © 2026 理易港（ourlyg.com）· 理财工具测评 · 每日研判
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
