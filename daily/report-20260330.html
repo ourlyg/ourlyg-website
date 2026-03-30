@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 百度统计 -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?67b56cbdd91b37f49d6c38510eabafa5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2026年3月30日早盘综合研判报告 - 3月PMI正式发布日，4月2日关税解放日一周年前最后交易日，包含TOP10财经新闻、持仓分析、技术研判与操作建议">
+    <title>早盘综合研判报告 | 2026-03-30 | 理易港</title>
+    <link rel="canonical" href="https://ourlyg.com/daily/report-20260330.html">
+    <meta property="og:title" content="早盘综合研判报告 - 2026年3月30日">
+    <meta property="og:description" content="3月PMI发布日，关税一周年前夕，TOP10财经新闻、持仓行业动态、技术分析与操作建议">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .report-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 80px 0 50px;
+            color: white;
+        }
+        .report-date { color: #94a3b8; font-size: 14px; }
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .news-table { font-size: 14px; }
+        .news-table td { padding: 12px; vertical-align: top; }
+        .tag-red { background: #fee2e2; color: #dc2626; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+        .tag-yellow { background: #fef3c7; color: #d97706; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+        .tag-green { background: #d1fae5; color: #059669; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+        .tag-blue { background: #dbeafe; color: #1d4ed8; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+        .stock-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3b82f6;
+        }
+        .stock-card.etf { border-left-color: #8b5cf6; }
+        .stock-card.warning { border-left-color: #f59e0b; }
+        .signal-buy { color: #059669; font-weight: 700; }
+        .signal-hold { color: #d97706; font-weight: 700; }
+        .signal-sell { color: #dc2626; font-weight: 700; }
+        .signal-watch { color: #6366f1; font-weight: 700; }
+        .conclusion-box {
+            background: linear-gradient(135deg, #1e3a5f, #0f3460);
+            color: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        .action-item {
+            background: white;
+            color: #1e293b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .action-num {
+            background: #3b82f6;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .risk-box {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .pmi-box {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border: 1px solid #86efac;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        .pmi-box.warn {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-color: #fbbf24;
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .data-row:last-child { border-bottom: none; }
+        .pct-up { color: #ef4444; font-weight: 700; }
+        .pct-down { color: #22c55e; font-weight: 700; }
+        .pct-flat { color: #64748b; font-weight: 700; }
+        .anniversary-banner {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="../index.html">
+            <span class="logo-icon">📊</span>理易港
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="../products/">产品测评</a></li>
+                <li class="nav-item"><a class="nav-link active" href="index.html">每日研判</a></li>
+                <li class="nav-item"><a class="nav-link" href="../tools/">理财工具</a></li>
+                <li class="nav-item"><a class="nav-link" href="../vip/">VIP服务</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- 报告头部 -->
+<div class="report-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <p class="report-date mb-2">📅 2026年3月30日（周一）| 早盘研判</p>
+                <h1 class="display-5 fw-bold mb-3">PMI发布日 · 关税一周年前夕</h1>
+                <p class="lead" style="color: #cbd5e1;">今日上午发布3月官方PMI，数据好坏直接影响开盘情绪。4月2日是去年关税战启动一周年，市场进入敏感时间窗口。</p>
+                <div class="d-flex gap-3 flex-wrap mt-3">
+                    <span class="badge bg-danger fs-6 px-3 py-2">⚠️ PMI数据发布日</span>
+                    <span class="badge bg-warning text-dark fs-6 px-3 py-2">4月2日关税一周年</span>
+                    <span class="badge bg-info fs-6 px-3 py-2">上周五上证+0.63%</span>
+                </div>
+            </div>
+            <div class="col-lg-4 text-end d-none d-lg-block">
+                <div style="font-size: 72px; opacity: 0.4;">📊</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+
+    <!-- 关税一周年警示 -->
+    <div class="anniversary-banner">
+        <div class="d-flex align-items-center gap-3">
+            <span style="font-size: 36px;">🗓️</span>
+            <div>
+                <div style="font-size: 18px; font-weight: 700;">4月2日：关税战启动一周年</div>
+                <div style="opacity: 0.85; margin-top: 4px;">2025年4月2日，特朗普宣布"解放日"关税，开启全球贸易格局重塑。一年来中国市场已充分消化冲击，本周为关键节点，需防止市场情绪波动引发短期震荡。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 上周五收盘数据速览 -->
+    <h2 class="section-title">📈 上周五（3月27日）收盘数据</h2>
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-md-3">
+            <div class="card text-center p-3 h-100">
+                <div style="font-size: 12px; color: #64748b;">上证指数</div>
+                <div style="font-size: 22px; font-weight: 700; color: #1e293b;">3913.72</div>
+                <div class="pct-up">+0.63%</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card text-center p-3 h-100">
+                <div style="font-size: 12px; color: #64748b;">深成指</div>
+                <div style="font-size: 22px; font-weight: 700; color: #1e293b;">13760.37</div>
+                <div class="pct-up">+1.13%</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card text-center p-3 h-100">
+                <div style="font-size: 12px; color: #64748b;">汇川技术</div>
+                <div style="font-size: 22px; font-weight: 700; color: #1e293b;">68.54</div>
+                <div class="pct-up">+1.51%</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card text-center p-3 h-100">
+                <div style="font-size: 12px; color: #64748b;">药明康德</div>
+                <div style="font-size: 22px; font-weight: 700; color: #1e293b;">97.00</div>
+                <div class="pct-up">+2.40%</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-3 mb-5">
+        <div class="col-6 col-md-4">
+            <div class="card text-center p-3">
+                <div style="font-size: 12px; color: #64748b;">中证A500ETF（159338）</div>
+                <div style="font-size: 20px; font-weight: 700;">1.185</div>
+                <div class="pct-up">+0.77%</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4">
+            <div class="card text-center p-3">
+                <div style="font-size: 12px; color: #64748b;">中证红利ETF（515080）</div>
+                <div style="font-size: 20px; font-weight: 700;">1.603</div>
+                <div class="pct-up">+0.19%</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4">
+            <div class="card text-center p-3">
+                <div style="font-size: 12px; color: #64748b;">恒生科技ETF（513180）</div>
+                <div style="font-size: 20px; font-weight: 700;">0.622</div>
+                <div class="pct-up">+0.32%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOP10财经新闻 -->
+    <h2 class="section-title">📰 TOP10 财经要闻</h2>
+    <div class="table-responsive mb-5">
+        <table class="table news-table table-hover">
+            <thead class="table-light">
+                <tr>
+                    <th width="5%">#</th>
+                    <th width="10%">标签</th>
+                    <th>标题 / 要点</th>
+                    <th width="15%">影响判断</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1</strong></td>
+                    <td><span class="tag-red">宏观</span></td>
+                    <td>
+                        <strong>3月官方PMI今日上午发布</strong><br>
+                        <small class="text-muted">2月PMI=49.0%（收缩区间），市场预期3月回升至50%荣枯线附近。今日数据好坏将直接影响开盘情绪和市场节奏。</small>
+                    </td>
+                    <td><span class="tag-red">重大关注</span></td>
+                </tr>
+                <tr>
+                    <td><strong>2</strong></td>
+                    <td><span class="tag-red">贸易</span></td>
+                    <td>
+                        <strong>4月2日：关税战启动一周年，全球供应链重塑进度盘点</strong><br>
+                        <small class="text-muted">2025年4月2日"解放日"关税启动一年，观察者网评述"中国百税不侵"，中国已适应高关税格局，本周市场存在情绪性纪念波动风险。</small>
+                    </td>
+                    <td><span class="tag-yellow">谨慎观察</span></td>
+                </tr>
+                <tr>
+                    <td><strong>3</strong></td>
+                    <td><span class="tag-yellow">中东</span></td>
+                    <td>
+                        <strong>中东局势不确定性上升，G7讨论释放战略油储</strong><br>
+                        <small class="text-muted">伊朗局势持续紧张，G7将讨论协调释放战略油储，若原油价格大幅波动将影响通胀预期和市场情绪。</small>
+                    </td>
+                    <td><span class="tag-yellow">关注油价</span></td>
+                </tr>
+                <tr>
+                    <td><strong>4</strong></td>
+                    <td><span class="tag-blue">光伏</span></td>
+                    <td>
+                        <strong>4月1日起中国光伏出口新规生效</strong><br>
+                        <small class="text-muted">光伏产品出口相关政策调整，光伏板块短期存在政策解读预期差，相关ETF可关注。</small>
+                    </td>
+                    <td><span class="tag-blue">板块机会</span></td>
+                </tr>
+                <tr>
+                    <td><strong>5</strong></td>
+                    <td><span class="tag-green">资金</span></td>
+                    <td>
+                        <strong>北向资金上周净流入，连续第三周正流入</strong><br>
+                        <small class="text-muted">外资持续回流A股，尤其对消费、医药、新能源板块加仓明显，是当前市场最强支撑力量。</small>
+                    </td>
+                    <td><span class="tag-green">偏多</span></td>
+                </tr>
+                <tr>
+                    <td><strong>6</strong></td>
+                    <td><span class="tag-red">非农</span></td>
+                    <td>
+                        <strong>美国3月非农本周五发布，市场预期就业降温</strong><br>
+                        <small class="text-muted">若非农数据低于预期，美联储降息预期升温，对A股流动性有利；若超预期则压制风险资产。</small>
+                    </td>
+                    <td><span class="tag-yellow">关注周五</span></td>
+                </tr>
+                <tr>
+                    <td><strong>7</strong></td>
+                    <td><span class="tag-blue">医药</span></td>
+                    <td>
+                        <strong>药明康德：美国制裁名单压力持续，国内业务占比提升</strong><br>
+                        <small class="text-muted">经历制裁风险后，药明康德国内+非美业务快速扩张，上周金融机构+2.4%，市场逐步消化制裁担忧。</small>
+                    </td>
+                    <td><span class="tag-green">持仓中性偏多</span></td>
+                </tr>
+                <tr>
+                    <td><strong>8</strong></td>
+                    <td><span class="tag-blue">工控</span></td>
+                    <td>
+                        <strong>汇川技术：制造业景气预期回升驱动工控板块走强</strong><br>
+                        <small class="text-muted">若今日PMI超预期（>50%），工控/自动化设备板块将是最直接受益方向，汇川逻辑强化。</small>
+                    </td>
+                    <td><span class="tag-green">PMI催化</span></td>
+                </tr>
+                <tr>
+                    <td><strong>9</strong></td>
+                    <td><span class="tag-yellow">解禁</span></td>
+                    <td>
+                        <strong>本周28只个股解禁，总市值近293亿，鸿日达居首（108亿）</strong><br>
+                        <small class="text-muted">解禁压力较大，鸿日达（108亿）、万润新能（49亿）需重点关注，持有相关个股注意风险。</small>
+                    </td>
+                    <td><span class="tag-red">规避解禁股</span></td>
+                </tr>
+                <tr>
+                    <td><strong>10</strong></td>
+                    <td><span class="tag-green">政策</span></td>
+                    <td>
+                        <strong>十五五规划开局之年，政策支持基调持续，AI+内需为双主线</strong><br>
+                        <small class="text-muted">2026年AI算力、消费内需双主线政策驱动明确，季末月末资金配置窗口，机构有加仓动力。</small>
+                    </td>
+                    <td><span class="tag-green">中线偏多</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 今日核心关注：PMI -->
+    <h2 class="section-title">🔍 今日核心关注：3月PMI解读框架</h2>
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="pmi-box">
+                <div style="font-weight: 700; font-size: 16px; color: #15803d; margin-bottom: 12px;">📗 情景A：PMI ≥ 50.5%（超预期）</div>
+                <ul class="mb-0" style="font-size: 14px; color: #166534;">
+                    <li>制造业重回扩张，改变悲观预期</li>
+                    <li>工控、机械、新能源设备受益</li>
+                    <li>汇川技术短线催化信号</li>
+                    <li>操作：可适当加仓工控ETF</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="pmi-box warn">
+                <div style="font-weight: 700; font-size: 16px; color: #92400e; margin-bottom: 12px;">📙 情景B：PMI 49.5~50.4%（符合预期）</div>
+                <ul class="mb-0" style="font-size: 14px; color: #78350f;">
+                    <li>市场反应平淡，继续震荡格局</li>
+                    <li>关注结构性机会，红利防御配置</li>
+                    <li>中证A500ETF维持持有</li>
+                    <li>操作：维持现有仓位</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="pmi-box" style="background: linear-gradient(135deg, #fef2f2, #fecaca); border-color: #f87171;">
+                <div style="font-weight: 700; font-size: 16px; color: #991b1b; margin-bottom: 12px;">📕 情景C：PMI &lt; 49.5%（弱于预期）</div>
+                <ul class="mb-0" style="font-size: 14px; color: #7f1d1d;">
+                    <li>叠加关税周年情绪，市场存在补跌风险</li>
+                    <li>防御性红利ETF相对抗跌</li>
+                    <li>汇川技术逻辑暂时受损</li>
+                    <li>操作：控仓，等待方向明确</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 持仓分析 -->
+    <h2 class="section-title">💼 持仓标的分析</h2>
+
+    <div class="stock-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+                <h5 class="mb-1">汇川技术（300124）</h5>
+                <small class="text-muted">工业自动化龙头 · 昨收 ¥68.54</small>
+            </div>
+            <span class="signal-hold">⏳ 等PMI验证</span>
+        </div>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="data-row"><span>上周五收盘</span><span style="font-weight:600;">68.54</span></div>
+                <div class="data-row"><span>上周五涨跌</span><span class="pct-up">+1.51%</span></div>
+                <div class="data-row"><span>近期趋势</span><span>震荡上行，站稳65元平台</span></div>
+            </div>
+            <div class="col-md-6">
+                <div style="background:#f1f5f9; border-radius:8px; padding:12px; font-size:14px;">
+                    <strong>今日逻辑：</strong><br>
+                    PMI是最大催化剂。若PMI≥50.5%，汇川作为工控龙头直接受益，可考虑加仓；若PMI弱，则继续持有等待更好入场点。当前68元附近有支撑，止损可设65元。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stock-card warning">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+                <h5 class="mb-1">药明康德（603259）</h5>
+                <small class="text-muted">CRO龙头 · 昨收 ¥97.00</small>
+            </div>
+            <span class="signal-hold">🔍 轻仓观察</span>
+        </div>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="data-row"><span>上周五收盘</span><span style="font-weight:600;">97.00</span></div>
+                <div class="data-row"><span>上周五涨跌</span><span class="pct-up">+2.40%</span></div>
+                <div class="data-row"><span>关键压力位</span><span>100元整数关口</span></div>
+            </div>
+            <div class="col-md-6">
+                <div style="background:#f1f5f9; border-radius:8px; padding:12px; font-size:14px;">
+                    <strong>今日逻辑：</strong><br>
+                    上周连续上涨，逼近100元整数关口。100元上方存在密集套牢盘，突破需要较大成交量配合。本周关税周年节点，CRO板块存在制裁预期情绪扰动风险，轻仓持有，不追涨。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stock-card etf">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+                <h5 class="mb-1">中证A500 ETF（159338）+ 中证红利 ETF（515080）+ 恒生科技 ETF（513180）</h5>
+                <small class="text-muted">宽基配置底仓</small>
+            </div>
+            <span class="signal-buy">✅ 正常持有</span>
+        </div>
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="data-row"><span>A500 ETF</span><span class="pct-up">1.185 (+0.77%)</span></div>
+                <div style="font-size:13px; color:#64748b; margin-top:8px;">广泛配置，跟踪中国核心资产，适合底仓持有。PMI超预期后可酌情加仓。</div>
+            </div>
+            <div class="col-md-4">
+                <div class="data-row"><span>红利 ETF</span><span class="pct-up">1.603 (+0.19%)</span></div>
+                <div style="font-size:13px; color:#64748b; margin-top:8px;">防御核心配置，关税周年前夕稳定性强。4月清明前建议适当加配，月度分红稳定现金流。</div>
+            </div>
+            <div class="col-md-4">
+                <div class="data-row"><span>恒生科技 ETF</span><span class="pct-up">0.622 (+0.32%)</span></div>
+                <div style="font-size:13px; color:#64748b; margin-top:8px;">港股科技估值低，2026年AI投资热情持续。作为进攻配置，PMI好转后可加仓。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 本周日历 -->
+    <h2 class="section-title">📅 本周关键节点</h2>
+    <div class="table-responsive mb-5">
+        <table class="table table-bordered" style="font-size:14px;">
+            <thead class="table-dark">
+                <tr>
+                    <th>日期</th>
+                    <th>事件</th>
+                    <th>重要度</th>
+                    <th>影响判断</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-danger">
+                    <td><strong>3月30日（今天）</strong></td>
+                    <td>中国3月官方PMI发布（上午9:30前后）</td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                    <td>最重要数据，决定本周方向</td>
+                </tr>
+                <tr class="table-warning">
+                    <td>4月1日（周三）</td>
+                    <td>中国光伏出口新规生效；财新制造业PMI</td>
+                    <td>⭐⭐⭐</td>
+                    <td>光伏板块扰动；验证官方PMI</td>
+                </tr>
+                <tr class="table-danger">
+                    <td>4月2日（周四）</td>
+                    <td>关税战启动一周年纪念日</td>
+                    <td>⭐⭐⭐⭐</td>
+                    <td>情绪风险日，防止放大波动</td>
+                </tr>
+                <tr>
+                    <td>4月3日（周五）</td>
+                    <td>清明节前最后交易日；美国3月非农</td>
+                    <td>⭐⭐⭐⭐</td>
+                    <td>节前减仓压力；非农影响美股</td>
+                </tr>
+                <tr class="table-light">
+                    <td>4月4日-4月6日</td>
+                    <td>清明节休市</td>
+                    <td>—</td>
+                    <td>建议节前降低仓位，防黑天鹅</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 总结建议 -->
+    <div class="conclusion-box">
+        <h3 class="mb-4">🎯 今日操作建议</h3>
+        <div class="action-item">
+            <div class="action-num">1</div>
+            <div>
+                <strong>等PMI数据再决策</strong><br>
+                <small>今日上午9:30前后PMI数据发布，开盘前不做主动操作。数据发布后按三情景方案执行，不要抢跑。</small>
+            </div>
+        </div>
+        <div class="action-item">
+            <div class="action-num">2</div>
+            <div>
+                <strong>汇川技术：PMI好则加仓，弱则持有等待</strong><br>
+                <small>PMI≥50.5%：考虑在69元附近加仓，目标75元，止损65元。PMI≤49.5%：维持现有仓位，不追跌。</small>
+            </div>
+        </div>
+        <div class="action-item">
+            <div class="action-num">3</div>
+            <div>
+                <strong>药明康德：100元上方不追，守100元突破信号</strong><br>
+                <small>当前97元位置安全，但100元整数关口阻力明显。等待放量突破100元后再考虑加仓，本周不主动操作。</small>
+            </div>
+        </div>
+        <div class="action-item">
+            <div class="action-num">4</div>
+            <div>
+                <strong>节前仓位管理：4月3日收盘前降至5成以下</strong><br>
+                <small>清明节三天休市，海外风险（关税周年、非农、地缘）可能在节日期间发酵。建议节前将仓位降至5成以下，节后根据节日消息再决策。</small>
+            </div>
+        </div>
+        <div class="action-item">
+            <div class="action-num">5</div>
+            <div>
+                <strong>红利ETF：节前持有，节后加仓机会</strong><br>
+                <small>红利ETF防御性强，节前持有。若节后市场因外部风险下跌，红利ETF跌幅有限，可作为底仓加仓时机。</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- 风险提示 -->
+    <div class="risk-box">
+        <h5>⚠️ 风险提示</h5>
+        <p class="mb-2">本报告仅供参考，不构成投资建议。股票投资有风险，入市需谨慎。</p>
+        <ul class="mb-0" style="font-size:14px;">
+            <li>PMI数据存在超预期风险，请根据实际数据动态调整操作方案</li>
+            <li>4月2日关税周年为市场情绪敏感节点，可能引发非理性波动</li>
+            <li>清明节假期期间海外市场正常交易，节后A股可能出现跳空缺口</li>
+            <li>药明康德仍面临美国制裁不确定性，仓位不宜过重</li>
+        </ul>
+    </div>
+
+    <!-- 相关阅读 -->
+    <h2 class="section-title">📚 相关报告</h2>
+    <div class="row g-3">
+        <div class="col-md-4">
+            <a href="report-20260329-preview.html" class="card text-decoration-none h-100">
+                <div class="card-body">
+                    <div style="font-size: 12px; color: #64748b;">2026-03-29</div>
+                    <div style="font-weight: 600; color: #1e293b; margin-top: 4px;">下周前瞻 · 4月2日关税大限，A股怎么走？</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="report-20260328-weekly.html" class="card text-decoration-none h-100">
+                <div class="card-body">
+                    <div style="font-size: 12px; color: #64748b;">2026-03-28</div>
+                    <div style="font-weight: 600; color: #1e293b; margin-top: 4px;">本周总结 · 上证放量收阳，震荡格局确认</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="index.html" class="card text-decoration-none h-100">
+                <div class="card-body">
+                    <div style="font-size: 12px; color: #64748b;">历史报告</div>
+                    <div style="font-weight: 600; color: #1e293b; margin-top: 4px;">查看全部每日研判报告</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<!-- 页脚 -->
+<footer style="background: #1e293b; color: #cbd5e1; padding: 40px 0 30px; margin-top: 60px;">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <h6 style="color: #f1f5f9; font-weight: 700; margin-bottom: 12px;">📊 理易港</h6>
+                <p style="font-size: 13px; line-height: 1.7;">专注于A股投资研判与理财产品测评，帮助普通投资者做出更理性的投资决策。</p>
+            </div>
+            <div class="col-md-4">
+                <h6 style="color: #f1f5f9; font-weight: 700; margin-bottom: 12px;">服务项目</h6>
+                <ul style="list-style:none; padding:0; font-size:13px;">
+                    <li><a href="../products/" style="color: #93c5fd; text-decoration:none;">产品测评</a></li>
+                    <li><a href="index.html" style="color: #93c5fd; text-decoration:none;">每日研判</a></li>
+                    <li><a href="../tools/" style="color: #93c5fd; text-decoration:none;">理财工具</a></li>
+                    <li><a href="../vip/" style="color: #93c5fd; text-decoration:none;">VIP服务</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h6 style="color: #f1f5f9; font-weight: 700; margin-bottom: 12px;">免责声明</h6>
+                <p style="font-size: 12px; color: #94a3b8; line-height: 1.6;">本网站所有内容仅供参考，不构成投资建议。投资有风险，入市需谨慎。请根据自身风险承受能力做出独立投资决策。</p>
+            </div>
+        </div>
+        <hr style="border-color: #334155; margin: 20px 0;">
+        <p style="text-align:center; font-size:12px; color:#64748b; margin:0;">© 2026 理易港 ourlyg.com · 理性投资 · 易学易用</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
