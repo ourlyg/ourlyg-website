@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 百度统计 -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?67b56cbdd91b37f49d6c38510eabafa5";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2026年4月2日收盘复盘报告 - 关税战一周年，大盘普跌创业板-2.31%，欧康医药涨30%领涨，TOP10涨幅榜单分析">
+    <title>收盘复盘报告 | 2026-04-02 | 理易港</title>
+    <link rel="canonical" href="https://ourlyg.com/daily/report-20260402.html">
+    <meta property="og:title" content="收盘复盘报告 - 2026年4月2日">
+    <meta property="og:description" content="关税周年日大盘普跌，但欧康医药+30%独立行情亮眼">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .report-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 80px 0 50px;
+            color: white;
+        }
+        .report-date { color: #94a3b8; font-size: 14px; }
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .news-table { font-size: 14px; }
+        .news-table td { padding: 12px; vertical-align: top; }
+        .tag-red { background: #fee2e2; color: #dc2626; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+        .tag-yellow { background: #fef3c7; color: #d97706; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+        .tag-green { background: #d1fae5; color: #059669; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+        .tag-blue { background: #dbeafe; color: #1d4ed8; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+        .stock-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3b82f6;
+        }
+        .stock-card.etf { border-left-color: #8b5cf6; }
+        .stock-card.warning { border-left-color: #f59e0b; }
+        .signal-buy { color: #059669; font-weight: 700; }
+        .signal-hold { color: #d97706; font-weight: 700; }
+        .signal-sell { color: #dc2626; font-weight: 700; }
+        .conclusion-box {
+            background: linear-gradient(135deg, #1e3a5f, #0f3460);
+            color: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        .action-item {
+            background: white;
+            color: #1e293b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .action-num {
+            background: #3b82f6;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .risk-box {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .data-row:last-child { border-bottom: none; }
+        .pct-up { color: #ef4444; font-weight: 700; }
+        .pct-down { color: #22c55e; font-weight: 700; }
+        .pct-flat { color: #64748b; font-weight: 700; }
+        .top10-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-bottom: 8px;
+            border-left: 4px solid #ef4444;
+            transition: transform 0.2s;
+        }
+        .top10-item:hover { transform: translateX(4px); }
+        .top10-item .rank {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        .key-date-box {
+            background: linear-gradient(135deg, #1e3a5f, #164e63);
+            color: white;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="../index.html">
+            <span class="logo-icon">📊</span>理易港
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                <li class="nav-item"><a class="nav-link active" href="index.html">每日研判</a></li>
+                <li class="nav-item"><a class="nav-link" href="../products/index.html">产品测评</a></li>
+                <li class="nav-item"><a class="nav-link" href="../tools/index.html">理财工具</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- 报告头部 -->
+<div class="report-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <p class="report-date mb-2">📅 2026年4月2日（周四）| 收盘复盘</p>
+                <h1 class="display-5 fw-bold mb-3">关税周年日 · 大盘普跌 · 欧康医药独立涨30%</h1>
+                <p class="lead" style="color: #cbd5e1;">关税战一周年当天，大盘全线下挫——创业板-2.31%、上证-0.74%。但个股结构精彩：欧康医药暴涨29.98%领涨全场，医药+新材料成为当日最强主线。明天是清明节前最后交易日。</p>
+                <div class="d-flex gap-3 flex-wrap mt-3">
+                    <span class="badge bg-danger fs-6 px-3 py-2">⚠️ 关税战一周年</span>
+                    <span class="badge bg-warning text-dark fs-6 px-3 py-2">📉 创业板-2.31%</span>
+                    <span class="badge bg-success fs-6 px-3 py-2">🔥 欧康医药+29.98%</span>
+                </div>
+            </div>
+            <div class="col-lg-4 text-end d-none d-lg-block">
+                <div style="font-size: 72px; opacity: 0.4;">📉</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+
+    <!-- 关键节点提醒 -->
+    <div class="key-date-box">
+        <div class="row g-3">
+            <div class="col-md-4 text-center">
+                <div style="font-size: 28px; font-weight: 800; color: #fbbf24;">昨天</div>
+                <div style="font-size: 13px; opacity: 0.8;">4月1日（周三）</div>
+                <div style="font-size: 12px; margin-top: 4px; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px;">开门红 上证+1.46%</div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div style="font-size: 28px; font-weight: 800; color: #ef4444;">今天</div>
+                <div style="font-size: 13px; opacity: 0.8;">4月2日（周四）</div>
+                <div style="font-size: 12px; margin-top: 4px; background: rgba(239,68,68,0.3); padding: 4px 8px; border-radius: 4px;">⚠️ 关税周年 普跌</div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div style="font-size: 28px; font-weight: 800; color: #f97316;">明天</div>
+                <div style="font-size: 13px; opacity: 0.8;">4月3日（周五）</div>
+                <div style="font-size: 12px; margin-top: 4px; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px;">节前最后交易日</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 收盘数据总览 -->
+    <h2 class="section-title">📈 收盘数据总览</h2>
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-md-4">
+            <div class="card text-center p-3 h-100">
+                <div style="font-size: 12px; color: #64748b;">上证指数</div>
+                <div style="font-size: 22px; font-weight: 700; color: #1e293b;">3919.29</div>
+                <div class="pct-down">-0.74%</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4">
+            <div class="card text-center p-3 h-100">
+                <div style="font-size: 12px; color: #64748b;">深证成指</div>
+                <div style="font-size: 22px; font-weight: 700; color: #1e293b;">13486.94</div>
+                <div class="pct-down">-1.60%</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4">
+            <div class="card text-center p-3 h-100">
+                <div style="font-size: 12px; color: #64748b;">创业板指</div>
+                <div style="font-size: 22px; font-weight: 700; color: #1e293b;">3172.65</div>
+                <div class="pct-down">-2.31%</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4">
+            <div class="card text-center p-3 h-100">
+                <div style="font-size: 12px; color: #64748b;">沪深300</div>
+                <div style="font-size: 22px; font-weight: 700; color: #1e293b;">4478.91</div>
+                <div class="pct-down">-1.04%</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4">
+            <div class="card text-center p-3 h-100">
+                <div style="font-size: 12px; color: #64748b;">中证500</div>
+                <div style="font-size: 22px; font-weight: 700; color: #1e293b;">7605.29</div>
+                <div class="pct-down">-1.87%</div>
+            </div>
+        </div>
+        <div class="col-6 col-md-4">
+            <div class="card text-center p-3 h-100">
+                <div style="font-size: 12px; color: #64748b;">涨跌比</div>
+                <div style="font-size: 16px; font-weight: 700; color: #1e293b;">716 : 4743</div>
+                <div style="font-size: 13px; color: #64748b;">明日（4月3日）</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOP10涨幅榜单 -->
+    <h2 class="section-title">🏆 今日涨幅TOP10</h2>
+    <p style="color: #64748b; margin-bottom: 16px;">数据来源：Tushare API · 全市场5485只股票筛选（收盘价≥1元）· 2026年4月2日收盘</p>
+
+    <div style="margin-bottom: 30px;">
+        <div class="top10-item">
+            <div class="d-flex align-items-center gap-3">
+                <div class="rank">1</div>
+                <div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1e293b;">欧康医药</div>
+                    <div style="font-size: 12px; color: #64748b;">920230.BJ · 北交所</div>
+                </div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-size: 18px; font-weight: 700; color: #ef4444;">+29.98%</div>
+                <div style="font-size: 12px; color: #64748b;">¥14.61</div>
+            </div>
+        </div>
+
+        <div class="top10-item">
+            <div class="d-flex align-items-center gap-3">
+                <div class="rank">2</div>
+                <div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1e293b;">星辉环材</div>
+                    <div style="font-size: 12px; color: #64748b;">300834.SZ · 创业板</div>
+                </div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-size: 18px; font-weight: 700; color: #ef4444;">+20.01%</div>
+                <div style="font-size: 12px; color: #64748b;">¥43.49</div>
+            </div>
+        </div>
+
+        <div class="top10-item">
+            <div class="d-flex align-items-center gap-3">
+                <div class="rank">3</div>
+                <div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1e293b;">博汇股份</div>
+                    <div style="font-size: 12px; color: #64748b;">300839.SZ · 创业板</div>
+                </div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-size: 18px; font-weight: 700; color: #ef4444;">+19.99%</div>
+                <div style="font-size: 12px; color: #64748b;">¥16.69</div>
+            </div>
+        </div>
+
+        <div class="top10-item">
+            <div class="d-flex align-items-center gap-3">
+                <div class="rank">4</div>
+                <div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1e293b;">康芝药业</div>
+                    <div style="font-size: 12px; color: #64748b;">300086.SZ · 创业板</div>
+                </div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-size: 18px; font-weight: 700; color: #ef4444;">+16.06%</div>
+                <div style="font-size: 12px; color: #64748b;">¥9.90</div>
+            </div>
+        </div>
+
+        <div class="top10-item">
+            <div class="d-flex align-items-center gap-3">
+                <div class="rank">5</div>
+                <div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1e293b;">科力股份</div>
+                    <div style="font-size: 12px; color: #64748b;">920088.BJ · 北交所</div>
+                </div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-size: 18px; font-weight: 700; color: #ef4444;">+15.76%</div>
+                <div style="font-size: 12px; color: #64748b;">¥61.98</div>
+            </div>
+        </div>
+
+        <div class="top10-item">
+            <div class="d-flex align-items-center gap-3">
+                <div class="rank">6</div>
+                <div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1e293b;">力诺药包</div>
+                    <div style="font-size: 12px; color: #64748b;">301188.SZ · 创业板</div>
+                </div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-size: 18px; font-weight: 700; color: #ef4444;">+15.35%</div>
+                <div style="font-size: 12px; color: #64748b;">¥23.59</div>
+            </div>
+        </div>
+
+        <div class="top10-item">
+            <div class="d-flex align-items-center gap-3">
+                <div class="rank">7</div>
+                <div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1e293b;">三生国健</div>
+                    <div style="font-size: 12px; color: #64748b;">688336.SH · 科创板</div>
+                </div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-size: 18px; font-weight: 700; color: #ef4444;">+13.41%</div>
+                <div style="font-size: 12px; color: #64748b;">¥90.38</div>
+            </div>
+        </div>
+
+        <div class="top10-item">
+            <div class="d-flex align-items-center gap-3">
+                <div class="rank">8</div>
+                <div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1e293b;">三旺通信</div>
+                    <div style="font-size: 12px; color: #64748b;">688618.SH · 科创板</div>
+                </div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-size: 18px; font-weight: 700; color: #ef4444;">+13.13%</div>
+                <div style="font-size: 12px; color: #64748b;">¥36.44</div>
+            </div>
+        </div>
+
+        <div class="top10-item">
+            <div class="d-flex align-items-center gap-3">
+                <div class="rank">9</div>
+                <div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1e293b;">诺思兰德</div>
+                    <div style="font-size: 12px; color: #64748b;">920047.BJ · 北交所</div>
+                </div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-size: 18px; font-weight: 700; color: #ef4444;">+12.63%</div>
+                <div style="font-size: 12px; color: #64748b;">¥28.44</div>
+            </div>
+        </div>
+
+        <div class="top10-item">
+            <div class="d-flex align-items-center gap-3">
+                <div class="rank">10</div>
+                <div>
+                    <div style="font-size: 15px; font-weight: 700; color: #1e293b;">必创科技</div>
+                    <div style="font-size: 12px; color: #64748b;">300667.SZ · 创业板</div>
+                </div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-size: 18px; font-weight: 700; color: #ef4444;">+12.11%</div>
+                <div style="font-size: 12px; color: #64748b;">¥17.78</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 榜单结构分析 -->
+    <h2 class="section-title">🔍 榜单结构分析</h2>
+    <div class="row g-3 mb-5">
+        <div class="col-md-4">
+            <div class="card p-3 h-100" style="border-top: 3px solid #ef4444;">
+                <h6 style="color: #ef4444;">💊 医药板块（3只）</h6>
+                <p style="font-size: 13px; color: #475569;">欧康医药+30%、康芝药业+16%、力诺药包+15%、三生国健+13%——医药（含药包材）占据TOP10四席，是当日最强主线。创新药+医药包装双线驱动。</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3 h-100" style="border-top: 3px solid #3b82f6;">
+                <h6 style="color: #3b82f6;">🧪 新材料（2只）</h6>
+                <p style="font-size: 13px; color: #475569;">星辉环材+20%、博汇股份+20%——新材料板块双涨停，受益于出口贸易新规落地后龙头集中度提升的逻辑。</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3 h-100" style="border-top: 3px solid #8b5cf6;">
+                <h6 style="color: #8b5cf6;">📡 科创板/北交所（4只）</h6>
+                <p style="font-size: 13px; color: #475569;">欧康医药（BJ）、科力股份（BJ）、诺思兰德（BJ）、三生国健（SH）、三旺通信（SH）——北交所+科创板合计占据半壁江山，小盘股活跃度远超主板。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 大盘复盘 -->
+    <h2 class="section-title">📊 大盘复盘分析</h2>
+    <div class="stock-card warning">
+        <h5>📉 关税周年日的"靴子落地"效应</h5>
+        <p>今天是关税战一周年（2025年4月2日第一轮关税正式生效），市场在事件落地前已连续调整（4月1日创业板-2.70%），今日继续下跌属于惯性释放。</p>
+        <ul>
+            <li><strong>创业板跌幅最大（-2.31%）</strong>——科技成长+CXO权重拖累，药明康德从昨日100元上方回落至103元附近</li>
+            <li><strong>中证红利逆市飘红（+0.23%）</strong>——高股息防御资产在大盘下跌日再次证明其价值</li>
+            <li><strong>跌多涨少</strong>——但仍有欧康医药+30%、星辉环材+20%的涨停板，说明个股结构性机会存在</li>
+            <li><strong>成交量</strong>——节前第二日，成交萎缩属正常现象，不代表市场信心崩塌</li>
+        </ul>
+    </div>
+
+    <div class="stock-card">
+        <h5>📈 4月1日"开门红"为何昙花一现？</h5>
+        <p>4月1日上证+1.46%（财新PMI催化），但4月2日迅速回落-0.74%。原因分析：</p>
+        <ul>
+            <li><strong>关税周年情绪压制</strong>：虽然无新增政策，但媒体集中报道"关税周年"形成情绪负反馈</li>
+            <li><strong>节前资金撤退</strong>：清明节前3天，机构减仓窗口加速了下跌</li>
+            <li><strong>外部不确定性升温</strong>：霍尔木兹海峡局势+油价上涨的担忧开始传导</li>
+            <li><strong>利好出尽效应</strong>：财新PMI预期已在4月1日price in，后续缺乏新催化</li>
+        </ul>
+    </div>
+
+    <!-- 明日研判 -->
+    <h2 class="section-title">📅 明日（4月3日）前瞻研判</h2>
+
+    <div class="stock-card warning">
+        <h5>⚠️ 清明节前最后交易日——关键风险日</h5>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="data-row"><span>市场环境</span><span style="color:#dc2626; font-weight:600;">多重利空叠加</span></div>
+                <div class="data-row"><span>油价</span><span style="color:#dc2626; font-weight:600;">WTI突破110美元</span></div>
+                <div class="data-row"><span>药品关税</span><span style="color:#dc2626; font-weight:600;">美国拟加征100%</span></div>
+                <div class="data-row"><span>外盘</span><span style="color:#d97706; font-weight:600;">耶稣受难日休市</span></div>
+                <div class="data-row"><span>节前效应</span><span style="color:#dc2626; font-weight:600;">最后减仓窗口</span></div>
+            </div>
+            <div class="col-md-6">
+                <div style="background:#f1f5f9; border-radius:8px; padding:12px; font-size:14px;">
+                    <strong>明日核心矛盾：</strong>节前持币过节压力 vs 超跌反弹动能。<br><br>
+                    连续两日下跌后，大盘有技术性反弹需求，但外盘利空（油价+药品关税）+ 节前资金撤出 = 反弹空间有限。<br><br>
+                    <strong>策略建议：不主动加仓，继续执行节前减仓计划。</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 操作建议 -->
+    <div class="conclusion-box">
+        <h3 class="mb-4">🎯 复盘总结 + 操作建议</h3>
+        <div class="action-item">
+            <div class="action-num">1</div>
+            <div>
+                <strong>今日复盘结论：关税周年日"如预期般平稳下跌"</strong><br>
+                <small>连续两天下跌，但跌幅可控（创业板累计-4.9%），未出现恐慌性抛售。TOP10榜单说明个股结构性机会仍在，医药+新材料是资金关注方向。这印证了前期判断——节前下跌是"技术性调整"而非"趋势性崩盘"。</small>
+            </div>
+        </div>
+        <div class="action-item">
+            <div class="action-num">2</div>
+            <div>
+                <strong>明日（4月3日）：节前最后交易日，减仓为主</strong><br>
+                <small>油价破110 + 药品关税100% + 耶稣受难日外盘休市 = 明日不确定性极高。建议收盘前将总仓位降至5成以下。中证红利可以保留（防御性最强），恒生科技ETF建议减仓或清仓。</small>
+            </div>
+        </div>
+        <div class="action-item">
+            <div class="action-num">3</div>
+            <div>
+                <strong>药明康德：关注100元保卫战</strong><br>
+                <small>昨日盘中突破100元后回落，今日收盘103.19元。美国拟对药品加征100%关税是重大利空，若明日跌破100元，节后可能有进一步下探至95元的压力。建议明日不追涨，保持现有仓位观察。</small>
+            </div>
+        </div>
+        <div class="action-item">
+            <div class="action-num">4</div>
+            <div>
+                <strong>汇川技术：66元支撑有效，中线不悲观</strong><br>
+                <small>PMI=50.5%超预期（官方+财新双确认），制造业景气度是汇川最硬的基本面支撑。节前震荡是正常的仓位调整，节后如果大盘企稳，68-70元仍是理想加仓区间。</small>
+            </div>
+        </div>
+        <div class="action-item">
+            <div class="action-num">5</div>
+            <div>
+                <strong>节后（4月7日）：关注三个变量</strong><br>
+                <small>①霍尔木兹局势是否升级（油价是否回落）；②美国药品关税执行细节（有无豁免）；③A股一季报预告（业绩超预期个股有望独立行情）。<strong>如果节后低开稳走，是本月最重要的加仓窗口。</strong></small>
+            </div>
+        </div>
+    </div>
+
+    <!-- 风险提示 -->
+    <div class="risk-box">
+        <h5>⚠️ 风险提示</h5>
+        <p class="mb-2">本报告仅供参考，不构成投资建议。股票投资有风险，入市需谨慎。</p>
+        <ul class="mb-0" style="font-size:14px;">
+            <li>美国拟对进口药品加征100%关税，CXO板块（药明康德等）面临政策压力，短期波动可能加大</li>
+            <li>WTI原油突破110美元/桶，霍尔木兹海峡局势升级可能进一步推高油价，对制造业形成成本压力</li>
+            <li>清明节期间（4月4-6日）海外市场正常交易，节假日存在黑天鹅风险</li>
+            <li>欧美市场因耶稣受难日休市，明日外盘参考基准缺失，盘中波动可能加大</li>
+        </ul>
+    </div>
+
+    <!-- 相关阅读 -->
+    <h2 class="section-title">📚 相关报告</h2>
+    <div class="row g-3">
+        <div class="col-md-4">
+            <a href="report-20260403.html" class="card text-decoration-none h-100">
+                <div class="card-body">
+                    <div style="font-size: 12px; color: #64748b;">2026-04-03</div>
+                    <div style="font-weight: 600; color: #1e293b; margin-top: 4px;">清明前最后交易日 · 药品关税冲击</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="report-20260401.html" class="card text-decoration-none h-100">
+                <div class="card-body">
+                    <div style="font-size: 12px; color: #64748b;">2026-04-01</div>
+                    <div style="font-weight: 600; color: #1e293b; margin-top: 4px;">关税周年日 · 财新PMI发布 · 节前倒计时</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="index.html" class="card text-decoration-none h-100">
+                <div class="card-body">
+                    <div style="font-size: 12px; color: #64748b;">历史报告</div>
+                    <div style="font-weight: 600; color: #1e293b; margin-top: 4px;">查看全部每日研判报告</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<!-- 页脚 -->
+<footer style="background: #1e293b; color: #cbd5e1; padding: 40px 0 30px; margin-top: 60px;">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <h6 style="color: #f1f5f9; font-weight: 700; margin-bottom: 12px;">📊 理易港</h6>
+                <p style="font-size: 13px; line-height: 1.7;">专注于A股投资研判与理财产品测评，帮助普通投资者做出更理性的投资决策。</p>
+            </div>
+            <div class="col-md-4">
+                <h6 style="color: #f1f5f9; font-weight: 700; margin-bottom: 12px;">服务项目</h6>
+                <ul style="list-style:none; padding:0; font-size:13px;">
+                    <li><a href="../products/" style="color: #93c5fd; text-decoration:none;">产品测评</a></li>
+                    <li><a href="index.html" style="color: #93c5fd; text-decoration:none;">每日研判</a></li>
+                    <li><a href="../tools/" style="color: #93c5fd; text-decoration:none;">理财工具</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h6 style="color: #f1f5f9; font-weight: 700; margin-bottom: 12px;">免责声明</h6>
+                <p style="font-size: 12px; color: #94a3b8; line-height: 1.6;">本网站所有内容仅供参考，不构成投资建议。投资有风险，入市需谨慎。</p>
+            </div>
+        </div>
+        <hr style="border-color: #334155; margin: 20px 0;">
+        <p style="text-align:center; font-size:12px; color:#64748b; margin:0;">© 2026 理易港 ourlyg.com · 理性投资 · 易学易用</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
