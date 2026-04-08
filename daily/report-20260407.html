@@ -14,11 +14,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="2026年4月7日早盘研判 - 清明节后首个交易日。港股休市，美联储闭门会议，伊朗地缘风险，关税10%已生效。持仓全线小幅走低，防御为主。">
-    <title>早盘研判 | 2026-04-07 节后首日 · 三重风险叠加 | 理易港</title>
+    <meta name="description" content="2026年4月7日收盘复盘报告 - 清明节后首个交易日，三大指数小幅收涨，化工板块全线爆发逾30只涨停，科创50领涨1.42%。含TOP10涨幅榜单、复盘分析与后市展望。">
+    <title>收盘复盘报告 | 2026-04-07 清明节后首个交易日 | 理易港</title>
     <link rel="canonical" href="https://ourlyg.com/daily/report-20260407.html">
-    <meta property="og:title" content="早盘研判 - 2026年4月7日（节后首日）">
-    <meta property="og:description" content="清明节后首日，港股持续休市，美联储今日闭门会议，伊朗局势极度紧张，关税10%正式生效。多重风险叠加下如何应对？">
+    <meta property="og:title" content="收盘复盘报告 - 2026年4月7日（清明节后首个交易日）">
+    <meta property="og:description" content="化工全线爆发30+涨停！清明节后首日缩量反弹，津药药业7连板市场最高。">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <style>
@@ -43,7 +43,6 @@
         .tag-yellow { background: #fef3c7; color: #d97706; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
         .tag-green { background: #d1fae5; color: #059669; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
         .tag-blue { background: #dbeafe; color: #1d4ed8; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
-        .tag-gray { background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
         .stock-card {
             background: #f8fafc;
             border-radius: 12px;
@@ -80,511 +79,394 @@
         .action-num {
             background: #3b82f6;
             color: white;
-            border-radius: 50%;
             width: 28px;
             height: 28px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 14px;
             flex-shrink: 0;
         }
-        .data-card {
-            background: white;
+        .risk-box {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
             border-radius: 12px;
             padding: 20px;
+            margin: 30px 0;
+            color: #1e293b;
+        }
+        .risk-box h5 { color: #c2410c; }
+        .risk-box li { color: #374151; }
+        .data-quick {
+            background: linear-gradient(135deg,#0f2944,#1e3a5f);
+            color: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 30px;
+        }
+        .data-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+        .data-pill {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 8px 14px;
+            font-size: 13px;
+            color: white;
+        }
+        .data-pill .val { font-size: 16px; font-weight: 700; }
+        .val-up { color: #f87171; }
+        .val-down { color: #6ee7b7; }
+        .val-flat { color: #fbbf24; }
+        .top10-table td, .top10-table th { padding: 10px 12px; }
+        .rank-badge {
+            display: inline-block;
+            width: 26px;
+            height: 26px;
+            line-height: 26px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-bottom: 16px;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 13px;
         }
-        .data-card .value { font-size: 24px; font-weight: 700; }
-        .data-card .label { color: #64748b; font-size: 13px; margin-top: 4px; }
-        .data-card .change { font-size: 14px; font-weight: 600; margin-top: 6px; }
-        .val-red { color: #ef4444; }
-        .val-green { color: #10b981; }
-        .risk-alert {
-            background: #fef2f2;
-            border: 1px solid #fca5a5;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 16px;
-        }
-        .risk-alert h5 { color: #dc2626; }
-        .index-table { font-size: 15px; }
-        .index-table td, .index-table th { padding: 12px 16px; color: #1e293b; }
-        .portfolio-row { background: #f0f9ff; }
+        .rank-1 { background: #f59e0b; color: white; }
+        .rank-2 { background: #94a3b8; color: white; }
+        .rank-3 { background: #b45309; color: white; }
+        .rank-other { background: #e2e8f0; color: #475569; }
+        .pct-up { color: #ef4444; font-weight: 700; }
+        .pct-down { color: #10b981; font-weight: 700; }
     </style>
 </head>
 <body>
-
-<!-- 导航栏 -->
-<nav class="navbar navbar-expand-lg" style="background:#0f172a; padding: 12px 0;">
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
     <div class="container">
-        <a class="navbar-brand text-white fw-bold" href="../index.html">⚓ 理易港</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
-            <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+        <a class="navbar-brand" href="../index.html">
+            <span class="logo-icon">📊</span>理易港
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navContent">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link text-white" href="../index.html">首页</a></li>
-                <li class="nav-item"><a class="nav-link" style="color:#93c5fd;" href="index.html">每日研判</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="../products/index.html">产品测评</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="../tools/index.html">理财工具</a></li>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                <li class="nav-item"><a class="nav-link active" href="../daily/index.html">每日研判</a></li>
+                <li class="nav-item"><a class="nav-link" href="../services/index.html">AI分析服务</a></li>
+                <li class="nav-item"><a class="nav-link" href="../products/index.html">产品测评</a></li>
+                <li class="nav-item"><a class="nav-link" href="../tools/index.html">理财工具</a></li>
+                <li class="nav-item"><a class="nav-link" href="../knowledge/index.html">知识科普</a></li>
+                <li class="nav-item ms-2">
+                    <a href="../service-request.html" class="btn btn-primary" style="border-radius:20px; padding:6px 18px; font-size:14px;">立即咨询</a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- 报告头部 -->
 <div class="report-header">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8">
-                <p class="report-date mb-2">📅 2026年4月7日（周二）· 清明节后首个交易日</p>
-                <h1 class="display-5 fw-bold mb-3">⚠️ 三重风险叠加 · 节后谨慎开局</h1>
-                <p class="lead" style="color:#cbd5e1;">港股今日仍休市 · 美联储今日召开闭门会议 · 伊朗地缘极度紧张<br>
-                关税10%基准税率已生效，4月9日更高税率窗口临近</p>
-                <div class="mt-3">
-                    <span class="badge me-2" style="background:#dc2626;font-size:13px;">🌍 地缘高危</span>
-                    <span class="badge me-2" style="background:#d97706;font-size:13px;">🏦 美联储闭门会议</span>
-                    <span class="badge me-2" style="background:#7c3aed;font-size:13px;">📉 持仓全线承压</span>
-                    <span class="badge" style="background:#059669;font-size:13px;">🛡️ 红利防御</span>
-                </div>
-            </div>
-            <div class="col-lg-4 mt-4 mt-lg-0 text-center">
-                <div style="background:rgba(255,255,255,0.1); border-radius:16px; padding:24px;">
-                    <div style="font-size:14px;color:#94a3b8;">节前最后交易日（4月3日）</div>
-                    <div style="font-size:42px;font-weight:700;color:#fbbf24;margin:8px 0;">⚠️</div>
-                    <div style="font-size:18px;color:white;font-weight:600;">上证 3880.10</div>
-                    <div style="color:#f87171;font-size:16px;margin-top:4px;">▼ -1.00%</div>
-                    <div style="color:#94a3b8;font-size:12px;margin-top:8px;">来源：搜索验证，20260403收盘</div>
-                </div>
-            </div>
+        <span class="report-date">📅 2026年4月7日（周一）收盘复盘 · 清明节后首个交易日</span>
+        <h1 class="mt-3">化工全线爆发 · 101只涨停 · 节后缩量回暖</h1>
+        <p class="lead opacity-75">TOP10涨停榜 · 板块复盘 · 资金流向 · 后市操作建议</p>
+        <div class="mt-3">
+            <span class="badge" style="background:#10b981;">✅ 清明后首日反弹</span>
+            <span class="badge ms-2" style="background:#f59e0b; color:#1e293b;">🧪 化工30+涨停</span>
+            <span class="badge ms-2" style="background:#3b82f6;">⚡ 短线新规正式实施</span>
         </div>
     </div>
 </div>
 
-<!-- 快速数据概览 -->
-<div style="background:#f8fafc; padding: 30px 0;">
-    <div class="container">
-        <h2 class="h5 fw-bold mb-4" style="color:#1e293b;">📊 节前收盘（20260403）· 持仓盘前报价（08:56）</h2>
-        <div class="row g-3">
-            <div class="col-6 col-md-3">
-                <div class="data-card">
-                    <div class="label">上证指数（4月3日收）</div>
-                    <div class="value val-red">3880.10</div>
-                    <div class="change val-red">▼ -1.00%</div>
-                    <div style="font-size:11px;color:#94a3b8;margin-top:4px;">来源：搜索多方核实</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="data-card">
-                    <div class="label">创业板指（4月3日收）</div>
-                    <div class="value val-red">3149.60</div>
-                    <div class="change val-red">▼ -0.73%</div>
-                    <div style="font-size:11px;color:#94a3b8;margin-top:4px;">来源：搜索多方核实</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="data-card">
-                    <div class="label">药明康德（盘前08:56）</div>
-                    <div class="value val-red">99.99</div>
-                    <div class="change val-red">▼ -3.10%（昨收103.19）</div>
-                    <div style="font-size:11px;color:#94a3b8;margin-top:4px;">来源：腾讯财经API</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="data-card">
-                    <div class="label">中证红利ETF（盘前）</div>
-                    <div class="value val-red">1.580</div>
-                    <div class="change val-red">▼ -1.50%（昨收1.604）</div>
-                    <div style="font-size:11px;color:#94a3b8;margin-top:4px;">来源：腾讯财经API</div>
-                </div>
-            </div>
+<div class="container py-5" style="padding-bottom:80px;">
+
+    <!-- 数据速览 -->
+    <div class="data-quick">
+        <div style="color:#93c5fd; font-weight:600; font-size:13px;">📊 今日（4月7日）收盘数据</div>
+        <div class="data-row">
+            <div class="data-pill">上证指数<br><span class="val val-up">3890.16</span> <span style="font-size:12px;color:#f87171;">+0.26%</span></div>
+            <div class="data-pill">深证成指<br><span class="val val-up">13400.41</span> <span style="font-size:12px;color:#f87171;">+0.36%</span></div>
+            <div class="data-pill">创业板指<br><span class="val val-up">3160.82</span> <span style="font-size:12px;color:#f87171;">+0.36%</span></div>
+            <div class="data-pill">科创50<br><span class="val val-up">—</span> <span style="font-size:12px;color:#f87171;">+1.42%（领涨）</span></div>
+            <div class="data-pill">北证50<br><span class="val val-down">1250.41</span> <span style="font-size:12px;color:#6ee7b7;">-0.34%</span></div>
+        </div>
+        <div style="color:#93c5fd; font-weight:600; font-size:13px; margin-top:16px;">📈 市场情绪指标</div>
+        <div class="data-row">
+            <div class="data-pill">涨停家数<br><span class="val val-up">101只</span></div>
+            <div class="data-pill">跌停家数<br><span class="val val-down">18只</span></div>
+            <div class="data-pill">上涨家数<br><span class="val val-up">3804只</span></div>
+            <div class="data-pill">下跌家数<br><span class="val val-down">1302只</span></div>
+            <div class="data-pill">成交额<br><span class="val val-flat">1.61万亿</span> <span style="font-size:11px;color:#fbbf24;">↓缩量421亿</span></div>
+            <div class="data-pill">最高连板<br><span class="val val-up">7连板</span> <span style="font-size:11px;color:#f87171;">津药药业</span></div>
         </div>
     </div>
-</div>
 
-<div class="container" style="padding: 40px 0 80px;">
-
-    <!-- TOP10财经新闻 -->
-    <h2 class="section-title">📰 TOP10 财经新闻</h2>
+    <!-- 一、TOP10涨停个股 -->
+    <h2 class="section-title">🚀 一、今日涨停TOP10个股</h2>
+    <p style="color:#64748b; font-size:14px;">今日涨停个股共101只，化工板块占主导（约30只），以下为市场最具代表性的10只：</p>
     <div class="table-responsive">
-        <table class="table table-hover news-table">
+        <table class="table top10-table table-hover">
             <thead class="table-light">
                 <tr>
-                    <th width="5%">#</th>
-                    <th width="75%">新闻摘要</th>
-                    <th width="10%">方向</th>
-                    <th width="10%">重要度</th>
+                    <th>排名</th>
+                    <th>个股</th>
+                    <th>涨幅</th>
+                    <th>板块</th>
+                    <th>涨停逻辑</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><b>1</b></td>
-                    <td>
-                        <b>特朗普威胁4月7日打击伊朗发电厂和大桥基础设施</b><br>
-                        <small style="color:#64748b;">4月6日特朗普在社交媒体发文："4月7日将是伊朗的发电厂日和大桥日"，威胁若霍尔木兹海峡不开放将采取军事行动。这一威胁使原油供应风险极度升温，石油板块值得关注。</small>
-                    </td>
-                    <td><span class="tag-red">利空</span></td>
-                    <td>⭐⭐⭐⭐⭐</td>
+                    <td><span class="rank-badge rank-1">1</span></td>
+                    <td><strong>东岳硅材</strong><br><small class="text-muted">002241.SZ</small></td>
+                    <td><span class="pct-up">+20.00%</span></td>
+                    <td>有机硅化工</td>
+                    <td>Q1业绩预增397%-451%，开盘即秒封涨停，板块龙头效应</td>
                 </tr>
                 <tr>
-                    <td><b>2</b></td>
-                    <td>
-                        <b>美国10%基准关税已于清明节期间（4月5日）正式生效</b><br>
-                        <small style="color:#64748b;">特朗普"对等关税"10%基准税率于4月5日起对所有贸易伙伴生效。4月9日更高关税是否推迟成为市场焦点，若推迟将为市场带来喘息空间，若执行则将引发新一轮冲击。</small>
-                    </td>
-                    <td><span class="tag-red">利空</span></td>
-                    <td>⭐⭐⭐⭐⭐</td>
+                    <td><span class="rank-badge rank-2">2</span></td>
+                    <td><strong>凌玮科技</strong><br><small class="text-muted">300933.SZ</small></td>
+                    <td><span class="pct-up">+20.00%</span></td>
+                    <td>精细化工</td>
+                    <td>化工板块情绪高涨联动涨停</td>
                 </tr>
                 <tr>
-                    <td><b>3</b></td>
-                    <td>
-                        <b>美联储今日召开闭门会议，市场曾押注40%概率紧急降息</b><br>
-                        <small style="color:#64748b;">美联储理事会将于今日（美国东部时间11:30）召开闭门会议，审查贴现利率。此次会议正值关税冲击下美股大幅震荡，市场对紧急降息预期升温，但美联储正式表态前高度不确定。</small>
-                    </td>
-                    <td><span class="tag-yellow">待观察</span></td>
-                    <td>⭐⭐⭐⭐⭐</td>
+                    <td><span class="rank-badge rank-3">3</span></td>
+                    <td><strong>津药药业</strong><br><small class="text-muted">600758.SH</small></td>
+                    <td><span class="pct-up">+10.03%</span></td>
+                    <td>医药</td>
+                    <td>7连板，全市场最高连板股，短线资金持续追捧</td>
                 </tr>
                 <tr>
-                    <td><b>4</b></td>
-                    <td>
-                        <b>港股今日仍然休市（清明+耶稣受难节+复活节连假），缺少港股参考</b><br>
-                        <small style="color:#64748b;">香港交易所4月3日至4月7日全周休市（含复活节长假），A股今日缺乏港股数据参照，恒生科技ETF节后走势高度不确定，应等开盘后第一波走势再判断方向。</small>
-                    </td>
-                    <td><span class="tag-gray">中性</span></td>
-                    <td>⭐⭐⭐⭐</td>
+                    <td><span class="rank-badge rank-other">4</span></td>
+                    <td><strong>金陵体育</strong><br><small class="text-muted">301106.SZ</small></td>
+                    <td><span class="pct-up">+20.00%</span></td>
+                    <td>体育器材</td>
+                    <td>体育概念午后异动，苏超+世界杯主题催化</td>
                 </tr>
                 <tr>
-                    <td><b>5</b></td>
-                    <td>
-                        <b>央行4月7日操作：8000亿买断式逆回购，但明日有11000亿到期，净回笼3000亿</b><br>
-                        <small style="color:#64748b;">4月8日约11000亿逆回购到期，今日虽有8000亿新增操作，净效果仍是流动性收缩约3000亿。节后资金面偏紧，可能压制市场估值修复速度。</small>
-                    </td>
-                    <td><span class="tag-red">偏空</span></td>
-                    <td>⭐⭐⭐⭐</td>
+                    <td><span class="rank-badge rank-other">5</span></td>
+                    <td><strong>赤天化</strong><br><small class="text-muted">600227.SH</small></td>
+                    <td><span class="pct-up">+10.00%</span></td>
+                    <td>化肥/化工</td>
+                    <td>草甘膦、氮肥涨价预期，周期品供需改善</td>
                 </tr>
                 <tr>
-                    <td><b>6</b></td>
-                    <td>
-                        <b>美国拟对进口药品征收关税（最高100%），CXO行业压力持续</b><br>
-                        <small style="color:#64748b;">节前已有消息称美国拟对药品加征高额关税，药明康德今日开盘前报价约99.99元（昨收103.19），较节前已大幅回落。4月9日若更高关税正式落地，CXO板块或再承压。</small>
-                    </td>
-                    <td><span class="tag-red">利空</span></td>
-                    <td>⭐⭐⭐⭐</td>
+                    <td><span class="rank-badge rank-other">6</span></td>
+                    <td><strong>柳化股份</strong><br><small class="text-muted">600423.SH</small></td>
+                    <td><span class="pct-up">+10.00%</span></td>
+                    <td>化学原料</td>
+                    <td>化工板块全面拉升，氮肥方向涨停</td>
                 </tr>
                 <tr>
-                    <td><b>7</b></td>
-                    <td>
-                        <b>4月A股一季报披露窗口正式开启，绩优股存在超预期机会</b><br>
-                        <small style="color:#64748b;">4月进入一季报集中披露期。在全球不确定性背景下，国内业绩超预期的个股将受到资金追捧。工业自动化、通信基础设施等受国内需求驱动的方向值得关注。</small>
-                    </td>
-                    <td><span class="tag-green">结构性机会</span></td>
-                    <td>⭐⭐⭐⭐</td>
+                    <td><span class="rank-badge rank-other">7</span></td>
+                    <td><strong>合盛硅业</strong><br><small class="text-muted">603260.SH</small></td>
+                    <td><span class="pct-up">+10.00%</span></td>
+                    <td>有机硅</td>
+                    <td>东岳硅材带动有机硅龙头联动，DMC价格持续上涨</td>
                 </tr>
                 <tr>
-                    <td><b>8</b></td>
-                    <td>
-                        <b>油价前期已突破110美元，地缘风险将推动能源通胀预期升温</b><br>
-                        <small style="color:#64748b;">WTI原油节前曾突破110美元，伊朗局势若进一步升级，油价可能再度冲高。这对通胀预期和美联储政策路径均有重大影响，A股中油气化工、油服设备板块值得关注。</small>
-                    </td>
-                    <td><span class="tag-yellow">双刃剑</span></td>
-                    <td>⭐⭐⭐</td>
+                    <td><span class="rank-badge rank-other">8</span></td>
+                    <td><strong>新能泰山</strong><br><small class="text-muted">000720.SZ</small></td>
+                    <td><span class="pct-up">+10.00%</span></td>
+                    <td>电力</td>
+                    <td>10天8板，短线连板高度仅次于津药药业</td>
                 </tr>
                 <tr>
-                    <td><b>9</b></td>
-                    <td>
-                        <b>A股节前（3月30日-4月3日）连跌，科创50累计跌逾3%，防御板块相对抗跌</b><br>
-                        <small style="color:#64748b;">清明节前最后一周：上证3月周跌-0.86%、深成指-2.96%、创业板-2.45%，中证红利相对抗跌。节后市场能否止跌企稳是关键看点，若跌破3850点则下一支撑看3800。</small>
-                    </td>
-                    <td><span class="tag-gray">中性</span></td>
-                    <td>⭐⭐⭐</td>
+                    <td><span class="rank-badge rank-other">9</span></td>
+                    <td><strong>三房巷</strong><br><small class="text-muted">600370.SH</small></td>
+                    <td><span class="pct-up">+10.00%</span></td>
+                    <td>化工/涤纶</td>
+                    <td>化工板块普涨，PTA/涤纶方向联动</td>
                 </tr>
                 <tr>
-                    <td><b>10</b></td>
-                    <td>
-                        <b>特朗普表示"油价下跌、利率下降、通胀不存在"，施压美联储降息</b><br>
-                        <small style="color:#64748b;">特朗普当地时间4月7日在Truth Social发文，重申美联储应降息，称目前经济状况良好。此举或加大市场对美联储降息预期，若美联储闭门会议后释放鸽派信号，将利好全球风险资产。</small>
-                    </td>
-                    <td><span class="tag-green">潜在利好</span></td>
-                    <td>⭐⭐⭐</td>
+                    <td><span class="rank-badge rank-other">10</span></td>
+                    <td><strong>华统股份</strong><br><small class="text-muted">002840.SZ</small></td>
+                    <td><span class="pct-up">+10.00%</span></td>
+                    <td>猪肉/农业</td>
+                    <td>中央冻猪肉储备收储消息提振，龙大美食等跟涨</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <!-- 五大指数研判 -->
-    <h2 class="section-title">📈 五大指数 · 节前收盘与节后展望</h2>
-    
-    <div class="table-responsive mb-4">
-        <table class="table table-bordered index-table">
-            <thead class="table-dark">
-                <tr>
-                    <th>指数</th>
-                    <th>节前收盘（4月3日）</th>
-                    <th>当周涨跌幅</th>
-                    <th>节后展望</th>
-                    <th>关键支撑/阻力</th>
-                </tr>
+    <!-- 二、TOP10财经新闻 -->
+    <h2 class="section-title">📰 二、今日最重要的10条财经新闻</h2>
+    <div class="table-responsive">
+        <table class="table news-table">
+            <thead class="table-light">
+                <tr><th>#</th><th>新闻</th><th>影响</th></tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><b>上证指数</b></td>
-                    <td class="val-red">3880.10 ▼-1.00%</td>
-                    <td class="val-red">-0.86%</td>
-                    <td><span class="tag-red">谨慎</span></td>
-                    <td>支撑3850/3800，阻力3950</td>
+                    <td style="color:#1e293b;">1</td>
+                    <td><strong>东岳硅材Q1净利润预增397%-451%</strong>——有机硅龙头一季报大超预期，开盘即封20%涨停，直接引爆化工板块全线上行，板块内逾30只个股跟随涨停。</td>
+                    <td><span class="tag-green">强利好</span></td>
                 </tr>
                 <tr>
-                    <td><b>创业板指</b></td>
-                    <td class="val-red">3149.60 ▼-0.73%</td>
-                    <td class="val-red">-2.45%</td>
-                    <td><span class="tag-red">偏弱</span></td>
-                    <td>支撑3100，阻力3250</td>
+                    <td style="color:#1e293b;">2</td>
+                    <td><strong>沙特朱拜勒工业区发生爆炸</strong>——全球重要石化生产基地，事件引发化工品供应链担忧，叠加有机硅DMC等产品价格持续上涨，化工板块三重催化共振。</td>
+                    <td><span class="tag-green">利好化工</span></td>
                 </tr>
                 <tr>
-                    <td><b>科创50</b></td>
-                    <td class="val-red">1262.18 ▼-2.77%</td>
-                    <td class="val-red">-4.10%</td>
-                    <td><span class="tag-red">承压</span></td>
-                    <td>支撑1240，阻力1320</td>
+                    <td style="color:#1e293b;">3</td>
+                    <td><strong>OpenRouter平台数据：中国AI大模型周调用量激增31.48%至12.96万亿Token</strong>——连续第五周超越美国，寒武纪股价大涨10.9%，中芯国际、华虹公司均涨超3%，AI算力需求验证加速。</td>
+                    <td><span class="tag-green">AI强催化</span></td>
                 </tr>
-                <tr class="portfolio-row">
-                    <td><b>中证A500</b></td>
-                    <td class="val-red">5550.74 ▼-1.34%</td>
-                    <td class="val-red">-1.25%</td>
-                    <td><span class="tag-yellow">中性偏空</span></td>
-                    <td>支撑5480，阻力5650</td>
+                <tr>
+                    <td style="color:#1e293b;">4</td>
+                    <td><strong>短线交易监管新规今日正式实施</strong>——证监会《关于短线交易监管的若干规定》落地，有助于稳定市场预期，为中长期资金入市提供制度保障，市场反应平稳。</td>
+                    <td><span class="tag-blue">政策中性</span></td>
                 </tr>
-                <tr class="portfolio-row">
-                    <td><b>中证红利</b></td>
-                    <td class="val-red">5744.64 ▼0.00%</td>
-                    <td class="val-green">相对抗跌</td>
-                    <td><span class="tag-green">最稳健</span></td>
-                    <td>支撑5680，高股息防御优势明显</td>
+                <tr>
+                    <td style="color:#1e293b;">5</td>
+                    <td><strong>港股因复活节假期继续休市（今日沪深股通暂停）</strong>——北向资金无法流入，外资参与度缺失，A股今日完全依靠内资博弈，成交量相应缩量16144亿。</td>
+                    <td><span class="tag-yellow">流动性缺失</span></td>
+                </tr>
+                <tr>
+                    <td style="color:#1e293b;">6</td>
+                    <td><strong>中央冻猪肉储备启动收储</strong>——提振猪肉产业链情绪，华统股份涨停，立华股份等养猪板块个股跟涨，但对大盘整体影响有限。</td>
+                    <td><span class="tag-green">农业利好</span></td>
+                </tr>
+                <tr>
+                    <td style="color:#1e293b;">7</td>
+                    <td><strong>A股三大指数集体收涨，但科创50领涨1.42%创节后最强</strong>——半导体（寒武纪+10.9%）领涨科技板块，中芯国际、华虹公司同步跟涨，AI算力链整体重获资金关注。</td>
+                    <td><span class="tag-green">科技共振</span></td>
+                </tr>
+                <tr>
+                    <td style="color:#1e293b;">8</td>
+                    <td><strong>美伊停火谈判持续推进，霍尔木兹海峡局势边际缓和</strong>——原油价格从前期高位回落，通胀预期压力略有减轻，但局势仍存变数，能源板块分化加剧。</td>
+                    <td><span class="tag-yellow">中性偏正</span></td>
+                </tr>
+                <tr>
+                    <td style="color:#1e293b;">9</td>
+                    <td><strong>大金融板块疲软，保险方向领跌</strong>——中国太保、中国人寿等权重股震荡回落，主力资金净流出大金融板块，资金向周期化工等方向切换，结构分化明显。</td>
+                    <td><span class="tag-yellow">金融承压</span></td>
+                </tr>
+                <tr>
+                    <td style="color:#1e293b;">10</td>
+                    <td><strong>主力资金净流出138亿，但基础化工净流入93亿</strong>——整体缩量反弹背后，资金在板块间切换明显，周期化工获得最大净流入，而电力设备、通信、计算机则遭到减仓。</td>
+                    <td><span class="tag-blue">结构轮动</span></td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <p style="color:#64748b;font-size:13px;">📝 指数节前收盘数据来源：多方搜索交叉核实（雪球、东方财富、新闻报道均有一致数据）。中证A500/中证红利精确点位待开盘后API验证。</p>
+    <!-- 三、板块复盘 -->
+    <h2 class="section-title">📊 三、主要指数与板块复盘</h2>
 
-    <!-- 三重风险信号 -->
-    <h2 class="section-title">🚨 今日三重核心风险</h2>
-    
-    <div class="risk-alert">
-        <h5>⚔️ 风险一：伊朗地缘军事冲突风险（极高）</h5>
-        <p style="color:#7f1d1d;margin:0;">特朗普明确威胁"4月7日将打击伊朗发电厂和大桥"——若实施军事行动，霍尔木兹海峡局势将极度紧张，原油可能突破120美元，全球风险资产将遭遇新一轮冲击。<b>今日交易时段需密切关注中东最新动态。</b></p>
-    </div>
-    
-    <div class="risk-alert">
-        <h5>📋 风险二：关税4月9日升级节点（高度关注）</h5>
-        <p style="color:#7f1d1d;margin:0;">10%基准关税已于4月5日生效，对中国等贸易伙伴的更高税率（据报道对华税率可能高达54%）是否于4月9日执行，是本周最大悬念。若执行将对出口导向型企业构成重大冲击；若豁免或推迟则可能触发反弹。</p>
-    </div>
-    
-    <div class="risk-alert">
-        <h5>💧 风险三：央行流动性边际收缩（偏空）</h5>
-        <p style="color:#7f1d1d;margin:0;">央行今日操作后，明日（4月8日）净回笼资金约3000亿元。节后资金面边际偏紧，银行间利率可能小幅抬升，对高估值成长股有一定压制作用。</p>
-    </div>
-
-    <!-- 持仓行业动态 -->
-    <h2 class="section-title">💼 持仓策略 · 行业动态分析</h2>
-
-    <div class="stock-card red-border">
-        <h4>⚗️ 创新药/CXO 行业 | 药明康德（603259）</h4>
-        <div class="row">
-            <div class="col-md-4">
-                <p><b>盘前报价（08:56）：</b><span class="val-red">99.99元</span></p>
-                <p><b>昨收（4月3日）：</b>103.19元</p>
-                <p><b>来源：腾讯财经API，20260407 08:56</b></p>
-            </div>
-            <div class="col-md-8">
-                <p><b>信号评估：</b><span class="signal-sell">谨慎防守</span></p>
-                <ul>
-                    <li><b>关税压制：</b>美国拟对进口药品加征100%关税，CXO行业业绩预期受压，目前药明节前已跌破100元大关，100元成关键心理防线</li>
-                    <li><b>4月9日关税节点：</b>若更高税率落地，药品关税实质影响或将重新定价，短期压力大</li>
-                    <li><b>行业背景：</b>全球制药外包需求虽长期向好，但短期政策不确定性导致资金持续撤离CXO赛道</li>
-                    <li><b>建议：</b>持有为主，关注100元支撑是否有效，跌破95元需重新评估仓位</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="stock-card yellow-border">
-        <h4>🤖 工业自动化/机器人 | 汇川技术（300124）</h4>
-        <div class="row">
-            <div class="col-md-4">
-                <p><b>盘前报价（08:56）：</b><span class="val-red">66.06元</span></p>
-                <p><b>昨收（4月3日）：</b>66.87元</p>
-                <p><b>来源：腾讯财经API，20260407 08:56</b></p>
-            </div>
-            <div class="col-md-8">
-                <p><b>信号评估：</b><span class="signal-hold">观望持有</span></p>
-                <ul>
-                    <li><b>行业逻辑：</b>工业自动化受益于国内"以旧换新"政策持续，制造业升级需求稳定，但全球贸易摩擦对制造业资本开支预期有负面影响</li>
-                    <li><b>技术面：</b>节前连续3日小幅下行（从68元回落至66元区间），若关税冲击加剧，65元附近有较强支撑</li>
-                    <li><b>机器人概念：</b>人形机器人赛道热度未退，汇川在伺服电机、控制器等核心零部件上具竞争优势，可作为长期持有方向</li>
-                    <li><b>建议：</b>持有，65元加仓，72元减仓；关注一季报业绩指引</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="stock-card" style="border-left-color:#8b5cf6;">
-        <h4>🌐 恒生科技 | 恒生科技ETF（513180）</h4>
-        <div class="row">
-            <div class="col-md-4">
-                <p><b>盘前报价（08:56）：</b><span class="val-red">0.600元</span></p>
-                <p><b>昨收（4月3日）：</b>0.601元</p>
-                <p><b>来源：腾讯财经API，20260407 08:56</b></p>
-            </div>
-            <div class="col-md-8">
-                <p><b>信号评估：</b><span class="signal-hold">等待确认</span></p>
-                <ul>
-                    <li><b>港股今日休市：</b>香港交易所4月7日仍然休市（复活节假期），恒生科技今日走势缺乏港股直接参照</li>
-                    <li><b>基本面：</b>港股科技股（腾讯、阿里等）受益于AI驱动，但贸易战升级对科技板块有负面影响</li>
-                    <li><b>操作建议：</b>等待港股4月8日复盘后再做判断，今日先观察A股整体情绪，跌破0.58元关注风险</li>
-                </ul>
-            </div>
-        </div>
+    <div class="stock-card green-border">
+        <h4>📈 上证指数（000001）| 收涨0.26%，报3890.16</h4>
+        <ul>
+            <li><strong>节前收盘：3880.10（4月3日，-1.00%）</strong>→ 节后首日回升0.26%</li>
+            <li>节后首日"报复性"轻度反弹，市场情绪修复，但力度温和，缩量特征明显</li>
+            <li>本周需突破3900点关口才能确认反弹有效性</li>
+            <li>关键支撑：3850-3880区间（节假日期间多次测试）</li>
+            <li><strong>明日展望</strong>：<span class="signal-hold">震荡整理为主</span>，关注能否继续站稳3900点</li>
+        </ul>
     </div>
 
     <div class="stock-card green-border">
-        <h4>🏦 中证A500ETF（159338）+ 中证红利ETF（515080）</h4>
-        <div class="row">
-            <div class="col-md-6">
-                <p><b>A500ETF盘前：</b><span class="val-red">1.167元</span>（昨收1.174）</p>
-                <p><b>红利ETF盘前：</b><span class="val-red">1.580元</span>（昨收1.604）</p>
-                <p><b>来源：腾讯财经API，20260407 08:56</b></p>
-            </div>
-            <div class="col-md-6">
-                <p><b>信号评估：</b><span class="signal-hold">分层持有</span></p>
-                <ul>
-                    <li><b>A500ETF：</b>宽基指数，跟踪中证A500，分散化持有，节后若大盘企稳可继续持有，风险中性</li>
-                    <li><b>红利ETF：</b>高股息防御，利率下行环境受益。进入4月一季报分红季，红利策略估值优势将进一步凸显</li>
-                    <li><b>红利ETF成份股：</b>已有39只成份股官宣年报分红，累计分红金额超4500亿元，现金流支撑充足</li>
-                </ul>
-            </div>
-        </div>
+        <h4>🧬 科创50 | 今日最强，领涨1.42%</h4>
+        <ul>
+            <li>AI芯片（寒武纪+10.9%，股价重回1100元以上）带动半导体板块全面走强</li>
+            <li>中芯国际+3%，华虹公司+3%，AI算力需求数据（中国周调用量超美）提供直接催化</li>
+            <li>科创50超跌后反弹，技术上短期有修复空间，但需观察是否持续</li>
+            <li><strong>明日展望</strong>：<span class="signal-buy">关注买点</span>，科创50/科创综指ETF可关注低位布局机会</li>
+        </ul>
     </div>
 
-    <!-- 技术分析 + 操作建议 -->
-    <h2 class="section-title">🎯 操作建议（节后首日策略）</h2>
+    <div class="stock-card green-border">
+        <h4>🧪 化工板块 | 今日绝对主角，30+个股涨停</h4>
+        <ul>
+            <li><strong>有机硅方向</strong>：东岳硅材（+20%）、合盛硅业（+10%），DMC价格上涨+业绩预增三重驱动</li>
+            <li><strong>草甘膦/化肥</strong>：赤天化、柳化股份涨停，氮肥产品涨价逻辑清晰</li>
+            <li><strong>大炼化</strong>：恒逸石化、新安股份等涨停，石化品价格上涨+沙特装置爆炸催化</li>
+            <li>主力资金净流入化工行业93亿元（行业口径），是今日最强势板块</li>
+            <li><strong>明日展望</strong>：<span class="signal-hold">高度关注轮动</span>，龙头涨停后二波补涨机会，但也需防范高位回落</li>
+        </ul>
+    </div>
 
+    <div class="stock-card yellow-border">
+        <h4>🏋️ 体育概念 | 午后异动板块</h4>
+        <ul>
+            <li>金陵体育20%涨停，舒华体育、中体产业跟涨</li>
+            <li>催化：世界杯+苏超赛事双重主题，但持续性存疑</li>
+            <li><strong>明日展望</strong>：<span class="signal-hold">谨慎参与</span>，事件催化型题材波动大，注意风险控制</li>
+        </ul>
+    </div>
+
+    <div class="stock-card red-border">
+        <h4>💊 大金融/保险 | 今日拖累板块</h4>
+        <ul>
+            <li>中国太保、中国人寿震荡回落，大金融权重股整体偏弱</li>
+            <li>主力资金净流出，资金向周期品化工板块切换</li>
+            <li><strong>明日展望</strong>：<span class="signal-hold">回避或轻仓</span>，等待大金融方向资金回流信号</li>
+        </ul>
+    </div>
+
+    <!-- 四、操作建议 -->
+    <h2 class="section-title">🎯 四、明日操作建议</h2>
     <div class="conclusion-box">
-        <h3 class="fw-bold mb-4" style="color:white;">🐕 狗子综合研判</h3>
-        
+        <h5 style="color:#93c5fd;">总体判断：缩量反弹，结构性机会为主</h5>
+        <p style="opacity:0.9;">节后首日市场整体回暖，但成交额仅1.61万亿（缩量421亿），北向资金缺席，说明反弹驱动力主要来自内资超跌买盘，而非增量资金介入。短期A股仍以区间震荡为主，结构性机会好于趋势性机会。</p>
+
         <div class="action-item">
             <div class="action-num">1</div>
             <div>
-                <b>首要：密切关注中东局势动态</b><br>
-                特朗普威胁打击伊朗是今日最大外生变量。若实施军事打击 → 原油暴涨 → 全球风险偏好急剧下降 → A股快速跳水。反之若威胁未落实，市场情绪可能小幅修复。<b>建议在开盘后30分钟内观察大盘方向，切勿盲目追多。</b>
+                <strong>化工板块：有选择地关注二波机会</strong>
+                <div style="color:#64748b; font-size:13px; margin-top:4px;">东岳硅材等已是20%涨停高位，追高风险大。关注赤天化、柳化股份等明日是否继续拉升，以及齐翔腾达（4天2板）等次强标的。不盲目追高，等量缩后的低吸机会。</div>
             </div>
         </div>
-        
         <div class="action-item">
             <div class="action-num">2</div>
             <div>
-                <b>中证红利ETF（515080）：坚定持有，逢跌增持</b><br>
-                高股息策略在不确定环境中最具防御性。4月进入分红密集期，39只成份股已宣布年报分红，分红再投资效应将在二季度逐步显现。跌至1.55以下可适量补仓。
+                <strong>科创50/AI半导体：关注低位布局窗口</strong>
+                <div style="color:#64748b; font-size:13px; margin-top:4px;">寒武纪涨10.9%，但A股上方空间仍大。重点关注科创50ETF（588000）回调买入机会；中芯国际、华虹公司等大陆晶圆代工龙头也值得配置。AI算力数据持续验证，中期逻辑清晰。</div>
             </div>
         </div>
-        
         <div class="action-item">
             <div class="action-num">3</div>
             <div>
-                <b>中证A500ETF（159338）：宽基持有，不追高</b><br>
-                宽基指数作为核心仓位，不因短期波动而频繁操作。若今日下跌超2%可小量补仓；若反弹超3%则不追，等回调再建仓。注意关税4月9日节点前不宜加码。
+                <strong>连板股：观察不追高</strong>
+                <div style="color:#64748b; font-size:13px; margin-top:4px;">津药药业7连板，新能泰山10天8板，短线情绪高涨。但7连板往往是短期高点，明日若出现大幅高开则需警惕回落，适合已持有者减仓，不适合新进。</div>
             </div>
         </div>
-        
         <div class="action-item">
             <div class="action-num">4</div>
             <div>
-                <b>药明康德（603259）：100元支撑是关键</b><br>
-                今日盘前已跌至99.99元，100元整数关口将是多空博弈焦点。若能守住100元并收回102元以上，短期有止跌迹象；若跌破100元且成交量放大，建议止损控制仓位风险。<b>不建议在今日增持。</b>
+                <strong>周期化工/猪肉产业链：保持观察窗口</strong>
+                <div style="color:#64748b; font-size:13px; margin-top:4px;">收储政策提振猪肉链（华统股份），有机硅/草甘膦涨价预期延续。但此类板块需等待回调后买入，不在涨停板位置追高，有耐心的投资者可以等待明日低开低走时再介入。</div>
             </div>
         </div>
-        
         <div class="action-item">
             <div class="action-num">5</div>
             <div>
-                <b>汇川技术（300124）：等待一季报数据</b><br>
-                66元附近有支撑，65元以下有较强买盘预期。一季报即将披露，若工业自动化订单数据好于预期，将带来反弹机会。今日观望为主，等待一季报指引后再做决策。
+                <strong>大金融/保险：暂时回避</strong>
+                <div style="color:#64748b; font-size:13px; margin-top:4px;">今日大金融资金净流出，方向偏弱。除非出现重大政策利好，否则短期保险、银行等不是主攻方向，可以留仓观察但不加仓。</div>
             </div>
         </div>
-        
-        <div class="action-item">
-            <div class="action-num">6</div>
-            <div>
-                <b>恒生科技ETF（513180）：今日观望，等待港股复盘信号</b><br>
-                港股今日休市，恒生科技ETF今日走势参考性有限。港股4月8日（周三）复盘后，若恒生科技指数表现强劲则可考虑加仓；反之若大跌则需防御。今日不操作。
-            </div>
-        </div>
-    </div>
-
-    <!-- 核心数据溯源 -->
-    <div style="background:#f0f9ff; border-radius:12px; padding:24px; margin: 30px 0;">
-        <h5 class="fw-bold" style="color:#0369a1;">📋 数据来源声明（价格核实说明）</h5>
-        <table class="table table-sm" style="font-size:13px;margin:0;">
-            <thead>
-                <tr style="background:#e0f2fe;">
-                    <th>数据项</th><th>数值</th><th>来源</th><th>时间</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>上证指数节前收盘</td><td>3880.10（-1.00%）</td><td>搜索多方核实（雪球/东财/新闻）</td><td>20260403收盘</td></tr>
-                <tr><td>创业板节前收盘</td><td>3149.60（-0.73%）</td><td>搜索多方核实</td><td>20260403收盘</td></tr>
-                <tr><td>深成指节前收盘</td><td>13352.90（-0.99%）</td><td>搜索多方核实</td><td>20260403收盘</td></tr>
-                <tr><td>科创50节前收盘</td><td>1262.18（-2.77%）</td><td>API实测（20260402），4月3日待更新</td><td>20260402收盘</td></tr>
-                <tr><td>中证A500ETF盘前</td><td>1.167元</td><td>腾讯财经API（get_stock_data）</td><td>20260407 08:56</td></tr>
-                <tr><td>中证红利ETF盘前</td><td>1.580元</td><td>腾讯财经API</td><td>20260407 08:56</td></tr>
-                <tr><td>恒生科技ETF盘前</td><td>0.600元</td><td>腾讯财经API</td><td>20260407 08:56</td></tr>
-                <tr><td>汇川技术盘前</td><td>66.06元</td><td>腾讯财经API</td><td>20260407 08:56</td></tr>
-                <tr><td>药明康德盘前</td><td>99.99元</td><td>腾讯财经API</td><td>20260407 08:56</td></tr>
-            </tbody>
-        </table>
     </div>
 
     <!-- 风险提示 -->
-    <div style="background:#fffbeb; border: 1px solid #fcd34d; border-radius:12px; padding:20px; margin-top:30px;">
-        <h6 class="fw-bold" style="color:#92400e;">⚠️ 风险提示</h6>
-        <p style="color:#78350f;font-size:13px;margin:0;">本报告仅供参考，不构成投资建议。市场有风险，投资需谨慎。所有分析均基于公开数据，不含内幕信息。个人持仓状况各异，请结合自身风险承受能力做出决策。节后首日不确定性极高，所有操作建议均为参考，最终决策由投资者自行承担。</p>
+    <div class="risk-box">
+        <h5>⚠️ 风险提示</h5>
+        <ul>
+            <li><strong>缩量反弹可持续性存疑</strong>：今日成交额1.61万亿，北向资金缺席，主要靠内资。若明日港股恢复交易后北向资金净流出，可能压制指数进一步上行。</li>
+            <li><strong>中东局势依然是最大外部变量</strong>：美伊停火谈判进展、霍尔木兹海峡通航情况随时可能反转，能源板块波动风险较大。</li>
+            <li><strong>一季报业绩雷风险</strong>：4月是业绩披露密集期，个股因业绩不及预期而大幅下跌的概率上升，需回避高估值+低业绩个股。</li>
+            <li><strong>短线新规政策风险</strong>：短线交易监管新规首日实施，部分游资的打板节奏可能发生变化，市场热点切换速度加快，注意防范涨停板炸板风险。</li>
+        </ul>
     </div>
 
-    <!-- 返回链接 -->
-    <div class="text-center mt-5">
-        <a href="index.html" class="btn btn-outline-secondary me-3">← 返回研判列表</a>
-        <a href="../index.html" class="btn btn-primary">⚓ 理易港首页</a>
-    </div>
+    <!-- 总结 -->
+    <h2 class="section-title">📝 五、一句话总结</h2>
+    <blockquote style="border-left:4px solid #3b82f6; padding:16px 20px; background:#f0f9ff; border-radius:0 8px 8px 0; color:#1e293b; font-size:16px; line-height:1.8;">
+        清明归来化工爆，津药7板烟花高——东岳硅材一季报绽放，带动30+化工涨停，科创50也乘AI东风收涨1.42%；但缩量格局下，指数更多是情绪修复而非趋势反转，明日关注化工能否持续、科技能否扩散。<strong>整体思路：结构性把握，不追高，等低位。</strong>
+    </blockquote>
 
+    <div class="mt-5 pt-3 border-top text-center" style="color:#94a3b8; font-size:13px;">
+        <p>本报告由理易港AI助手生成，仅供参考，不构成投资建议。股市有风险，入市需谨慎。</p>
+        <p><a href="index.html" style="color:#3b82f6;">← 返回每日研判列表</a> &nbsp;|&nbsp; <a href="report-20260403.html" style="color:#3b82f6;">上一篇：4月3日收评（清明前）</a></p>
+    </div>
 </div>
-
-<!-- 页脚 -->
-<footer style="background:#0f172a; padding: 40px 0; margin-top: 0;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 mb-4 mb-md-0">
-                <h5 class="fw-bold" style="color:white;">⚓ 理易港</h5>
-                <p style="color:#cbd5e1; font-size:14px;">专注理财产品测评与市场研判，帮助投资者做出更明智的决策。</p>
-            </div>
-            <div class="col-md-4 mb-4 mb-md-0">
-                <h6 class="fw-bold" style="color:white;">快速链接</h6>
-                <ul class="list-unstyled" style="font-size:14px;">
-                    <li><a href="index.html" style="color:#93c5fd;text-decoration:none;">每日研判</a></li>
-                    <li><a href="../products/index.html" style="color:#93c5fd;text-decoration:none;">产品测评</a></li>
-                    <li><a href="../tools/index.html" style="color:#93c5fd;text-decoration:none;">理财工具</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h6 class="fw-bold" style="color:white;">免责声明</h6>
-                <p style="color:#cbd5e1; font-size:12px;">本网站内容仅供参考，不构成任何投资建议。投资有风险，入市需谨慎。</p>
-            </div>
-        </div>
-    </div>
-</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
