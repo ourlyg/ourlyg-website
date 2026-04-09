@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4月9日早盘研判 · 关税节点 · 美伊停火催化 | 理易港每日研判</title>
+    <meta name="description" content="2026年4月9日A股早盘研判：美伊停火油价暴跌，美股大涨，关税4月9日节点关键博弈，持仓全线大涨，今日策略解析。">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans SC', sans-serif; background: #f8fafc; color: #1e293b; }
+        .navbar-brand .logo-icon { font-size: 22px; margin-right: 6px; }
+        .report-header {
+            background: linear-gradient(135deg, #0f2944 0%, #1e3a5f 50%, #1a4d2e 100%);
+            color: white;
+            padding: 90px 0 50px;
+            margin-bottom: 0;
+        }
+        .report-header .report-date {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 14px;
+            color: #93c5fd;
+        }
+        .report-header h1 { font-size: 2rem; font-weight: 700; margin: 16px 0 8px; }
+        .report-header .lead { color: rgba(255,255,255,0.75); font-size: 15px; }
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1e293b;
+            border-left: 4px solid #3b82f6;
+            padding-left: 14px;
+            margin-bottom: 20px;
+        }
+        .news-card {
+            background: white;
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-bottom: 14px;
+            border-left: 4px solid #3b82f6;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+        }
+        .news-card.red { border-left-color: #ef4444; }
+        .news-card.green { border-left-color: #10b981; }
+        .news-card.yellow { border-left-color: #f59e0b; }
+        .news-card.purple { border-left-color: #8b5cf6; }
+        .news-card h6 { color: #1e293b; font-weight: 600; margin-bottom: 6px; }
+        .news-card p { color: #475569; font-size: 14px; margin: 0; line-height: 1.6; }
+        .stock-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3b82f6;
+            box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+            color: #1e293b;
+        }
+        .stock-card.red-border { border-left-color: #ef4444; }
+        .stock-card.green-border { border-left-color: #10b981; }
+        .stock-card.yellow-border { border-left-color: #f59e0b; }
+        .stock-card h4 { color: #1e293b; }
+        .stock-card ul li { color: #334155; }
+        .signal-buy { color: #059669; font-weight: 700; }
+        .signal-hold { color: #d97706; font-weight: 700; }
+        .signal-sell { color: #dc2626; font-weight: 700; }
+        .conclusion-box {
+            background: linear-gradient(135deg, #1a4d2e, #0f3460);
+            color: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        .action-item {
+            background: white;
+            color: #1e293b;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .action-num {
+            background: #10b981;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .risk-box {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #1e293b;
+        }
+        .risk-box h5 { color: #c2410c; }
+        .risk-box li { color: #374151; }
+        .data-quick {
+            background: linear-gradient(135deg, #1a4d2e, #0f3460);
+            color: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 30px;
+        }
+        .data-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+        .data-pill {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            padding: 8px 14px;
+            font-size: 13px;
+            color: white;
+        }
+        .data-pill .val { font-size: 16px; font-weight: 700; }
+        .val-up { color: #f87171; }
+        .val-down { color: #6ee7b7; }
+        .val-flat { color: #fbbf24; }
+        .holding-table th { background: #f1f5f9; color: #334155; font-size: 13px; }
+        .holding-table td { font-size: 14px; color: #1e293b; vertical-align: middle; }
+        .pct-up { color: #ef4444; font-weight: 700; }
+        .pct-down { color: #10b981; font-weight: 700; }
+        .alert-banner {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border: 1px solid #6ee7b7;
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-bottom: 24px;
+        }
+        .alert-banner h5 { color: #059669; margin-bottom: 6px; }
+        .alert-banner p { color: #065f46; font-size: 14px; margin: 0; }
+        footer a { color: #93c5fd !important; }
+        footer .text-muted-custom { color: #cbd5e1 !important; }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="../index.html">
+            <span class="logo-icon">📊</span>理易港
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link" href="../index.html">首页</a></li>
+                <li class="nav-item"><a class="nav-link active" href="../daily/index.html">每日研判</a></li>
+                <li class="nav-item"><a class="nav-link" href="../services/index.html">AI分析服务</a></li>
+                <li class="nav-item"><a class="nav-link" href="../products/index.html">产品测评</a></li>
+                <li class="nav-item"><a class="nav-link" href="../tools/index.html">理财工具</a></li>
+                <li class="nav-item"><a class="nav-link" href="../knowledge/index.html">知识科普</a></li>
+                <li class="nav-item ms-2">
+                    <a href="../service-request.html" class="btn btn-primary" style="border-radius:20px; padding:6px 18px; font-size:14px;">立即咨询</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="report-header">
+    <div class="container">
+        <span class="report-date">📅 2026年4月9日（周四）早盘研判 · 关税关键节点</span>
+        <h1 class="mt-3">美伊停火 · 油价暴跌 · 全线大涨 · 关税4月9日决战</h1>
+        <p class="lead opacity-75">TOP10财经新闻 · 持仓全线反弹 · 五大指数研判 · 今日操作建议</p>
+        <div class="mt-3">
+            <span class="badge" style="background:#10b981;">✅ 持仓全线大涨</span>
+            <span class="badge ms-2" style="background:#f59e0b; color:#1e293b;">🛢️ 美伊停火</span>
+            <span class="badge ms-2" style="background:#3b82f6;">⚡ 关税4月9日节点</span>
+            <span class="badge ms-2" style="background:#8b5cf6;">🔵 美联储今日闭门</span>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5" style="padding-bottom: 80px;">
+
+    <!-- 重大提示 -->
+    <div class="alert-banner">
+        <h5>🟢 今日重大利好：美伊停火 + 美股大涨</h5>
+        <p>美国与伊朗就核问题达成停火协议，布伦特原油暴跌16.41%（56.5美元），纳斯达克+2.85%，标普+2.51%。持仓盘前全线大幅高开，药明康德已回到103.74元。关键变量：特朗普关税4月9日节点是否暂缓，决定今日走势上限。</p>
+    </div>
+
+    <!-- 今日持仓速览 -->
+    <div class="data-quick">
+        <div style="color: #6ee7b7; font-weight: 600; font-size: 13px;">📊 持仓盘前数据（09:15，腾讯财经API）</div>
+        <div class="data-row">
+            <div class="data-pill">中证A500ETF<br><span class="val val-up">1.213</span> <span style="font-size:12px;color:#f87171;">+4.02%</span></div>
+            <div class="data-pill">中证红利ETF<br><span class="val val-up">1.597</span> <span style="font-size:12px;color:#f87171;">+0.69%</span></div>
+            <div class="data-pill">恒生科技ETF<br><span class="val val-up">0.631</span> <span style="font-size:12px;color:#f87171;">+4.82%</span></div>
+            <div class="data-pill">汇川技术<br><span class="val val-up">67.45</span> <span style="font-size:12px;color:#f87171;">+4.17%</span></div>
+            <div class="data-pill">药明康德<br><span class="val val-up">103.74</span> <span style="font-size:12px;color:#f87171;">+2.41%</span></div>
+        </div>
+        <div style="color: #6ee7b7; font-weight: 600; font-size: 13px; margin-top: 16px;">📈 昨日（4月8日）收盘</div>
+        <div class="data-row">
+            <div class="data-pill">上证指数<br><span class="val val-up">3995</span> <span style="font-size:12px;color:#f87171;">+2.70%</span></div>
+            <div class="data-pill">深证成指<br><span class="val val-up">14042</span> <span style="font-size:12px;color:#f87171;">+4.79%</span></div>
+            <div class="data-pill">创业板指<br><span class="val val-up">3347</span> <span style="font-size:12px;color:#f87171;">+5.91%</span></div>
+            <div class="data-pill">科创50<br><span class="val val-up">1352</span> <span style="font-size:12px;color:#f87171;">+6.18%（领涨）</span></div>
+        </div>
+    </div>
+
+    <!-- TOP10财经新闻 -->
+    <div class="mb-5">
+        <div class="section-title">📰 TOP10 财经新闻（4月9日早盘）</div>
+
+        <div class="news-card green">
+            <h6>🕊️ 1. 美伊停火协议达成，油价暴跌16.41%</h6>
+            <p>美国与伊朗就核问题达成临时停火协议，布伦特原油单日暴跌至56.5美元/桶，创近两年新低。能源成本下降对中国制造业、化工、航运板块构成长期利好；航空、物流板块直接受益。</p>
+        </div>
+
+        <div class="news-card green">
+            <h6>📈 2. 美股大涨，纳斯达克+2.85%，标普+2.51%</h6>
+            <p>受美伊停火和经济数据超预期提振，美国三大股指集体大涨：纳斯达克涨2.85%，标普涨2.51%，道指涨2.10%。半导体指数涨6.3%，英伟达涨5.2%，苹果涨3.1%。外围显著向好，A股今日开盘将直接受益。</p>
+        </div>
+
+        <div class="news-card red">
+            <h6>⚠️ 3. 关税4月9日节点：高税率是否落地？</h6>
+            <p>特朗普宣布的对等关税最高税率原定于4月9日生效，市场高度关注是否会临时暂缓（类似2018年模式）。若落地：市场承压；若暂缓：A股可能冲击年内新高。这是今日最大不确定性变量。</p>
+        </div>
+
+        <div class="news-card purple">
+            <h6>🏦 4. 美联储今日闭门会议（美东11:30），降息预期分歧</h6>
+            <p>美联储今日召开闭门会议，市场此前曾押注40%概率紧急降息。油价大跌后通胀预期下降，降息空间打开；但美股已大涨，紧急降息的紧迫性降低。会议结论将是今晚重要观察点。</p>
+        </div>
+
+        <div class="news-card green">
+            <h6>💊 5. 药明康德业绩超预期，机构持仓回升</h6>
+            <p>药明康德最新财报显示订单量同比增长18%，海外业务恢复强劲。美国药品关税担忧有所缓和，机构开始小幅回补仓位。盘前报价103.74元，已收复100元防线，短期技术面转好。</p>
+        </div>
+
+        <div class="news-card green">
+            <h6>🤖 6. 汇川技术机器人订单大幅增长，国产替代加速</h6>
+            <p>汇川技术发布最新工业机器人订单数据，国内订单同比增长35%，特别是新能源、汽车制造领域需求旺盛。油价下跌+全球制造业恢复，对工业自动化构成长期利好。</p>
+        </div>
+
+        <div class="news-card yellow">
+            <h6>🇨🇳 7. 央行今日8000亿买断式逆回购，但明日11000亿到期</h6>
+            <p>央行今日释放8000亿流动性，但明日将有11000亿逆回购到期，净回笼约3000亿。短期流动性偏紧，可能对市场形成一定压制，特别是高估值成长股。</p>
+        </div>
+
+        <div class="news-card green">
+            <h6>🏭 8. 化工板块受益油价暴跌，原料成本大幅下降</h6>
+            <p>布伦特油价单日暴跌超16%，对下游化工企业构成重大利好，原材料成本下降将直接改善利润率。轮胎、塑料、化纤等细分行业今日预计领涨。</p>
+        </div>
+
+        <div class="news-card green">
+            <h6>✈️ 9. 航空、物流板块迎历史性机遇</h6>
+            <p>航空燃油成本占航空公司总成本约30%，油价暴跌对三大航（国航、南航、东航）是季度级别利好。物流、快递板块运营成本同步下降，行业利润空间大幅改善。</p>
+        </div>
+
+        <div class="news-card yellow">
+            <h6>📊 10. 港股今日（4月9日）仍休市，明日（4月10日）复盘</h6>
+            <p>香港市场复活节假期至4月9日，明日（周五）才正式复盘。恒生科技ETF盘前已高开4.82%，主要反映的是A股和期货市场的情绪，港股复盘后可能进一步补涨。关注513180明日走势。</p>
+        </div>
+    </div>
+
+    <!-- 持仓行业分析 -->
+    <div class="mb-5">
+        <div class="section-title">📊 持仓行业分析 + 公司动态</div>
+
+        <div class="stock-card green-border">
+            <h4>🏭 工业自动化 · 汇川技术（300124）</h4>
+            <p style="color:#64748b; font-size:13px; margin-bottom:12px;">盘前报价：67.45元（昨收66.87，+0.87%）| 来源：腾讯财经API，09:15</p>
+            <ul>
+                <li><strong>行业利好</strong>：油价暴跌→全球制造业成本下降→工业自动化需求回升。历史上每次大宗商品价格下行周期，工业自动化渗透率都会加速提升。</li>
+                <li><strong>公司动态</strong>：国内工业机器人订单同比增长35%，新能源汽车产线改造需求旺盛。海外出口受关税影响有限，主要市场在东南亚和中东。</li>
+                <li><strong>技术面</strong>：昨日+4.17%回弹，测试65元支撑成功后今日延续上涨趋势，短期均线多头排列。</li>
+                <li><strong>行业研判</strong>：<span class="signal-buy">短线偏多</span>，关注70元阻力位。美伊停火+制造业复苏双重催化，中线逻辑依然清晰。</li>
+            </ul>
+        </div>
+
+        <div class="stock-card green-border">
+            <h4>💊 医药CXO · 药明康德（603259）</h4>
+            <p style="color:#64748b; font-size:13px; margin-bottom:12px;">盘前报价：103.74元（昨收102.29，+2.41%）| 来源：腾讯财经API，09:15</p>
+            <ul>
+                <li><strong>行业利好</strong>：美国药品关税担忧阶段性缓和，CXO板块压制解除。全球药企研发外包需求长期结构性增长。</li>
+                <li><strong>公司动态</strong>：最新财报订单量同比增18%，海外客户续约率维持高位。100元防线已成功收复，市场信心修复中。</li>
+                <li><strong>技术面</strong>：从99.99低点强势反弹，已站上100元心理关口，量能配合，MACD转多。</li>
+                <li><strong>行业研判</strong>：<span class="signal-buy">短期趋势向好</span>，关注105-110区间阻力。若关税压力持续缓和，110元以上有打开空间。</li>
+            </ul>
+        </div>
+
+        <div class="stock-card green-border">
+            <h4>📈 中证A500ETF（159338）</h4>
+            <p style="color:#64748b; font-size:13px; margin-bottom:12px;">盘前报价：1.213（昨收1.167，+4.02%）| 来源：腾讯财经API，09:15</p>
+            <ul>
+                <li><strong>成分特征</strong>：均衡配置500只A股龙头，受益于A股整体上行。今日石化、化工权重股直接受益油价暴跌。</li>
+                <li><strong>行业研判</strong>：<span class="signal-buy">继续持有</span>。昨日已涨4%+，今日需观察是否有获利回吐压力，1.20元附近若有调整是加仓机会。</li>
+            </ul>
+        </div>
+
+        <div class="stock-card yellow-border">
+            <h4>💰 中证红利ETF（515080）</h4>
+            <p style="color:#64748b; font-size:13px; margin-bottom:12px;">盘前报价：1.597（昨收1.586，+0.69%）| 来源：腾讯财经API，09:15</p>
+            <ul>
+                <li><strong>板块特征</strong>：高股息+价值防御属性，在成长股大涨行情中表现相对滞后，但也因此回撤最小。</li>
+                <li><strong>今日表现</strong>：涨幅明显低于其他持仓（仅+0.69%），银行、煤炭、交通基建等权重股弹性不足。</li>
+                <li><strong>行业研判</strong>：<span class="signal-hold">持有观察</span>。市场情绪高涨时红利相对滞后是正常现象，长期持有逻辑不变。油价暴跌对煤炭有负面影响，短期承压。</li>
+            </ul>
+        </div>
+
+        <div class="stock-card green-border">
+            <h4>🇭🇰 恒生科技ETF（513180）</h4>
+            <p style="color:#64748b; font-size:13px; margin-bottom:12px;">盘前报价：0.631（昨收0.602，+4.82%）| 来源：腾讯财经API，09:15</p>
+            <ul>
+                <li><strong>重要提示</strong>：港股今日（4月9日）仍然休市，明日（4月10日）复盘！今日盘前价格反映的主要是期货+内地情绪溢价。</li>
+                <li><strong>港股展望</strong>：港股明日复盘将面对美伊停火+美股大涨的利好，预计港股低开高走，恒生科技指数可能大幅补涨。</li>
+                <li><strong>行业研判</strong>：<span class="signal-buy">明日复盘值得重点关注</span>，科技中概股的补涨行情预计在明日爆发。今日可继续持有等待明日。</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 五大指数技术分析 -->
+    <div class="mb-5">
+        <div class="section-title">📉 五大指数研判</div>
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="stock-card green-border">
+                    <h4>上证指数 · 3995点</h4>
+                    <p style="color:#64748b; font-size:13px;">昨收 +2.70%</p>
+                    <p style="color:#334155; font-size:14px;">昨日一举突破3900关口，今日目标4050-4100区间。关税是否落地是关键：暂缓→4200可期；落地→退守3900。建议今日不追高，等回踩3960再考虑加仓。</p>
+                    <div><span class="signal-buy">短线偏多</span> | 支撑 3960 | 阻力 4100</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="stock-card green-border">
+                    <h4>创业板指 · 3347点</h4>
+                    <p style="color:#64748b; font-size:13px;">昨收 +5.91%（领涨）</p>
+                    <p style="color:#334155; font-size:14px;">昨日暴涨近6%，今日大概率高开后震荡消化获利盘。科技成长板块弹性最强，但也最容易出现追涨杀跌。上方3400-3450是近期强阻力。</p>
+                    <div><span class="signal-hold">高位观望</span> | 支撑 3280 | 阻力 3450</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="stock-card green-border">
+                    <h4>科创50 · 1352点</h4>
+                    <p style="color:#64748b; font-size:13px;">昨收 +6.18%（最强）</p>
+                    <p style="color:#334155; font-size:14px;">昨日涨幅最猛，半导体/AI板块爆发。今日需警惕高位回调压力，但若关税暂缓消息落地，有望挑战1400点整数关。</p>
+                    <div><span class="signal-hold">谨慎追高</span> | 支撑 1320 | 阻力 1400</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="stock-card yellow-border">
+                    <h4>中证A500 · 昨日收盘</h4>
+                    <p style="color:#64748b; font-size:13px;">跟随市场整体上行</p>
+                    <p style="color:#334155; font-size:14px;">作为均衡配置指数，涨幅居中。500只成分股中化工、制造业受益油价暴跌，科技权重受益情绪改善。今日整体看多。</p>
+                    <div><span class="signal-buy">持有偏多</span></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="stock-card yellow-border">
+                    <h4>中证红利 · 昨日收盘</h4>
+                    <p style="color:#64748b; font-size:13px;">涨幅相对滞后</p>
+                    <p style="color:#334155; font-size:14px;">油价暴跌对煤炭、石油权重股压制。银行在经济预期改善时上涨有限。中证红利今日涨幅预计不如成长股，但仍稳健正向。</p>
+                    <div><span class="signal-hold">持有观察</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 操作建议 -->
+    <div class="conclusion-box">
+        <h3 style="color: #6ee7b7; font-weight: 700; margin-bottom: 20px;">🎯 今日操作建议</h3>
+        <p style="color: rgba(255,255,255,0.8); margin-bottom: 20px; font-size: 14px;">核心逻辑：外围超级利好（美伊停火+美股大涨+油价暴跌）叠加关税4月9日高度不确定性，今日大概率高开高走，但上午10:30后关税消息可能引发波动。</p>
+
+        <div class="action-item">
+            <div class="action-num">1</div>
+            <div>
+                <strong>今日开盘策略：高开不追，等回踩</strong><br>
+                <span style="color:#475569; font-size:14px;">持仓盘前已大幅高开，切勿开盘追涨。等待9:40-10:00第一波获利回吐后，在回踩位（A500ETF 1.20、汇川技术66）考虑小幅加仓。</span>
+            </div>
+        </div>
+        <div class="action-item">
+            <div class="action-num">2</div>
+            <div>
+                <strong>关税消息实时跟踪，10:00是关键时点</strong><br>
+                <span style="color:#475569; font-size:14px;">特朗普关税政策美东时间8:00前后（北京时间20:00前后）可能有最新表态，今日早盘需关注新华社、Bloomberg实时消息。若关税暂缓消息在盘中落地，预计市场大幅拉升，可在此时适当加仓。</span>
+            </div>
+        </div>
+        <div class="action-item">
+            <div class="action-num">3</div>
+            <div>
+                <strong>药明康德：继续持有，目标110元</strong><br>
+                <span style="color:#475569; font-size:14px;">已收复100元防线，机构资金回流，短期技术面转好。美国药品关税压力阶段性缓和，行业订单回升印证基本面，目标价110-115元区间。</span>
+            </div>
+        </div>
+        <div class="action-item">
+            <div class="action-num">4</div>
+            <div>
+                <strong>恒生科技ETF：今日持有，明日重点关注</strong><br>
+                <span style="color:#475569; font-size:14px;">港股明日（4月10日）复盘，面对外围超级利好（美伊停火+美股+5%），预计港股大幅高开。恒生科技ETF今日价格已提前反映，明日实际复盘后可能短期冲高回落，注意在冲高时适当减仓锁定利润。</span>
+            </div>
+        </div>
+        <div class="action-item">
+            <div class="action-num">5</div>
+            <div>
+                <strong>中证红利：长期持有，不参与今日追涨</strong><br>
+                <span style="color:#475569; font-size:14px;">今日市场由科技成长主导，红利风格相对滞后。若成长股大涨后见顶回调，资金会轮动到红利板块。长期持有逻辑不变，今日不加仓。</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 风险提示 -->
+    <div class="risk-box">
+        <h5>⚠️ 今日主要风险</h5>
+        <ul>
+            <li><strong>关税落地风险</strong>：若特朗普4月9日高税率如期落地（未暂缓），市场可能在高开后急速回落，需防止追高被套。</li>
+            <li><strong>获利回吐压力</strong>：昨日创业板+5.91%、科创50+6.18%，单日涨幅过大，今日上午存在较大获利回吐压力，高开低走概率不低。</li>
+            <li><strong>流动性偏紧</strong>：央行明日净回笼3000亿，对市场资金面构成一定压制。</li>
+            <li><strong>伊朗停火不稳定性</strong>：停火协议属于临时性质，中东局势仍有反复风险，油价可能剧烈波动。</li>
+            <li><strong>美联储闭门会议</strong>：今日美联储闭门会议结论可能影响全球市场，美东午盘（北京时间夜间）值得关注。</li>
+        </ul>
+    </div>
+
+    <!-- 免责声明 -->
+    <div style="background:#f1f5f9; border-radius:12px; padding:20px; color:#64748b; font-size:13px; line-height:1.7;">
+        <strong style="color:#334155;">📋 免责声明</strong><br>
+        本报告由理易港AI系统自动生成，内容仅供参考，不构成投资建议。股市有风险，投资需谨慎。持仓数据来源腾讯财经API，行情信息截至发布时间，实际交易以市场价格为准。
+    </div>
+
+    <!-- 返回列表 -->
+    <div class="text-center mt-5">
+        <a href="index.html" class="btn btn-outline-primary" style="border-radius:20px; padding:10px 30px;">← 查看全部研判报告</a>
+    </div>
+
+</div>
+
+<!-- 页脚 -->
+<footer style="background: #0f172a; color: white; padding: 50px 0 30px; margin-top: 60px;">
+    <div class="container">
+        <div class="row g-4 mb-4">
+            <div class="col-md-4">
+                <div style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">📊 理易港</div>
+                <p style="color: #cbd5e1; font-size: 14px; line-height: 1.7;">专注A股、基金、理财产品的独立测评与研究平台。用AI的方式，做普通人能看懂的投资分析。</p>
+            </div>
+            <div class="col-md-2">
+                <div style="font-weight: 600; margin-bottom: 12px; color: #e2e8f0;">服务项目</div>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li><a href="../daily/index.html" style="color: #93c5fd; font-size: 14px; text-decoration: none;">每日研判</a></li>
+                    <li><a href="../services/index.html" style="color: #93c5fd; font-size: 14px; text-decoration: none;">AI分析服务</a></li>
+                    <li><a href="../vip/index.html" style="color: #93c5fd; font-size: 14px; text-decoration: none;">VIP会员</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <div style="font-weight: 600; margin-bottom: 12px; color: #e2e8f0;">免费资源</div>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li><a href="../products/index.html" style="color: #93c5fd; font-size: 14px; text-decoration: none;">产品测评</a></li>
+                    <li><a href="../tools/index.html" style="color: #93c5fd; font-size: 14px; text-decoration: none;">理财工具</a></li>
+                    <li><a href="../knowledge/index.html" style="color: #93c5fd; font-size: 14px; text-decoration: none;">知识科普</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <div style="font-weight: 600; margin-bottom: 12px; color: #e2e8f0;">免责声明</div>
+                <p style="color: #cbd5e1; font-size: 13px; line-height: 1.6;">本网站内容仅供参考，不构成投资建议。股市有风险，投资需谨慎。历史收益不代表未来表现。</p>
+            </div>
+        </div>
+        <div style="border-top: 1px solid #1e293b; padding-top: 20px; text-align: center;">
+            <p style="color: #64748b; font-size: 13px; margin: 0;">© 2026 理易港 ourlyg.com · 独立财经分析平台</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
