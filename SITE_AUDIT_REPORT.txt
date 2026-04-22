@@ -1,0 +1,855 @@
+线上站点全面检查报告
+======================================================================
+
+检查时间: 2026-03-20
+检查文件数: 84
+总问题数: 275
+  - 严重问题: 8
+  - 中等问题: 11
+  - 轻微问题: 8
+
+
+[HTML结构]
+问题数量: 8
+
+1. [HIGH] seo-meta-template.html
+   缺少DOCTYPE声明
+
+2. [HIGH] seo-meta-template.html
+   缺少<title>标签
+
+3. [HIGH] includes\footer.html
+   缺少DOCTYPE声明
+
+4. [HIGH] includes\footer.html
+   缺少<title>标签
+
+5. [HIGH] includes\footer.html
+   缺少viewport meta标签
+
+6. [HIGH] includes\security-head.html
+   缺少DOCTYPE声明
+
+7. [HIGH] includes\security-head.html
+   缺少<title>标签
+
+8. [HIGH] includes\security-head.html
+   缺少viewport meta标签
+
+
+[链接]
+问题数量: 248
+
+1. [UNKNOWN] N/A
+   N/A
+
+2. [UNKNOWN] N/A
+   N/A
+
+3. [UNKNOWN] N/A
+   N/A
+
+4. [UNKNOWN] N/A
+   N/A
+
+5. [UNKNOWN] N/A
+   N/A
+
+6. [UNKNOWN] N/A
+   N/A
+
+7. [UNKNOWN] N/A
+   N/A
+
+8. [UNKNOWN] N/A
+   N/A
+
+9. [UNKNOWN] N/A
+   N/A
+
+10. [UNKNOWN] N/A
+   N/A
+
+11. [UNKNOWN] N/A
+   N/A
+
+12. [UNKNOWN] N/A
+   N/A
+
+13. [UNKNOWN] N/A
+   N/A
+
+14. [UNKNOWN] N/A
+   N/A
+
+15. [UNKNOWN] N/A
+   N/A
+
+16. [UNKNOWN] N/A
+   N/A
+
+17. [UNKNOWN] N/A
+   N/A
+
+18. [UNKNOWN] N/A
+   N/A
+
+19. [UNKNOWN] N/A
+   N/A
+
+20. [UNKNOWN] N/A
+   N/A
+
+21. [UNKNOWN] N/A
+   N/A
+
+22. [UNKNOWN] N/A
+   N/A
+
+23. [UNKNOWN] N/A
+   N/A
+
+24. [UNKNOWN] N/A
+   N/A
+
+25. [UNKNOWN] N/A
+   N/A
+
+26. [UNKNOWN] N/A
+   N/A
+
+27. [UNKNOWN] N/A
+   N/A
+
+28. [UNKNOWN] N/A
+   N/A
+
+29. [UNKNOWN] N/A
+   N/A
+
+30. [UNKNOWN] N/A
+   N/A
+
+31. [UNKNOWN] N/A
+   N/A
+
+32. [UNKNOWN] N/A
+   N/A
+
+33. [UNKNOWN] N/A
+   N/A
+
+34. [UNKNOWN] N/A
+   N/A
+
+35. [UNKNOWN] N/A
+   N/A
+
+36. [UNKNOWN] N/A
+   N/A
+
+37. [UNKNOWN] N/A
+   N/A
+
+38. [UNKNOWN] N/A
+   N/A
+
+39. [UNKNOWN] N/A
+   N/A
+
+40. [UNKNOWN] N/A
+   N/A
+
+41. [UNKNOWN] N/A
+   N/A
+
+42. [UNKNOWN] N/A
+   N/A
+
+43. [UNKNOWN] N/A
+   N/A
+
+44. [UNKNOWN] N/A
+   N/A
+
+45. [UNKNOWN] N/A
+   N/A
+
+46. [UNKNOWN] N/A
+   N/A
+
+47. [UNKNOWN] N/A
+   N/A
+
+48. [UNKNOWN] N/A
+   N/A
+
+49. [UNKNOWN] N/A
+   N/A
+
+50. [UNKNOWN] N/A
+   N/A
+
+51. [UNKNOWN] N/A
+   N/A
+
+52. [UNKNOWN] N/A
+   N/A
+
+53. [UNKNOWN] N/A
+   N/A
+
+54. [UNKNOWN] N/A
+   N/A
+
+55. [UNKNOWN] N/A
+   N/A
+
+56. [UNKNOWN] N/A
+   N/A
+
+57. [UNKNOWN] N/A
+   N/A
+
+58. [UNKNOWN] N/A
+   N/A
+
+59. [UNKNOWN] N/A
+   N/A
+
+60. [UNKNOWN] N/A
+   N/A
+
+61. [UNKNOWN] N/A
+   N/A
+
+62. [UNKNOWN] N/A
+   N/A
+
+63. [UNKNOWN] N/A
+   N/A
+
+64. [UNKNOWN] N/A
+   N/A
+
+65. [UNKNOWN] N/A
+   N/A
+
+66. [UNKNOWN] N/A
+   N/A
+
+67. [UNKNOWN] N/A
+   N/A
+
+68. [UNKNOWN] N/A
+   N/A
+
+69. [UNKNOWN] N/A
+   N/A
+
+70. [UNKNOWN] N/A
+   N/A
+
+71. [UNKNOWN] N/A
+   N/A
+
+72. [UNKNOWN] N/A
+   N/A
+
+73. [UNKNOWN] N/A
+   N/A
+
+74. [UNKNOWN] N/A
+   N/A
+
+75. [UNKNOWN] N/A
+   N/A
+
+76. [UNKNOWN] N/A
+   N/A
+
+77. [UNKNOWN] N/A
+   N/A
+
+78. [UNKNOWN] N/A
+   N/A
+
+79. [UNKNOWN] N/A
+   N/A
+
+80. [UNKNOWN] N/A
+   N/A
+
+81. [UNKNOWN] N/A
+   N/A
+
+82. [UNKNOWN] N/A
+   N/A
+
+83. [UNKNOWN] N/A
+   N/A
+
+84. [UNKNOWN] N/A
+   N/A
+
+85. [UNKNOWN] N/A
+   N/A
+
+86. [UNKNOWN] N/A
+   N/A
+
+87. [UNKNOWN] N/A
+   N/A
+
+88. [UNKNOWN] N/A
+   N/A
+
+89. [UNKNOWN] N/A
+   N/A
+
+90. [UNKNOWN] N/A
+   N/A
+
+91. [UNKNOWN] N/A
+   N/A
+
+92. [UNKNOWN] N/A
+   N/A
+
+93. [UNKNOWN] N/A
+   N/A
+
+94. [UNKNOWN] N/A
+   N/A
+
+95. [UNKNOWN] N/A
+   N/A
+
+96. [UNKNOWN] N/A
+   N/A
+
+97. [UNKNOWN] N/A
+   N/A
+
+98. [UNKNOWN] N/A
+   N/A
+
+99. [UNKNOWN] N/A
+   N/A
+
+100. [UNKNOWN] N/A
+   N/A
+
+101. [UNKNOWN] N/A
+   N/A
+
+102. [UNKNOWN] N/A
+   N/A
+
+103. [UNKNOWN] N/A
+   N/A
+
+104. [UNKNOWN] N/A
+   N/A
+
+105. [UNKNOWN] N/A
+   N/A
+
+106. [UNKNOWN] N/A
+   N/A
+
+107. [UNKNOWN] N/A
+   N/A
+
+108. [UNKNOWN] N/A
+   N/A
+
+109. [UNKNOWN] N/A
+   N/A
+
+110. [UNKNOWN] N/A
+   N/A
+
+111. [UNKNOWN] N/A
+   N/A
+
+112. [UNKNOWN] N/A
+   N/A
+
+113. [UNKNOWN] N/A
+   N/A
+
+114. [UNKNOWN] N/A
+   N/A
+
+115. [UNKNOWN] N/A
+   N/A
+
+116. [UNKNOWN] N/A
+   N/A
+
+117. [UNKNOWN] N/A
+   N/A
+
+118. [UNKNOWN] N/A
+   N/A
+
+119. [UNKNOWN] N/A
+   N/A
+
+120. [UNKNOWN] N/A
+   N/A
+
+121. [UNKNOWN] N/A
+   N/A
+
+122. [UNKNOWN] N/A
+   N/A
+
+123. [UNKNOWN] N/A
+   N/A
+
+124. [UNKNOWN] N/A
+   N/A
+
+125. [UNKNOWN] N/A
+   N/A
+
+126. [UNKNOWN] N/A
+   N/A
+
+127. [UNKNOWN] N/A
+   N/A
+
+128. [UNKNOWN] N/A
+   N/A
+
+129. [UNKNOWN] N/A
+   N/A
+
+130. [UNKNOWN] N/A
+   N/A
+
+131. [UNKNOWN] N/A
+   N/A
+
+132. [UNKNOWN] N/A
+   N/A
+
+133. [UNKNOWN] N/A
+   N/A
+
+134. [UNKNOWN] N/A
+   N/A
+
+135. [UNKNOWN] N/A
+   N/A
+
+136. [UNKNOWN] N/A
+   N/A
+
+137. [UNKNOWN] N/A
+   N/A
+
+138. [UNKNOWN] N/A
+   N/A
+
+139. [UNKNOWN] N/A
+   N/A
+
+140. [UNKNOWN] N/A
+   N/A
+
+141. [UNKNOWN] N/A
+   N/A
+
+142. [UNKNOWN] N/A
+   N/A
+
+143. [UNKNOWN] N/A
+   N/A
+
+144. [UNKNOWN] N/A
+   N/A
+
+145. [UNKNOWN] N/A
+   N/A
+
+146. [UNKNOWN] N/A
+   N/A
+
+147. [UNKNOWN] N/A
+   N/A
+
+148. [UNKNOWN] N/A
+   N/A
+
+149. [UNKNOWN] N/A
+   N/A
+
+150. [UNKNOWN] N/A
+   N/A
+
+151. [UNKNOWN] N/A
+   N/A
+
+152. [UNKNOWN] N/A
+   N/A
+
+153. [UNKNOWN] N/A
+   N/A
+
+154. [UNKNOWN] N/A
+   N/A
+
+155. [UNKNOWN] N/A
+   N/A
+
+156. [UNKNOWN] N/A
+   N/A
+
+157. [UNKNOWN] N/A
+   N/A
+
+158. [UNKNOWN] N/A
+   N/A
+
+159. [UNKNOWN] N/A
+   N/A
+
+160. [UNKNOWN] N/A
+   N/A
+
+161. [UNKNOWN] N/A
+   N/A
+
+162. [UNKNOWN] N/A
+   N/A
+
+163. [UNKNOWN] N/A
+   N/A
+
+164. [UNKNOWN] N/A
+   N/A
+
+165. [UNKNOWN] N/A
+   N/A
+
+166. [UNKNOWN] N/A
+   N/A
+
+167. [UNKNOWN] N/A
+   N/A
+
+168. [UNKNOWN] N/A
+   N/A
+
+169. [UNKNOWN] N/A
+   N/A
+
+170. [UNKNOWN] N/A
+   N/A
+
+171. [UNKNOWN] N/A
+   N/A
+
+172. [UNKNOWN] N/A
+   N/A
+
+173. [UNKNOWN] N/A
+   N/A
+
+174. [UNKNOWN] N/A
+   N/A
+
+175. [UNKNOWN] N/A
+   N/A
+
+176. [UNKNOWN] N/A
+   N/A
+
+177. [UNKNOWN] N/A
+   N/A
+
+178. [UNKNOWN] N/A
+   N/A
+
+179. [UNKNOWN] N/A
+   N/A
+
+180. [UNKNOWN] N/A
+   N/A
+
+181. [UNKNOWN] N/A
+   N/A
+
+182. [UNKNOWN] N/A
+   N/A
+
+183. [UNKNOWN] N/A
+   N/A
+
+184. [UNKNOWN] N/A
+   N/A
+
+185. [UNKNOWN] N/A
+   N/A
+
+186. [UNKNOWN] N/A
+   N/A
+
+187. [UNKNOWN] N/A
+   N/A
+
+188. [UNKNOWN] N/A
+   N/A
+
+189. [UNKNOWN] N/A
+   N/A
+
+190. [UNKNOWN] N/A
+   N/A
+
+191. [UNKNOWN] N/A
+   N/A
+
+192. [UNKNOWN] N/A
+   N/A
+
+193. [UNKNOWN] N/A
+   N/A
+
+194. [UNKNOWN] N/A
+   N/A
+
+195. [UNKNOWN] N/A
+   N/A
+
+196. [UNKNOWN] N/A
+   N/A
+
+197. [UNKNOWN] N/A
+   N/A
+
+198. [UNKNOWN] N/A
+   N/A
+
+199. [UNKNOWN] N/A
+   N/A
+
+200. [UNKNOWN] N/A
+   N/A
+
+201. [UNKNOWN] N/A
+   N/A
+
+202. [UNKNOWN] N/A
+   N/A
+
+203. [UNKNOWN] N/A
+   N/A
+
+204. [UNKNOWN] N/A
+   N/A
+
+205. [UNKNOWN] N/A
+   N/A
+
+206. [UNKNOWN] N/A
+   N/A
+
+207. [UNKNOWN] N/A
+   N/A
+
+208. [UNKNOWN] N/A
+   N/A
+
+209. [UNKNOWN] N/A
+   N/A
+
+210. [UNKNOWN] N/A
+   N/A
+
+211. [UNKNOWN] N/A
+   N/A
+
+212. [UNKNOWN] N/A
+   N/A
+
+213. [UNKNOWN] N/A
+   N/A
+
+214. [UNKNOWN] N/A
+   N/A
+
+215. [UNKNOWN] N/A
+   N/A
+
+216. [UNKNOWN] N/A
+   N/A
+
+217. [UNKNOWN] N/A
+   N/A
+
+218. [UNKNOWN] N/A
+   N/A
+
+219. [UNKNOWN] N/A
+   N/A
+
+220. [UNKNOWN] N/A
+   N/A
+
+221. [UNKNOWN] N/A
+   N/A
+
+222. [UNKNOWN] N/A
+   N/A
+
+223. [UNKNOWN] N/A
+   N/A
+
+224. [UNKNOWN] N/A
+   N/A
+
+225. [UNKNOWN] N/A
+   N/A
+
+226. [UNKNOWN] N/A
+   N/A
+
+227. [UNKNOWN] N/A
+   N/A
+
+228. [UNKNOWN] N/A
+   N/A
+
+229. [UNKNOWN] N/A
+   N/A
+
+230. [UNKNOWN] N/A
+   N/A
+
+231. [UNKNOWN] N/A
+   N/A
+
+232. [UNKNOWN] N/A
+   N/A
+
+233. [UNKNOWN] N/A
+   N/A
+
+234. [UNKNOWN] N/A
+   N/A
+
+235. [UNKNOWN] N/A
+   N/A
+
+236. [UNKNOWN] N/A
+   N/A
+
+237. [UNKNOWN] N/A
+   N/A
+
+238. [UNKNOWN] N/A
+   N/A
+
+239. [UNKNOWN] N/A
+   N/A
+
+240. [UNKNOWN] N/A
+   N/A
+
+241. [UNKNOWN] N/A
+   N/A
+
+242. [UNKNOWN] N/A
+   N/A
+
+243. [UNKNOWN] N/A
+   N/A
+
+244. [UNKNOWN] N/A
+   N/A
+
+245. [UNKNOWN] N/A
+   N/A
+
+246. [UNKNOWN] N/A
+   N/A
+
+247. [UNKNOWN] N/A
+   N/A
+
+248. [UNKNOWN] N/A
+   N/A
+
+
+[SEO]
+问题数量: 12
+
+1. [MEDIUM] 404.html
+   缺少description meta标签
+
+2. [MEDIUM] analytics-dashboard.html
+   缺少description meta标签
+
+3. [MEDIUM] baidu_raw.html
+   缺少description meta标签
+
+4. [MEDIUM] customer_locator.html
+   缺少description meta标签
+
+5. [MEDIUM] seo-meta-template.html
+   缺少description meta标签
+
+6. [MEDIUM] vip-subscription.html
+   缺少description meta标签
+
+7. [MEDIUM] data\financial_news_20260318.html
+   缺少description meta标签
+
+8. [MEDIUM] includes\footer.html
+   缺少description meta标签
+
+9. [MEDIUM] includes\security-head.html
+   缺少description meta标签
+
+10. [MEDIUM] products\template.html
+   缺少description meta标签
+
+11. [LOW] samples\index.html
+   首页建议添加keywords meta标签
+
+12. [MEDIUM] tools\calculator.html
+   缺少description meta标签
+
+
+[兼容性]
+问题数量: 6
+
+1. [LOW] baidu_raw.html
+   未检测到Bootstrap，可能影响移动端显示
+
+2. [LOW] customer_locator.html
+   未检测到Bootstrap，可能影响移动端显示
+
+3. [LOW] seo-meta-template.html
+   未检测到Bootstrap，可能影响移动端显示
+
+4. [LOW] data\financial_news_20260318.html
+   未检测到Bootstrap，可能影响移动端显示
+
+5. [LOW] includes\footer.html
+   未检测到Bootstrap，可能影响移动端显示
+
+6. [LOW] includes\security-head.html
+   未检测到Bootstrap，可能影响移动端显示
+
+
+[最佳实践]
+问题数量: 1
+
+1. [LOW] 根目录
+   缺少favicon图标
+
