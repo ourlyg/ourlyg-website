@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试页面</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 80px;
+        }
+        .test-banner {
+            background: linear-gradient(135deg, #0066FF 0%, #004499 100%);
+            color: white;
+            padding: 40px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">💰 我们的理易港(测试)</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products/index.html">产品测评</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="test-banner text-center">
+            <h1>✅ Bootstrap 5.3.2 加载成功!</h1>
+            <p>如果你能看到这个漂亮的蓝色背景和格式化的文字,说明Bootstrap正常工作</p>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">导航栏测试</h5>
+                        <p class="card-text">导航栏应该是横向排列的(桌面端)</p>
+                        <p class="badge bg-success">✅ 横向排列</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">栅格系统测试</h5>
+                        <p class="card-text">这三个卡片应该横向排列</p>
+                        <p class="badge bg-success">✅ 响应式栅格</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">颜色测试</h5>
+                        <p class="card-text">CSS变量系统正常工作</p>
+                        <p class="badge bg-primary">✅ 配色正常</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert-info">
+            <strong>提示:</strong> 如果这个测试页面显示正常,但index.html不正常,请:
+            <ol>
+                <li>按 <kbd>Ctrl + F5</kbd> 强制刷新index.html</li>
+                <li>清除浏览器缓存</li>
+                <li>确认你打开的文件路径是正确的</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
