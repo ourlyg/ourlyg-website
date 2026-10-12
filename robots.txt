@@ -1,9 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /private/
-Disallow: /temp/
-Disallow: /__pycache__/
-Disallow: /.git/
 
 Sitemap: https://ourlyg.com/sitemap.xml
