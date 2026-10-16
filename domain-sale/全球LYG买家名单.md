@@ -149,6 +149,16 @@ LYG 可作：Lead Your Growth（增长咨询）、Love Your Green（环保/消�
 - **本轮手动跑一次（=手机端同机制实证）**：①邮件巡检——收件箱无新报价；Lygature `jorg.janssen@` 信无退信（通道通，待回复）；Yolanda 离职转 `katie@` 已确认。②挖掘新买家——**Low Yat Group（马来西亚 1947 财团，官方域名 lyg.com.my，通用邮箱 enquiry@lyg.com.my）**：LYG 直为其品牌域名，强契合+有门户需求，高价值合规目标（非错位/非国企/非纯物流）。③首触信已发 `enquiry@lyg.com.my`，主题 "ourlyg.com — a natural Our LYG address for Low Yat Group"，坚定价 **USD 4,500**，escrow 担保，queued 成功，日配额余 48。
 - **结论**：手机端能唤醒、能跑一次；PC 开机即与桌面端等价。落盘为证。
 
+### 2026-10-16 09:39（北京时间）— 二叔问"有结果了吗"：核查 + 状态落盘
+- **真实结论：仍 0 成交、0 报价。** 收件箱最新邮件停在 2026-10-13 00:33Z；10-14 发的 Lygature(MD)/Low Yat 两封之后**零回复、零退信**（无退信=通道通，无回复=暂无意）。
+- **域名真实到期 2027-12-21（剩约 432 天，raw whois 已核实）**——销售窗口充裕，不急但也不能停。
+- **双备份点已验证 intact**：GitHub `ourlyg/ourlyg-website/domain-sale/` 11 文件齐全；资料库同名 11 文件可检索（手机端指令可接手）。
+- **本轮挖掘（WebSearch）诚实结果**：未挖到新的精确 LYG 高价值目标。LyGH Capital（L-Y-G-H 错位，ourlyg 不映射）已排除；另一条搜索被中文新闻污染无效。**判断：精确 LYG 的公开实体已基本触达或邮件失效，继续硬发错位目标违反方法论，停止低效发散。**
+- **下一步真实动作（已排）**：
+  1. **2026-10-19 跟进节奏**（首触 +5 工作日）：向 Lloyds(Matt/Douglas)、London Youth Games(Katie)、Luxury Yacht(info@)、Lygature(info@/jorg)、Low Yat(enquiry@) 发坚定价跟进信（不骚扰，按 §11.5/§12.3 报价框架）。
+  2. **全球大盘被动曝光（最高杠杆未开发渠道）**：Afternic/Sedo/Dan 挂牌文案已备（《全球挂牌包.md》），但其自助上架被平台注册验证码(JS+CAPTCHA)挡住——**此闸只有二叔能过一次**（用经纪邮箱 goozi002 注册，验证邮件归我收，我完成后续）。过此闸后才有被动买家流量，是当前最该补的短板。
+  3. 双备份点（GitHub+资料库）持续随动作更新。
+
 ### 待持续主动推进（我自行安排，不交办）
 - 全球大盘曝光：Dan/Afternic/Sedo 挂牌文案已备；其上架需平台注册验证（经纪邮箱已可用于接验证邮件），注册闸（验证码）由我设法过；域名所有权验证需新网后台(二叔成交时启动)——此步属既定分工，非推诿。
 - 继续挖掘 Tier2/Tier3 真实买家直邮（Link Your Game / Luxury Yacht Group / 更多 LYG 品牌方与机构）。
